@@ -7,26 +7,26 @@
  */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic&subset=latin,latin-ext);
-/* line 28 */
+@media -sass-debug-info{filename{}line{font-family:\0000328}}
 html, body {
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-/* line 34 */
+@media -sass-debug-info{filename{}line{font-family:\0000334}}
 body {
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 39 */
+@media -sass-debug-info{filename{}line{font-family:\0000339}}
 html, button, input, select, textarea,
 .pure-g [class*="pure-u"] {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
-/* line 45 */
+@media -sass-debug-info{filename{}line{font-family:\0000345}}
 div.metabar-container {
   height: 65px;
   position: absolute;
@@ -34,66 +34,66 @@ div.metabar-container {
   height: 65px;
   width: 100%;
 }
-/* line 53 */
+@media -sass-debug-info{filename{}line{font-family:\0000353}}
 div.metabar-container div.metabar {
   height: 100%;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 60 */
+@media -sass-debug-info{filename{}line{font-family:\0000360}}
 .product-badge {
   max-width: 50%;
   height: auto;
 }
 
-/* line 65 */
+@media -sass-debug-info{filename{}line{font-family:\0000365}}
 div.pure-u-1-2 {
   display: block;
 }
 
-/* line 69 */
+@media -sass-debug-info{filename{}line{font-family:\0000369}}
 div.post-content, div.entry-content {
   font-weight: 300;
   font-family: Merriweather, freight-text-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
-/* line 74 */
+@media -sass-debug-info{filename{}line{font-family:\0000374}}
 div.post-content h1, div.post-content h2, div.post-content h3, div.post-content h4, div.post-content h5, div.post-content h6, div.entry-content h1, div.entry-content h2, div.entry-content h3, div.entry-content h4, div.entry-content h5, div.entry-content h6 {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   font-weight: normal;
 }
-/* line 79 */
+@media -sass-debug-info{filename{}line{font-family:\0000379}}
 div.post-content h1, div.entry-content h1 {
   font-size: 28px;
 }
-/* line 83 */
+@media -sass-debug-info{filename{}line{font-family:\0000383}}
 div.post-content h2, div.entry-content h2 {
   font-size: 26px;
 }
-/* line 87 */
+@media -sass-debug-info{filename{}line{font-family:\0000387}}
 div.post-content h3, div.entry-content h3 {
   font-size: 24px;
 }
-/* line 91 */
+@media -sass-debug-info{filename{}line{font-family:\0000391}}
 div.post-content h4, div.entry-content h4 {
   font-size: 22px;
 }
-/* line 95 */
+@media -sass-debug-info{filename{}line{font-family:\0000395}}
 div.post-content h5, div.post-content h6, div.entry-content h5, div.entry-content h6 {
   font-size: 20px;
 }
-/* line 99 */
+@media -sass-debug-info{filename{}line{font-family:\0000399}}
 div.post-content h3, div.post-content h4, div.post-content h5, div.post-content h6, div.entry-content h3, div.entry-content h4, div.entry-content h5, div.entry-content h6 {
   font-weight: 300;
 }
-/* line 103 */
+@media -sass-debug-info{filename{}line{font-family:\00003103}}
 div.post-content a, div.entry-content a {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 107 */
+@media -sass-debug-info{filename{}line{font-family:\00003107}}
 div.post-content img, div.entry-content img {
   max-width: 100%;
 }
-/* line 111 */
+@media -sass-debug-info{filename{}line{font-family:\00003111}}
 div.post-content hr, div.entry-content hr {
   margin: 40px auto;
   width: 80%;
@@ -103,36 +103,36 @@ div.post-content hr, div.entry-content hr {
   background-color: rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 35.5em) {
-  /* line 111 */
+@media -sass-debug-info{filename{}line{font-family:\00003111}}
   div.post-content hr, div.entry-content hr {
     width: 50%;
   }
 }
 
-/* line 126 */
+@media -sass-debug-info{filename{}line{font-family:\00003126}}
 div.navigation {
   text-align: left;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 134 */
+@media -sass-debug-info{filename{}line{font-family:\00003134}}
 div.main-container {
   padding: 5px;
   background-color: #fafafa;
 }
-/* line 139 */
+@media -sass-debug-info{filename{}line{font-family:\00003139}}
 div.main-container .pure-g {
   max-width: 1000px;
   margin: 0 auto;
 }
 @media screen and (min-width: 48em) {
-  /* line 134 */
+@media -sass-debug-info{filename{}line{font-family:\00003134}}
   div.main-container {
     padding: 20px;
   }
 }
-/* line 148 */
+@media -sass-debug-info{filename{}line{font-family:\00003148}}
 div.main-container div.post {
   width: 100%;
   text-align: left;
@@ -145,31 +145,31 @@ div.main-container div.post {
   box-sizing: border-box;
 }
 @media screen and (min-width: 64em) {
-  /* line 148 */
+@media -sass-debug-info{filename{}line{font-family:\00003148}}
   div.main-container div.post {
     padding: 20px;
   }
 }
-/* line 164 */
+@media -sass-debug-info{filename{}line{font-family:\00003164}}
 div.main-container div.post h2 {
   font-size: 26px;
 }
-/* line 166 */
+@media -sass-debug-info{filename{}line{font-family:\00003166}}
 div.main-container div.post h2 a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
-/* line 172 */
+@media -sass-debug-info{filename{}line{font-family:\00003172}}
 div.main-container div.post div.post-content {
   font-family: Merriweather, freight-text-pro, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 176 */
+@media -sass-debug-info{filename{}line{font-family:\00003176}}
 div.main-container div.post div.post-content a {
   background-position: 0px 23px;
 }
-/* line 181 */
+@media -sass-debug-info{filename{}line{font-family:\00003181}}
 div.main-container div.post div.post-footer a {
   color: #57ad68;
   font-size: 14px;
@@ -177,21 +177,21 @@ div.main-container div.post div.post-footer a {
   text-decoration: none;
   letter-spacing: -0.02em;
 }
-/* line 189 */
+@media -sass-debug-info{filename{}line{font-family:\00003189}}
 div.main-container div.post div.post-footer a:hover {
   text-decoration: underline;
 }
-/* line 195 */
+@media -sass-debug-info{filename{}line{font-family:\00003195}}
 div.main-container div.right-container {
   text-align: left;
 }
 @media screen and (min-width: 64em) {
-  /* line 195 */
+@media -sass-debug-info{filename{}line{font-family:\00003195}}
   div.main-container div.right-container {
     padding-left: 20px;
   }
 }
-/* line 205 */
+@media -sass-debug-info{filename{}line{font-family:\00003205}}
 div.main-container div.right-container div.right-bar div.right-head {
   color: rgba(0, 0, 0, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.0785);
@@ -202,34 +202,34 @@ div.main-container div.right-container div.right-bar div.right-head {
   text-transform: uppercase;
   font-size: 11px;
 }
-/* line 219 */
+@media -sass-debug-info{filename{}line{font-family:\00003219}}
 div.main-container img.post-image {
   margin-top: 20px;
   width: 90%;
 }
 @media screen and (min-width: 48em) {
-  /* line 219 */
+@media -sass-debug-info{filename{}line{font-family:\00003219}}
   div.main-container img.post-image {
     max-width: 420px;
   }
 }
-/* line 233 */
+@media -sass-debug-info{filename{}line{font-family:\00003233}}
 div.main-container div.heading {
   text-align: left;
 }
-/* line 236 */
+@media -sass-debug-info{filename{}line{font-family:\00003236}}
 div.main-container div.heading div.heading-prefix {
   color: rgba(0, 0, 0, 0.3);
   font-size: 11px;
 }
-/* line 241 */
+@media -sass-debug-info{filename{}line{font-family:\00003241}}
 div.main-container div.heading h3 {
   font-weight: 300;
   font-size: 32px;
   margin: 0;
 }
 
-/* line 252 */
+@media -sass-debug-info{filename{}line{font-family:\00003252}}
 footer.index-footer {
   width: 100%;
   margin: 0 auto;
@@ -237,7 +237,7 @@ footer.index-footer {
   padding: 10px 0 25px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-/* line 260 */
+@media -sass-debug-info{filename{}line{font-family:\00003260}}
 footer.index-footer a {
   display: inline-block;
   color: rgba(0, 0, 0, 0.3);
@@ -245,13 +245,13 @@ footer.index-footer a {
   margin-right: 16px;
   text-decoration: none;
 }
-/* line 268 */
+@media -sass-debug-info{filename{}line{font-family:\00003268}}
 footer.index-footer a:hover {
   text-decoration: underline;
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 278 */
+@media -sass-debug-info{filename{}line{font-family:\00003278}}
 div.post-meta img.post-avatar {
   max-width: 36px;
   max-height: 36px;
@@ -260,40 +260,40 @@ div.post-meta img.post-avatar {
   vertical-align: middle;
   margin-right: 10px;
 }
-/* line 289 */
+@media -sass-debug-info{filename{}line{font-family:\00003289}}
 div.post-meta div.meta-data {
   letter-spacing: -0.02em;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.3);
 }
-/* line 295 */
+@media -sass-debug-info{filename{}line{font-family:\00003295}}
 div.post-meta div.meta-data a {
   text-decoration: none;
 }
-/* line 299 */
+@media -sass-debug-info{filename{}line{font-family:\00003299}}
 div.post-meta div.meta-data a.category {
   color: #57ad68;
   font-size: 14px;
 }
-/* line 304 */
+@media -sass-debug-info{filename{}line{font-family:\00003304}}
 div.post-meta div.meta-data a.category:hover {
   color: #468c54;
 }
-/* line 308 */
+@media -sass-debug-info{filename{}line{font-family:\00003308}}
 div.post-meta div.meta-data a.author {
   color: inherit;
 }
-/* line 312 */
+@media -sass-debug-info{filename{}line{font-family:\00003312}}
 div.post-meta div.meta-data a.author:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 324 */
+@media -sass-debug-info{filename{}line{font-family:\00003324}}
 div.page-container {
   text-align: center;
   margin-top: 0px;
 }
-/* line 328 */
+@media -sass-debug-info{filename{}line{font-family:\00003328}}
 div.page-container div.entry-content {
   max-width: 700px;
   margin: 0 auto;
@@ -304,23 +304,23 @@ div.page-container div.entry-content {
   padding: 20px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 328 */
+@media -sass-debug-info{filename{}line{font-family:\00003328}}
   div.page-container div.entry-content {
     line-height: 1.6;
   }
 }
-/* line 341 */
+@media -sass-debug-info{filename{}line{font-family:\00003341}}
 div.page-container div.entry-content div.entry-info {
   font-size: 14px;
   font-style: italic;
 }
-/* line 348 */
+@media -sass-debug-info{filename{}line{font-family:\00003348}}
 div.page-container footer {
   margin: 0 auto;
   text-align: left;
   max-width: 700px;
 }
-/* line 353 */
+@media -sass-debug-info{filename{}line{font-family:\00003353}}
 div.page-container footer div.post-footer {
   padding: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -328,66 +328,66 @@ div.page-container footer div.post-footer {
   margin: 30px 0 40px 0;
 }
 @media screen and (min-width: 48em) {
-  /* line 353 */
+@media -sass-debug-info{filename{}line{font-family:\00003353}}
   div.page-container footer div.post-footer {
     padding: 40px 0;
   }
 }
-/* line 363 */
+@media -sass-debug-info{filename{}line{font-family:\00003363}}
 div.page-container footer div.post-footer h3 {
   font-size: 18px;
   line-height: 1.1;
   margin: 0;
   padding: 0;
 }
-/* line 369 */
+@media -sass-debug-info{filename{}line{font-family:\00003369}}
 div.page-container footer div.post-footer h3 a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
-/* line 374 */
+@media -sass-debug-info{filename{}line{font-family:\00003374}}
 div.page-container footer div.post-footer h3 a:hover {
   color: #57ad68;
 }
-/* line 379 */
+@media -sass-debug-info{filename{}line{font-family:\00003379}}
 div.page-container footer div.post-footer p.author-description {
   font-size: 14px;
   line-height: 1.3;
   color: rgba(0, 0, 0, 0.6);
   margin: 4px 0;
 }
-/* line 387 */
+@media -sass-debug-info{filename{}line{font-family:\00003387}}
 div.page-container footer div.post-footer div.poster-info {
   margin-top: 20px;
 }
-/* line 391 */
+@media -sass-debug-info{filename{}line{font-family:\00003391}}
 div.page-container footer div.post-footer div.poster-info img {
   max-width: 60px;
   border-radius: 100%;
   margin-right: 10px;
 }
-/* line 400 */
+@media -sass-debug-info{filename{}line{font-family:\00003400}}
 div.page-container footer div.post-footer div.post-category-info {
   margin-top: 20px;
 }
-/* line 404 */
+@media -sass-debug-info{filename{}line{font-family:\00003404}}
 div.page-container footer div.post-footer div.post-category-info img {
   max-width: 60px;
   border-radius: 3px;
   margin-right: 10px;
 }
-/* line 416 */
+@media -sass-debug-info{filename{}line{font-family:\00003416}}
 div.page-container div.tags {
   padding: 20px;
 }
 @media screen and (min-width: 48em) {
-  /* line 416 */
+@media -sass-debug-info{filename{}line{font-family:\00003416}}
   div.page-container div.tags {
     padding: 0;
   }
 }
 
-/* line 431 */
+@media -sass-debug-info{filename{}line{font-family:\00003431}}
 div.article-header-container div.background-image-container div.background-image {
   background-position: 50% 50%;
   background-size: cover;
@@ -399,7 +399,7 @@ div.article-header-container div.background-image-container div.background-image
   overflow-x: hidden;
   margin: 20px 0 40px 0;
 }
-/* line 447 */
+@media -sass-debug-info{filename{}line{font-family:\00003447}}
 div.article-header-container div.background-image-container div.background-image div.title {
   color: white;
   margin: 0;
@@ -410,31 +410,31 @@ div.article-header-container div.background-image-container div.background-image
   width: 95%;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 447 */
+@media -sass-debug-info{filename{}line{font-family:\00003447}}
   div.article-header-container div.background-image-container div.background-image div.title {
     width: 80%;
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 447 */
+@media -sass-debug-info{filename{}line{font-family:\00003447}}
   div.article-header-container div.background-image-container div.background-image div.title {
     width: 90%;
   }
 }
-/* line 465 */
+@media -sass-debug-info{filename{}line{font-family:\00003465}}
 div.article-header-container div.background-image-container div.background-image h1 {
   font-size: 32px;
   line-height: 32px;
   margin: 0;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 465 */
+@media -sass-debug-info{filename{}line{font-family:\00003465}}
   div.article-header-container div.background-image-container div.background-image h1 {
     font-size: 60px;
     line-height: 60px;
   }
 }
-/* line 476 */
+@media -sass-debug-info{filename{}line{font-family:\00003476}}
 div.article-header-container div.background-image-container div.background-image h2 {
   font-size: 24px;
   line-height: 24px;
@@ -442,48 +442,48 @@ div.article-header-container div.background-image-container div.background-image
   font-weight: 300;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 476 */
+@media -sass-debug-info{filename{}line{font-family:\00003476}}
   div.article-header-container div.background-image-container div.background-image h2 {
     font-size: 36px;
     line-height: 36px;
   }
 }
-/* line 488 */
+@media -sass-debug-info{filename{}line{font-family:\00003488}}
 div.article-header-container div.background-image-container div.background-image img {
   width: 100%;
   height: 270px;
   visibility: hidden;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 488 */
+@media -sass-debug-info{filename{}line{font-family:\00003488}}
   div.article-header-container div.background-image-container div.background-image img {
     height: 100%;
   }
 }
-/* line 504 */
+@media -sass-debug-info{filename{}line{font-family:\00003504}}
 div.article-header-container div.background-image-container div.background-image-small img {
   max-width: 90%;
 }
 @media screen and (min-width: 48em) {
-  /* line 504 */
+@media -sass-debug-info{filename{}line{font-family:\00003504}}
   div.article-header-container div.background-image-container div.background-image-small img {
     max-width: 80%;
   }
 }
-/* line 512 */
+@media -sass-debug-info{filename{}line{font-family:\00003512}}
 div.article-header-container div.background-image-container div.background-image-small div.title-container {
   width: 100%;
   margin: 20px auto;
   margin-bottom: 40px;
 }
 @media screen and (min-width: 48em) {
-  /* line 512 */
+@media -sass-debug-info{filename{}line{font-family:\00003512}}
   div.article-header-container div.background-image-container div.background-image-small div.title-container {
     width: 700px;
     margin: 0 auto;
   }
 }
-/* line 523 */
+@media -sass-debug-info{filename{}line{font-family:\00003523}}
 div.article-header-container div.background-image-container div.background-image-small div.title-container h1 {
   font-size: 32px;
   line-height: 1;
@@ -491,12 +491,12 @@ div.article-header-container div.background-image-container div.background-image
   padding-top: 20px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 523 */
+@media -sass-debug-info{filename{}line{font-family:\00003523}}
   div.article-header-container div.background-image-container div.background-image-small div.title-container h1 {
     font-size: 60px;
   }
 }
-/* line 534 */
+@media -sass-debug-info{filename{}line{font-family:\00003534}}
 div.article-header-container div.background-image-container div.background-image-small div.title-container h4 {
   font-size: 24px;
   font-weight: 300;
@@ -505,24 +505,24 @@ div.article-header-container div.background-image-container div.background-image
   margin: 0;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 534 */
+@media -sass-debug-info{filename{}line{font-family:\00003534}}
   div.article-header-container div.background-image-container div.background-image-small div.title-container h4 {
     font-size: 32px;
   }
 }
 
-/* line 562 */
+@media -sass-debug-info{filename{}line{font-family:\00003562}}
 div.category-page-container {
   max-width: 1040px;
   margin: 80px auto;
   padding: 0 20px;
 }
-/* line 567 */
+@media -sass-debug-info{filename{}line{font-family:\00003567}}
 div.category-page-container div.category-logo img {
   max-width: 440px;
   margin: 50px 0;
 }
-/* line 572 */
+@media -sass-debug-info{filename{}line{font-family:\00003572}}
 div.category-page-container div.category-logo h1 {
   font-size: 50px;
   font-weight: bold;
@@ -531,12 +531,12 @@ div.category-page-container div.category-logo h1 {
   word-wrap: break-word;
   padding-top: 20px;
 }
-/* line 579 */
+@media -sass-debug-info{filename{}line{font-family:\00003579}}
 div.category-page-container div.category-logo h1 a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
-/* line 585 */
+@media -sass-debug-info{filename{}line{font-family:\00003585}}
 div.category-page-container div.section-header {
   color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
@@ -547,23 +547,23 @@ div.category-page-container div.section-header {
   font-weight: bold;
   padding-bottom: 6px;
 }
-/* line 598 */
+@media -sass-debug-info{filename{}line{font-family:\00003598}}
 div.category-page-container span.header {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
 }
-/* line 606 */
+@media -sass-debug-info{filename{}line{font-family:\00003606}}
 div.category-page-container div.article-row div.col {
   padding: 20px 0px 20px 0px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 606 */
+@media -sass-debug-info{filename{}line{font-family:\00003606}}
   div.category-page-container div.article-row div.col {
     padding: 20px 15px 20px 15px;
   }
 }
-/* line 614 */
+@media -sass-debug-info{filename{}line{font-family:\00003614}}
 div.category-page-container div.article-row a.article-thumbnail {
   display: block;
   width: 100%;
@@ -573,70 +573,70 @@ div.category-page-container div.article-row a.article-thumbnail {
   background-size: cover;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 624 */
+@media -sass-debug-info{filename{}line{font-family:\00003624}}
 div.category-page-container div.article-row a.article-thumbnail-1 {
   height: 200px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 624 */
+@media -sass-debug-info{filename{}line{font-family:\00003624}}
   div.category-page-container div.article-row a.article-thumbnail-1 {
     height: 275px;
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 624 */
+@media -sass-debug-info{filename{}line{font-family:\00003624}}
   div.category-page-container div.article-row a.article-thumbnail-1 {
     height: 350px;
   }
 }
-/* line 636 */
+@media -sass-debug-info{filename{}line{font-family:\00003636}}
 div.category-page-container div.article-row a.article-thumbnail-2 {
   height: 200px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 636 */
+@media -sass-debug-info{filename{}line{font-family:\00003636}}
   div.category-page-container div.article-row a.article-thumbnail-2 {
     height: 220px;
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 636 */
+@media -sass-debug-info{filename{}line{font-family:\00003636}}
   div.category-page-container div.article-row a.article-thumbnail-2 {
     height: 272px;
   }
 }
-/* line 648 */
+@media -sass-debug-info{filename{}line{font-family:\00003648}}
 div.category-page-container div.article-row a.article-thumbnail-3 {
   height: 200px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 648 */
+@media -sass-debug-info{filename{}line{font-family:\00003648}}
   div.category-page-container div.article-row a.article-thumbnail-3 {
     height: 275px;
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 648 */
+@media -sass-debug-info{filename{}line{font-family:\00003648}}
   div.category-page-container div.article-row a.article-thumbnail-3 {
     height: 350px;
   }
 }
 @media screen and (min-width: 64em) {
-  /* line 648 */
+@media -sass-debug-info{filename{}line{font-family:\00003648}}
   div.category-page-container div.article-row a.article-thumbnail-3 {
     height: 174px;
   }
 }
-/* line 667 */
+@media -sass-debug-info{filename{}line{font-family:\00003667}}
 div.category-page-container div.article-info {
   text-align: left;
 }
-/* line 670 */
+@media -sass-debug-info{filename{}line{font-family:\00003670}}
 div.category-page-container div.article-info a {
   color: rgba(0, 0, 0, 0.9);
   text-decoration: none;
 }
-/* line 675 */
+@media -sass-debug-info{filename{}line{font-family:\00003675}}
 div.category-page-container div.article-info h1, div.category-page-container div.article-info h2 {
   line-height: 1.1;
   font-weight: bold;
@@ -644,37 +644,37 @@ div.category-page-container div.article-info h1, div.category-page-container div
   padding: 10px 0;
   margin: 0;
 }
-/* line 683 */
+@media -sass-debug-info{filename{}line{font-family:\00003683}}
 div.category-page-container div.article-info h1 {
   font-size: 24px;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 683 */
+@media -sass-debug-info{filename{}line{font-family:\00003683}}
   div.category-page-container div.article-info h1 {
     font-size: 36px;
   }
 }
-/* line 691 */
+@media -sass-debug-info{filename{}line{font-family:\00003691}}
 div.category-page-container div.article-info h2 {
   font-size: 24px;
 }
-/* line 696 */
+@media -sass-debug-info{filename{}line{font-family:\00003696}}
 div.category-page-container div.article-info blockquote, div.category-page-container div.article-info p {
   margin: 0;
   letter-spacing: -0.02em;
   border: 0;
   padding: 0;
 }
-/* line 703 */
+@media -sass-debug-info{filename{}line{font-family:\00003703}}
 div.category-page-container div.article-info div.post-meta {
   padding: 18px 0;
 }
-/* line 706 */
+@media -sass-debug-info{filename{}line{font-family:\00003706}}
 div.category-page-container div.article-info div.post-meta img {
   border-radius: 100%;
 }
 
-/* line 726 */
+@media -sass-debug-info{filename{}line{font-family:\00003726}}
 div.author-page-header div.cover {
   height: 175px;
   background-size: cover;
@@ -682,48 +682,48 @@ div.author-page-header div.cover {
   background-position: 50% 50%;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 726 */
+@media -sass-debug-info{filename{}line{font-family:\00003726}}
   div.author-page-header div.cover {
     height: 300px;
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 726 */
+@media -sass-debug-info{filename{}line{font-family:\00003726}}
   div.author-page-header div.cover {
     height: 400px;
   }
 }
-/* line 741 */
+@media -sass-debug-info{filename{}line{font-family:\00003741}}
 div.author-page-header div.avatar, div.author-page-header div.avatar-no-cover {
   display: inline-block;
   width: 120px;
   height: 120px;
 }
-/* line 746 */
+@media -sass-debug-info{filename{}line{font-family:\00003746}}
 div.author-page-header div.avatar img, div.author-page-header div.avatar-no-cover img {
   border-radius: 100%;
 }
-/* line 751 */
+@media -sass-debug-info{filename{}line{font-family:\00003751}}
 div.author-page-header div.avatar {
   margin-top: -60px;
 }
-/* line 755 */
+@media -sass-debug-info{filename{}line{font-family:\00003755}}
 div.author-page-header div.avatar-no-cover {
   margin-top: 60px;
 }
-/* line 760 */
+@media -sass-debug-info{filename{}line{font-family:\00003760}}
 div.author-page-header div.author-profile {
   width: 95%;
   margin: 0 auto;
   margin-bottom: 60px;
 }
 @media screen and (min-width: 48em) {
-  /* line 760 */
+@media -sass-debug-info{filename{}line{font-family:\00003760}}
   div.author-page-header div.author-profile {
     width: 700px;
   }
 }
-/* line 769 */
+@media -sass-debug-info{filename{}line{font-family:\00003769}}
 div.author-page-header div.author-profile h1 {
   font-weight: bold;
   font-size: 36px;
@@ -731,12 +731,12 @@ div.author-page-header div.author-profile h1 {
   margin: 16px 0;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 769 */
+@media -sass-debug-info{filename{}line{font-family:\00003769}}
   div.author-page-header div.author-profile h1 {
     font-size: 50px;
   }
 }
-/* line 780 */
+@media -sass-debug-info{filename{}line{font-family:\00003780}}
 div.author-page-header div.author-profile p.author-description {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.6);
@@ -745,17 +745,17 @@ div.author-page-header div.author-profile p.author-description {
   word-wrap: break-word;
   letter-spacing: -0.02em;
 }
-/* line 789 */
+@media -sass-debug-info{filename{}line{font-family:\00003789}}
 div.author-page-header div.author-profile ul.author-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 794 */
+@media -sass-debug-info{filename{}line{font-family:\00003794}}
 div.author-page-header div.author-profile ul.author-links li {
   display: inline;
 }
-/* line 797 */
+@media -sass-debug-info{filename{}line{font-family:\00003797}}
 div.author-page-header div.author-profile ul.author-links li a {
   color: rgba(0, 0, 0, 0.8);
   font-size: 36px;
@@ -764,22 +764,22 @@ div.author-page-header div.author-profile ul.author-links li a {
   transition: 100ms background-color, 100ms border-color,100ms color,100ms fill;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 797 */
+@media -sass-debug-info{filename{}line{font-family:\00003797}}
   div.author-page-header div.author-profile ul.author-links li a {
     font-size: 48px;
     padding: 0 15px;
   }
 }
-/* line 811 */
+@media -sass-debug-info{filename{}line{font-family:\00003811}}
 div.author-page-header div.author-profile ul.author-links li a:hover {
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 816 */
+@media -sass-debug-info{filename{}line{font-family:\00003816}}
 div.author-page-header div.author-profile ul.author-links li:last-child a {
   border-right: none;
 }
 
-/* line 826 */
+@media -sass-debug-info{filename{}line{font-family:\00003826}}
 div.author-page-divider:before {
   content: "";
   display: block;
@@ -789,13 +789,13 @@ div.author-page-divider:before {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* line 835 */
+@media -sass-debug-info{filename{}line{font-family:\00003835}}
 div.author-page-divider {
   position: relative;
   top: 11px;
   width: 100%;
 }
-/* line 839 */
+@media -sass-debug-info{filename{}line{font-family:\00003839}}
 div.author-page-divider span {
   text-decoration: none;
   display: inline-block;
@@ -809,13 +809,13 @@ div.author-page-divider span {
   color: rgba(0, 0, 0, 0.6);
   position: relative;
 }
-/* line 854 */
+@media -sass-debug-info{filename{}line{font-family:\00003854}}
 div.author-page-divider span:hover {
   border-color: rgba(0, 0, 0, 0.6);
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 861 */
+@media -sass-debug-info{filename{}line{font-family:\00003861}}
 div.tags a {
   color: rgba(0, 0, 0, 0.6);
   background: rgba(255, 255, 255, 0.97);
@@ -829,7 +829,7 @@ div.tags a {
   display: inline-block;
 }
 
-/* line 874 */
+@media -sass-debug-info{filename{}line{font-family:\00003874}}
 div.tags a:hover {
   color: #468c54;
   border-color: #a9d8b2;
@@ -837,12 +837,12 @@ div.tags a:hover {
   text-decoration: none;
 }
 
-/* line 881 */
+@media -sass-debug-info{filename{}line{font-family:\00003881}}
 pre, code {
   font-family: Consolas, "Deja Vu Sans Mono", "Ubuntu Mono", "Bitstream Vera Sans Mono", Monaco, "Courier New", monospace;
 }
 
-/* line 885 */
+@media -sass-debug-info{filename{}line{font-family:\00003885}}
 pre {
   font-size: 16px;
   line-height: 1.4;
@@ -852,7 +852,7 @@ pre {
   padding: 6px 9.5px;
 }
 
-/* line 894 */
+@media -sass-debug-info{filename{}line{font-family:\00003894}}
 code {
   background-color: #F8F8F8;
   border: 1px solid #E6E6E6;
@@ -860,7 +860,7 @@ code {
   padding: 2px 5px 0 5px;
 }
 
-/* line 901 */
+@media -sass-debug-info{filename{}line{font-family:\00003901}}
 blockquote {
   border-left: 3px solid rgba(0, 0, 0, 0.8);
   font-style: italic;
@@ -869,23 +869,22 @@ blockquote {
   margin-bottom: 30px;
 }
 
-/* line 911 */
+@media -sass-debug-info{filename{}line{font-family:\00003911}}
 div.pagination {
-  margin: 20px auto;
+  margin: 30px auto;
 }
-/* line 913 */
+@media -sass-debug-info{filename{}line{font-family:\00003913}}
 div.pagination div.left {
   text-align: left;
 }
-/* line 916 */
+@media -sass-debug-info{filename{}line{font-family:\00003916}}
 div.pagination div.right {
   text-align: right;
 }
-/* line 919 */
+@media -sass-debug-info{filename{}line{font-family:\00003919}}
 div.pagination a {
   display: inline-block;
-  line-height: 31px;
-  padding: 0 14px;
+  padding: 5px 5px;
   font-size: 12px;
   transition: 100ms background-color,100ms border-color,100ms color,100ms fill;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -893,12 +892,12 @@ div.pagination a {
   color: rgba(0, 0, 0, 0.44);
   text-decoration: none;
 }
-/* line 930 */
+@media -sass-debug-info{filename{}line{font-family:\00003930}}
 div.pagination a:hover {
   color: rgba(0, 0, 0, 0.6);
   border-color: rgba(0, 0, 0, 0.3);
 }
-/* line 934 */
+@media -sass-debug-info{filename{}line{font-family:\00003934}}
 div.pagination a:active {
   outline: none;
   color: rgba(0, 0, 0, 0.8);
@@ -906,312 +905,312 @@ div.pagination a:active {
 }
 
 /* pygments */
-/* line 946 */
+@media -sass-debug-info{filename{}line{font-family:\00003946}}
 .highlight .c {
   color: #8f5902;
   font-style: italic;
 }
-/* line 947 */
+@media -sass-debug-info{filename{}line{font-family:\00003947}}
 .highlight .err {
   color: #a40000;
   border: 1px solid #ef2929;
 }
-/* line 948 */
+@media -sass-debug-info{filename{}line{font-family:\00003948}}
 .highlight .g {
   color: #000000;
 }
-/* line 949 */
+@media -sass-debug-info{filename{}line{font-family:\00003949}}
 .highlight .k {
   color: #204a87;
   font-weight: bold;
 }
-/* line 950 */
+@media -sass-debug-info{filename{}line{font-family:\00003950}}
 .highlight .l {
   color: #000000;
 }
-/* line 951 */
+@media -sass-debug-info{filename{}line{font-family:\00003951}}
 .highlight .n {
   color: #000000;
 }
-/* line 952 */
+@media -sass-debug-info{filename{}line{font-family:\00003952}}
 .highlight .o {
   color: #ce5c00;
   font-weight: bold;
 }
-/* line 953 */
+@media -sass-debug-info{filename{}line{font-family:\00003953}}
 .highlight .x {
   color: #000000;
 }
-/* line 954 */
+@media -sass-debug-info{filename{}line{font-family:\00003954}}
 .highlight .p {
   color: #000000;
   font-weight: bold;
 }
-/* line 955 */
+@media -sass-debug-info{filename{}line{font-family:\00003955}}
 .highlight .cm {
   color: #8f5902;
   font-style: italic;
 }
-/* line 956 */
+@media -sass-debug-info{filename{}line{font-family:\00003956}}
 .highlight .cp {
   color: #8f5902;
   font-style: italic;
 }
-/* line 957 */
+@media -sass-debug-info{filename{}line{font-family:\00003957}}
 .highlight .c1 {
   color: #8f5902;
   font-style: italic;
 }
-/* line 958 */
+@media -sass-debug-info{filename{}line{font-family:\00003958}}
 .highlight .cs {
   color: #8f5902;
   font-style: italic;
 }
-/* line 959 */
+@media -sass-debug-info{filename{}line{font-family:\00003959}}
 .highlight .gd {
   color: #a40000;
 }
-/* line 960 */
+@media -sass-debug-info{filename{}line{font-family:\00003960}}
 .highlight .ge {
   color: #000000;
   font-style: italic;
 }
-/* line 961 */
+@media -sass-debug-info{filename{}line{font-family:\00003961}}
 .highlight .gr {
   color: #ef2929;
 }
-/* line 962 */
+@media -sass-debug-info{filename{}line{font-family:\00003962}}
 .highlight .gh {
   color: #000080;
   font-weight: bold;
 }
-/* line 963 */
+@media -sass-debug-info{filename{}line{font-family:\00003963}}
 .highlight .gi {
   color: #00A000;
 }
-/* line 964 */
+@media -sass-debug-info{filename{}line{font-family:\00003964}}
 .highlight .go {
   color: #000000;
   font-style: italic;
 }
-/* line 965 */
+@media -sass-debug-info{filename{}line{font-family:\00003965}}
 .highlight .gp {
   color: #8f5902;
 }
-/* line 966 */
+@media -sass-debug-info{filename{}line{font-family:\00003966}}
 .highlight .gs {
   color: #000000;
   font-weight: bold;
 }
-/* line 967 */
+@media -sass-debug-info{filename{}line{font-family:\00003967}}
 .highlight .gu {
   color: #800080;
   font-weight: bold;
 }
-/* line 968 */
+@media -sass-debug-info{filename{}line{font-family:\00003968}}
 .highlight .gt {
   color: #a40000;
   font-weight: bold;
 }
-/* line 969 */
+@media -sass-debug-info{filename{}line{font-family:\00003969}}
 .highlight .kc {
   color: #204a87;
   font-weight: bold;
 }
-/* line 970 */
+@media -sass-debug-info{filename{}line{font-family:\00003970}}
 .highlight .kd {
   color: #204a87;
   font-weight: bold;
 }
-/* line 971 */
+@media -sass-debug-info{filename{}line{font-family:\00003971}}
 .highlight .kn {
   color: #204a87;
   font-weight: bold;
 }
-/* line 972 */
+@media -sass-debug-info{filename{}line{font-family:\00003972}}
 .highlight .kp {
   color: #204a87;
   font-weight: bold;
 }
-/* line 973 */
+@media -sass-debug-info{filename{}line{font-family:\00003973}}
 .highlight .kr {
   color: #204a87;
   font-weight: bold;
 }
-/* line 974 */
+@media -sass-debug-info{filename{}line{font-family:\00003974}}
 .highlight .kt {
   color: #204a87;
   font-weight: bold;
 }
-/* line 975 */
+@media -sass-debug-info{filename{}line{font-family:\00003975}}
 .highlight .ld {
   color: #000000;
 }
-/* line 976 */
+@media -sass-debug-info{filename{}line{font-family:\00003976}}
 .highlight .m {
   color: #0000cf;
   font-weight: bold;
 }
-/* line 977 */
+@media -sass-debug-info{filename{}line{font-family:\00003977}}
 .highlight .s {
   color: #4e9a06;
 }
-/* line 978 */
+@media -sass-debug-info{filename{}line{font-family:\00003978}}
 .highlight .na {
   color: #c4a000;
 }
-/* line 979 */
+@media -sass-debug-info{filename{}line{font-family:\00003979}}
 .highlight .nb {
   color: #204a87;
 }
-/* line 980 */
+@media -sass-debug-info{filename{}line{font-family:\00003980}}
 .highlight .nc {
   color: #000000;
 }
-/* line 981 */
+@media -sass-debug-info{filename{}line{font-family:\00003981}}
 .highlight .no {
   color: #000000;
 }
-/* line 982 */
+@media -sass-debug-info{filename{}line{font-family:\00003982}}
 .highlight .nd {
   color: #5c35cc;
   font-weight: bold;
 }
-/* line 983 */
+@media -sass-debug-info{filename{}line{font-family:\00003983}}
 .highlight .ni {
   color: #ce5c00;
 }
-/* line 984 */
+@media -sass-debug-info{filename{}line{font-family:\00003984}}
 .highlight .ne {
   color: #cc0000;
   font-weight: bold;
 }
-/* line 985 */
+@media -sass-debug-info{filename{}line{font-family:\00003985}}
 .highlight .nf {
   color: #000000;
 }
-/* line 986 */
+@media -sass-debug-info{filename{}line{font-family:\00003986}}
 .highlight .nl {
   color: #f57900;
 }
-/* line 987 */
+@media -sass-debug-info{filename{}line{font-family:\00003987}}
 .highlight .nn {
   color: #000000;
 }
-/* line 988 */
+@media -sass-debug-info{filename{}line{font-family:\00003988}}
 .highlight .nx {
   color: #000000;
 }
-/* line 989 */
+@media -sass-debug-info{filename{}line{font-family:\00003989}}
 .highlight .py {
   color: #000000;
 }
-/* line 990 */
+@media -sass-debug-info{filename{}line{font-family:\00003990}}
 .highlight .nt {
   color: #204a87;
   font-weight: bold;
 }
-/* line 991 */
+@media -sass-debug-info{filename{}line{font-family:\00003991}}
 .highlight .nv {
   color: #000000;
 }
-/* line 992 */
+@media -sass-debug-info{filename{}line{font-family:\00003992}}
 .highlight .ow {
   color: #204a87;
   font-weight: bold;
 }
-/* line 993 */
+@media -sass-debug-info{filename{}line{font-family:\00003993}}
 .highlight .w {
   color: #f8f8f8;
   text-decoration: underline;
 }
-/* line 994 */
+@media -sass-debug-info{filename{}line{font-family:\00003994}}
 .highlight .mb {
   color: #0000cf;
   font-weight: bold;
 }
-/* line 995 */
+@media -sass-debug-info{filename{}line{font-family:\00003995}}
 .highlight .mf {
   color: #0000cf;
   font-weight: bold;
 }
-/* line 996 */
+@media -sass-debug-info{filename{}line{font-family:\00003996}}
 .highlight .mh {
   color: #0000cf;
   font-weight: bold;
 }
-/* line 997 */
+@media -sass-debug-info{filename{}line{font-family:\00003997}}
 .highlight .mi {
   color: #0000cf;
   font-weight: bold;
 }
-/* line 998 */
+@media -sass-debug-info{filename{}line{font-family:\00003998}}
 .highlight .mo {
   color: #0000cf;
   font-weight: bold;
 }
-/* line 999 */
+@media -sass-debug-info{filename{}line{font-family:\00003999}}
 .highlight .sb {
   color: #4e9a06;
 }
-/* line 1000 */
+@media -sass-debug-info{filename{}line{font-family:\000031000}}
 .highlight .sc {
   color: #4e9a06;
 }
-/* line 1001 */
+@media -sass-debug-info{filename{}line{font-family:\000031001}}
 .highlight .sd {
   color: #8f5902;
   font-style: italic;
 }
-/* line 1002 */
+@media -sass-debug-info{filename{}line{font-family:\000031002}}
 .highlight .s2 {
   color: #4e9a06;
 }
-/* line 1003 */
+@media -sass-debug-info{filename{}line{font-family:\000031003}}
 .highlight .se {
   color: #4e9a06;
 }
-/* line 1004 */
+@media -sass-debug-info{filename{}line{font-family:\000031004}}
 .highlight .sh {
   color: #4e9a06;
 }
-/* line 1005 */
+@media -sass-debug-info{filename{}line{font-family:\000031005}}
 .highlight .si {
   color: #4e9a06;
 }
-/* line 1006 */
+@media -sass-debug-info{filename{}line{font-family:\000031006}}
 .highlight .sx {
   color: #4e9a06;
 }
-/* line 1007 */
+@media -sass-debug-info{filename{}line{font-family:\000031007}}
 .highlight .sr {
   color: #4e9a06;
 }
-/* line 1008 */
+@media -sass-debug-info{filename{}line{font-family:\000031008}}
 .highlight .s1 {
   color: #4e9a06;
 }
-/* line 1009 */
+@media -sass-debug-info{filename{}line{font-family:\000031009}}
 .highlight .ss {
   color: #4e9a06;
 }
-/* line 1010 */
+@media -sass-debug-info{filename{}line{font-family:\000031010}}
 .highlight .bp {
   color: #3465a4;
 }
-/* line 1011 */
+@media -sass-debug-info{filename{}line{font-family:\000031011}}
 .highlight .vc {
   color: #000000;
 }
-/* line 1012 */
+@media -sass-debug-info{filename{}line{font-family:\000031012}}
 .highlight .vg {
   color: #000000;
 }
-/* line 1013 */
+@media -sass-debug-info{filename{}line{font-family:\000031013}}
 .highlight .vi {
   color: #000000;
 }
-/* line 1014 */
+@media -sass-debug-info{filename{}line{font-family:\000031014}}
 .highlight .il {
   color: #0000cf;
   font-weight: bold;
