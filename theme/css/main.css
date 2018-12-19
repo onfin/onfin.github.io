@@ -862,10 +862,10 @@ code {
 
 @media -sass-debug-info{filename{}line{font-family:\00003901}}
 blockquote {
-  border-left: 3px solid rgba(0, 0, 0, 0.8);
+  border-left: 3px solid rgba(80, 80, 80, 0.8);
   font-style: italic;
   padding-left: 20px;
-  margin-left: -23px;
+  margin-left: 5%;
   margin-bottom: 30px;
 }
 
