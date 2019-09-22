@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Калькуляторы банковских карт</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+
+</head>
+<body>
+    <nav class="navigation pure-menu pure-menu-horizontal">
+        <a href="/" class="pure-menu-link">Житейские воззрения пана Семушельского</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
+            <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
+            <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
+            <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
+            <li class="pure-menu-item"><a href="/pages/calculators" class="pure-menu-link">Калькуляторы</a></li>
+        </ul>
+    </nav>
+
+    <main>
+<div class="page-container">
+    <div class="entry-content post-meta pure-u-3-4">
+            <div class="entry-info"> Обновлено: 2019-09-21 </div>
+    </div>
+
+    <div class="article-header-container">
+        <div class="background-image-container">
+            <div class="background-image-small">
+                <div class="title-container">
+                    <h1>Калькуляторы банковских карт</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entry-content">
+        <script type="text/javascript" src="/js/forms.js"></script>
+
+<h1 id="_1">Потери от хранения денег в наличности и на счетах под низкий процент</h1>
+<form id="percentLoss" markdown="1">
+|||
+|----|---|
+Среднемесячный остаток | <input id="balance" type="number" step=1000 onChange="percentLossForm.onChange(this)" />
+Ставка процента, %г | <input id="ourRate" type="number" step=0.5 onChange="percentLossForm.onChange(this)" />
+Рыночная ставка, %г | <input id="marketRate" type="number" step=0.5 onChange="percentLossForm.onChange(this)" />
+Потери в год | <input id="percentLoss" type="number" readonly class="output"/>
+</form>
+
+<script type="text/javascript">
+  const percentLossForm = new Form("percentLoss",
+    {
+      balance: 10000,
+      marketRate: 10,
+      ourRate: 0,
+    },
+    function() {
+      var pc = this.fields.marketRate - this.fields.ourRate;
+      var q = 1+pc/100/12;
+      var res = this.fields.balance * Math.pow(q, 12) - this.fields.balance;
+      this.form.elements.namedItem("percentLoss").value = res.toFixed(2);
+    }
+  );
+</script>
+
+<h1 id="_2">Доход от кэшбэка и процента на остаток по дебетовой карте</h1>
+<form id="debitCard" markdown="1">
+|||
+|---|---|
+Среднемесячные расходы | <input id="spending" type="number" step=1000 onChange="debitCardForm.onChange(this)" />
+Среднемесячный остаток | <input id="balance" type="number" step=1000 onChange="debitCardForm.onChange(this)" />
+Процент на остаток, %г | <input id="percent" type="number" step=0.5  onChange="debitCardForm.onChange(this)" />
+Cредний эффективный кэшбэк, % | <input id="cashback" type="number" step=0.5  onChange="debitCardForm.onChange(this)" />
+Cтоимоть годового обслуживания и накладные расходы | <input id="fee" type="number" step=100  onChange="debitCardForm.onChange(this)" />
+Доход от карты | <input id="income" class="output" readonly />
+Или в % к среднемесячным расходам | <input id="incomePercent" class="output" readonly />
+</form>
+
+<script type="text/javascript">
+  const debitCardForm = new Form("debitCard", {
+    balance: 10000,
+    spending: 20000,
+    percent: 5,
+    cashback: 1,
+    fee: 500
+  },
+  function() {
+      const res = this.fields.balance*this.fields.percent/100 + this.fields.spending*12*this.fields.cashback/100 - this.fields.fee;
+      this.form.elements.namedItem("income").value = res.toFixed(2);
+      this.form.elements.namedItem("incomePercent").value = (res/12/this.fields.spending*100).toFixed(2);
+  })
+</script>
+
+<h1 id="_3">Доход от кэшбэка и льготного кредита по кредитной карте</h1>
+<form id="creditCard" markdown="1">
+|||
+|---|---|
+Месячные расходы | <input id="spending" type="number" step=1000 onChange="creditCardForm.onChange(this)" />
+Процент на остаток, %г | <input id="percent" type="number" step=0.5 onChange="creditCardForm.onChange(this)" />
+Средний эффективный кэшбэк, % | <input id="cashback" type="number" step=0.5 onChange="creditCardForm.onChange(this)" />
+Продолжительность грейса, дней | <input id="grace" type="number" step=5 onChange="creditCardForm.onChange(this)" />
+Честный грейс | <input id="trueGrace" type="checkbox" checked onChange="creditCardForm.onChange(this)">
+Процент к ежемесячному погашению, % | <input id="mid" type="number" step=5 onChange="creditCardForm.onChange(this)" />
+Годовое обслуживание | <input id="fee" type="number" step=100 onChange="creditCardForm.onChange(this)" />
+Дополнительная экономия | <input id="bonus" type="number" step=100 onChange="creditCardForm.onChange(this)" />
+Ставка по кредиту | <input id="interest" type="number" step=1 onChange="creditCardForm.onChange(this)" />
+|
+Доход от карты | <input id="income" class="output" readonly />
+Или в % к среднемесячным расходам | <input id="incomePercent" class="output" readonly />
+|
+Платёж в случае вылета из грейса | <input id="debt" class="output" readonly />
+Ежедневный процент | <input id="debtPay" class="output" readonly />
+</form>
+
+<script type="text/javascript">
+  const creditCardForm = new Form("creditCard", {
+    spending: 20000,
+    percent: 5,
+    cashback: 2,
+    grace: 55,
+    trueGrace: true,
+    fee: 2000,
+    bonus: 6000,
+    interest: 28,
+    mid: 5
+  },
+  function() {
+      var k = this.fields.grace/30 * (1-this.fields.mid/100);
+      if (!this.fields.trueGrace)
+        k /= 2;
+      var res = k*this.fields.spending*this.fields.percent/100 + this.fields.spending*12*this.fields.cashback/100 + this.fields.bonus - this.fields.fee;
+      this.form.elements.namedItem("income").value = res.toFixed(2);
+      this.form.elements.namedItem("incomePercent").value = (res/12/this.fields.spending*100).toFixed(2);
+
+      this.form.elements.namedItem("debt").value = (this.fields.spending*this.fields.interest/100/360*this.fields.grace).toFixed(2);
+      this.form.elements.namedItem("debtPay").value = (this.fields.spending*this.fields.interest/100/360).toFixed(2);
+  });
+</script>
+        <hr>
+    </div>
+
+    <footer>
+        <div class="pagination">
+            <div class="post-meta pure-g">
+                <div class="pure-u-1-3 left">
+                </div>
+                <div class="pure-u-1-3 center">
+                            <a href="/pages/calculators"> &uarr; Калькуляторы &uarr; </a>
+                </div>
+                <div class="pure-u-1-3 right">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    </main>
+</body>
+</html>

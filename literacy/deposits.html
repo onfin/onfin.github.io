@@ -1,33 +1,37 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-        <title>Размещение средств в банках</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="https://onfin.github.io/theme/css/main.css" />
-        <link href="https://onfin.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Full Atom Feed" />
+    <title>Размещение средств в банках</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+
 </head>
 <body>
-
-    <div class="navigation pure-menu pure-menu-horizontal">
+    <nav class="navigation pure-menu pure-menu-horizontal">
         <a href="/" class="pure-menu-link">Житейские воззрения пана Семушельского</a>
         <ul class="pure-menu-list">
             <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
             <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
             <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
             <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
-
+            <li class="pure-menu-item"><a href="/pages/calculators" class="pure-menu-link">Калькуляторы</a></li>
         </ul>
+    </nav>
+
+    <main>
+<div class="page-container">
+    <div class="entry-content post-meta pure-u-3-4">
+            <div class="entry-info"> Обновлено: 2019-09-21 </div>
     </div>
 
-
-<div class="page-container">
     <div class="article-header-container">
         <div class="background-image-container">
-
             <div class="background-image-small">
                 <div class="title-container">
                     <h1>Размещение средств в банках</h1>
@@ -37,7 +41,6 @@
     </div>
 
     <div class="entry-content">
-          <div class="entry-info"> Обновлено: 2018-12-19 </div>
         <p>Прежде чем рассказывать о банковских сервисах по размещению денег, хочу ещё раз произнести фундаментальную истину по их поводу. Деньги, которые вы отнесли в банк, — <strong>больше не ваши деньги</strong>, это деньги банка. В обмен на них вы получили обязательство банка по возврату вам долга и оплаты его использования (в форме процентов или услуг). Точно так же, как деньги полученные вами в кредит от банка — больше не деньги банка, в обмен на них банк получил ваше обязательство по возврату долга и оплаты его использования. Кредит и депозит — это полностью симметричные операции. К сожалению, маркетологи банков часто сами этого не осознают, придумывая очень странные схемы начисления, например, процентов на остатки по картам и счетам, а юридически они потом оформляются ещё страннее (потому что это явная нелепица: определять стоимость заимствования в зависимости от совершения заимодавцем (не должником!) не связанных с займом действий).</p>
 <div class="toc">
 <ul>
@@ -79,7 +82,7 @@
 
 <p>При выборе способа выплаты нужно руководствоваться следующими соображениями:</p>
 <ul>
-<li>Получение процентов в конце срока обычно выгоднее их капитализации (процентная ставка начисляется выше, чем в случае даже эффективной ставки с капитализацией). Как правило для вкладов с каптализацией банк приводит <em>эффективную процентную ставку</em> (т.е. приведённую к концу срока вклада). Если её нет, то рассчитывается она просто: <span class="math">\((1+r/N)^{N}-1\)</span>, где r — годовая процентная ставка (в единицах, т.е. ставка в процентах делённая на 100), а N — сколько раз за год начисляются проценты (например, если при номинальной годовой ставке
+<li>Получение процентов в конце срока обычно выгоднее их капитализации (процентная ставка начисляется выше, чем в случае даже эффективной ставки с капитализацией). Как правило для вкладов с каптализацией банк приводит <em>эффективную процентную ставку</em> (т.е. приведённую к концу срока вклада). Если её нет, то рассчитывается она просто: $(1+r/N)^{N}-1$, где r — годовая процентная ставка (в единицах, т.е. ставка в процентах делённая на 100), а N — сколько раз за год начисляются проценты (например, если при номинальной годовой ставке
 <input id="rate" type="number" value=6 step=0.5 style="width: 2em;" onChange="calcEffectiveRate()" />%г
 проценты начисляются
 <input id="periods" type="number" value=12 step=1 style="width: 2.5em;" onChange="calcEffectiveRate()" />раз,
@@ -92,115 +95,29 @@
 <p>Рекомендумый способ использования вклада — хранение денег до планируемого срока использования, если он наступает в течение года, или если есть риск внеплановой нужды в хранимой сумме.</p>
 <p>Вклады и счета размером меньше лимита АСВ (1,4Мр сейчас, включая сюда начисленные проценты) можно держать в любом банке, если у вас есть документы, подтверждающие открытие счёта и зачисление на него денег (лучше это делать, конечно, межбанком), а также если вас не смущает перспектива подождать 2-3 недели и пройти некоторую бюрократию по их возвращению. А ещё нужно в договоре вклада уточнить, что начисляемые повышенные проценты — это не специальным образом рассчитываемый бонус, а именно проценты. На бонусы страховка не распространяется.</p>
 <h1 id="_4">Дебетовые карты</h1>
-<p>С практической точки зрения, дебетовая карта это аналог накопительного счёта, деньгами с которого можно сразу расплачиваться в торговых точках, и все рогатки накопительных счетов к ним применимы (а также и несколько собственных, описанных в статье о <a href="https://onfin.github.io/literacy/moneytransfer#cards">денежных переводах</a>).</p>
+<p>С практической точки зрения, дебетовая карта это аналог накопительного счёта, деньгами с которого можно сразу расплачиваться в торговых точках, и все рогатки накопительных счетов к ним применимы (а также и несколько собственных, описанных в статье о <a href="/literacy/moneytransfer#cards">денежных переводах</a>).</p>
 <p>Некоторые банки на остаток по своим дебетовкам начисляют весьма высокие проценты (иногда даже не выдвигая дополнительных требований, или делая их несущественными). Такие карты называют <em>доходными</em>, ими вполне можно пользоваться как обычным накопительным счётом, но для этого нужно снизить доступные лимиты на операции по карте до уровня текущих расходов (если они будут совершаться с этой карты).</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
         <hr>
     </div>
 
     <footer>
-            <div class="pagination">
-                    <div class="post-meta pure-g">
-                        <div class="pure-u-1-3 left">
-                                  <a href="https://onfin.github.io/literacy/moneytransfer"> &lt;&lt; Денежные переводы </a>
-                        </div>
-                        <div class="pure-u-1-3 center">
-                                  <a href="https://onfin.github.io/pages/literacy"> &uarr; Грамотность &uarr; </a>
-                        </div>
-                        <div class="pure-u-1-3 right">
-                                  <a href="https://onfin.github.io/literacy/cards"> Банковские карты &gt;&gt; </a>
-                        </div>
-                    </div>
+        <div class="pagination">
+            <div class="post-meta pure-g">
+                <div class="pure-u-1-3 left">
+                            <a href="/literacy/moneytransfer"> &lt;&lt; Денежные переводы </a>
                 </div>
-
-
-
-<!--
-
-        <div class="pure-g post-footer">
-            <div class="pure-u-1">
-                <div class="pure-g poster-info">
-                    <div class="pure-u-3-4">
-                        <h3 class="author-name"><a href="https://onfin.github.io/"></a></h3>
-                        <p class="author-description">
-                        </p>
-                    </div>
+                <div class="pure-u-1-3 center">
+                            <a href="/pages/literacy"> &uarr; Грамотность &uarr; </a>
+                </div>
+                <div class="pure-u-1-3 right">
+                            <a href="/literacy/cards"> Банковские карты &gt;&gt; </a>
                 </div>
             </div>
-       </div>
--->
-
+        </div>
     </footer>
 
 </div>
 
-
-
-<!--
-    <footer class="index-footer">
-
-        <a href="https://onfin.github.io/" title="Житейские воззрения пана Семушельского">Житейские воззрения пана Семушельского</a>
-        <a href="/blog">Сиюминутное</a></li>
-        <a href="/pages/literacy">Грамотность</a></li>
-        <a href="/pages/halava">Халява</a></li>
-        <a href="/pages/sources">Источники</a></li>
-
-    </footer>
--->
-
+    </main>
 </body>
 </html>

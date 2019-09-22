@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Житейские воззрения пана Семушельского</title>
+<link href="https://onfin.github.io"/>
+<updated>2019-09-21T20:57:36.092108</updated>
+<author>
+    <name>Андрей Болкисев</name>
+</author>
+<id>https://onfin.github.io</id>
+
+    <entry>
+        <title>2019-05-20</title>
+        <link href="https://onfin.github.io/blog/2019-05-20" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2019-05-20</id>
+        <updated>2019-09-21T20:57:36.092108</updated>
+        <published>2019-05-20T00:00:00</published>
+        <summary type="html">&lt;p&gt;Целых три месяца прошло от последней записи, навёрстываем упущенное.&lt;/p&gt;
+&lt;p&gt;Во-первых, я актуализировал раздел со своими &lt;a href=&#34;{% link &#39;/pages/halava.md&#39; %}&#34;&gt;сервисами&lt;/a&gt;. Вылетели закрытые банками (вместе с самими банками) карточки Росгосстрах- и Бин- банков, вылетел брокер Открытие, внезапно установивший депозитарную комиссию в 175р за месяц, в котором были движения ценных бумаг. Добавил описание ИИС от ВТБ, открытого ещё в позапрошлом году из-за его уникальных свойств.&lt;/p&gt;
+&lt;p&gt;Новости (и старости) из открытой печати:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pwc.com/gx/en/industries/technology/publications/global-100-software-leaders/explore-the-data.html&#34;&gt;Global 100 Software Leaders&lt;/a&gt;, из серии обзоров PWC о компаниях «передовых» отраслей (и не забываем про &lt;a href=&#34;{% link &#39;/blog/2018-12-02.md&#39; %}&#34;&gt;слова Баффета&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Феноменологическая &lt;a href=&#34;http://finzz.ru/model-altmana.html&#34;&gt;модель Альтмана&lt;/a&gt;, предсказывающая вероятность банкротства фирмы.&lt;/li&gt;
+&lt;li&gt;Хорошая, на мой взгляд, критическая заметка о модели поведения &lt;a href=&#34;http://fingeniy.com/bolshe-tratit-chtoby-bolshe-zarabatyvat/&#34;&gt;«больше тратить чтобы больше зарабатывать»&lt;/a&gt; и &lt;a href=&#34;http://fingeniy.com/na-chem-mozhno-sekonomit-dengi/&#34;&gt;список способов экономии&lt;/a&gt; на повседневных вещах на сайте, который я, в общем и целом, &lt;em&gt;не рекомендовал бы&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Опыт читателей Тинькофф-журнала о том, &lt;a href=&#34;https://journal.tinkoff.ru/finansovye-plani-kotorye-mi-zasluzhili&#34;&gt;как они вели бюджет и учёт расходов&lt;/a&gt;. Этот ресурс я в общем и целом рекомендовал бы, но, после того как Тинькофф стал ещё и брокером, у них наметился явный перекос в генерирование себе комиссий.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1k4EdwAiwVdok2z3CZoUk_q6Atdb1x7QK2PuRBni814E/edit#gid=0&#34;&gt;Табличка облигаций с безналоговым купоном&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Заметка о том, почему инвесторам стоит &lt;a href=&#34;https://behaviouralinvestment.com/2019/03/07/most-investors-should-be-satisficers-not-maximisers/&#34;&gt;ограничиваться достаточно хорошей доходностью, а не пытаться её мксимизировать&lt;/a&gt;. Кратко: сам процесс поиска стоит очень дорого, как по времени/нервам, так и непосредственно по деньгам.&lt;/li&gt;
+&lt;li&gt;at6 дал &lt;em&gt;очень простой и понятный&lt;/em&gt; &lt;a href=&#34;https://at6.livejournal.com/23247.html&#34;&gt;практический конспект по оценке справедливой стоимости акций&lt;/a&gt;. Справедливый комментарий &lt;a href=&#34;https://fintraining.livejournal.com/&#34;&gt;Сергея Спирина&lt;/a&gt;: «Я всегда очень рад появлению подобных статей. Теперь, когда очередной юноша с горящими глазами будет задавать мне вопросы в духе &#34;Что вы думаете про фундаментальный анализ?&#34;, я с удовольствием дам ему ссылку на цикл Ваших статей. Если он сможет понять написанное, или хотя бы дочитать до конца, и в процессе чтения у него не потухнет взгляд, то, возможно, ему и стоит попробовать заняться фундаментальным анализом.»&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zerohedge.com/news/2019-03-14/twenty-craziest-investing-facts-ever&#34;&gt;20 крышесносных фактов об инвестировании&lt;/a&gt;, как оно и есть на самом деле.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://journal.tinkoff.ru/invest-declare&#34;&gt;Как платить налоги с доходов от инвестиций&lt;/a&gt; и &lt;a href=&#34;http://activeinvestor.pro/kak-investoru-snizit-svoi-nalogi&#34;&gt;как их законно снижать&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Великолепный пример от Сергея Спирина о том, &lt;a href=&#34;https://fintraining.livejournal.com/1078121.html&#34;&gt;как меняются относительные доходности различных видов вложений в разное время&lt;/a&gt;. Не дайте себя запутать удачно подобранными графиками!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://behaviouralinvestment.com/2019/04/16/ten-behavioural-advantages-amateur-investors-hold-over-professionals/&#34;&gt;О преимуществах, которые частный инвестор имеет перед управляющим&lt;/a&gt;. Кратко: частный инвестор может (и должен!) формировать портфель под свои личные интересы, не оглядываясь на окружающих и не оправдываясь перед ними.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/11ElKz7sJ6JH9Ex6yQcU0hC1TFEMmLVt-hFFQEzY-Fyc/edit#gid=1404557592&#34;&gt;Сводная таблица по тарифам брокеров&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ещё один &lt;a href=&#34;https://tradingeconomics.com/&#34;&gt;огромный массив макроэкономических данных&lt;/a&gt;, очень удобно представленных.&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    </entry>
+    <entry>
+        <title>2019-02-24</title>
+        <link href="https://onfin.github.io/blog/2019-02-24" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2019-02-24</id>
+        <updated>2019-09-21T21:01:03.712102</updated>
+        <published>2019-02-24T00:00:00</published>
+        <summary type="html">&lt;p&gt;Пока сочинение о природе денег и устройстве современной финансовой системы у меня заглохло, набросал &lt;a href=&#34;{% link &#39;/literacy/instruments.md&#39;%}&#34;&gt;Краткий обзор инструментов сбережения&lt;/a&gt;. Я попытался сосредоточиться на том, что упускают, по-моему, все популярные источники: на том, что каждый инструмент обладает своим набором рисков, с разными вероятностями реализации, а один и тот же риск в разных инструментах может проявляться по-разному. Рынок оценивает все эти риски «интегрально», а инвестор имеет возможность подбирать инструменты так, чтобы наименее чувствительные для него риски были оценены рынком наиболее дорого (ну и избегать противоположной ситуации, разумеется). Не люблю разбрасываться деньгами, и подход к оценкам инвестиционных возможностей &lt;em&gt;от рисков&lt;/em&gt; считаю самым правильным.&lt;/p&gt;
+&lt;p&gt;Что ещё накопилось:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Нашёл очень интересный цикл статей о теории случайных блужданий:&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ru.ihodl.com/advertising/2016-01-20/treidery-i-pianitsy/&#34;&gt;Трейдеры и пьяницы&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ru.ihodl.com/advertising/2016-01-26/zadacha-o-kotirovke-kotoraia-nikogda-ne-verniotsia/&#34;&gt;Задача о котировке, которая никогда не вернётся&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ru.ihodl.com/advertising/2016-02-02/zadacha-ob-igroke-kotorogo-nelzia-vygnat-iz-kazino/&#34;&gt;Задача об игроке, которого нельзя выгнать из казино&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ru.ihodl.com/investment/2016-02-09/paradoks-sankt-peterburgskoi-loterei/&#34;&gt;Парадокс Санкт-Петербургской лотереи&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ru.ihodl.com/advertising/2016-02-18/mozhno-li-kupit-schaste/&#34;&gt;Можно ли купить счастье&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://at6.livejournal.com/22095.html&#34;&gt;at6&lt;/a&gt; сделал расчёт ожидаемой доходности российского фондового рынка, каковая совпала с американской.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gregbar.livejournal.com/885461.html&#34;&gt;Григорий Барщевский&lt;/a&gt; опубликовал «алгоритм инвестирования».&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://journal.tinkoff.ru/moscow-rentier/&#34;&gt;Тинькофф-журнал&lt;/a&gt; рассказал о тяготах сдачи московского жилья в аренду, оттуда же — &lt;a href=&#34;https://journal.tinkoff.ru/news/kredit-history-gosuslugi&#34;&gt;получение кредитной истории через госуслуги&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://assetallocation.ru/buffett-realty/&#34;&gt;Как Баффет в недвижимость инвестировал&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Табличка &lt;a href=&#34;https://www.moex.com/ru/markets/stock/privilegeindividuals.aspx&#34;&gt;безналоговых облигаций&lt;/a&gt; на Мосбирже.&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    </entry>
+    <entry>
+        <title>2019-01-12</title>
+        <link href="https://onfin.github.io/blog/2019-01-12" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2019-01-12</id>
+        <updated>2019-09-21T21:01:03.712102</updated>
+        <published>2019-01-12T00:00:00</published>
+        <summary type="html">&lt;p&gt;Неделя оказалась урожайной: набрались тонны информации. Пробегусь здесь кратко, чтобы не забыть добавить потом в статьи.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Два хороших обзора принципов работы фондов недвижимости: &lt;a href=&#34;https://invest2bfree.ru/investicii-v-reit-fondy/&#34;&gt;Максима Молчанова&lt;/a&gt; и &lt;a href=&#34;http://activeinvestor.pro/fondy-nedvizhimosti/&#34;&gt;Алексея Мартынова&lt;/a&gt;. В &lt;a href=&#34;https://journal.tinkoff.ru/discuss/real-estate-investors/?utm_source=rss&#34;&gt;Тинкофф-журнале&lt;/a&gt; тоже внезапно появились адекватные комментаторы на тему инвестиций в недвижимость.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://behaviouralinvestment.com/2019/01/09/can-more-information-lead-to-worse-investment-decisions/&#34;&gt;Joe Wiggins&lt;/a&gt; поделился ссылками на исследования, показавшие, что увеличение количества информации выше некоторого уровня не ведёт к улучшению качества решений, но сильно повышает уверенность в них.&lt;/li&gt;
+&lt;li&gt;Попалась на глаза старая очень фундаментальная публикация &lt;a href=&#34;http://aswathdamodaran.blogspot.com/2016/12/active-investing-rest-in-peace-or.html&#34;&gt;Асвата Дамодарана&lt;/a&gt; об исследованиях, показывающих невозможность «обыграть рынок» и, соответственно, выгоду пассивных индексных инвестиций.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://at6.livejournal.com/21832.html&#34;&gt;at6&lt;/a&gt; опубликовал сопоставление своей личной инфляции с офифиальной начиная с 2009г. Резюме: Росстат считает честно.&lt;/li&gt;
+&lt;li&gt;Вновь &lt;a href=&#34;http://activeinvestor.pro/kak-perezhit-korrektsiyu-ili-obval-na-rynke-aktsij&#34;&gt;Алексей Мартынов&lt;/a&gt; — как готовиться к обвалам на фондовых рынках.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nakhusha.livejournal.com/46084.html&#34;&gt;nakhusha&lt;/a&gt; напоминает о том, что считающиеся консервативным инструментом облигации на длинном горизонте имеют гораздо более высокий риск потери капитала, нежели акции. &lt;a href=&#34;https://nakhusha.livejournal.com/46415.html&#34;&gt;Особенно сейчас.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Очередная перепечатка &lt;a href=&#34;https://telegra.ph/Kto-zarabatyvaet-na-rynke-02-27&#34;&gt;Андрея Мовчана&lt;/a&gt; тоже о возможностях (точнее, невозможностях) получения спекулятивных доходов на финансовых рынках.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;А ещё я закончил разбор некоторых нюансов &lt;a href=&#34;{% link &#39;/literacy/credits.md&#39; %}&#34;&gt;кредитной математики&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <title>2019-01-02</title>
+        <link href="https://onfin.github.io/blog/2019-01-02" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2019-01-02</id>
+        <updated>2019-09-21T14:50:26.107770</updated>
+        <published>2019-01-02T00:00:00</published>
+        <summary type="html">&lt;p&gt;Я уже выкинул из своего биржевого отчёта колонки с доходностями отдельных акций (и перестал расписывать по ним дивиденды), но график динамики портфеля в сравнении с основными индексами сделал — это может быть вам поучительно. На графике — рублёвая стоимость моего российского портфеля (после дивидендов, комиссий и налогов), разделённая на сумму вложений/изъятий, и портфелей из акций индекса Мосбиржи и SnP500 (ETF ERUS и SPY), если покупать/продавать так же.&lt;/p&gt;
+&lt;p&gt;Видно, что доходности портфелей приблизительно равны, так что доллар — не наше всё, хотя многие считают иначе. Так же, широкая диверсификация в акциях (мой портфель с 15% на каждую достаточно представленную на рынке отрасль против индекса Мосбиржи с 50% на нефтянку, а дальше что подобралось) значительно снижает волатильность портфеля, но не даёт выигрыша в доходности.&lt;/p&gt;
+&lt;div style=&#34;width: 100%&#34;&gt;
+  &lt;img src=&#34;/images/perf2018.svg&#34; style=&#34;width: 100%&#34; /&gt;
+&lt;/div&gt;</summary>
+    </entry>
+    <entry>
+        <title>2018-12-31</title>
+        <link href="https://onfin.github.io/blog/2018-12-31" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2018-12-31</id>
+        <updated>2019-09-21T21:01:03.712102</updated>
+        <published>2018-12-31T00:00:00</published>
+        <summary type="html">&lt;p&gt;К НГ закончил-таки фундаментальную заметку о &lt;a href=&#34;{% link &#39;/literacy/reserves.md&#39; %}&#34;&gt;резервах (и страховании)&lt;/a&gt;. Т.к. здесь — вся соль и суть личных финансов, прошу обратной связи.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <title>2018-12-19</title>
+        <link href="https://onfin.github.io/blog/2018-12-19" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2018-12-19</id>
+        <updated>2019-09-21T20:58:22.844107</updated>
+        <published>2018-12-19T00:00:00</published>
+        <summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Внезапно, узнал о существовании вкладов с &lt;a href=&#34;https://www.bystrobank.ru/uslugi/vklad/maxistavka.html&#34;&gt;плавающими ставками&lt;/a&gt;. Теперь будте внимательней, открывая вклад: вдруг &lt;a href=&#34;{% link &#39;/literacy/deposits.md#savings&#39; %}&#34;&gt;тоже&lt;/a&gt; чего в правилах расчёта ставки придумают.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://nakhusha.livejournal.com/49116.html&#34;&gt;Прислали&lt;/a&gt; цитату Джона Богла (человека, придумавшего индексное инвестирование, которое полностью переформатировало отрасль):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Для тех, кто покупая акции определенной компании, считает, что становится частью бизнеса и участвует в чем-то. Давным-давно рядовой миноритарный акционер стал просто владельцем бумажки, которая дает возможность получить некую долю от оставшихся после распределения денег (если еще что-то осталось). Говорить о том, что кто-то участвует в бизнесе, если у него нет блокирующего или контрольного пакета, немного наивно.&lt;/p&gt;
+&lt;p&gt;Если у инвестора нет доступа к действительно большим источникам средств, и он не является бизнесменом по типу Уоррена Баффета, такому вкладчику (а по-другому его и не назовешь) об акциях следует думать как о классе активов, а не как о вложении в отдельную компанию. К сожалению (а для многих, к счастью), в настоящее время рядовой акционер рискует только вложенной суммой, но при этом похож на бездомного перед дверьми учреждения в надежде, что ему вынесут миску супа.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Там ещё дальше есть ещё такое замечание:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Реальная стоимость активов отдельного человека определяется, с одной стороны, действиями лиц, управляющих компанией (которые обычно неподконтрольны рядовому собственнику), а с другой стороны – действиями третьих лиц на неустойчивом и зачастую довольно капризном рынке.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Всё это, конечно, так, и полезно об этих рисках помнить. Однако нельзя забывать о том, что акция (даже если она приобретена в составе индекса) — это право на вполне конкретную долю прибыли вполне конкретной компании. И мы вполне можем проверить, работают ли управляющие компанией на нашу прибыль. Если работают — капризы рынка нам только на руку.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://behaviouralinvestment.com&#34;&gt;Joe Wiggins&lt;/a&gt;, много пишущий о психологии инвестирования (у него блог практически прямо так и начинается), &lt;a href=&#34;https://behaviouralinvestment.com/2018/12/18/50-reasons-why-we-dont-invest-for-the-long-term/&#34;&gt;перечислил&lt;/a&gt; целых 50 причин, препятствующих долгосрочным инвестициям (а краткосрочные, как известно, — путь к разорению). Сводятся к следующим:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Это тупо скучно.&lt;/em&gt; Раз в год накупил, и больше ничего делать не надо. Вот на самом деле — не надо.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;А в это время рынок колбасит.&lt;/em&gt; Там постоянно что-то происходит, из чего, нам кажется, мы можем извлечь дополнительную прибыль. На самом деле, дополнительную прибыль из этого мы можем извлечь только для брокера и биржи (как мы &lt;a href=&#34;{% link &#39;/blog/2018-12-02.md&#39; %}&#34;&gt;помним&lt;/a&gt;, прибыль для инвестров зарабатывает только бизнес), а все игры вокруг этого — более-менее казино.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;И мы всё больше погружаемся в этот расколбас, забывая про долговременные эффекты.&lt;/em&gt; И вообще забывая про собственную голову, а следуя за большинством.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;И мы считаем, что у нас достаточно информации, чтобы сформировать определённое мнение о будущем состоянии экономики и рынка.&lt;/em&gt; А на самом деле — там вообще всё непонятно, а бо́льшая часть информации — расхожие заблуждения даже о фактах, не говоря уже о динамике процессов.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;А значит мы всегда должны показывать положительный результат, и не хуже чем у всех остальных.&lt;/em&gt; Хотя лучшее решение на долгосрочную перспективу проявляет себя, часто, на горизонте даже не нескольких лет, а и более того.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    </entry>
+    <entry>
+        <title>2018-12-16</title>
+        <link href="https://onfin.github.io/blog/2018-12-16" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2018-12-16</id>
+        <updated>2019-09-21T21:01:03.712102</updated>
+        <published>2018-12-16T00:00:00</published>
+        <summary type="html">&lt;p&gt;Все самые ударные пенсионные калькуляторы &lt;a href=&#34;{% link &#39;/literacy/intro.md&#39; %}&#34;&gt;в одной статье&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;сколько я получу ежемесячного пассивного дохода через заданное количество лет на свой капитал и на свои ежемесячные вложения,&lt;/li&gt;
+&lt;li&gt;сколько мне нужно сейчас откладывать, чтобы получить желаемый пассивный доход через заданное колиечество лет,&lt;/li&gt;
+&lt;li&gt;через сколько лет я достигну финансовой независимости, если буду вкладывать указанную часть от доходов.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;А ещё пришёл разбор &lt;a href=&#34;https://spydell.livejournal.com/662627.html&#34;&gt;текущего состояния американской экономики&lt;/a&gt;. Вкратце. Великая Рецессия, начавшаяся 10 лет назад, наконец-то закончилась. Экономика США набирает обороты.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <title>2018-12-15</title>
+        <link href="https://onfin.github.io/blog/2018-12-15" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2018-12-15</id>
+        <updated>2019-09-21T14:50:26.107770</updated>
+        <published>2018-12-15T00:00:00</published>
+        <summary type="html">&lt;p&gt;Поторопился вчера опубликовать статью по картам, где в разделе кэшбэка первым на деревне затейником назвал Citi.
+Сегодня пришёл обзор по бонусной программе Росбанка — &lt;a href=&#34;http://hranidengi.ru/mozhno-vse-ot-rosbanka/&#34;&gt;вот где фантазия-то разгулялась&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <title>Недельное</title>
+        <link href="https://onfin.github.io/blog/2018-12-14" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2018-12-14</id>
+        <updated>2019-09-21T21:01:03.712102</updated>
+        <published>2018-12-14T00:00:00</published>
+        <summary type="html">&lt;p&gt;Продолжается «банковский цикл», вышли статьи:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;{% link &#39;/literacy/deposits.md&#39; %}&#34;&gt;Размещение средств в банках&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;{% link &#39;/literacy/cards.md&#39; %}&#34;&gt;Банковские карты&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;{% link &#39;/literacy/cardscalc.md&#39; %}&#34;&gt;Использование и расчёт банковских карт&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;В текстах появились интерактивные калькулторы.&lt;/p&gt;
+&lt;p&gt;На «Росте сбережений» опубликована &lt;a href=&#34;https://rostsber.ru/publish/investment/sanctions_and_banking_sector.html&#34;&gt;заметка&lt;/a&gt; о влиянии планирующихся санкций на банковскую систему. Резюме: ничего катастрофического, но держателям карточек международных платёжных систем в госбанках стоит задуматься об альтернативах.&lt;/p&gt;</summary>
+    </entry>
+    <entry>
+        <title>2018-12-08</title>
+        <link href="https://onfin.github.io/blog/2018-12-08" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2018-12-08</id>
+        <updated>2019-09-21T18:06:44.051426</updated>
+        <published>2018-12-08T00:00:00</published>
+        <summary type="html">&lt;p&gt;&lt;a href=&#34;{% link &#39;/pages/literacy.md&#39; %}&#34;&gt;Грамотность&lt;/a&gt; пополнилась заметкой о &lt;a href=&#34;{% link &#39;/literacy/basebank.md&#39; %}&#34;&gt;выборе базового банка&lt;/a&gt;.&lt;/p&gt;</summary>
+    </entry>
+</feed>
