@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+        <meta name="description" content="Калькуляторы для расчёта выгоды, сравнения и выбора банковских карт." />
+        <meta name="keywords" content="банковские карты, дебетовые карты, кредитные карты, кэшбэк, расчёт выгоды, калькулятор" />
+
+<meta property="og:locale" content="ru" />
+
+    <meta property="og:description" content="Калькуляторы для расчёта выгоды, сравнения и выбора банковских карт." />
+
+    <meta property="og:type" content="article" />
+        <meta property="og:article:modified_time" content="2019-09-22" />
+<meta property="og:title" content="Калькуляторы банковских карт" />
+<meta property="og:url" content="https://onfin.github.io/calculators/cards" />
+
+
 
 </head>
 <body>
@@ -27,7 +40,7 @@
     <main>
 <div class="page-container">
     <div class="entry-content post-meta pure-u-3-4">
-            <div class="entry-info"> Обновлено: 2019-09-21 </div>
+            <div class="entry-info"> Обновлено: 2019-09-22 </div>
     </div>
 
     <div class="article-header-container">
@@ -44,15 +57,34 @@
         <script type="text/javascript" src="/js/forms.js"></script>
 
 <h1 id="_1">Потери от хранения денег в наличности и на счетах под низкий процент</h1>
-<form id="percentLoss" markdown="1">
-|||
-|----|---|
-Среднемесячный остаток | <input id="balance" type="number" step=1000 onChange="percentLossForm.onChange(this)" />
-Ставка процента, %г | <input id="ourRate" type="number" step=0.5 onChange="percentLossForm.onChange(this)" />
-Рыночная ставка, %г | <input id="marketRate" type="number" step=0.5 onChange="percentLossForm.onChange(this)" />
-Потери в год | <input id="percentLoss" type="number" readonly class="output"/>
+<form id="percentLoss">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Среднемесячный остаток</td>
+<td><input id="balance" type="number" step=1000 onChange="percentLossForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Ставка процента, %г</td>
+<td><input id="ourRate" type="number" step=0.5 onChange="percentLossForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Рыночная ставка, %г</td>
+<td><input id="marketRate" type="number" step=0.5 onChange="percentLossForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Потери в год</td>
+<td><input id="percentLoss" type="number" readonly class="output"/></td>
+</tr>
+</tbody>
+</table>
 </form>
-
 <script type="text/javascript">
   const percentLossForm = new Form("percentLoss",
     {
@@ -70,18 +102,46 @@
 </script>
 
 <h1 id="_2">Доход от кэшбэка и процента на остаток по дебетовой карте</h1>
-<form id="debitCard" markdown="1">
-|||
-|---|---|
-Среднемесячные расходы | <input id="spending" type="number" step=1000 onChange="debitCardForm.onChange(this)" />
-Среднемесячный остаток | <input id="balance" type="number" step=1000 onChange="debitCardForm.onChange(this)" />
-Процент на остаток, %г | <input id="percent" type="number" step=0.5  onChange="debitCardForm.onChange(this)" />
-Cредний эффективный кэшбэк, % | <input id="cashback" type="number" step=0.5  onChange="debitCardForm.onChange(this)" />
-Cтоимоть годового обслуживания и накладные расходы | <input id="fee" type="number" step=100  onChange="debitCardForm.onChange(this)" />
-Доход от карты | <input id="income" class="output" readonly />
-Или в % к среднемесячным расходам | <input id="incomePercent" class="output" readonly />
+<form id="debitCard">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Среднемесячные расходы</td>
+<td><input id="spending" type="number" step=1000 onChange="debitCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Среднемесячный остаток</td>
+<td><input id="balance" type="number" step=1000 onChange="debitCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Процент на остаток, %г</td>
+<td><input id="percent" type="number" step=0.5  onChange="debitCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Cредний эффективный кэшбэк, %</td>
+<td><input id="cashback" type="number" step=0.5  onChange="debitCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Cтоимоть годового обслуживания и накладные расходы</td>
+<td><input id="fee" type="number" step=100  onChange="debitCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Доход от карты</td>
+<td><input id="income" class="output" readonly /></td>
+</tr>
+<tr>
+<td>Или в % к среднемесячным расходам</td>
+<td><input id="incomePercent" class="output" readonly /></td>
+</tr>
+</tbody>
+</table>
 </form>
-
 <script type="text/javascript">
   const debitCardForm = new Form("debitCard", {
     balance: 10000,
@@ -98,26 +158,78 @@ Cтоимоть годового обслуживания и накладные 
 </script>
 
 <h1 id="_3">Доход от кэшбэка и льготного кредита по кредитной карте</h1>
-<form id="creditCard" markdown="1">
-|||
-|---|---|
-Месячные расходы | <input id="spending" type="number" step=1000 onChange="creditCardForm.onChange(this)" />
-Процент на остаток, %г | <input id="percent" type="number" step=0.5 onChange="creditCardForm.onChange(this)" />
-Средний эффективный кэшбэк, % | <input id="cashback" type="number" step=0.5 onChange="creditCardForm.onChange(this)" />
-Продолжительность грейса, дней | <input id="grace" type="number" step=5 onChange="creditCardForm.onChange(this)" />
-Честный грейс | <input id="trueGrace" type="checkbox" checked onChange="creditCardForm.onChange(this)">
-Процент к ежемесячному погашению, % | <input id="mid" type="number" step=5 onChange="creditCardForm.onChange(this)" />
-Годовое обслуживание | <input id="fee" type="number" step=100 onChange="creditCardForm.onChange(this)" />
-Дополнительная экономия | <input id="bonus" type="number" step=100 onChange="creditCardForm.onChange(this)" />
-Ставка по кредиту | <input id="interest" type="number" step=1 onChange="creditCardForm.onChange(this)" />
-|
-Доход от карты | <input id="income" class="output" readonly />
-Или в % к среднемесячным расходам | <input id="incomePercent" class="output" readonly />
-|
-Платёж в случае вылета из грейса | <input id="debt" class="output" readonly />
-Ежедневный процент | <input id="debtPay" class="output" readonly />
+<form id="creditCard">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Месячные расходы</td>
+<td><input id="spending" type="number" step=1000 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Процент на остаток, %г</td>
+<td><input id="percent" type="number" step=0.5 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Средний эффективный кэшбэк, %</td>
+<td><input id="cashback" type="number" step=0.5 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Продолжительность грейса, дней</td>
+<td><input id="grace" type="number" step=5 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Честный грейс</td>
+<td><input id="trueGrace" type="checkbox" checked onChange="creditCardForm.onChange(this)"></td>
+</tr>
+<tr>
+<td>Процент к ежемесячному погашению, %</td>
+<td><input id="mid" type="number" step=5 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Годовое обслуживание</td>
+<td><input id="fee" type="number" step=100 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Дополнительная экономия</td>
+<td><input id="bonus" type="number" step=100 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Ставка по кредиту</td>
+<td><input id="interest" type="number" step=1 onChange="creditCardForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Доход от карты</td>
+<td><input id="income" class="output" readonly /></td>
+</tr>
+<tr>
+<td>Или в % к среднемесячным расходам</td>
+<td><input id="incomePercent" class="output" readonly /></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Платёж в случае вылета из грейса</td>
+<td><input id="debt" class="output" readonly /></td>
+</tr>
+<tr>
+<td>Ежедневный процент</td>
+<td><input id="debtPay" class="output" readonly /></td>
+</tr>
+</tbody>
+</table>
 </form>
-
 <script type="text/javascript">
   const creditCardForm = new Form("creditCard", {
     spending: 20000,

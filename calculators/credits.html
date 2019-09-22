@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+        <meta name="description" content="Калькуляторы для расчёта, сравнения и выбра различных схем выплаты кредитов. Насколько выгоднее или невыгоднее взять кредит и вложить по сравнению с постепенным накоплением." />
+        <meta name="keywords" content="калькулятор, кредит, аннуитетная схема, дифференцированная схема, сравнение схем погашения, кредит и инфляция" />
+
+<meta property="og:locale" content="ru" />
+
+    <meta property="og:description" content="Калькуляторы для расчёта, сравнения и выбра различных схем выплаты кредитов. Насколько выгоднее или невыгоднее взять кредит и вложить по сравнению с постепенным накоплением." />
+
+    <meta property="og:type" content="article" />
+        <meta property="og:article:modified_time" content="2019-09-22" />
+<meta property="og:title" content="Калькуляторы кредитов" />
+<meta property="og:url" content="https://onfin.github.io/calculators/credits" />
+
+
 
 </head>
 <body>
@@ -27,7 +40,7 @@
     <main>
 <div class="page-container">
     <div class="entry-content post-meta pure-u-3-4">
-            <div class="entry-info"> Обновлено: 2019-09-21 </div>
+            <div class="entry-info"> Обновлено: 2019-09-22 </div>
     </div>
 
     <div class="article-header-container">
@@ -49,16 +62,38 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
 
-<form id="credit" markdown="1">
-|||
-|----|---|
-Сумма | <input id="sum" type="number" step=1000 onChange="creditForm.onChange(this)" />
-Срок, мес | <input id="months" type="number" step=1 onChange="creditForm.onChange(this)" />
-Ставка, %г | <input id="interestRate" type="number" step=0.5 onChange="creditForm.onChange(this)" />
-Инфляция, %г | <input id="inflation" type="number" step=0.5 onChange="creditForm.onChange(this)" />
-Ставка по вложениям, %г |  <input id="investRate" type="number" step=0.5 onChange="creditForm.onChange(this)" />
+<form id="credit">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сумма</td>
+<td><input id="sum" type="number" step=1000 onChange="creditForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Срок, мес</td>
+<td><input id="months" type="number" step=1 onChange="creditForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Ставка, %г</td>
+<td><input id="interestRate" type="number" step=0.5 onChange="creditForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Инфляция, %г</td>
+<td><input id="inflation" type="number" step=0.5 onChange="creditForm.onChange(this)" /></td>
+</tr>
+<tr>
+<td>Ставка по вложениям, %г</td>
+<td><input id="investRate" type="number" step=0.5 onChange="creditForm.onChange(this)" /></td>
+</tr>
+</tbody>
+</table>
 </form>
-
 <h1 id="_1">Аннуитетное погашение</h1>
 <div id="annuitySchedule"></div>
 
@@ -71,224 +106,225 @@
 <h1 id="_4">Занять и вложить</h1>
 <div id="borrowAndInvestSchedule"></div>
 
-<p>
+<p></p>
 <script type="text/javascript">
     function toggleCollapsible(elem) {
         elem.classList.toggle("active");
         elem.nextElementSibling.classList.toggle("active");
-    }</p>
-<pre><code>const scheduleTemplate = nunjucks.compile(`
-        &lt;p&gt;Полная сумма платежей: {{total | round(0)}}&lt;br&gt;
-            С учётом инфляции: {{real | round(0)}}&lt;/p&gt;
-
-        &lt;button class="collapse-btn" onClick="toggleCollapsible(this)"&gt;Расписание платежей&lt;/button&gt;
-        &lt;div class="payment collapse-content"&gt;
-            &lt;table class="payments"&gt;
-                &lt;tr&gt;
-                    &lt;th&gt;Месяц&lt;/th&gt;
-                    &lt;th&gt;Платёж&lt;/th&gt;
-                    &lt;th&gt;Остаток&lt;/th&gt;
-                    &lt;th&gt;На проценты&lt;/th&gt;
-                    &lt;th&gt;На погашение&lt;/th&gt;
-                    &lt;th&gt;Реальный платёж&lt;/th&gt;
-                &lt;/tr&gt;
-                {% for p in payments %}
-                    &lt;tr&gt;
-                        &lt;td align="right"&gt;{{p.month}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{(p.interest+p.principal) | round(0)}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{p.sum | round(0)}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{p.interest | round(0)}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{p.principal | round(0)}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{p.realPayment | round(0)}}&lt;/td&gt;
-                    &lt;/tr&gt;
-                {% endfor %}
-            &lt;/table&gt;
-        &lt;/div&gt;
-`);
-
-const borrowAndInvestTemplate = nunjucks.compile(`
-        &lt;p&gt;
-            Конечный капитал с инвестированием займа: {{capitalWithCredit | round(0)}}&lt;br&gt;
-            Конечный капитал с инвестированием накоплений: {{capitalWithSavings | round(0)}}&lt;br&gt;
-            Дополнительная доходность схемы: {{extra | round(2)}}%г
-        &lt;/p&gt;
-
-        &lt;button class="collapse-btn" onClick="toggleCollapsible(this)"&gt;Расписание накопления&lt;/button&gt;
-        &lt;div class="collapse-content"&gt;
-            &lt;table class="payments"&gt;
-                &lt;tr&gt;
-                    &lt;th&gt;Месяц&lt;/th&gt;
-                    &lt;th&gt;С займом&lt;/th&gt;
-                    &lt;th&gt;С накоплением&lt;/th&gt;
-                &lt;/tr&gt;
-                {% for p in schedule %}
-                    &lt;tr&gt;
-                        &lt;td align="right"&gt;{{p.month}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{p.capitalWithCredit | round(0)}}&lt;/td&gt;
-                        &lt;td align="right"&gt;{{p.capitalWithSavings | round(0)}}&lt;/td&gt;
-                    &lt;/tr&gt;
-                {% endfor %}
-            &lt;/table&gt;
-        &lt;/div&gt;
-`);
-
-
-const creditForm = new Form("credit",
-    {
-    sum: 2000000,
-    months: 120,
-    interestRate: 9,
-    inflation: 5,
-    investRate: 7
-    },
-    function() {
-        const annuitySchedule = calcAnnuitySchedule(this.fields);
-        document.getElementById("annuitySchedule").innerHTML = scheduleTemplate.render(annuitySchedule);
-
-        const diffSchedule = calcDiffSchedule(this.fields);
-        document.getElementById("diffSchedule").innerHTML = scheduleTemplate.render(diffSchedule);
-
-        const lumpSumSchedule = calcLumpSumSchedule(this.fields);
-        document.getElementById("lumpSumSchedule").innerHTML = scheduleTemplate.render(lumpSumSchedule);
-
-        const borrowAndInvestSchedule = calcBorrowAndInvest(this.fields);
-        document.getElementById("borrowAndInvestSchedule").innerHTML = borrowAndInvestTemplate.render(borrowAndInvestSchedule);
-
-        // const months = this.fields.months;
-        // new Chartist.Line('.schedule-chart', {
-        //     labels: _.range(1,months),
-        //     series: [
-        //         {name: "погашение", "data": annuitySchedule.payments.map(p =&gt; p.principal)},
-        //         {name: "проценты", "data": annuitySchedule.payments.map(p =&gt; p.principal+p.interest)},
-        //     ]
-        //     }, {
-        //         showArea: true,
-        //         showLine: false,
-        //         showPoint: false,
-        //         fullWidth: true,
-        //         axisX: {
-        //             labelInterpolationFnc: function(value, index) {
-        //                 return index % (months/10) === 0 ? value : null;
-        //             }
-        //         }
-        // });
     }
-);
 
-function annuityCoeff(data) {
-    const monthRate = data.interestRate/100/12;
-    return monthRate*Math.pow(1+monthRate, data.months)/(Math.pow(1+monthRate, data.months)-1);
-}
+    const scheduleTemplate = nunjucks.compile(`
+            <p>Полная сумма платежей: {{total | round(0)}}<br>
+                С учётом инфляции: {{real | round(0)}}</p>
 
-function annuityPayment(data) {
-    return data.sum * annuityCoeff(data);
-}
+            <button class="collapse-btn" onClick="toggleCollapsible(this)">Расписание платежей</button>
+            <div class="payment collapse-content">
+                <table class="payments">
+                    <tr>
+                        <th>Месяц</th>
+                        <th>Платёж</th>
+                        <th>Остаток</th>
+                        <th>На проценты</th>
+                        <th>На погашение</th>
+                        <th>Реальный платёж</th>
+                    </tr>
+                    {% for p in payments %}
+                        <tr>
+                            <td align="right">{{p.month}}</td>
+                            <td align="right">{{(p.interest+p.principal) | round(0)}}</td>
+                            <td align="right">{{p.sum | round(0)}}</td>
+                            <td align="right">{{p.interest | round(0)}}</td>
+                            <td align="right">{{p.principal | round(0)}}</td>
+                            <td align="right">{{p.realPayment | round(0)}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    `);
 
-function diffConstPayment(data) {
-    return data.sum/data.months;
-}
+    const borrowAndInvestTemplate = nunjucks.compile(`
+            <p>
+                Конечный капитал с инвестированием займа: {{capitalWithCredit | round(0)}}<br>
+                Конечный капитал с инвестированием накоплений: {{capitalWithSavings | round(0)}}<br>
+                Дополнительная доходность схемы: {{extra | round(2)}}%г
+            </p>
 
-function calcAnnuitySchedule(data) {
-    let sum = data.sum;
-    const pay = annuityPayment(data);
-    const monthInfl = data.inflation/100/12;
-    const monthRate = data.interestRate/100/12;
+            <button class="collapse-btn" onClick="toggleCollapsible(this)">Расписание накопления</button>
+            <div class="collapse-content">
+                <table class="payments">
+                    <tr>
+                        <th>Месяц</th>
+                        <th>С займом</th>
+                        <th>С накоплением</th>
+                    </tr>
+                    {% for p in schedule %}
+                        <tr>
+                            <td align="right">{{p.month}}</td>
+                            <td align="right">{{p.capitalWithCredit | round(0)}}</td>
+                            <td align="right">{{p.capitalWithSavings | round(0)}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+    `);
 
-    const payments = [];
-    let paymentReal = 0;
-    let paymentTotal = 0;
-    for (let m = 0; m &lt; data.months; ++m) {
-        payments.push({
-            month: m+1,
-            sum: sum - pay + monthRate*sum,
-            interest: monthRate*sum,
-            principal: pay - monthRate*sum,
-            realPayment: pay / Math.pow(1+monthInfl, m)
-        });
-        sum -= pay - monthRate*sum ;
-        paymentReal += pay / Math.pow(1+monthInfl, m);
-        paymentTotal += pay;
-    };
 
-    return {payments: payments, real: paymentReal, total: paymentTotal};
-}
+    const creditForm = new Form("credit",
+        {
+        sum: 2000000,
+        months: 120,
+        interestRate: 9,
+        inflation: 5,
+        investRate: 7
+        },
+        function() {
+            const annuitySchedule = calcAnnuitySchedule(this.fields);
+            document.getElementById("annuitySchedule").innerHTML = scheduleTemplate.render(annuitySchedule);
 
-function calcDiffSchedule(data) {
-    let sum = data.sum;
-    const pay = data.sum/data.months;
-    const monthInfl = data.inflation/100/12;
-    const monthRate = data.interestRate/100/12;
+            const diffSchedule = calcDiffSchedule(this.fields);
+            document.getElementById("diffSchedule").innerHTML = scheduleTemplate.render(diffSchedule);
 
-    const payments = [];
-    let paymentReal = 0;
-    let paymentTotal = 0;
-    for (let m = 0; m &lt; data.months; ++m) {
-        payments.push({
-            month: m+1,
-            sum: sum - pay,
-            interest: monthRate*sum,
-            principal: pay,
-            realPayment: (pay+monthRate*sum) / Math.pow(1+monthInfl, m)
-        });
-        sum -= pay;
-        paymentReal += (pay+monthRate*sum) / Math.pow(1+monthInfl, m);
-        paymentTotal += (pay+monthRate*sum);
-    };
+            const lumpSumSchedule = calcLumpSumSchedule(this.fields);
+            document.getElementById("lumpSumSchedule").innerHTML = scheduleTemplate.render(lumpSumSchedule);
 
-    return {payments: payments, real: paymentReal, total: paymentTotal};
-}
+            const borrowAndInvestSchedule = calcBorrowAndInvest(this.fields);
+            document.getElementById("borrowAndInvestSchedule").innerHTML = borrowAndInvestTemplate.render(borrowAndInvestSchedule);
 
-function calcLumpSumSchedule(data) {
-    let sum = data.sum;
-    const monthInfl = data.inflation/100/12;
-    const monthRate = data.interestRate/100/12;
+            // const months = this.fields.months;
+            // new Chartist.Line('.schedule-chart', {
+            //     labels: _.range(1,months),
+            //     series: [
+            //         {name: "погашение", "data": annuitySchedule.payments.map(p => p.principal)},
+            //         {name: "проценты", "data": annuitySchedule.payments.map(p => p.principal+p.interest)},
+            //     ]
+            //     }, {
+            //         showArea: true,
+            //         showLine: false,
+            //         showPoint: false,
+            //         fullWidth: true,
+            //         axisX: {
+            //             labelInterpolationFnc: function(value, index) {
+            //                 return index % (months/10) === 0 ? value : null;
+            //             }
+            //         }
+            // });
+        }
+    );
 
-    const payments = [];
-    let paymentReal = 0;
-    let paymentTotal = 0;
-    for (let m = 0; m &lt; data.months; ++m) {
-        const principal = (m === data.months-1) ? sum : 0;
-        payments.push({
-            month: m+1,
-            sum: sum,
-            interest: monthRate*sum,
-            principal: principal,
-            realPayment: (principal + monthRate*sum) / Math.pow(1+monthInfl, m)
-        });
-        sum -= principal;
-        paymentReal += (principal+monthRate*sum) / Math.pow(1+monthInfl, m);
-        paymentTotal += (principal+monthRate*sum);
-    };
+    function annuityCoeff(data) {
+        const monthRate = data.interestRate/100/12;
+        return monthRate*Math.pow(1+monthRate, data.months)/(Math.pow(1+monthRate, data.months)-1);
+    }
 
-    return {payments: payments, real: paymentReal, total: paymentTotal};
-}
+    function annuityPayment(data) {
+        return data.sum * annuityCoeff(data);
+    }
 
-function calcBorrowAndInvest(data) {
-    let capitalWithCredit = data.sum;
-    let capitalWithSavings = 0;
-    const pay = annuityPayment(data);
-    const monthInfl = data.inflation/100/12;
-    const monthInterest = data.interestRate/100/12;
-    const monthRent = data.investRate/100/12;
+    function diffConstPayment(data) {
+        return data.sum/data.months;
+    }
 
-    const schedule = [];
-    for (let m = 0; m &lt; data.months; ++m) {
-        capitalWithCredit = capitalWithCredit*(1+monthRent);
-        capitalWithSavings = capitalWithSavings*(1+monthRent) + pay;
+    function calcAnnuitySchedule(data) {
+        let sum = data.sum;
+        const pay = annuityPayment(data);
+        const monthInfl = data.inflation/100/12;
+        const monthRate = data.interestRate/100/12;
 
-        schedule.push({
-            month: m+1,
-            capitalWithCredit,
-            capitalWithSavings
-        });
-    };
+        const payments = [];
+        let paymentReal = 0;
+        let paymentTotal = 0;
+        for (let m = 0; m < data.months; ++m) {
+            payments.push({
+                month: m+1,
+                sum: sum - pay + monthRate*sum,
+                interest: monthRate*sum,
+                principal: pay - monthRate*sum,
+                realPayment: pay / Math.pow(1+monthInfl, m)
+            });
+            sum -= pay - monthRate*sum ;
+            paymentReal += pay / Math.pow(1+monthInfl, m);
+            paymentTotal += pay;
+        };
 
-    return {capitalWithCredit, capitalWithSavings, schedule,
-        extra: (Math.pow(capitalWithCredit/capitalWithSavings, 12.0/data.months)-1)*100};
-}
-</code></pre>
-<p></script>
-</p>
+        return {payments: payments, real: paymentReal, total: paymentTotal};
+    }
+
+    function calcDiffSchedule(data) {
+        let sum = data.sum;
+        const pay = data.sum/data.months;
+        const monthInfl = data.inflation/100/12;
+        const monthRate = data.interestRate/100/12;
+
+        const payments = [];
+        let paymentReal = 0;
+        let paymentTotal = 0;
+        for (let m = 0; m < data.months; ++m) {
+            payments.push({
+                month: m+1,
+                sum: sum - pay,
+                interest: monthRate*sum,
+                principal: pay,
+                realPayment: (pay+monthRate*sum) / Math.pow(1+monthInfl, m)
+            });
+            sum -= pay;
+            paymentReal += (pay+monthRate*sum) / Math.pow(1+monthInfl, m);
+            paymentTotal += (pay+monthRate*sum);
+        };
+
+        return {payments: payments, real: paymentReal, total: paymentTotal};
+    }
+
+    function calcLumpSumSchedule(data) {
+        let sum = data.sum;
+        const monthInfl = data.inflation/100/12;
+        const monthRate = data.interestRate/100/12;
+
+        const payments = [];
+        let paymentReal = 0;
+        let paymentTotal = 0;
+        for (let m = 0; m < data.months; ++m) {
+            const principal = (m === data.months-1) ? sum : 0;
+            payments.push({
+                month: m+1,
+                sum: sum,
+                interest: monthRate*sum,
+                principal: principal,
+                realPayment: (principal + monthRate*sum) / Math.pow(1+monthInfl, m)
+            });
+            sum -= principal;
+            paymentReal += (principal+monthRate*sum) / Math.pow(1+monthInfl, m);
+            paymentTotal += (principal+monthRate*sum);
+        };
+
+        return {payments: payments, real: paymentReal, total: paymentTotal};
+    }
+
+    function calcBorrowAndInvest(data) {
+        let capitalWithCredit = data.sum;
+        let capitalWithSavings = 0;
+        const pay = annuityPayment(data);
+        const monthInfl = data.inflation/100/12;
+        const monthInterest = data.interestRate/100/12;
+        const monthRent = data.investRate/100/12;
+
+        const schedule = [];
+        for (let m = 0; m < data.months; ++m) {
+            capitalWithCredit = capitalWithCredit*(1+monthRent);
+            capitalWithSavings = capitalWithSavings*(1+monthRent) + pay;
+
+            schedule.push({
+                month: m+1,
+                capitalWithCredit,
+                capitalWithSavings
+            });
+        };
+
+        return {capitalWithCredit, capitalWithSavings, schedule,
+            extra: (Math.pow(capitalWithCredit/capitalWithSavings, 12.0/data.months)-1)*100};
+    }
+</script>
+
+<p></p>
         <hr>
     </div>
 
