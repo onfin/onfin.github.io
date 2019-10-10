@@ -28,35 +28,34 @@
 
 </head>
 <body>
-    <nav class="navigation pure-menu pure-menu-horizontal">
-        <a href="/" class="pure-menu-link">Житейские воззрения пана Семушельского</a>
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
-            <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
-            <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
-            <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
-            <li class="pure-menu-item"><a href="/pages/calculators" class="pure-menu-link">Калькуляторы</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="pure-menu pure-menu-horizontal">
+            <a href="/" class="pure-menu-link">Житейские воззрения пана Семушельского</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
+                <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
+                <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
+                <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
+                <li class="pure-menu-item"><a href="/pages/calculators" class="pure-menu-link">Калькуляторы</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-<div class="page-container">
-    <div class="entry-content post-meta pure-u-3-4">
-            <div class="entry-info"> Обновлено: 2019-09-26 </div>
-    </div>
 
-    <div class="article-header-container">
-        <div class="background-image-container">
-            <div class="background-image-small">
-                <div class="title-container">
-                    <h1>Математика кредитов</h1>
-                </div>
+<div class="pure-g">
+<div class="page pure-u-1 pure-u-lg-9-12">
+    <article>
+        <header>
+            <h1>Математика кредитов</h1>
+            <div class="meta">
+                    <p class="description">Теория и расчёт различных схем погашения кредитов. Какова реальная переплата по кредиту по той или иной схеме? Сколько стоит хранить в банке резерв на будущие платежи по кредиту? Сколько можно заработать, если вложить кредитные деньги?</p>
+                        <p> Обновлено: 2019-09-26 </p>
             </div>
-        </div>
-    </div>
+        </header>
 
-    <div class="entry-content">
-        <p>Если вам не интересна теория — переходите сразу к <a href="/calculators/credits">калькулятору</a></p>
+        <div class="content">
+            <p>Если вам не интересна теория — переходите сразу к <a href="/calculators/credits">калькулятору</a>.</p>
 <p>Кредит — это способ воспользоваться деньгами банка за некоторую плату. Очевидно, пользоваться кредитами имеет смысл только тогда, когда это принесёт больший доход, чем будет выплачено процентов. Однако рассчитывать кредиты довольно сложно и по интернетам разгуливает изрядное количество дури по этому поводу (у одного — <a href="http://capitalgains.ru/obrazovanie/lichnye-finansy/annuitetnaya-shema-pogasheniya-kredita.html">аннуитеты впаривают</a>, другой — <a href="https://daskonto.ru/banki/na-puti-k-zrelosti">взял кредит под 11%г, чтобы положить под 7</a> и считает, что это выгодно).</p>
 <p>Разберёмся сперва с формами погашения. При аннуитетных платежах вы всегда отдаёте банку одну и ту же сумму, часть суммы идёт в погашение процентов, а часть — кредита. Дифференцированный платёж состоит из двух частей: фиксированной суммы в погашение кредита, и платёж по процентам на остаток задолженности. В схематичном виде выглядит это так (здесь на вертикальной оси выплаты по долгу и процентам представлены в процентах от аннуитетного платежа, а остаток по кредиту — от его начальной суммы, по горизонтальной оси — годы):</p>
 <div style="width: 100%">
@@ -89,8 +88,10 @@
 
 <p>Сравниваем сценарии, где мы поддерживаем резерв по выплатам на полгода вперёд (направляя начисленные проценты на погашение кредита, а когда он уменьшится до размера резерва — погашая его полность.) и где сразу погашаем часть кредита на размер резерва (но не уменьшая при этом ежемесячный платёж: всё-таки, выгоднее гасить кредит раньше). Как видно, реальный размер выплат с учётом инфляции различается незначительно.</p>
 <p>Статья будет пополняться новыми разборами.</p>
-        <hr>
-    </div>
+        </div>
+    </article>
+
+    <hr>
 
     <footer>
         <div class="pagination">
@@ -105,9 +106,8 @@
             </div>
         </div>
     </footer>
-
 </div>
-
+</div>
     </main>
 </body>
 </html>

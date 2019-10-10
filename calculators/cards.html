@@ -19,7 +19,7 @@
     <meta property="og:description" content="Калькуляторы для расчёта выгоды, сравнения и выбора банковских карт." />
 
     <meta property="og:type" content="article" />
-        <meta property="og:article:modified_time" content="2019-09-22" />
+        <meta property="og:article:modified_time" content="2019-10-08" />
 <meta property="og:title" content="Калькуляторы банковских карт" />
 <meta property="og:url" content="https://onfin.github.io/calculators/cards" />
 
@@ -27,37 +27,36 @@
 
 </head>
 <body>
-    <nav class="navigation pure-menu pure-menu-horizontal">
-        <a href="/" class="pure-menu-link">Житейские воззрения пана Семушельского</a>
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
-            <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
-            <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
-            <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
-            <li class="pure-menu-item"><a href="/pages/calculators" class="pure-menu-link">Калькуляторы</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="pure-menu pure-menu-horizontal">
+            <a href="/" class="pure-menu-link">Житейские воззрения пана Семушельского</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
+                <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
+                <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
+                <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
+                <li class="pure-menu-item"><a href="/pages/calculators" class="pure-menu-link">Калькуляторы</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-<div class="page-container">
-    <div class="entry-content post-meta pure-u-3-4">
-            <div class="entry-info"> Обновлено: 2019-09-22 </div>
-    </div>
 
-    <div class="article-header-container">
-        <div class="background-image-container">
-            <div class="background-image-small">
-                <div class="title-container">
-                    <h1>Калькуляторы банковских карт</h1>
-                </div>
+<div class="pure-g">
+<div class="page pure-u-1 pure-u-lg-9-12">
+    <article>
+        <header>
+            <h1>Калькуляторы банковских карт</h1>
+            <div class="meta">
+                    <p class="description">Калькуляторы для расчёта выгоды, сравнения и выбора банковских карт.</p>
+                        <p> Обновлено: 2019-10-08 </p>
             </div>
-        </div>
-    </div>
+        </header>
 
-    <div class="entry-content">
-        <script type="text/javascript" src="/js/forms.js"></script>
+        <div class="content">
+            <script type="text/javascript" src="/js/forms.js"></script>
 
-<h1 id="_1">Потери от хранения денег в наличности и на счетах под низкий процент</h1>
+<h2 id="_1">Потери от хранения денег в наличности и на счетах под низкий процент</h2>
 <form id="percentLoss">
 <table>
 <thead>
@@ -102,7 +101,7 @@
   );
 </script>
 
-<h1 id="_2">Доход от кэшбэка и процента на остаток по дебетовой карте</h1>
+<h2 id="_2">Доход от кэшбэка и процента на остаток по дебетовой карте</h2>
 <form id="debitCard">
 <table>
 <thead>
@@ -158,7 +157,7 @@
   })
 </script>
 
-<h1 id="_3">Доход от кэшбэка и льготного кредита по кредитной карте</h1>
+<h2 id="_3">Доход от кэшбэка и льготного кредита по кредитной карте</h2>
 <form id="creditCard">
 <table>
 <thead>
@@ -255,8 +254,10 @@
       this.form.elements.namedItem("debtPay").value = (this.fields.spending*this.fields.interest/100/360).toFixed(2);
   });
 </script>
-        <hr>
-    </div>
+        </div>
+    </article>
+
+    <hr>
 
     <footer>
         <div class="pagination">
@@ -271,9 +272,8 @@
             </div>
         </div>
     </footer>
-
 </div>
-
+</div>
     </main>
 </body>
 </html>
