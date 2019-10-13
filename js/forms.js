@@ -27,7 +27,7 @@ function makeForm(div, fields, calc) {
                     h('td', null, fields[k].title),
                     h('td', null, h('input', {...fields[k], value: values[k], readonly: true, class: "output"}))));
         }
-        return h(Fragment, {}, res);
+        return h('table', {}, res);
     }
 
     render(h(PForm), div);
