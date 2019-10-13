@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Сложный процент</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="/calculators/compounding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+        <meta name="description" content="Калькуляторы сложного процента и сроков достижения финансовой независимости" />
+
+<meta property="og:locale" content="ru" />
+
+    <meta property="og:description" content="Калькуляторы сложного процента и сроков достижения финансовой независимости" />
+
+    <meta property="og:type" content="website" />
+<meta property="og:title" content="Сложный процент" />
+<meta property="og:url" content="https://onfin.github.io/calculators/compounding" />
+
+
+
+</head>
+<body>
+    <header>
+        <nav class="pure-menu pure-menu-horizontal">
+            <label class="menu-container">
+                <a href="/" class="pure-menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
+                <input type="checkbox" />
+                <span class="checkmark"><i>&equiv;</i></span>
+                <ul class="menu">
+                        <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
+                        <li class="pure-menu-item"><a href="/pages/literacy" class="pure-menu-link">Грамотность</a></li>
+                        <li class="pure-menu-item"><a href="/pages/halava" class="pure-menu-link">Халява</a></li>
+                        <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
+                        <li class="pure-menu-item"><a href="/calculators" class="pure-menu-link">Калькуляторы</a></li>
+                </ul>
+            </label>
+        </nav>
+    </header>
+
+    <main>
+
+<div class="pure-g">
+<div class="page pure-u-1 pure-u-lg-9-12">
+    <article>
+        <header>
+            <h1>Сложный процент</h1>
+            <div class="meta">
+                    <p class="description">Калькуляторы сложного процента и сроков достижения финансовой независимости</p>
+                        <p> Обновлено: 2019-10-13 </p>
+            </div>
+        </header>
+
+        <div class="content">
+            <script type="text/javascript" src="/js/preact.umd.js"></script>
+
+<script type="text/javascript" src="/js/hooks.umd.js"></script>
+
+<script type="text/javascript" src="/js/forms.js"></script>
+
+<h2 id="_1">Эффективная годовая ставка</h2>
+<div id="effectiveRate"  class="calc-form"></div>
+
+<script type="text/javascript">
+    makeForm(effectiveRate, {
+        rate: {
+            title: "Ставка процента, %г",
+            step: 0.5,
+            default: 5
+        },
+        capNum: {
+            title: "Капитализаций в год",
+            step: 1,
+            default: 12
+        },
+        effectiveRate: {
+            title: "Эффективная реальная годовая ставка, %г",
+            output: true
+        }
+    },
+    function(f) {
+        f.effectiveRate = ((Math.pow(1 + f.rate/100/f.capNum, f.capNum)-1)*100).toFixed(2);
+    })
+</script>
+
+<h2 id="_2">Капитал и доходность на разовое вложение</h2>
+<div id="lumpSumInvest"  class="calc-form"></div>
+
+<script type="text/javascript">
+    makeForm(lumpSumInvest, {
+        sum: {
+            title: "Сумма вложения",
+            step: 1000,
+            default: 100000
+        },
+        rate: {
+            title: "Эффективная реальная годовая ставка, %г",
+            step: 0.5,
+            default: 5
+        },
+        years: {
+            title: "Срок вложения, лет",
+            step: 1,
+            default: 15
+        },
+        resultingSum: {
+            title: "Накопленный капитал",
+            output: true
+        },
+        resultingIncome: {
+            title: "Ежемесячный доход с капитала",
+            output: true
+        }
+    },
+    function(f) {
+        f.resultingSum = (f.sum * Math.pow(1+f.rate/100, f.years)).toFixed(0);
+        f.resultingIncome = (f.resultingSum * f.rate/100 / 12).toFixed(0);
+    })
+</script>
+
+<h2 id="_3">Капитал и доходность на периодические вложения</h2>
+<div id="regularInvest"  class="calc-form"></div>
+
+<script type="text/javascript">
+    makeForm(regularInvest, {
+        sum: {
+            title: "Сумма ежемесячного пополнения",
+            step: 1000,
+            default: 10000
+        },
+        rate: {
+            title: "Эффективная реальная годовая ставка, %г",
+            step: 0.5,
+            default: 5
+        },
+        years: {
+            title: "Срок вложений, лет",
+            step: 1,
+            default: 15
+        },
+        resultingSum: {
+            title: "Накопленный капитал",
+            output: true
+        },
+        resultingIncome: {
+            title: "Ежемесячный доход с капитала",
+            output: true
+        }
+    },
+    function(f) {
+        const r = 1+f.rate/100;
+        f.resultingSum = (f.sum*12 * (1-Math.pow(r, f.years))/(1-r)).toFixed(0);
+        f.resultingIncome = (f.resultingSum * (r-1) / 12).toFixed(0);
+    })
+</script>
+
+<h2 id="_4">Требуемые ежемесячные сбережения для заданного пассивного дохода</h2>
+<div id="targetIncome"  class="calc-form"></div>
+
+<script type="text/javascript">
+    makeForm(targetIncome, {
+        targetIncome: {
+            title: "Целевой ежемесячный доход",
+            step: 1000,
+            default: 50000
+        },
+        capital: {
+            title: "Уже накоплено",
+            step: 1000,
+            default: 100000
+        },
+        rate: {
+            title: "Эффективная реальная годовая ставка, %г",
+            step: 0.5,
+            default: 5
+        },
+        years: {
+            title: "Срок сбережений, лет",
+            step: 1,
+            default: 15
+        },
+        neededSavings: {
+            title: "Необходимо ежемесячно откладывать",
+            output: true
+        }
+    },
+    function(f) {
+        const r = 1+f.rate/100;
+        f.neededSavings = ((f.targetIncome*12/(r-1) - f.capital*Math.pow(r, f.years)) * (1-r) / (1-Math.pow(r, f.years)) / 12).toFixed(0) ;
+    })
+</script>
+
+<h2 id="_5">Срок достижения финансовой независимости</h2>
+<div id="retirement"  class="calc-form"></div>
+
+<script type="text/javascript">
+    makeForm(retirement, {
+        income: {
+            title: "Ежемесячный доход",
+            step: 1000,
+            default: 50000
+        },
+        expence: {
+            title: "Среднемесячные расходы",
+            step: 1000,
+            default: 30000
+        },
+        targetIncome: {
+            title: "Целевой ежемесячный доход",
+            step: 1000,
+            default: 50000
+        },
+        capital: {
+            title: "Капитал",
+            step: 1000,
+            default: 100000
+        },
+        rate: {
+            title: "Эффективная реальная годовая ставка, %г",
+            step: 0.5,
+            default: 5
+        },
+        retirement: {
+            title: "Осталось до финансовой независимости, лет",
+            output: true
+        },
+        freedom: {
+            title: "Осталось до финансовой свободы, лет",
+            output: true
+        }
+    },
+    function(f) {
+        const r = 1+f.rate/100;
+        const s = (f.income-f.expence)*12;
+        const tc = (e) => e/(r-1)*12;
+        f.retirement = Math.ceil( Math.log( (tc(f.expence)*(r-1)+s)/(f.capital*(r-1)+s) ) / Math.log(r) );
+        f.freedom = Math.ceil( Math.log( (tc(f.targetIncome)*(r-1)+s)/(f.capital*(r-1)+s) ) / Math.log(r) );
+    })
+</script>
+        </div>
+    </article>
+</div>
+</div>
+    </main>
+
+    <footer>
+<div class="pure-g">
+<div class="pagination pure-u-1 pure-u-lg-9-12">
+    <div class="pure-g">
+    <div class="pure-u-1-3 left">
+    </div>
+    <div class="pure-u-1-3 center">
+                <a href="/calculators"> &uarr; Калькуляторы &uarr; </a>
+    </div>
+    <div class="pure-u-1-3 right">
+    </div>
+    </div>
+</div>
+</div>
+
+        <div class="disclaimer">
+            <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+
+            <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ.</p>
+
+            <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
