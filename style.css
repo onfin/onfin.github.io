@@ -17,8 +17,8 @@
 -------------------------------------------------------------------------------*/
 /* Let's default this puppy out
 -------------------------------------------------------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300,300italic);
 @import url(/js/pure-min.css);
 @import url(/js/grids-responsive-min.css);
 /* line 15, /home/celsior/pet/ssg/content/_theme/_reset.scss */
@@ -300,7 +300,40 @@ b, strong {
   font-weight: bold;
 }
 
-/* line 33 */
+@font-face {
+  font-family: 'ShareIcons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/images/share.woff) format("woff");
+}
+/* line 39 */
+i.share {
+  font-family: 'ShareIcons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 52 */
+.share-buttons {
+  text-align: right;
+}
+/* line 54 */
+.share-buttons a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.44);
+}
+/* line 58 */
+.share-buttons a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 65 */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
   margin: 0;
   padding: 0;
@@ -311,58 +344,63 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background: transparent;
 }
 
-/* line 43 */
+/* line 75 */
+abbr[title] {
+  border-bottom: none;
+}
+
+/* line 79 */
 strong {
   font-weight: bold;
 }
 
-/* line 47 */
+/* line 83 */
 em {
   font-style: italic;
 }
 
-/* line 51 */
+/* line 87 */
 ol {
   padding-inline-start: 32px;
 }
 
-/* line 55 */
+/* line 91 */
 ul {
   padding-inline-start: 32px;
   list-style-type: circle;
 }
 
-/* line 60 */
-p, ol, ul {
+/* line 96 */
+p, ol, ul, table {
   margin: 0px auto 16px auto;
 }
 
-/* line 64 */
+/* line 100 */
 .clearfix {
   overflow: auto;
 }
 
-/* line 68 */
+/* line 104 */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 
-/* line 74 */
+/* line 110 */
 mjx-container[jax="CHTML"] {
   font-weight: 700;
   margin: unset !important;
   font-size: 110%;
 }
 
-/* line 80 */
+/* line 116 */
 mjx-container[jax="CHTML"][display="true"] {
   font-size: 130%;
   font-weight: normal;
 }
 
-/* line 86 */
+/* line 122 */
 html, body {
   padding: 0;
   text-align: center;
@@ -371,32 +409,32 @@ html, body {
   line-height: 1.5;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 86 */
+  /* line 122 */
   html, body {
     line-height: 1.6;
   }
 }
 
-/* line 100 */
+/* line 136 */
 .pure-g {
   font-family: unset;
 }
-/* line 103 */
+/* line 139 */
 .pure-g [class*="pure-u"] {
   font-family: unset;
 }
 
-/* line 108 */
+/* line 144 */
 input {
   width: 100%;
 }
 
-/* line 113 */
+/* line 149 */
 button, input, select, textarea, .pure-menu-link {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
-/* line 117 */
+/* line 153 */
 .menu-container {
   display: block;
   cursor: pointer;
@@ -406,35 +444,35 @@ button, input, select, textarea, .pure-menu-link {
   user-select: none;
   max-width: 700px;
 }
-/* line 126 */
+/* line 162 */
 .menu-container .menu-link-home {
   white-space: normal;
 }
-/* line 130 */
+/* line 166 */
 .menu-container input {
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-/* line 136 */
+/* line 172 */
 .menu-container input:hover ~ .checkmark {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 140 */
+/* line 176 */
 .menu-container input:checked ~ .checkmark {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 144 */
+/* line 180 */
 .menu-container input:checked ~ ul {
   display: inline;
 }
-/* line 147 */
+/* line 183 */
 .menu-container input:checked ~ ul .pure-menu-item {
   display: block;
   height: unset;
 }
-/* line 154 */
+/* line 190 */
 .menu-container .checkmark {
   position: absolute;
   top: 0;
@@ -446,97 +484,97 @@ button, input, select, textarea, .pure-menu-link {
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* line 168 */
+/* line 204 */
 body {
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 300;
 }
-/* line 174 */
+/* line 210 */
 body nav ul {
   padding-inline-start: unset;
 }
 @media screen and (max-width: 380px) {
-  /* line 178 */
+  /* line 214 */
   body nav .menu-container {
     display: grid;
     grid-template-areas: "menu-sw title" "menu menu";
     grid-template-columns: 32px auto;
   }
-  /* line 186 */
+  /* line 222 */
   body nav a {
     grid-area: title;
   }
-  /* line 190 */
+  /* line 226 */
   body nav ul {
     grid-area: menu;
     display: none;
   }
 }
 @media not screen and (max-width: 380px) {
-  /* line 197 */
+  /* line 233 */
   body nav input, body nav .checkmark {
     display: none;
   }
 }
 
-/* line 206 */
+/* line 242 */
 .calc-form table {
   table-layout: fixed;
 }
-/* line 210 */
+/* line 246 */
 .calc-form tr {
   width: 100%;
 }
-/* line 213 */
+/* line 249 */
 .calc-form td {
   padding: 0 10px 0 10px;
   width: 50%;
 }
 
-/* line 221 */
+/* line 257 */
 .payments tr * {
   padding: 0 10px 0 10px;
   font-family: Consolas, "Deja Vu Sans Mono", "Ubuntu Mono", "Bitstream Vera Sans Mono", Monaco, "Courier New", monospace;
 }
-/* line 226 */
+/* line 262 */
 .payments tr:hover {
   background-color: lightgray;
 }
 
-/* line 231 */
+/* line 267 */
 .collapse-content {
   display: none;
 }
 
-/* line 235 */
+/* line 271 */
 .collapse-content.active {
   display: inherit;
 }
 
-/* line 239 */
+/* line 275 */
 .product-badge {
   max-width: 50%;
   height: auto;
 }
 
-/* line 244 */
+/* line 280 */
 .pure-u-1-2 {
   display: block;
 }
 
-/* line 248 */
+/* line 284 */
 .pure-menu-horizontal {
   white-space: unset;
 }
 
-/* line 252 */
+/* line 288 */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   font-weight: normal;
 }
 
-/* line 257 */
+/* line 293 */
 h1 {
   font-size: 32px;
   line-height: 1.2;
@@ -546,27 +584,27 @@ h1 {
   text-align: center;
 }
 
-/* line 266 */
+/* line 302 */
 h2 {
   font-size: 24px;
   padding: 16px 0;
   line-height: 1.2;
 }
 
-/* line 272 */
+/* line 308 */
 h3 {
   font-size: 20px;
   padding: 8px 0;
   line-height: 1.2;
 }
 
-/* line 278 */
+/* line 314 */
 a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: underline;
 }
 
-/* line 283 */
+/* line 319 */
 hr {
   width: 50%;
   background-color: rgba(0, 0, 0, 0.1);
@@ -574,7 +612,7 @@ hr {
   border: 0;
 }
 
-/* line 291 */
+/* line 327 */
 header, main, footer {
   padding: 5px;
   font-weight: 300;
@@ -582,19 +620,19 @@ header, main, footer {
   margin: 0 auto;
 }
 
-/* line 300 */
+/* line 336 */
 nav {
   text-align: left;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 306 */
+/* line 342 */
 .page, .posts, .pagination, .disclaimer {
   max-width: 700px;
 }
 
-/* line 310 */
+/* line 346 */
 .disclaimer {
   width: 100%;
   text-align: left;
@@ -609,7 +647,7 @@ nav {
   padding: 16px 16px 0 16px;
 }
 
-/* line 326 */
+/* line 362 */
 article {
   width: 100%;
   text-align: left;
@@ -622,23 +660,23 @@ article {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 339 */
+/* line 375 */
 article .meta {
   letter-spacing: -0.02em;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.44);
   font-style: italic;
 }
-/* line 348 */
+/* line 384 */
 article h2 a {
   text-decoration: none;
 }
-/* line 353 */
+/* line 389 */
 article .content {
   margin: 0 auto;
 }
 
-/* line 359 */
+/* line 395 */
 .posts article {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 4px 0px;
   border-radius: 3px;
@@ -646,49 +684,48 @@ article .content {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 366 */
+/* line 402 */
 .posts article h2 {
   font-weight: bold;
 }
 
-/* line 372 */
+/* line 408 */
 .pagination {
   margin-bottom: 30px;
 }
-/* line 375 */
+/* line 411 */
 .pagination .left {
   text-align: left;
 }
-/* line 378 */
+/* line 414 */
 .pagination .right {
   text-align: right;
 }
-/* line 381 */
+/* line 417 */
 .pagination a {
   display: inline-block;
   padding: 5px 5px;
   font-size: 12px;
   transition: 100ms background-color,100ms border-color,100ms color,100ms fill;
-  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 999em;
   color: rgba(0, 0, 0, 0.44);
   text-decoration: none;
 }
-/* line 391 */
+/* line 427 */
 .pagination a:hover {
   color: rgba(0, 0, 0, 0.8);
   border-color: rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
-/* line 399 */
+/* line 435 */
 .output::-webkit-inner-spin-button,
 .output::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 405 */
+/* line 441 */
 .output {
   -moz-appearance: textfield;
   background-color: white;

@@ -11,7 +11,9 @@ function makeForm(div, fields, calc) {
     calc(defaultValues);
     const PForm = () => {
         const [values, setValues] = useState(defaultValues);
-        const onChange = (name, value) => {
+        const onChange = (name, value, e) => {
+            if (fields[name].type == "number" && value == String(Number(value)))
+              value = Number(value);
             const newValues = {...values, [name]: value};
             calc(newValues);
             setValues(newValues);
@@ -21,7 +23,7 @@ function makeForm(div, fields, calc) {
             if (!fields[k].output)
                 res.push(h('tr', null,
                     h('td', null, fields[k].title),
-                    h('td', null, h('input', {...fields[k], [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k], onInput: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'])}))));
+                    h('td', null, h('input', {...fields[k], [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k], onChange: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'], e)}))));
             else
                 res.push(h('tr', null,
                     h('td', null, fields[k].title),
