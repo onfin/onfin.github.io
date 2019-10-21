@@ -86,7 +86,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/system</loc>
-            <lastmod>2019-10-18</lastmod>
+            <lastmod>2019-10-21</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -99,6 +99,12 @@
         <url>
             <loc>https://onfin.github.io/notes/referrals</loc>
             <lastmod>2019-10-18</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/accounting</loc>
+            <lastmod>2019-10-21</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -218,7 +224,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2019-10-18</lastmod>
+            <lastmod>2019-10-21</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

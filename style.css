@@ -371,7 +371,7 @@ ul {
 }
 
 /* line 96 */
-p, ol, ul, table {
+p, ol, ul, table, pre {
   margin: 0px auto 16px auto;
 }
 
@@ -661,22 +661,26 @@ article {
   padding: 20px;
 }
 /* line 375 */
+article header {
+  padding: unset;
+}
+/* line 379 */
 article .meta {
   letter-spacing: -0.02em;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.44);
   font-style: italic;
 }
-/* line 384 */
+/* line 388 */
 article h2 a {
   text-decoration: none;
 }
-/* line 389 */
+/* line 393 */
 article .content {
   margin: 0 auto;
 }
 
-/* line 395 */
+/* line 399 */
 .posts article {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 4px 0px;
   border-radius: 3px;
@@ -684,24 +688,33 @@ article .content {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 402 */
-.posts article h2 {
+/* line 406 */
+.posts article h1 {
+  font-size: 32px;
+  line-height: 1.2;
   font-weight: bold;
-}
-
-/* line 408 */
-.pagination {
-  margin-bottom: 30px;
-}
-/* line 411 */
-.pagination .left {
+  padding: 16px 0;
+  margin: 0 auto;
   text-align: left;
 }
 /* line 414 */
+.posts article h1 a {
+  text-decoration: none;
+}
+
+/* line 425 */
+.pagination {
+  margin-bottom: 30px;
+}
+/* line 428 */
+.pagination .left {
+  text-align: left;
+}
+/* line 431 */
 .pagination .right {
   text-align: right;
 }
-/* line 417 */
+/* line 434 */
 .pagination a {
   display: inline-block;
   padding: 5px 5px;
@@ -711,21 +724,21 @@ article .content {
   color: rgba(0, 0, 0, 0.44);
   text-decoration: none;
 }
-/* line 427 */
+/* line 444 */
 .pagination a:hover {
   color: rgba(0, 0, 0, 0.8);
   border-color: rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
-/* line 435 */
+/* line 452 */
 .output::-webkit-inner-spin-button,
 .output::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 441 */
+/* line 458 */
 .output {
   -moz-appearance: textfield;
   background-color: white;
