@@ -79,6 +79,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/capital</loc>
+            <lastmod>2019-10-22</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/aboutme</loc>
             <lastmod>2019-10-18</lastmod>
             <changefreq>monthly</changefreq>
@@ -224,7 +230,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2019-10-21</lastmod>
+            <lastmod>2019-10-22</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
