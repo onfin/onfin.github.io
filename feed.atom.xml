@@ -3,12 +3,33 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2019-10-22T21:17:53.579372</updated>
+<updated>2019-10-28T20:51:04.881610</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>2019-10-28. Очередной финансовый дайджест</title>
+        <link href="https://onfin.github.io/blog/2019-10-28" rel="alternate"/>
+        <id>https://onfin.github.io/blog/2019-10-28</id>
+        <updated>2019-10-28T20:51:04.881610</updated>
+        <published>2019-10-28T00:00:00</published>
+        <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.dripinvesting.org/Tools/Tools.asp&#34;&gt;The DRiP Investing Resource Center&lt;/a&gt; — ссылки на различные реусрсы и инструменты о дивидендном инвестировании.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mrfreeat33.com/&#34;&gt;Mr. Free at 33&lt;/a&gt; — очередной американец, который накопил на пенсию к 33-м и теперь из Тайланда всех учит делать так же.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.economicprinciples.org/&#34;&gt;Economic Principles&lt;/a&gt; — статьи и беседы Рэя Далио.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.google.com/presentation/d/1lD68xon6h-W_v2W6Jw3R2lx3dqTc89mivMXMhoiK5nw&#34;&gt;Презентация&lt;/a&gt; и &lt;a href=&#34;https://telegra.ph/mmt-05-07&#34;&gt;статья&lt;/a&gt; о Современной денежной теории.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://hranidengi.ru/oplata-kartoj-za-granicej-rf-2019-vybiraem-luchshuju-kartu/&#34;&gt;Оплата картой за границей РФ 2019: выбираем лучшую карту&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/learn/biznes-na-svoi-mosigra&#34;&gt;Бизнес на свои: онлайн-курс&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://data.worldbank.org/&#34;&gt;World Bank Open Data&lt;/a&gt; — экономическая статисика от Всемирного Банка&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/1FmUsmz2k-x9OydO7RcUSeo_bHc0bWRYVgy-IMkEaKcE/edit?usp=sharing&#34;&gt;Проверил&lt;/a&gt; утверждение Баффета о том, что &lt;a href=&#34;https://fortune.com/2011/06/12/buffett-how-inflation-swindles-the-equity-investor-fortune-classics-1977/&#34;&gt;владельцы акций страдают от инфляции не меньше владельцев облигаций&lt;/a&gt;. Внутри года зависимости вроде бы и нет (за исключением периодов очень высокой инфляции), а вот на десятилетнем скользящем окне явно нарисовался... экономический цикл: падение доходности с растущей инфляцией и рост доходности с падающей.&lt;/li&gt;
+&lt;li&gt;Сообщили, что исследование, в котором сделан вывод, что из-за несвоевременных входов-выходов доходность инвесторов в фонды отстаёт вплоть до 4%г от доходности фондов, &lt;a href=&#34;https://www.kitces.com/blog/does-the-dalbar-study-grossly-overstate-the-behavior-gap-guest-post&#34;&gt;ошибочно&lt;/a&gt;.  Пересчитал. Действительно, &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1deWKSBPsHp451gETMBao6WELB96PqsmogU8nKOPW9xg/edit?usp=sharing&#34;&gt;разницы в доходности между регулярными довнесениями и хаотичными метаниями нет практически никакой&lt;/a&gt;, если не учитывать спреды, налоги и комиссии, разумеется.&lt;/li&gt;
+&lt;li&gt;Джо Виггинс напоминает, что &lt;a href=&#34;https://behaviouralinvestment.com/2019/08/21/your-investment-time-horizon-might-be-shorter-than-you-think/&#34;&gt;горизонт инвестиций может оказаться ближе, чем предполагалось&lt;/a&gt;. Причём даже не из-за внешних обстоятельств, а из-за нервозности самого инвестора.&lt;/li&gt;
+&lt;li&gt;Конспект Рэя Далио о &lt;a href=&#34;https://road2riches.ru/info/vzglyad-reya-dalio-o-vliyanii-kitaya-na-mirovuju-ekonomiku/&#34;&gt;состоянии мировой экономики, конце доллара и Китае&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Любопытный разбор &lt;a href=&#34;https://smart-lab.ru/blog/566200.php&#34;&gt;некоторых американских ETF&lt;/a&gt;. Автор усердно зазывает людей в какие-то свои фьючерсные спекуляции, но про asset allocation пишет вполне дельные вещи.&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    </entry>
     <entry>
         <title>Зачем нужен капитал</title>
         <link href="https://onfin.github.io/notes/capital" rel="alternate"/>
@@ -206,19 +227,5 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</summary>
-    </entry>
-    <entry>
-        <title>2018-12-16</title>
-        <link href="https://onfin.github.io/blog/2018-12-16" rel="alternate"/>
-        <id>https://onfin.github.io/blog/2018-12-16</id>
-        <updated>2019-09-26T13:23:03.628110</updated>
-        <published>2018-12-16T00:00:00</published>
-        <summary type="html">&lt;p&gt;Все самые ударные пенсионные калькуляторы &lt;a href=&#34;/literacy/intro&#34;&gt;в одной статье&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;сколько я получу ежемесячного пассивного дохода через заданное количество лет на свой капитал и на свои ежемесячные вложения,&lt;/li&gt;
-&lt;li&gt;сколько мне нужно сейчас откладывать, чтобы получить желаемый пассивный доход через заданное колиечество лет,&lt;/li&gt;
-&lt;li&gt;через сколько лет я достигну финансовой независимости, если буду вкладывать указанную часть от доходов.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;А ещё пришёл разбор &lt;a href=&#34;https://spydell.livejournal.com/662627.html&#34;&gt;текущего состояния американской экономики&lt;/a&gt;. Вкратце. Великая Рецессия, начавшаяся 10 лет назад, наконец-то закончилась. Экономика США набирает обороты.&lt;/p&gt;</summary>
     </entry>
 </feed>

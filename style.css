@@ -1,11 +1,4 @@
 /*
- * Medius - Responsive theme for pelican
- * https://github.com/onuraslan/medius
- *
- * Copyright (C) 2015  Onur Aslan  <onur@onur.im>
- * Licensed under MIT
- */
-/*
 	HTML5 Reset :: style.css
 	----------------------------------------------------------
 	We have learned much from/been inspired by/taken code where offered from:
@@ -306,7 +299,7 @@ b, strong {
   font-weight: 400;
   src: url(/images/share.woff) format("woff");
 }
-/* line 39 */
+/* line 31 */
 i.share {
   font-family: 'ShareIcons' !important;
   speak: none;
@@ -319,21 +312,21 @@ i.share {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 52 */
+/* line 44 */
 .share-buttons {
   text-align: right;
 }
-/* line 54 */
+/* line 46 */
 .share-buttons a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.44);
 }
-/* line 58 */
+/* line 50 */
 .share-buttons a:hover {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 65 */
+/* line 57 */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
   margin: 0;
   padding: 0;
@@ -344,69 +337,69 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   background: transparent;
 }
 
-/* line 75 */
+/* line 67 */
 abbr[title] {
   border-bottom: none;
 }
 
-/* line 79 */
+/* line 71 */
 strong {
   font-weight: bold;
 }
 
-/* line 83 */
+/* line 75 */
 em {
   font-style: italic;
 }
 
-/* line 87 */
+/* line 79 */
 strong em, em strong {
   font-weight: bold;
   font-style: italic;
 }
 
-/* line 94 */
+/* line 86 */
 ol {
   padding-inline-start: 32px;
 }
 
-/* line 98 */
+/* line 90 */
 ul {
   padding-inline-start: 32px;
   list-style-type: circle;
 }
 
-/* line 103 */
+/* line 95 */
 p, ol, ul, table, pre {
   margin: 0px auto 16px auto;
 }
 
-/* line 107 */
+/* line 99 */
 .clearfix {
   overflow: auto;
 }
 
-/* line 111 */
+/* line 103 */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 
-/* line 117 */
+/* line 109 */
 mjx-container[jax="CHTML"] {
   font-weight: 700;
   margin: unset !important;
   font-size: 110%;
 }
 
-/* line 123 */
+/* line 115 */
 mjx-container[jax="CHTML"][display="true"] {
   font-size: 130%;
   font-weight: normal;
 }
 
-/* line 129 */
+/* line 121 */
 html, body {
   padding: 0;
   text-align: center;
@@ -415,32 +408,32 @@ html, body {
   line-height: 1.5;
 }
 @media screen and (min-width: 35.5em) {
-  /* line 129 */
+  /* line 121 */
   html, body {
     line-height: 1.6;
   }
 }
 
-/* line 143 */
+/* line 135 */
 .pure-g {
   font-family: unset;
 }
-/* line 146 */
+/* line 138 */
 .pure-g [class*="pure-u"] {
   font-family: unset;
 }
 
-/* line 151 */
+/* line 143 */
 input {
   width: 100%;
 }
 
-/* line 156 */
+/* line 148 */
 button, input, select, textarea, .pure-menu-link {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
-/* line 160 */
+/* line 152 */
 .menu-container {
   display: block;
   cursor: pointer;
@@ -450,35 +443,35 @@ button, input, select, textarea, .pure-menu-link {
   user-select: none;
   max-width: 700px;
 }
-/* line 169 */
+/* line 161 */
 .menu-container .menu-link-home {
   white-space: normal;
 }
-/* line 173 */
+/* line 165 */
 .menu-container input {
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-/* line 179 */
+/* line 171 */
 .menu-container input:hover ~ .checkmark {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 183 */
+/* line 175 */
 .menu-container input:checked ~ .checkmark {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 187 */
+/* line 179 */
 .menu-container input:checked ~ ul {
   display: inline;
 }
-/* line 190 */
+/* line 182 */
 .menu-container input:checked ~ ul .pure-menu-item {
   display: block;
   height: unset;
 }
-/* line 197 */
+/* line 189 */
 .menu-container .checkmark {
   position: absolute;
   top: 0;
@@ -490,97 +483,97 @@ button, input, select, textarea, .pure-menu-link {
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* line 211 */
+/* line 203 */
 body {
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 300;
 }
-/* line 217 */
+/* line 209 */
 body nav ul {
   padding-inline-start: unset;
 }
 @media screen and (max-width: 380px) {
-  /* line 221 */
+  /* line 213 */
   body nav .menu-container {
     display: grid;
     grid-template-areas: "menu-sw title" "menu menu";
     grid-template-columns: 32px auto;
   }
-  /* line 229 */
+  /* line 221 */
   body nav a {
     grid-area: title;
   }
-  /* line 233 */
+  /* line 225 */
   body nav ul {
     grid-area: menu;
     display: none;
   }
 }
 @media not screen and (max-width: 380px) {
-  /* line 240 */
+  /* line 232 */
   body nav input, body nav .checkmark {
     display: none;
   }
 }
 
-/* line 249 */
+/* line 241 */
 .calc-form table {
   table-layout: fixed;
 }
-/* line 253 */
+/* line 245 */
 .calc-form tr {
   width: 100%;
 }
-/* line 256 */
+/* line 248 */
 .calc-form td {
   padding: 0 10px 0 10px;
   width: 50%;
 }
 
-/* line 264 */
+/* line 256 */
 .payments tr * {
   padding: 0 10px 0 10px;
   font-family: Consolas, "Deja Vu Sans Mono", "Ubuntu Mono", "Bitstream Vera Sans Mono", Monaco, "Courier New", monospace;
 }
-/* line 269 */
+/* line 261 */
 .payments tr:hover {
   background-color: lightgray;
 }
 
-/* line 274 */
+/* line 266 */
 .collapse-content {
   display: none;
 }
 
-/* line 278 */
+/* line 270 */
 .collapse-content.active {
   display: inherit;
 }
 
-/* line 282 */
+/* line 274 */
 .product-badge {
   max-width: 50%;
   height: auto;
 }
 
-/* line 287 */
+/* line 279 */
 .pure-u-1-2 {
   display: block;
 }
 
-/* line 291 */
+/* line 283 */
 .pure-menu-horizontal {
   white-space: unset;
 }
 
-/* line 295 */
+/* line 287 */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   font-weight: normal;
 }
 
-/* line 300 */
+/* line 292 */
 h1 {
   font-size: 32px;
   line-height: 1.2;
@@ -590,27 +583,27 @@ h1 {
   text-align: center;
 }
 
-/* line 309 */
+/* line 301 */
 h2 {
   font-size: 24px;
   padding: 16px 0;
   line-height: 1.2;
 }
 
-/* line 315 */
+/* line 307 */
 h3 {
   font-size: 20px;
   padding: 8px 0;
   line-height: 1.2;
 }
 
-/* line 321 */
+/* line 313 */
 a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: underline;
 }
 
-/* line 326 */
+/* line 318 */
 hr {
   width: 50%;
   background-color: rgba(0, 0, 0, 0.1);
@@ -618,7 +611,7 @@ hr {
   border: 0;
 }
 
-/* line 334 */
+/* line 326 */
 header, main, footer {
   padding: 5px;
   font-weight: 300;
@@ -626,19 +619,19 @@ header, main, footer {
   margin: 0 auto;
 }
 
-/* line 343 */
+/* line 335 */
 nav {
   text-align: left;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 349 */
+/* line 341 */
 .page, .posts, .pagination, .disclaimer {
   max-width: 700px;
 }
 
-/* line 353 */
+/* line 345 */
 .disclaimer {
   width: 100%;
   text-align: left;
@@ -653,7 +646,7 @@ nav {
   padding: 16px 16px 0 16px;
 }
 
-/* line 369 */
+/* line 361 */
 article {
   width: 100%;
   text-align: left;
@@ -666,27 +659,27 @@ article {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 382 */
+/* line 374 */
 article header {
   padding: unset;
 }
-/* line 386 */
+/* line 378 */
 article .meta {
   letter-spacing: -0.02em;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.44);
   font-style: italic;
 }
-/* line 395 */
+/* line 387 */
 article h2 a {
   text-decoration: none;
 }
-/* line 400 */
+/* line 392 */
 article .content {
   margin: 0 auto;
 }
 
-/* line 406 */
+/* line 398 */
 .posts article {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 4px 0px;
   border-radius: 3px;
@@ -694,7 +687,7 @@ article .content {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 413 */
+/* line 405 */
 .posts article h1 {
   font-size: 32px;
   line-height: 1.2;
@@ -703,24 +696,24 @@ article .content {
   margin: 0 auto;
   text-align: left;
 }
-/* line 421 */
+/* line 413 */
 .posts article h1 a {
   text-decoration: none;
 }
 
-/* line 432 */
+/* line 424 */
 .pagination {
   margin-bottom: 30px;
 }
-/* line 435 */
+/* line 427 */
 .pagination .left {
   text-align: left;
 }
-/* line 438 */
+/* line 430 */
 .pagination .right {
   text-align: right;
 }
-/* line 441 */
+/* line 433 */
 .pagination a {
   display: inline-block;
   padding: 5px 5px;
@@ -730,21 +723,21 @@ article .content {
   color: rgba(0, 0, 0, 0.44);
   text-decoration: none;
 }
-/* line 451 */
+/* line 443 */
 .pagination a:hover {
   color: rgba(0, 0, 0, 0.8);
   border-color: rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
-/* line 459 */
+/* line 451 */
 .output::-webkit-inner-spin-button,
 .output::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 465 */
+/* line 457 */
 .output {
   -moz-appearance: textfield;
   background-color: white;

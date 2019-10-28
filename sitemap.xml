@@ -116,7 +116,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/pages/sources</loc>
-            <lastmod>2019-10-14</lastmod>
+            <lastmod>2019-10-28</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -223,6 +223,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/blog/2019-10-28</loc>
+            <lastmod>2019-10-28</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/blog/2018-12-02</loc>
             <lastmod>2019-09-26</lastmod>
             <changefreq>monthly</changefreq>
@@ -230,7 +236,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2019-10-22</lastmod>
+            <lastmod>2019-10-28</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
