@@ -49,7 +49,7 @@
             <h1>Сложный процент</h1>
             <div class="meta">
                     <p class="description">Калькуляторы сложного процента и сроков достижения финансовой независимости</p>
-                        <p> Обновлено: <time>2019-10-14</time> </p>
+                        <p> Обновлено: <time>2019-10-29</time> </p>
             </div>
         </header>
 
@@ -76,7 +76,7 @@
             default: 12
         },
         effectiveRate: {
-            title: "Эффективная реальная годовая ставка, %г",
+            title: "Эффективная годовая ставка, %г",
             output: true
         }
     },
@@ -96,7 +96,7 @@
             default: 100000
         },
         rate: {
-            title: "Эффективная реальная годовая ставка, %г",
+            title: "Эффективная годовая ставка, %г",
             step: 0.5,
             default: 5
         },
@@ -131,7 +131,7 @@
             default: 10000
         },
         rate: {
-            title: "Эффективная реальная годовая ставка, %г",
+            title: "Эффективная годовая ставка, %г",
             step: 0.5,
             default: 5
         },
@@ -156,7 +156,43 @@
     })
 </script>
 
-<h2 id="_4">Требуемые ежемесячные сбережения для заданного пассивного дохода</h2>
+<h2 id="_4">Требуемые ежемесячные сбережения для накопления заданной суммы</h2>
+<div id="targetSum"  class="calc-form"></div>
+
+<script type="text/javascript">
+    makeForm(targetSum, {
+        targetSum: {
+            title: "Целевая сумма",
+            step: 1000,
+            default: 5000000
+        },
+        capital: {
+            title: "Уже накоплено",
+            step: 1000,
+            default: 1000000
+        },
+        rate: {
+            title: "Эффективная годовая ставка, %г",
+            step: 0.5,
+            default: 5
+        },
+        years: {
+            title: "Срок сбережений, лет",
+            step: 1,
+            default: 15
+        },
+        neededSavings: {
+            title: "Необходимо ежемесячно откладывать",
+            output: true
+        }
+    },
+    function(f) {
+        const r = 1+f.rate/100;
+        f.neededSavings = ((f.targetSum - f.capital*Math.pow(r, f.years)) * (1-r) / (1-Math.pow(r, f.years)) / 12).toFixed(0);
+    })
+</script>
+
+<h2 id="_5">Требуемые ежемесячные сбережения для заданного пассивного дохода</h2>
 <div id="targetIncome"  class="calc-form"></div>
 
 <script type="text/javascript">
@@ -172,7 +208,7 @@
             default: 100000
         },
         rate: {
-            title: "Эффективная реальная годовая ставка, %г",
+            title: "Эффективная годовая ставка, %г",
             step: 0.5,
             default: 5
         },
@@ -192,7 +228,7 @@
     })
 </script>
 
-<h2 id="_5">Срок достижения финансовой независимости</h2>
+<h2 id="_6">Срок достижения финансовой независимости</h2>
 <div id="retirement"  class="calc-form"></div>
 
 <script type="text/javascript">
@@ -218,7 +254,7 @@
             default: 100000
         },
         rate: {
-            title: "Эффективная реальная годовая ставка, %г",
+            title: "Эффективная годовая ставка, %г",
             step: 0.5,
             default: 5
         },

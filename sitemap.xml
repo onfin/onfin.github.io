@@ -103,6 +103,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/finplan</loc>
+            <lastmod>2019-10-30</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/recklessness</loc>
             <lastmod>2019-10-29</lastmod>
             <changefreq>monthly</changefreq>
@@ -128,7 +134,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/compounding</loc>
-            <lastmod>2019-10-14</lastmod>
+            <lastmod>2019-10-29</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -242,7 +248,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2019-10-29</lastmod>
+            <lastmod>2019-10-30</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
