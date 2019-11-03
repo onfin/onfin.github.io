@@ -73,6 +73,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/literacy/brokers</loc>
+            <lastmod>2019-11-03</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/literacy/notaboutmoney</loc>
             <lastmod>2019-10-14</lastmod>
             <changefreq>monthly</changefreq>
