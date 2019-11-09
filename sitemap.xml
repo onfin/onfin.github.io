@@ -55,6 +55,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/literacy/taxes</loc>
+            <lastmod>2019-11-09</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/literacy/instruments</loc>
             <lastmod>2019-10-14</lastmod>
             <changefreq>monthly</changefreq>
