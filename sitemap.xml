@@ -68,7 +68,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/instruments</loc>
-            <lastmod>2019-10-14</lastmod>
+            <lastmod>2019-11-17</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -135,6 +135,12 @@
         <url>
             <loc>https://onfin.github.io/notes/recklessness</loc>
             <lastmod>2019-10-29</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/marketprice</loc>
+            <lastmod>2019-11-17</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -272,13 +278,13 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2019-11-11</lastmod>
+            <lastmod>2019-11-17</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://onfin.github.io/blog/pages/2</loc>
-            <lastmod>2019-11-11</lastmod>
+            <lastmod>2019-11-17</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
