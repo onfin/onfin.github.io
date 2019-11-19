@@ -17,7 +17,7 @@
 
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2018-12-14" />
-        <meta property="og:article:modified_time" content="2019-11-09" />
+        <meta property="og:article:modified_time" content="2019-11-19" />
 <meta property="og:title" content="Использование и расчёт банковских карт" />
 <meta property="og:url" content="https://onfin.github.io/literacy/cardscalc" />
 
@@ -58,7 +58,7 @@
             <h1>Использование и расчёт банковских карт</h1>
             <div class="meta">
                     <p class="description">Выгоды и опасности банковских карт. Как правильно выбрать и использовать банковскую карту. Стратегия набора веера карт. Расчёт выгоды от использования дебетовых и кредитных карт.</p>
-                        <p> Обновлено: <time>2019-11-09</time> </p>
+                        <p> Обновлено: <time>2019-11-19</time> </p>
             </div>
         </header>
 
@@ -124,9 +124,9 @@
 
 <p>На ваши деньги в банке должен начисляться нормальный рыночный процент. Это хоть как-то замедляет их обесценение.
 Если ваш среднемесячный остаток в банке
-<input id="balance" type="number" value=10000 step=1000 style="width: 4em;" onChange="calcPercentLoss()" />р,
+<input id="balance" type="number" value=10000 step=1000 style="width: 5em;" onChange="calcPercentLoss()" />р,
 а начисляемый на него процент ниже среднерыночной ставки по накопительным счетам и доходным картам на
-<input id="percent-diff" type="number" value=3 step=0.5 style="width: 2em;" onChange="calcPercentLoss()" />%г,
+<input id="percent-diff" type="number" value=3 step=0.5 style="width: 2.5em;" onChange="calcPercentLoss()" />%г,
 то ваши потери за год на недополученных процентах —
 <b><span id="percent-loss">1663.83</span></b>р.</p>
 <p>Это сразу исключает любимые зарплатные Сбер, ВТБ и Альфу из списка банков, в которых можно оформлять базовую карточку. Но карточка Сбера обычно нужна — для денежных переводов внутри Сбера и оплаты коммуналки без комиссии (бывает, что это единственный надёжный способ, а коммуналка — заметная статья в бюджете), можно её и как кошелёк использовать — банкоматы почти везде. Только не надо держать больших остатков на ней: с 3Кр уже больше 80р/мес получается стоимость использования за счёт потерь на процентах, в Tele2 1Гб мобильного интернета вне пакетов стоит 70.</p>
@@ -154,15 +154,15 @@
 </script>
 
 <p>Если среднемесячный остаток на карте или сопутствующем накопительном счёте
-<input id="debit-balance" type="number" value=15000 step=1000 style="width: 4em;" onChange="calcDebitCard()" />р,
+<input id="debit-balance" type="number" value=15000 step=1000 style="width: 5em;" onChange="calcDebitCard()" />р,
 среднемесячные расходы по карте
-<input id="debit-spending" type="number" value=15000 step=1000 style="width: 4em;" onChange="calcDebitCard()" />р,
+<input id="debit-spending" type="number" value=15000 step=1000 style="width: 5em;" onChange="calcDebitCard()" />р,
 процент на остаток
-<input id="debit-percent" type="number" value=6 step=0.5 style="width: 2em;" onChange="calcDebitCard()" />%г,
+<input id="debit-percent" type="number" value=6 step=0.5 style="width: 2.5em;" onChange="calcDebitCard()" />%г,
 средний эффективный кэшбэк
-<input id="debit-cashback" type="number" value=2 step=0.5 style="width: 2em;" onChange="calcDebitCard()" />%,
+<input id="debit-cashback" type="number" value=2 step=0.5 style="width: 2.5em;" onChange="calcDebitCard()" />%,
 стоимоть годового обслуживания и накладные расходы
-<input id="debit-fee" type="number" value=500 step=100 style="width: 3em;" onChange="calcDebitCard()" />р,
+<input id="debit-fee" type="number" value=500 step=100 style="width: 4em;" onChange="calcDebitCard()" />р,
 то получаем доход от карты в год
 <b><span id="debit-income">4000.00</span></b>р
 или
@@ -200,27 +200,27 @@
 </script>
 
 <p>Месячные расходы:
-<input id="cr-exp" type="number" value=15000 step=1000 style="width: 4em;" onChange="calcCreditCard()" />р,
+<input id="cr-exp" type="number" value=15000 step=1000 style="width: 5em;" onChange="calcCreditCard()" />р,
 процент на остаток:
-<input id="cr-percent" type="number" value=6 step=0.5 style="width: 2em;" onChange="calcCreditCard()" />%г,
+<input id="cr-percent" type="number" value=6 step=0.5 style="width: 2.5em;" onChange="calcCreditCard()" />%г,
 средний эффективный кэшбэк:
-<input id="cr-cb-rate" type="number" value=3 step=0.5 style="width: 2em;" onChange="calcCreditCard()" />%,
+<input id="cr-cb-rate" type="number" value=3 step=0.5 style="width: 2.5em;" onChange="calcCreditCard()" />%,
 продолжительность грейса:
-<input id="cr-grace" type="number" value=55 step=5 style="width: 2.5em;" onChange="calcCreditCard()" />дней
+<input id="cr-grace" type="number" value=55 step=5 style="width: 3em;" onChange="calcCreditCard()" />дней
 (грейс честный
 <input id="cr-grace-type" type="checkbox" checked style="width: 1em;" onChange="calcCreditCard()">),
 процент к ежемесячному погашению:
-<input id="cr-mid" type="number" value=5 step=5 style="width: 2em;" onChange="calcCreditCard()" />%,
+<input id="cr-mid" type="number" value=5 step=5 style="width: 2.5em;" onChange="calcCreditCard()" />%,
 годовое обслуживание:
-<input id="cr-fee" type="number" value=2000 step=100 style="width: 3em;" onChange="calcCreditCard()" />р,
+<input id="cr-fee" type="number" value=2000 step=100 style="width: 4em;" onChange="calcCreditCard()" />р,
 дополнительная экономия:
-<input id="cr-bonus" type="number" value=6000 step=100 style="width: 3em;" onChange="calcCreditCard()" />р;
+<input id="cr-bonus" type="number" value=6000 step=100 style="width: 4em;" onChange="calcCreditCard()" />р;
 итого процентов, кэшбэка и бонусов в год
 <b><span id="cr-result">10967.5</span></b>р,
 добавочная доходность
 <b><span id="cr-result-pc">6.09</span></b>%.</p>
 <p>При этом один вылет из грейса (при ставке
-<input id="cr-interest" type="number" value=35 step=1 style="width: 2em;" onChange="calcCreditCard()" />%г
+<input id="cr-interest" type="number" value=35 step=1 style="width: 3em;" onChange="calcCreditCard()" />%г
 ) выставит вас на
 <b><span id="cr-debt">802.08</span></b>р
 долга, и ещё
