@@ -55,7 +55,7 @@
             <h1>Сложный процент</h1>
             <div class="meta">
                     <p class="description">Калькуляторы сложного процента и сроков достижения финансовой независимости</p>
-                        <p> Обновлено: <time>2019-10-29</time> </p>
+                        <p> Обновлено: <time>2019-11-23</time> </p>
             </div>
         </header>
 
@@ -65,6 +65,8 @@
 <script type="text/javascript" src="/js/hooks.umd.js"></script>
 
 <script type="text/javascript" src="/js/forms.js"></script>
+
+<script type="text/javascript" src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
 
 <h2 id="_1">Эффективная годовая ставка</h2>
 <div id="effectiveRate"  class="calc-form"></div>
@@ -280,6 +282,202 @@
         f.retirement = Math.ceil( Math.log( (tc(f.expence)*(r-1)+s)/(f.capital*(r-1)+s) ) / Math.log(r) );
         f.freedom = Math.ceil( Math.log( (tc(f.targetIncome)*(r-1)+s)/(f.capital*(r-1)+s) ) / Math.log(r) );
     })
+</script>
+
+<h2 id="_7">Финансовый профиль жизни обычного человека и инвестора</h2>
+<div id="lifeProfile" class="calc-form"></div>
+
+<div style="min-height: 256px">
+    <canvas id="canvas"></canvas>
+</div>
+
+<script type="text/javascript">
+  makeForm(lifeProfile, {
+    start: {
+      title: "Начало карьеры, лет",
+      type: "number",
+      step: 1,
+      default: 20
+    },
+    startSum: {
+      title: "Первый заработок, Кр/мес",
+      type: "number",
+      step: 1,
+      default: 15
+    },
+    peak: {
+      title: "Пик доходов, лет",
+      type: "number",
+      step: 1,
+      default: 35
+    },
+    peakSum: {
+      title: "Доход на пике, Кр/мес",
+      type: "number",
+      step: 1,
+      default: 150
+    },
+    peakEnd: {
+      title: "Начало заката, лет",
+      type: "number",
+      step: 1,
+      default: 50
+    },
+    retireBefore: {
+      title: "Доход перед пенсией, Кр/мес",
+      type: "number",
+      step: 1,
+      default: 50
+    },
+    retire: {
+      title: "Выход на пенсию, лет",
+      type: "number",
+      step: 1,
+      default: 65
+    },
+    retireAfter: {
+      title: "Пенсия, Кр/мес",
+      type: "number",
+      step: 1,
+      default: 15
+    },
+    end: {
+      title: "Смерть, лет",
+      type: "number",
+      step: 1,
+      default: 100
+    },
+    savingsRate: {
+      title: "Норма сбережений, %",
+      type: "number",
+      step: 1,
+      default: 30
+    },
+    yield: {
+      title: "Доходность сбережений, %г",
+      type: "number",
+      step: 1,
+      default: 5,
+      max: 5
+    },
+    spent_o: {
+        title: "Потратил за жизнь обычный человек, Мр",
+        type: "number",
+        output: true
+    },
+    spent_i: {
+        title: "Потратил за жизнь инвестор, Мр",
+        type: "number",
+        output: true
+    }
+    },
+    function(f) {
+        let spent_o = [];
+        let spent_i = [];
+        let invested = [];
+        let labels = [];
+
+        const sr = f.savingsRate/100;
+        const r = f.yield/100;
+        const rr = 1+r;
+        for (let k = f.start; k < f.end; ++k) {
+            labels.push(k);
+            let inc = 0;
+            if (k < f.peak)
+                inc = (f.startSum + (f.peakSum-f.startSum)/(f.peak-f.start)*(k-f.start))*12;
+            else if (k < f.peakEnd)
+                inc = f.peakSum*12;
+            else if (k < f.retire)
+                inc = (f.peakSum + (f.retireBefore-f.peakSum)/(f.retire-f.peakEnd)*(k-f.peakEnd))*12;
+            else
+                inc = f.retireAfter*12;
+
+            spent_o.push(inc);
+            const inc_i = inc + (invested.length === 0 ? 0 : invested[invested.length-1]) * r;
+            let sp_i = inc * (1-sr);
+            if (spent_i.length > 0) { // && spent_i[spent_i.length-1] > sp_i) {
+                const cap = invested[invested.length-1];
+                const t = f.end-k;
+                const dc = rr === 1 ? cap/t : cap * rr**t * (1-rr) / (1-rr**t);  //cap/(f.end-k);
+                sp_i = Math.min(dc+sp_i, Math.max(spent_i[spent_i.length-1]*1.1, sp_i));
+            }
+            spent_i.push(sp_i);
+            invested.push((invested.length === 0 ? 0 : invested[invested.length-1]) + inc_i-sp_i);
+        }
+
+        f.spent_o = (spent_o.reduce((a,b) => a+b, 0)/1e3).toFixed(3);
+        f.spent_i = (spent_i.reduce((a,b) => a+b, 0)/1e3).toFixed(3);
+
+        var lineChartData = {
+            labels: labels,
+            datasets: [{
+                label: 'Расходы без сбережений',
+                borderColor: 'red',
+                backgroundColor: 'red',
+                fill: false,
+                data: spent_o.map(v => (v/12).toFixed(0)),
+                yAxisID: 'spent',
+            }, {
+                label: 'Расходы со сбережениями',
+                borderColor: 'green',
+                backgroundColor: 'green',
+                fill: false,
+                data: spent_i.map(v => (v/12).toFixed(0)),
+                yAxisID: 'spent'
+            }, {
+                label: 'Капитал',
+                borderColor: 'blue',
+                backgroundColor: 'blue',
+                fill: false,
+                data: invested.map(v => (v/1000).toFixed(3)),
+                yAxisID: 'capital'
+            }]
+        };
+
+        var ctx = document.getElementById('canvas').getContext('2d');
+        if (window.myLine)
+            window.myLine.destroy();
+        window.myLine = Chart.Line(ctx, {
+            data: lineChartData,
+            options: {
+                responsive: true,
+                hoverMode: 'index',
+                maintainAspectRatio: false,
+                onResize: function(chart, size) {
+                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + 'px';
+                },
+                stacked: false,
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'spent',
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Расходы, Кр/мес"
+                        }
+                    }, {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        id: 'capital',
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Капитал, Мр"
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Годы"
+                        }
+                    }]
+                }
+            }
+        });
+    }
+  )
 </script>
         </div>
         <aside>
