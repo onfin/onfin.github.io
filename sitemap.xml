@@ -175,12 +175,6 @@
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/dividend_stocks</loc>
-            <lastmod>2019-12-30</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
             <loc>https://onfin.github.io/notes/accounting</loc>
             <lastmod>2019-12-29</lastmod>
             <changefreq>monthly</changefreq>
