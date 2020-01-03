@@ -80,7 +80,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/deposits</loc>
-            <lastmod>2019-10-14</lastmod>
+            <lastmod>2020-01-02</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -99,6 +99,24 @@
         <url>
             <loc>https://onfin.github.io/literacy/notaboutmoney</loc>
             <lastmod>2019-11-09</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/deposits2</loc>
+            <lastmod>2020-01-02</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/cash</loc>
+            <lastmod>2020-01-02</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/bonds</loc>
+            <lastmod>2020-01-03</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -200,7 +218,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/compounding</loc>
-            <lastmod>2019-11-23</lastmod>
+            <lastmod>2020-01-02</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
