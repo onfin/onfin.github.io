@@ -109,6 +109,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/literacy/instruments/realty</loc>
+            <lastmod>2020-01-07</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/literacy/instruments/cash</loc>
             <lastmod>2020-01-04</lastmod>
             <changefreq>monthly</changefreq>
@@ -116,7 +122,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/instruments/gold</loc>
-            <lastmod>2020-01-04</lastmod>
+            <lastmod>2020-01-05</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
