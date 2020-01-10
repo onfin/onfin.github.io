@@ -242,7 +242,13 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators</loc>
-            <lastmod>2019-11-23</lastmod>
+            <lastmod>2020-01-10</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators/fees_taxes_effect</loc>
+            <lastmod>2020-01-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

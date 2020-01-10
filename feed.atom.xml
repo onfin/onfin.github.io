@@ -3,12 +3,261 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2020-01-07T21:38:44.810500</updated>
+<updated>2020-01-10T13:09:26.750689</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Влияние комиссий и налогов на финансовый результат</title>
+        <link href="https://onfin.github.io/calculators/fees_taxes_effect" rel="alternate"/>
+        <id>https://onfin.github.io/calculators/fees_taxes_effect</id>
+        <updated>2020-01-10T13:09:26.750689</updated>
+        <published>2020-01-10</published>
+        <summary type="html">&lt;script type=&#34;text/javascript&#34; src=&#34;/js/preact.umd.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/hooks.umd.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/forms.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://www.chartjs.org/dist/2.9.3/Chart.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;netReturn&#34; class=&#34;calc-form&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;При самостоятельном управлении в комиссии за управление нужно учесть депозитарную комиссию и комиссию брокера за реинвестирование дивидендов и ребалансировки.&lt;/p&gt;
+&lt;h2 id=&#34;_1&#34;&gt;Прирост капитала&lt;/h2&gt;
+&lt;div style=&#34;min-height: 256px&#34;&gt;
+    &lt;canvas id=&#34;capChart&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;_2&#34;&gt;Потери капитала на налогах и комиссиях&lt;/h3&gt;
+&lt;div style=&#34;min-height: 256px&#34;&gt;
+    &lt;canvas id=&#34;lossChart&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  makeForm(netReturn, {
+    infl: {
+      title: &#34;Инфляция, %г&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 5
+    },
+    appr: {
+      title: &#34;Ценовая доходность сверх инфляции, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.5,
+      default: 1
+    },
+    div: {
+      title: &#34;Дивидендная доходность, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.5,
+      default: 5
+    },
+    fee: {
+      title: &#34;Комиссия за управление, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.1,
+      default: 0.2
+    },
+    tax: {
+      title: &#34;Налог, %&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 13
+    },
+    netReturn: {
+        title: &#34;Эффективная доходность для инвестора, %г&#34;,
+        type: &#34;number&#34;,
+        output: true
+    }
+    },
+    function(f) {
+        const grossCap = [1];
+        const capAfterDivTax = [1];
+        const capAfterFees = [1];
+        const capAfterIncomeTax = [1];
+        let labels = [0];
+
+        const divTaxLoss = [0];
+        const feesLoss = [0];
+        const incomeTaxLoss = [0];
+
+        const inflRate = 1 + f.infl/100;
+        const appr = (1 + f.appr/100)*inflRate;
+        const div = 1 + f.div/100;
+        const fee = 1 - f.fee/100;
+        const tax = 1 - f.tax/100;
+
+        for (let i = 0; i &lt; 40; ++i) {
+            labels.push(i+1);
+            grossCap.push(grossCap[grossCap.length-1]*appr*div);
+            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax));
+            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*tax)*fee);
+            capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1]*tax + 1-tax);
+
+            divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
+            feesLoss.push((1-capAfterFees[capAfterFees.length-1]/grossCap[grossCap.length-1])*100 - divTaxLoss[divTaxLoss.length-1]);
+            incomeTaxLoss.push((1-capAfterIncomeTax[capAfterIncomeTax.length-1]/grossCap[grossCap.length-1])*100 - feesLoss[feesLoss.length-1] - divTaxLoss[divTaxLoss.length-1]);
+        }
+
+        let infl = 1;
+        for (let i = 0; i &lt; grossCap.length; ++i) {
+            grossCap[i] /= infl;
+            capAfterDivTax[i] /= infl;
+            capAfterFees[i] /= infl;
+            capAfterIncomeTax[i] /= infl;
+            infl *= inflRate;
+        }
+
+        f.netReturn = ((Math.pow(capAfterIncomeTax[capAfterIncomeTax.length-1], 1/40)-1)*100).toFixed(2);
+
+        const capChartData = {
+            labels: labels,
+            datasets: [{
+                label: &#39;Без комиссий и налогов&#39;,
+                borderColor: &#39;#1f77b4&#39;,
+                backgroundColor: &#39;#1f77b4&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: grossCap.map(v =&gt; v.toFixed(2))
+            }, {
+                label: &#39;После налога на дивиденды&#39;,
+                borderColor: &#39;#ff7f0e&#39;,
+                backgroundColor: &#39;#ff7f0e&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: capAfterDivTax.map(v =&gt; v.toFixed(2))
+            }, {
+                label: &#39;После комиссий за управление&#39;,
+                borderColor: &#39;#2ca02c&#39;,
+                backgroundColor: &#39;#2ca02c&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: capAfterFees.map(v =&gt; v.toFixed(2))
+            }, {
+                label: &#39;После налога на доход от продажи&#39;,
+                borderColor: &#39;#d62728&#39;,
+                backgroundColor: &#39;#d62728&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: capAfterIncomeTax.map(v =&gt; v.toFixed(2))
+            }]
+        };
+
+        var ctx = document.getElementById(&#39;capChart&#39;).getContext(&#39;2d&#39;);
+        if (window.capChartLines)
+            window.capChartLines.destroy();
+        window.capChartLines = Chart.Line(ctx, {
+            data: capChartData,
+            options: {
+                responsive: true,
+                hoverMode: &#39;index&#39;,
+                maintainAspectRatio: false,
+                onResize: function(chart, size) {
+                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
+                },
+                stacked: false,
+                tooltips: {
+                    mode: &#34;index&#34;
+                },
+                scales: {
+                    yAxes: [{
+                        type: &#39;linear&#39;,
+                        display: true,
+                        position: &#39;left&#39;,
+                        id: &#39;spent&#39;,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Прирост капитала, раз&#34;
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Годы&#34;
+                        }
+                    }]
+                }
+            }
+        });
+
+        const lossChartData = {
+            labels: labels,
+            datasets: [{
+                label: &#39;Налог на дивиденды&#39;,
+                borderColor: &#39;#ff7f0e&#39;,
+                backgroundColor: &#39;#ff7f0e55&#39;,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                fill: true,
+                data: divTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
+            }, {
+                label: &#39;Комиссии за управление&#39;,
+                borderColor: &#39;#2ca02c&#39;,
+                backgroundColor: &#39;#2ca02c55&#39;,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                fill: true,
+                data: feesLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
+            }, {
+                label: &#39;Налог на доход от продажи&#39;,
+                borderColor: &#39;#d62728&#39;,
+                backgroundColor: &#39;#d6272855&#39;,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                fill: true,
+                data: incomeTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
+            }]
+        };
+
+        var ctx = document.getElementById(&#39;lossChart&#39;).getContext(&#39;2d&#39;);
+        if (window.lossChartLines)
+            window.lossChartLines.destroy();
+        window.lossChartLines = Chart.Line(ctx, {
+            data: lossChartData,
+            options: {
+                responsive: true,
+                hoverMode: &#39;index&#39;,
+                maintainAspectRatio: false,
+                onResize: function(chart, size) {
+                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
+                },
+                stacked: false,
+                tooltips: {
+                    mode: &#34;index&#34;
+                },
+                scales: {
+                    yAxes: [{
+                        type: &#39;linear&#39;,
+                        display: true,
+                        position: &#39;left&#39;,
+                        id: &#39;spent&#39;,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Потери, % от капитала&#34;
+                        },
+                        stacked: true
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Годы&#34;
+                        }
+                    }]
+                }
+            }
+        });
+    }
+  )
+&lt;/script&gt;</summary>
+    </entry>
     <entry>
         <title>Недвижимость</title>
         <link href="https://onfin.github.io/literacy/instruments/realty" rel="alternate"/>
@@ -845,35 +1094,5 @@
 &lt;li&gt;Акции покупаются постепенно, не больше чем на 10% совокупного капитала в месяц, и без попыток угадывания момента (всё равно всё выровняется).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;На что рассчитывать &lt;em&gt;в среднем&lt;/em&gt;? На временно́м горизонте порядка 20 лет и больше для хорошо диверсифицированного портфеля — на доходность в размере &amp;lt;инфляция&amp;gt;+5%г (если сначала что-то сильно выросло, оно потом сильно провалится: примерно первые десять лет риски только растут, потом снижаются), максимальную просадку капитала — 80%, максимальную просадку дивидендного потока — 25%, время восстановления капитала из просадки — 10 лет. Это по историческим данным и с учётом инфляции. В номинальных цифрах даже просадку на 75% можно не заметить (те, кто в 2008 покупал недвижимость, не очень заметили, что она с тех пор в четыре раза обесценилась, если пересчитать в рубли на день покупки).&lt;/p&gt;</summary>
-    </entry>
-    <entry>
-        <title>Математика диверсификации: портфельный эффект и ребалансировка между акциями</title>
-        <link href="https://onfin.github.io/notes/diversification_math" rel="alternate"/>
-        <id>https://onfin.github.io/notes/diversification_math</id>
-        <updated>2019-12-29T22:13:15.990283</updated>
-        <published>2019-12-07</published>
-        <summary type="html">&lt;p&gt;Рассмотрим сферический фондовый рынок в вакууме, на котором обращается 10000 акций. Т.к. рынок сферический и в вакууме, компании никак не взаимодействуют ни друг с другом, ни со внешней средой, дивидендов поэтому тоже не платят. Вся доходность акции заключается в изменении её цены. Цены изменяются независимо друг от друга на случайный процент вверх или вниз каждый шаг моделирования. Начальной ценой всех акций возьмём 1.&lt;/p&gt;
-&lt;p&gt;Вот так будет выглядеть распределение цен акций через условные 10 лет моделирования.&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/price_dist_10y.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;График этот читается так: у (Bx-Ax) процентов акций цена лежит между Ay и By. Чтобы показать относительное изменение цены по оси y взята логарифмическая шкала. Тонкими линиями показаны половина акций и начальная цена.&lt;/p&gt;
-&lt;p&gt;Как ожидалось, вероятности получения прибыли и убытка по каждой акции совершенно одинаковы. С одинаковой вероятностью можно получить как увеличение своего капитала в 10 раз, так и его уменьшение в те же 10 раз. Так выглядит этот график, если по оси y взять доходность отдельных акций в процентах годовых (на всех графиках цены и доходности условны и используются только для сравнения сценариев, хотя я откалибровал параметры модели так, чтобы среднерыночная доходность соответствала ≈5%г).&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/yield_dist_10y.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;С течением времени среднегодовая доходность возвращается к средней.&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/yield_dist_30y.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Но абсолютные результаты лучших и худших акций продолжают разбегаться всё сильнее, хотя большинство акций так и болтаются около своей начальной цены (&lt;a href=&#34;https://thebamalliance.com/blog/the-perils-of-owning-individual-stocks/&#34;&gt;как это и происходит на настоящем рынке&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/price_dist_30y.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Теперь посмотрим, что получается если мы начнём собирать из этих акций портфели (случайные, разумеется).&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/portfolio_yield_dist_30y.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;С увеличением количества акций в портфеле, его ожидаемая доходность всё время растёт и снижается неопределённость в её размере. Мы не делали никаких ребалансировок и довложений, мы просто включили в портфель N независимо ведущих себя акций. Почему так получается? Ответ очевиден: убытки ограничены (стоимость акции не может стать отрицательной), а прибыль — нет.&lt;/p&gt;
-&lt;p&gt;Теперь посмотрим на эффект довложений и ребалансировок (портфель из 50 акций, довложение/ребалансировка ежегодно в размере начальной суммы, расчёт на 30 лет).&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/portfolio_yields.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Как видно, регулярные довложения (временна́я диверсификация) увеличивают и доходность, и стабильность портфеля. При этом докупка пропорционально капитализации имеет несколько неоднозначный эффект: она хороша, только если в портфеле оказалось достаточно «акций-счастливчиков». А ребалансировка (т.е. выравнивание долей акций в портфеле) показывает совершенно выдающиеся результаты по повышению доходности и снижению риска портфеля, только в 30% исходов проигрывая портфелям, взвешенным по капитализации.&lt;/p&gt;
-&lt;p&gt;Однако, эти результаты справедливы только в случае, если успех или неуспех компаний определяется случайными факторами. Если мы будем считать, что некоторые компании лучше других способны зарабатывать прибыль, а некоторые, наоборот, только уничтожают акционерный капитал, то получим следующие результаты.&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/diversification_math/portfolio_yields_fate.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Оптимальным вариантом становится портфель, взвешенный и пополняемый пропорционально рыночной капитализации, а ребалансировка приводит только к снижению доходности.&lt;/p&gt;
-&lt;p&gt;Однако доходность акции на рынке определяется не только деятельностью компании, но и рыночной оценкой её будущего. Т.е. даже совсем убыточная компания может быть оценена так низко, что при своём банкротстве даст инвестору среднерыночную прибыль — от распродажи имущества. Учитывая это, полученный результат можно переформулировать так: на абсолютно эффективном рынке, где вся информация о деятельности компании и возможных рисках включена в цену, поэтому ожидаемые доходности всех акций одинаковы и вся разница в фактической доходности определяется случайными факторами (чей эффект вновь тут же включается в цену) — наилучшим будет равновзвешенный портфель акций; на неэффективном рынке, где присутствует систематическая пере- или недооценка отдельных компаний — наилучшим будет портфель, взвешенный по капитализации.&lt;/p&gt;
-&lt;p&gt;Получилось забавное противоречие с господствующими школами мысли. Ведь сторонники гипотезы эффективного рынка выступают за взвешенные по капитализации портфели, а сторонники поиска неэффективностей — как минимум — за равновзвешенные. Поддержание равной балансовой стоимости акций выглядит неплохим нейтральным вариантом.&lt;/p&gt;
-&lt;p&gt;Какой из этих вариантов лучше соответствует реальному рынку — я не знаю. На данный момент я руководствуюсь промежуточной моделью: считаю колебания капитализаций отраслей случайными и ребалансируюсь между отраслями, но внутри отраслей ребалансировку не произвожу. Однако сложность этой модели меня утомляет и я хочу её упростить.&lt;/p&gt;
-&lt;p&gt;Исходники моделей: &lt;a href=&#34;/notes/diversification_math/vol.py&#34;&gt;рынок&lt;/a&gt;, &lt;a href=&#34;/notes/diversification_math/vol2.py&#34;&gt;довложения и ребалансировка&lt;/a&gt;.&lt;/p&gt;</summary>
     </entry>
 </feed>
