@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
+            <loc>https://onfin.github.io/literacy</loc>
+            <lastmod>2020-01-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes</loc>
+            <lastmod>2020-02-01</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io</loc>
             <lastmod>2019-10-14</lastmod>
             <changefreq>monthly</changefreq>
@@ -50,13 +62,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/moneytransfer</loc>
-            <lastmod>2019-11-09</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy</loc>
-            <lastmod>2019-10-16</lastmod>
+            <lastmod>2020-01-15</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -133,6 +139,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/inflation</loc>
+            <lastmod>2020-02-04</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/workersfactories</loc>
             <lastmod>2019-12-29</lastmod>
             <changefreq>monthly</changefreq>
@@ -165,12 +177,6 @@
         <url>
             <loc>https://onfin.github.io/notes/fairprice</loc>
             <lastmod>2019-12-29</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes</loc>
-            <lastmod>2019-10-18</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
