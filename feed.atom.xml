@@ -3,12 +3,75 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2020-02-10T15:28:35.379364</updated>
+<updated>2020-02-10T16:46:00.868951</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+
+    <entry>
+        <title>Стоимость облигаций</title>
+        <link href="https://onfin.github.io/calculators/bond_price" rel="alternate"/>
+        <id>https://onfin.github.io/calculators/bond_price</id>
+        <updated>2020-02-10T16:46:00.868951</updated>
+        <published>2020-02-10</published>
+        <summary type="html">&lt;p&gt;Рыночная ставка даётся без учёта капитализации (реинвестирования). Для заданного срока погашения можно посмотреть её на &lt;a href=&#34;https://www.moex.com/ru/marketdata/indices/state/g-curve/&#34;&gt;кривой бескупонной доходности&lt;/a&gt;.&lt;/p&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/preact.umd.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/hooks.umd.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/forms.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;bondPrice&#34; class=&#34;calc-form&#34;&gt;&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  makeForm(bondPrice, {
+    faceValue: {
+      title: &#34;Номинал облигации&#34;,
+      type: &#34;number&#34;,
+      step: 1000,
+      default: 1000
+    },
+    duration: {
+      title: &#34;Лет до погашения&#34;,
+      type: &#34;number&#34;,
+      step: 0.25,
+      default: 2
+    },
+    faceRate: {
+      title: &#34;Ставка купона, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.25,
+      default: 5
+    },
+    couponsYear: {
+      title: &#34;Количество выплат в год&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 2
+    },
+    marketRate: {
+      title: &#34;Рыночная ставка, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.5,
+      default: 7
+    },
+    bondPrice: {
+      title: &#34;Рыночная стоимость&#34;,
+      type: &#34;number&#34;,
+      output: true,
+      default: 0
+    }},
+    function(f) {
+        const c = f.faceValue * f.faceRate/100 / f.couponsYear;
+        const mr = f.marketRate/100  / f.couponsYear ;
+        const n = f.couponsYear * f.duration;
+        f.bondPrice = (c * (1-Math.pow(1+mr, -n))/(mr) + f.faceValue*Math.pow(1+mr, -n)).toFixed(2);
+    }
+  )
+&lt;/script&gt;</summary>
+    </entry>
 
     <entry>
         <title>Анатомия доходности</title>
@@ -136,7 +199,7 @@
         <title>Влияние комиссий и налогов на финансовый результат</title>
         <link href="https://onfin.github.io/calculators/fees_taxes_effect" rel="alternate"/>
         <id>https://onfin.github.io/calculators/fees_taxes_effect</id>
-        <updated>2020-01-10T13:09:26.750689</updated>
+        <updated>2020-02-10T16:20:23.676590</updated>
         <published>2020-01-10</published>
         <summary type="html">&lt;script type=&#34;text/javascript&#34; src=&#34;/js/preact.umd.js&#34;&gt;&lt;/script&gt;
 
@@ -148,7 +211,6 @@
 
 &lt;div id=&#34;netReturn&#34; class=&#34;calc-form&#34;&gt;&lt;/div&gt;
 
-&lt;p&gt;При самостоятельном управлении в комиссии за управление нужно учесть депозитарную комиссию и комиссию брокера за реинвестирование дивидендов и ребалансировки.&lt;/p&gt;
 &lt;h2 id=&#34;_1&#34;&gt;Прирост капитала&lt;/h2&gt;
 &lt;div style=&#34;min-height: 256px&#34;&gt;
     &lt;canvas id=&#34;capChart&#34;&gt;&lt;/canvas&gt;
@@ -179,11 +241,23 @@
       step: 0.5,
       default: 5
     },
-    fee: {
-      title: &#34;Комиссия за управление, %г&#34;,
+    trade_fee: {
+      title: &#34;Брокерская комиссия с оборота, %&#34;,
       type: &#34;number&#34;,
-      step: 0.1,
-      default: 0.2
+      step: 0.01,
+      default: 0.05
+    },
+    turnover: {
+      title: &#34;Оборачиваемость портфеля, % в год&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 5
+    },
+    fee: {
+      title: &#34;Комиссия за управление и хранение, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.01,
+      default: 0.01
     },
     tax: {
       title: &#34;Налог, %&#34;,
@@ -198,27 +272,31 @@
     }
     },
     function(f) {
+        const inflRate = 1 + f.infl/100;
+        const appr = (1 + f.appr/100)*inflRate;
+        const turnover = f.turnover/100;
+        const div = 1 + f.div/100;
+        const fee = 1 - f.fee/100;
+        const trade_fee = f.trade_fee/100;
+        const tax = 1 - f.tax/100;
+
         const grossCap = [1];
         const capAfterDivTax = [1];
-        const capAfterFees = [1];
-        const capAfterIncomeTax = [1];
+        const capAfterFees = [1*(1-trade_fee)];
+        const capAfterIncomeTax = [1*(1-trade_fee)];
         let labels = [0];
 
         const divTaxLoss = [0];
         const feesLoss = [0];
         const incomeTaxLoss = [0];
 
-        const inflRate = 1 + f.infl/100;
-        const appr = (1 + f.appr/100)*inflRate;
-        const div = 1 + f.div/100;
-        const fee = 1 - f.fee/100;
-        const tax = 1 - f.tax/100;
-
         for (let i = 0; i &lt; 40; ++i) {
             labels.push(i+1);
             grossCap.push(grossCap[grossCap.length-1]*appr*div);
             capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax));
-            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*tax)*fee);
+            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*tax)*fee
+                              - capAfterFees[capAfterFees.length-1]*(div-1)*tax*trade_fee
+                              - capAfterFees[capAfterFees.length-1]*2*turnover*trade_fee);
             capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1]*tax + 1-tax);
 
             divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
@@ -256,7 +334,7 @@
                 pointHitRadius: 10,
                 data: capAfterDivTax.map(v =&gt; v.toFixed(2))
             }, {
-                label: &#39;После комиссий за управление&#39;,
+                label: &#39;После комиссий&#39;,
                 borderColor: &#39;#2ca02c&#39;,
                 backgroundColor: &#39;#2ca02c&#39;,
                 fill: false,
@@ -322,7 +400,7 @@
                 fill: true,
                 data: divTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
             }, {
-                label: &#39;Комиссии за управление&#39;,
+                label: &#39;Комиссии&#39;,
                 borderColor: &#39;#2ca02c&#39;,
                 backgroundColor: &#39;#2ca02c55&#39;,
                 pointRadius: 0,
@@ -731,15 +809,6 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;</summary>
-    </entry>
-
-    <entry>
-        <title></title>
-        <link href="https://onfin.github.io/blog" rel="alternate"/>
-        <id>https://onfin.github.io/blog</id>
-        <updated>2020-01-01T16:44:11.918122</updated>
-        <published>2020-01-01T16:44:11.918122</published>
-        <summary type="html">None</summary>
     </entry>
 
 </feed>

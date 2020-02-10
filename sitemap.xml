@@ -254,13 +254,19 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators</loc>
-            <lastmod>2020-01-10</lastmod>
+            <lastmod>2020-02-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/fees_taxes_effect</loc>
-            <lastmod>2020-01-10</lastmod>
+            <lastmod>2020-02-10</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators/bond_price</loc>
+            <lastmod>2020-02-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
