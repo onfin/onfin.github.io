@@ -16,7 +16,7 @@
     <meta property="og:description" content="Калькулятор реальной доходности с учётом комиссий и налогов" />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-01-10" />
-        <meta property="og:article:modified_time" content="2020-01-10" />
+        <meta property="og:article:modified_time" content="2020-02-10" />
 <meta property="og:title" content="Влияние комиссий и налогов на финансовый результат" />
 <meta property="og:url" content="https://onfin.github.io/calculators/fees_taxes_effect" />
 
@@ -57,7 +57,7 @@
             <h1>Влияние комиссий и налогов на финансовый результат</h1>
             <div class="meta">
                     <p class="description">Калькулятор реальной доходности с учётом комиссий и налогов</p>
-                    <p> Обновлено: <time>2020-01-10</time> </p>
+                    <p> Обновлено: <time>2020-02-10</time> </p>
 
             </div>
         </header>
@@ -73,7 +73,6 @@
 
 <div id="netReturn" class="calc-form"></div>
 
-<p>При самостоятельном управлении в комиссии за управление нужно учесть депозитарную комиссию и комиссию брокера за реинвестирование дивидендов и ребалансировки.</p>
 <h2 id="_1">Прирост капитала</h2>
 <div style="min-height: 256px">
     <canvas id="capChart"></canvas>
@@ -104,11 +103,23 @@
       step: 0.5,
       default: 5
     },
-    fee: {
-      title: "Комиссия за управление, %г",
+    trade_fee: {
+      title: "Брокерская комиссия с оборота, %",
       type: "number",
-      step: 0.1,
-      default: 0.2
+      step: 0.01,
+      default: 0.05
+    },
+    turnover: {
+      title: "Оборачиваемость портфеля, % в год",
+      type: "number",
+      step: 1,
+      default: 5
+    },
+    fee: {
+      title: "Комиссия за управление и хранение, %г",
+      type: "number",
+      step: 0.01,
+      default: 0.01
     },
     tax: {
       title: "Налог, %",
@@ -123,27 +134,31 @@
     }
     },
     function(f) {
+        const inflRate = 1 + f.infl/100;
+        const appr = (1 + f.appr/100)*inflRate;
+        const turnover = f.turnover/100;
+        const div = 1 + f.div/100;
+        const fee = 1 - f.fee/100;
+        const trade_fee = f.trade_fee/100;
+        const tax = 1 - f.tax/100;
+
         const grossCap = [1];
         const capAfterDivTax = [1];
-        const capAfterFees = [1];
-        const capAfterIncomeTax = [1];
+        const capAfterFees = [1*(1-trade_fee)];
+        const capAfterIncomeTax = [1*(1-trade_fee)];
         let labels = [0];
 
         const divTaxLoss = [0];
         const feesLoss = [0];
         const incomeTaxLoss = [0];
 
-        const inflRate = 1 + f.infl/100;
-        const appr = (1 + f.appr/100)*inflRate;
-        const div = 1 + f.div/100;
-        const fee = 1 - f.fee/100;
-        const tax = 1 - f.tax/100;
-
         for (let i = 0; i < 40; ++i) {
             labels.push(i+1);
             grossCap.push(grossCap[grossCap.length-1]*appr*div);
             capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax));
-            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*tax)*fee);
+            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*tax)*fee
+                              - capAfterFees[capAfterFees.length-1]*(div-1)*tax*trade_fee
+                              - capAfterFees[capAfterFees.length-1]*2*turnover*trade_fee);
             capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1]*tax + 1-tax);
 
             divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
@@ -181,7 +196,7 @@
                 pointHitRadius: 10,
                 data: capAfterDivTax.map(v => v.toFixed(2))
             }, {
-                label: 'После комиссий за управление',
+                label: 'После комиссий',
                 borderColor: '#2ca02c',
                 backgroundColor: '#2ca02c',
                 fill: false,
@@ -247,7 +262,7 @@
                 fill: true,
                 data: divTaxLoss.map(v => v && v.toFixed(2))
             }, {
-                label: 'Комиссии за управление',
+                label: 'Комиссии',
                 borderColor: '#2ca02c',
                 backgroundColor: '#2ca02c55',
                 pointRadius: 0,
