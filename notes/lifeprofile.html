@@ -16,7 +16,7 @@
     <meta property="og:description" content="Как будут изменяться в течение жизни доходы, расходы и капитал если делать сбережения и если их не делать." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2019-11-21" />
-        <meta property="og:article:modified_time" content="2019-12-29" />
+        <meta property="og:article:modified_time" content="2020-02-13" />
 <meta property="og:title" content="Финансовый профиль жизни обычного человека и инвестора" />
 <meta property="og:url" content="https://onfin.github.io/notes/lifeprofile" />
 
@@ -57,7 +57,7 @@
             <h1>Финансовый профиль жизни обычного человека и инвестора</h1>
             <div class="meta">
                     <p class="description">Как будут изменяться в течение жизни доходы, расходы и капитал если делать сбережения и если их не делать.</p>
-                    <p> Обновлено: <time>2019-12-29</time> </p>
+                    <p> Обновлено: <time>2020-02-13</time> </p>
 
             </div>
         </header>
@@ -203,20 +203,26 @@
                 fill: false,
                 data: spent_o.map(v => (v/12).toFixed(0)),
                 yAxisID: 'spent',
+                pointRadius: 0,
+                pointHitRadius: 10,
             }, {
                 label: 'Расходы со сбережениями',
                 borderColor: 'green',
                 backgroundColor: 'green',
                 fill: false,
                 data: spent_i.map(v => (v/12).toFixed(0)),
-                yAxisID: 'spent'
+                yAxisID: 'spent',
+                pointRadius: 0,
+                pointHitRadius: 10,
             }, {
                 label: 'Капитал',
                 borderColor: 'blue',
                 backgroundColor: 'blue',
                 fill: false,
                 data: invested.map(v => (v/1000).toFixed(3)),
-                yAxisID: 'capital'
+                yAxisID: 'capital',
+                pointRadius: 0,
+                pointHitRadius: 10,
             }]
         };
 
@@ -231,6 +237,9 @@
                 maintainAspectRatio: false,
                 onResize: function(chart, size) {
                     chart.canvas.parentNode.style.height = Math.max(size.height, 256) + 'px';
+                },
+                tooltips: {
+                    mode: "index"
                 },
                 stacked: false,
                 scales: {

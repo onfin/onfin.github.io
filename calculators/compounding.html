@@ -54,7 +54,7 @@
             <h1>Сложный процент</h1>
             <div class="meta">
                     <p class="description">Калькуляторы сложного процента и сроков достижения финансовой независимости</p>
-                    <p> Обновлено: <time>2020-01-02</time> </p>
+                    <p> Обновлено: <time>2020-02-13</time> </p>
 
             </div>
         </header>
@@ -417,20 +417,26 @@
                 fill: false,
                 data: spent_o.map(v => (v/12).toFixed(0)),
                 yAxisID: 'spent',
+                pointRadius: 0,
+                pointHitRadius: 10,
             }, {
                 label: 'Расходы со сбережениями',
                 borderColor: 'green',
                 backgroundColor: 'green',
                 fill: false,
                 data: spent_i.map(v => (v/12).toFixed(0)),
-                yAxisID: 'spent'
+                yAxisID: 'spent',
+                pointRadius: 0,
+                pointHitRadius: 10,
             }, {
                 label: 'Капитал',
                 borderColor: 'blue',
                 backgroundColor: 'blue',
                 fill: false,
                 data: invested.map(v => (v/1000).toFixed(3)),
-                yAxisID: 'capital'
+                yAxisID: 'capital',
+                pointRadius: 0,
+                pointHitRadius: 10,
             }]
         };
 
@@ -445,6 +451,9 @@
                 maintainAspectRatio: false,
                 onResize: function(chart, size) {
                     chart.canvas.parentNode.style.height = Math.max(size.height, 256) + 'px';
+                },
+                tooltips: {
+                    mode: "index"
                 },
                 stacked: false,
                 scales: {
