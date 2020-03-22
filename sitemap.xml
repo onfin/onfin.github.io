@@ -200,7 +200,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/lifeprofile</loc>
-            <lastmod>2020-02-13</lastmod>
+            <lastmod>2020-02-18</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -248,13 +248,13 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/compounding</loc>
-            <lastmod>2020-02-13</lastmod>
+            <lastmod>2020-02-18</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/credits</loc>
-            <lastmod>2019-10-14</lastmod>
+            <lastmod>2020-02-18</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -266,7 +266,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/fees_taxes_effect</loc>
-            <lastmod>2020-02-10</lastmod>
+            <lastmod>2020-02-23</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -309,6 +309,12 @@
         <url>
             <loc>https://onfin.github.io/blog/2018-12-14</loc>
             <lastmod>2019-09-26</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2020-03-22</loc>
+            <lastmod>2020-03-22</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -380,7 +386,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2020-01-01</lastmod>
+            <lastmod>2020-03-22</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

@@ -16,7 +16,7 @@
     <meta property="og:description" content="Калькулятор реальной доходности с учётом комиссий и налогов" />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-01-10" />
-        <meta property="og:article:modified_time" content="2020-02-10" />
+        <meta property="og:article:modified_time" content="2020-02-23" />
 <meta property="og:title" content="Влияние комиссий и налогов на финансовый результат" />
 <meta property="og:url" content="https://onfin.github.io/calculators/fees_taxes_effect" />
 
@@ -57,7 +57,7 @@
             <h1>Влияние комиссий и налогов на финансовый результат</h1>
             <div class="meta">
                     <p class="description">Калькулятор реальной доходности с учётом комиссий и налогов</p>
-                    <p> Обновлено: <time>2020-02-10</time> </p>
+                    <p> Обновлено: <time>2020-02-23</time> </p>
 
             </div>
         </header>
@@ -69,7 +69,7 @@
 
 <script type="text/javascript" src="/js/forms.js"></script>
 
-<script type="text/javascript" src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+<script type="text/javascript" src="/js/Chart.min.js"></script>
 
 <div id="netReturn" class="calc-form"></div>
 
@@ -104,7 +104,7 @@
       default: 5
     },
     trade_fee: {
-      title: "Брокерская комиссия с оборота, %",
+      title: "Брокерская комиссия с оборота и спред, %",
       type: "number",
       step: 0.01,
       default: 0.05
@@ -151,15 +151,20 @@
         const divTaxLoss = [0];
         const feesLoss = [0];
         const incomeTaxLoss = [0];
+        let turnoverTaxAcc = 0;
 
         for (let i = 0; i < 40; ++i) {
             labels.push(i+1);
             grossCap.push(grossCap[grossCap.length-1]*appr*div);
-            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax));
-            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*tax)*fee
+            const turnoverTax = capAfterDivTax[capAfterDivTax.length-1]*(appr-1)*Math.min(turnover,1)*(1-tax);
+            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax)
+             - turnoverTax);
+            turnoverTaxAcc += turnoverTax;
+            capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
                               - capAfterFees[capAfterFees.length-1]*(div-1)*tax*trade_fee
                               - capAfterFees[capAfterFees.length-1]*2*turnover*trade_fee);
-            capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1]*tax + 1-tax);
+            const incomeTax = (capAfterFees[capAfterFees.length-1]-1)*(1-tax);
+            capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1] - Math.max(incomeTax-turnoverTaxAcc, 0));
 
             divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
             feesLoss.push((1-capAfterFees[capAfterFees.length-1]/grossCap[grossCap.length-1])*100 - divTaxLoss[divTaxLoss.length-1]);
@@ -188,7 +193,7 @@
                 pointHitRadius: 10,
                 data: grossCap.map(v => v.toFixed(2))
             }, {
-                label: 'После налога на дивиденды',
+                label: 'После налога на дивиденды и спекулятивную прибыль',
                 borderColor: '#ff7f0e',
                 backgroundColor: '#ff7f0e',
                 fill: false,
@@ -196,7 +201,7 @@
                 pointHitRadius: 10,
                 data: capAfterDivTax.map(v => v.toFixed(2))
             }, {
-                label: 'После комиссий',
+                label: 'После комиссий и потерь на спредах',
                 borderColor: '#2ca02c',
                 backgroundColor: '#2ca02c',
                 fill: false,
@@ -254,7 +259,7 @@
         const lossChartData = {
             labels: labels,
             datasets: [{
-                label: 'Налог на дивиденды',
+                label: 'Налог на дивиденды и спекулятивную прибыль',
                 borderColor: '#ff7f0e',
                 backgroundColor: '#ff7f0e55',
                 pointRadius: 0,
@@ -262,7 +267,7 @@
                 fill: true,
                 data: divTaxLoss.map(v => v && v.toFixed(2))
             }, {
-                label: 'Комиссии',
+                label: 'Комиссии и потери на спредах',
                 borderColor: '#2ca02c',
                 backgroundColor: '#2ca02c55',
                 pointRadius: 0,
