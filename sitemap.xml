@@ -313,6 +313,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/blog/2020-04-02</loc>
+            <lastmod>2020-04-02</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/blog/2020-03-22</loc>
             <lastmod>2020-03-22</lastmod>
             <changefreq>monthly</changefreq>
@@ -386,7 +392,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2020-03-22</lastmod>
+            <lastmod>2020-04-02</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

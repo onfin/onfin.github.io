@@ -695,10 +695,6 @@ article .meta {
   color: rgba(0, 0, 0, 0.44);
   font-style: italic;
 }
-/* line 412 */
-article h2 a {
-  text-decoration: none;
-}
 /* line 417 */
 article .content {
   margin: 0 auto;
