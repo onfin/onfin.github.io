@@ -8,7 +8,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes</loc>
-            <lastmod>2020-02-12</lastmod>
+            <lastmod>2020-04-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -223,6 +223,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/piketti</loc>
+            <lastmod>2020-04-10</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/accounting</loc>
             <lastmod>2019-12-29</lastmod>
             <changefreq>monthly</changefreq>
@@ -302,7 +308,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog/2020-01-01</loc>
-            <lastmod>2020-01-01</lastmod>
+            <lastmod>2020-04-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -320,7 +326,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog/2020-04-02</loc>
-            <lastmod>2020-04-02</lastmod>
+            <lastmod>2020-04-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -398,7 +404,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog</loc>
-            <lastmod>2020-04-02</lastmod>
+            <lastmod>2020-04-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
