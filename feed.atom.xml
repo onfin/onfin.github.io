@@ -3,12 +3,279 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2020-04-11T13:40:28.501703</updated>
+<updated>2020-04-18T15:02:24.356319</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+
+    <entry>
+        <title>Влияние комиссий и налогов на финансовый результат ETF</title>
+        <link href="https://onfin.github.io/calculators/etf_taxation" rel="alternate"/>
+        <id>https://onfin.github.io/calculators/etf_taxation</id>
+        <updated>2020-04-18T15:02:24.356319</updated>
+        <published>2020-04-18</published>
+        <summary type="html">&lt;p&gt;Все дивиденды реинвестируются, в конце срока удержания фонд продаётся. Если фонд аккумулирует дивиденды, поле «налог на выплаченные дивиденды» установить в 0. Предполагается, что брокерская комиссия уплачивается только при самостоятельном реинвестировании, а для аккумулирующих фондов транзакционные издержки учтены в комиссии за управление.&lt;/p&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/preact.umd.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/hooks.umd.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/forms.js&#34;&gt;&lt;/script&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;/js/Chart.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;netReturn&#34; class=&#34;calc-form&#34;&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;_1&#34;&gt;Прирост капитала&lt;/h2&gt;
+&lt;div style=&#34;min-height: 256px&#34;&gt;
+    &lt;canvas id=&#34;capChart&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;_2&#34;&gt;Потери капитала на налогах и комиссиях&lt;/h3&gt;
+&lt;div style=&#34;min-height: 256px&#34;&gt;
+    &lt;canvas id=&#34;lossChart&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  makeForm(netReturn, {
+    deval: {
+      title: &#34;Средняя скорость обесценения национальной валюты относительно валюты ETF, %г&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 5
+    },
+    appr: {
+      title: &#34;Ценовая доходность сверх эффекта валютных курсов, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.5,
+      default: 1
+    },
+    div: {
+      title: &#34;Дивидендная доходность, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.5,
+      default: 5
+    },
+    trade_fee: {
+      title: &#34;Брокерская комиссия с оборота и спред, %&#34;,
+      type: &#34;number&#34;,
+      step: 0.01,
+      default: 0.05
+    },
+    fee: {
+      title: &#34;Комиссия за управление, %г&#34;,
+      type: &#34;number&#34;,
+      step: 0.01,
+      default: 0.05
+    },
+    inner_tax: {
+      title: &#34;Налог на дивиденды внутри ETF, %&#34;,
+      type: &#34;number&#34;,
+      step: 0.1,
+      default: 15
+    },
+    distr_tax: {
+      title: &#34;Налог на выплаченные дивиденды, %&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 13
+    },
+    gain_tax: {
+      title: &#34;Налог с продажи паёв, %&#34;,
+      type: &#34;number&#34;,
+      step: 1,
+      default: 13
+    },
+    netReturn: {
+        title: &#34;Эффективная доходность для инвестора, %г&#34;,
+        type: &#34;number&#34;,
+        output: true
+    }
+    },
+    function(f) {
+        const devalRate = 1 + f.deval/100;
+        const appr = (1 + f.appr/100);
+        const div = 1 + f.div/100;
+        const fee = 1 - f.fee/100;
+        const trade_fee = f.trade_fee/100;
+        const div_tax = (1 - f.inner_tax/100)*(1 - f.distr_tax/100);
+        const gain_tax = 1 - f.gain_tax/100;
+
+        const grossCap = [1];
+        const capAfterDivTax = [1];
+        const capAfterFees = [1*(1-trade_fee)];
+        const capAfterIncomeTax = [1*(1-trade_fee)];
+        let labels = [0];
+
+        const divTaxLoss = [0];
+        const feesLoss = [0];
+        const incomeTaxLoss = [0];
+        let turnoverTaxAcc = 0;
+
+        let deval = 1;
+        for (let i = 0; i &lt; 40; ++i) {
+            labels.push(i+1);
+            grossCap.push(grossCap[grossCap.length-1]*appr*div);
+            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*div_tax));
+            capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
+                              - (f.distr_tax &gt; 0 ? capAfterFees[capAfterFees.length-1]*(div-1)*div_tax*trade_fee : 0));
+            const incomeTax = (capAfterFees[capAfterFees.length-1]*deval-1)*(1-gain_tax);
+            capAfterIncomeTax.push((capAfterFees[capAfterFees.length-1]*deval - incomeTax)/deval);
+
+            divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
+            feesLoss.push((1-capAfterFees[capAfterFees.length-1]/grossCap[grossCap.length-1])*100 - divTaxLoss[divTaxLoss.length-1]);
+            incomeTaxLoss.push((1-capAfterIncomeTax[capAfterIncomeTax.length-1]/grossCap[grossCap.length-1])*100 - feesLoss[feesLoss.length-1] - divTaxLoss[divTaxLoss.length-1]);
+
+            deval *= devalRate;
+        }
+
+        f.netReturn = ((Math.pow(capAfterIncomeTax[capAfterIncomeTax.length-1], 1/40)-1)*100).toFixed(2);
+
+        const capChartData = {
+            labels: labels,
+            datasets: [{
+                label: &#39;Без комиссий и налогов&#39;,
+                borderColor: &#39;#1f77b4&#39;,
+                backgroundColor: &#39;#1f77b4&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: grossCap.map(v =&gt; v.toFixed(2))
+            }, {
+                label: &#39;После налога на дивиденды&#39;,
+                borderColor: &#39;#ff7f0e&#39;,
+                backgroundColor: &#39;#ff7f0e&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: capAfterDivTax.map(v =&gt; v.toFixed(2))
+            }, {
+                label: &#39;После комиссий и потерь на спредах&#39;,
+                borderColor: &#39;#2ca02c&#39;,
+                backgroundColor: &#39;#2ca02c&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: capAfterFees.map(v =&gt; v.toFixed(2))
+            }, {
+                label: &#39;После налога на доход от продажи&#39;,
+                borderColor: &#39;#d62728&#39;,
+                backgroundColor: &#39;#d62728&#39;,
+                fill: false,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                data: capAfterIncomeTax.map(v =&gt; v.toFixed(2))
+            }]
+        };
+
+        var ctx = document.getElementById(&#39;capChart&#39;).getContext(&#39;2d&#39;);
+        if (window.capChartLines)
+            window.capChartLines.destroy();
+        window.capChartLines = Chart.Line(ctx, {
+            data: capChartData,
+            options: {
+                responsive: true,
+                hoverMode: &#39;index&#39;,
+                maintainAspectRatio: false,
+                onResize: function(chart, size) {
+                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
+                },
+                stacked: false,
+                tooltips: {
+                    mode: &#34;index&#34;
+                },
+                scales: {
+                    yAxes: [{
+                        type: &#39;linear&#39;,
+                        display: true,
+                        position: &#39;left&#39;,
+                        id: &#39;spent&#39;,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Прирост капитала, раз&#34;
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Годы&#34;
+                        }
+                    }]
+                }
+            }
+        });
+
+        const lossChartData = {
+            labels: labels,
+            datasets: [{
+                label: &#39;Налог на дивиденды и спекулятивную прибыль&#39;,
+                borderColor: &#39;#ff7f0e&#39;,
+                backgroundColor: &#39;#ff7f0e55&#39;,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                fill: true,
+                data: divTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
+            }, {
+                label: &#39;Комиссии и потери на спредах&#39;,
+                borderColor: &#39;#2ca02c&#39;,
+                backgroundColor: &#39;#2ca02c55&#39;,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                fill: true,
+                data: feesLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
+            }, {
+                label: &#39;Налог на доход от продажи&#39;,
+                borderColor: &#39;#d62728&#39;,
+                backgroundColor: &#39;#d6272855&#39;,
+                pointRadius: 0,
+                pointHitRadius: 10,
+                fill: true,
+                data: incomeTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
+            }]
+        };
+
+        var ctx = document.getElementById(&#39;lossChart&#39;).getContext(&#39;2d&#39;);
+        if (window.lossChartLines)
+            window.lossChartLines.destroy();
+        window.lossChartLines = Chart.Line(ctx, {
+            data: lossChartData,
+            options: {
+                responsive: true,
+                hoverMode: &#39;index&#39;,
+                maintainAspectRatio: false,
+                onResize: function(chart, size) {
+                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
+                },
+                stacked: false,
+                tooltips: {
+                    mode: &#34;index&#34;
+                },
+                scales: {
+                    yAxes: [{
+                        type: &#39;linear&#39;,
+                        display: true,
+                        position: &#39;left&#39;,
+                        id: &#39;spent&#39;,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Потери, % от капитала&#34;
+                        },
+                        stacked: true
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#34;Годы&#34;
+                        }
+                    }]
+                }
+            }
+        });
+    }
+  )
+&lt;/script&gt;</summary>
+    </entry>
 
     <entry>
         <title>Полезно решать дифференциальные уравнения: Тома Пикетти</title>
@@ -355,276 +622,6 @@ $$ r_{\infty} = \delta \frac{1-s_c}{s_c}, $$
 &lt;p&gt;Третья проблема, как я уже писал выше, — от структурной «инфляции», которая вовсе не инфляция, но может восприниматься как таковая ЦБ, из-за несовершенства средств измерения. Неверно интерпретировав сигнал от ИПЦ, центробанк может начать предпринимать действия, прямо ухудшающие работу экономики. К счастью, центробанки как правило осторожны и пристально следят за последствиями своих решений, поэтому неверная политика скорее всего будет быстро отменена. Хотя относительно европейского центробанка у меня в этом отношении есть некоторые сомнения, но ему приходится единой политикой регулировать чудовищно различные по своему состоянию экономики (за цену &lt;a href=&#34;https://www.numbeo.com/cost-of-living/in/Podgorica&#34;&gt;обеда в Черногории&lt;/a&gt; во Франции &lt;a href=&#34;https://www.numbeo.com/cost-of-living/in/Paris&#34;&gt;едва чашку кофе нальют&lt;/a&gt;), так что ему там всё равно должно быть виднее.&lt;/p&gt;
 &lt;p&gt;Разделить все эти эффекты — практически невозможно, и ошибки (иногда фатальные) — неизбежны.&lt;/p&gt;
 &lt;p&gt;Поэтому моя надежда на криптовалюты — в том, что абсолютная прозрачность транзакций и алгоритмизация эмиссии позволит построить точный автоматический регулятор наполнения деньгами различных секторов экономики, сделать экономический рост идеально ровным, а распределение богатства — рыночно-справедливым. К сожалению, криптовалютное сообщество настолько дремуче в экономическом плане, что упорно строит валюты по подобию золота, хотя катастрофические последствия отката на такую систему денежного обращения — вполне очевидны.&lt;/p&gt;</summary>
-    </entry>
-
-    <entry>
-        <title>Влияние комиссий и налогов на финансовый результат</title>
-        <link href="https://onfin.github.io/calculators/fees_taxes_effect" rel="alternate"/>
-        <id>https://onfin.github.io/calculators/fees_taxes_effect</id>
-        <updated>2020-02-23T12:16:47.143146</updated>
-        <published>2020-01-10</published>
-        <summary type="html">&lt;script type=&#34;text/javascript&#34; src=&#34;/js/preact.umd.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/hooks.umd.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/forms.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/Chart.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;netReturn&#34; class=&#34;calc-form&#34;&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;_1&#34;&gt;Прирост капитала&lt;/h2&gt;
-&lt;div style=&#34;min-height: 256px&#34;&gt;
-    &lt;canvas id=&#34;capChart&#34;&gt;&lt;/canvas&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&#34;_2&#34;&gt;Потери капитала на налогах и комиссиях&lt;/h3&gt;
-&lt;div style=&#34;min-height: 256px&#34;&gt;
-    &lt;canvas id=&#34;lossChart&#34;&gt;&lt;/canvas&gt;
-&lt;/div&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-  makeForm(netReturn, {
-    infl: {
-      title: &#34;Инфляция, %г&#34;,
-      type: &#34;number&#34;,
-      step: 1,
-      default: 5
-    },
-    appr: {
-      title: &#34;Ценовая доходность сверх инфляции, %г&#34;,
-      type: &#34;number&#34;,
-      step: 0.5,
-      default: 1
-    },
-    div: {
-      title: &#34;Дивидендная доходность, %г&#34;,
-      type: &#34;number&#34;,
-      step: 0.5,
-      default: 5
-    },
-    trade_fee: {
-      title: &#34;Брокерская комиссия с оборота и спред, %&#34;,
-      type: &#34;number&#34;,
-      step: 0.01,
-      default: 0.05
-    },
-    turnover: {
-      title: &#34;Оборачиваемость портфеля, % в год&#34;,
-      type: &#34;number&#34;,
-      step: 1,
-      default: 5
-    },
-    fee: {
-      title: &#34;Комиссия за управление и хранение, %г&#34;,
-      type: &#34;number&#34;,
-      step: 0.01,
-      default: 0.01
-    },
-    tax: {
-      title: &#34;Налог, %&#34;,
-      type: &#34;number&#34;,
-      step: 1,
-      default: 13
-    },
-    netReturn: {
-        title: &#34;Эффективная доходность для инвестора, %г&#34;,
-        type: &#34;number&#34;,
-        output: true
-    }
-    },
-    function(f) {
-        const inflRate = 1 + f.infl/100;
-        const appr = (1 + f.appr/100)*inflRate;
-        const turnover = f.turnover/100;
-        const div = 1 + f.div/100;
-        const fee = 1 - f.fee/100;
-        const trade_fee = f.trade_fee/100;
-        const tax = 1 - f.tax/100;
-
-        const grossCap = [1];
-        const capAfterDivTax = [1];
-        const capAfterFees = [1*(1-trade_fee)];
-        const capAfterIncomeTax = [1*(1-trade_fee)];
-        let labels = [0];
-
-        const divTaxLoss = [0];
-        const feesLoss = [0];
-        const incomeTaxLoss = [0];
-        let turnoverTaxAcc = 0;
-
-        for (let i = 0; i &lt; 40; ++i) {
-            labels.push(i+1);
-            grossCap.push(grossCap[grossCap.length-1]*appr*div);
-            const turnoverTax = capAfterDivTax[capAfterDivTax.length-1]*(appr-1)*Math.min(turnover,1)*(1-tax);
-            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax)
-             - turnoverTax);
-            turnoverTaxAcc += turnoverTax;
-            capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
-                              - capAfterFees[capAfterFees.length-1]*(div-1)*tax*trade_fee
-                              - capAfterFees[capAfterFees.length-1]*2*turnover*trade_fee);
-            const incomeTax = (capAfterFees[capAfterFees.length-1]-1)*(1-tax);
-            capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1] - Math.max(incomeTax-turnoverTaxAcc, 0));
-
-            divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
-            feesLoss.push((1-capAfterFees[capAfterFees.length-1]/grossCap[grossCap.length-1])*100 - divTaxLoss[divTaxLoss.length-1]);
-            incomeTaxLoss.push((1-capAfterIncomeTax[capAfterIncomeTax.length-1]/grossCap[grossCap.length-1])*100 - feesLoss[feesLoss.length-1] - divTaxLoss[divTaxLoss.length-1]);
-        }
-
-        let infl = 1;
-        for (let i = 0; i &lt; grossCap.length; ++i) {
-            grossCap[i] /= infl;
-            capAfterDivTax[i] /= infl;
-            capAfterFees[i] /= infl;
-            capAfterIncomeTax[i] /= infl;
-            infl *= inflRate;
-        }
-
-        f.netReturn = ((Math.pow(capAfterIncomeTax[capAfterIncomeTax.length-1], 1/40)-1)*100).toFixed(2);
-
-        const capChartData = {
-            labels: labels,
-            datasets: [{
-                label: &#39;Без комиссий и налогов&#39;,
-                borderColor: &#39;#1f77b4&#39;,
-                backgroundColor: &#39;#1f77b4&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: grossCap.map(v =&gt; v.toFixed(2))
-            }, {
-                label: &#39;После налога на дивиденды и спекулятивную прибыль&#39;,
-                borderColor: &#39;#ff7f0e&#39;,
-                backgroundColor: &#39;#ff7f0e&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: capAfterDivTax.map(v =&gt; v.toFixed(2))
-            }, {
-                label: &#39;После комиссий и потерь на спредах&#39;,
-                borderColor: &#39;#2ca02c&#39;,
-                backgroundColor: &#39;#2ca02c&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: capAfterFees.map(v =&gt; v.toFixed(2))
-            }, {
-                label: &#39;После налога на доход от продажи&#39;,
-                borderColor: &#39;#d62728&#39;,
-                backgroundColor: &#39;#d62728&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: capAfterIncomeTax.map(v =&gt; v.toFixed(2))
-            }]
-        };
-
-        var ctx = document.getElementById(&#39;capChart&#39;).getContext(&#39;2d&#39;);
-        if (window.capChartLines)
-            window.capChartLines.destroy();
-        window.capChartLines = Chart.Line(ctx, {
-            data: capChartData,
-            options: {
-                responsive: true,
-                hoverMode: &#39;index&#39;,
-                maintainAspectRatio: false,
-                onResize: function(chart, size) {
-                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
-                },
-                stacked: false,
-                tooltips: {
-                    mode: &#34;index&#34;
-                },
-                scales: {
-                    yAxes: [{
-                        type: &#39;linear&#39;,
-                        display: true,
-                        position: &#39;left&#39;,
-                        id: &#39;spent&#39;,
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Прирост капитала, раз&#34;
-                        }
-                    }],
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Годы&#34;
-                        }
-                    }]
-                }
-            }
-        });
-
-        const lossChartData = {
-            labels: labels,
-            datasets: [{
-                label: &#39;Налог на дивиденды и спекулятивную прибыль&#39;,
-                borderColor: &#39;#ff7f0e&#39;,
-                backgroundColor: &#39;#ff7f0e55&#39;,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                fill: true,
-                data: divTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
-            }, {
-                label: &#39;Комиссии и потери на спредах&#39;,
-                borderColor: &#39;#2ca02c&#39;,
-                backgroundColor: &#39;#2ca02c55&#39;,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                fill: true,
-                data: feesLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
-            }, {
-                label: &#39;Налог на доход от продажи&#39;,
-                borderColor: &#39;#d62728&#39;,
-                backgroundColor: &#39;#d6272855&#39;,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                fill: true,
-                data: incomeTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
-            }]
-        };
-
-        var ctx = document.getElementById(&#39;lossChart&#39;).getContext(&#39;2d&#39;);
-        if (window.lossChartLines)
-            window.lossChartLines.destroy();
-        window.lossChartLines = Chart.Line(ctx, {
-            data: lossChartData,
-            options: {
-                responsive: true,
-                hoverMode: &#39;index&#39;,
-                maintainAspectRatio: false,
-                onResize: function(chart, size) {
-                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
-                },
-                stacked: false,
-                tooltips: {
-                    mode: &#34;index&#34;
-                },
-                scales: {
-                    yAxes: [{
-                        type: &#39;linear&#39;,
-                        display: true,
-                        position: &#39;left&#39;,
-                        id: &#39;spent&#39;,
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Потери, % от капитала&#34;
-                        },
-                        stacked: true
-                    }],
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Годы&#34;
-                        }
-                    }]
-                }
-            }
-        });
-    }
-  )
-&lt;/script&gt;</summary>
     </entry>
 
 </feed>

@@ -3,22 +3,22 @@
 
 <html lang="ru">
 <head>
-    <title>Влияние комиссий и налогов на финансовый результат</title>
+    <title>Влияние комиссий и налогов на финансовый результат ETF</title>
     <meta charset="utf-8" />
-    <link rel="canonical" href="/calculators/fees_taxes_effect" />
+    <link rel="canonical" href="/calculators/etf_taxation" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
-        <meta name="description" content="Калькулятор реальной доходности с учётом комиссий и налогов" />
+        <meta name="description" content="Калькулятор для сравнения эффективной доходности ETF, выплачивающих и аккумулирующих дивиденды." />
         <meta name="keywords" content="финансовая грамотность, фондовый рынок, комиссии, налоги, реальная доходность" />
 
 <meta property="og:locale" content="ru" />
-    <meta property="og:description" content="Калькулятор реальной доходности с учётом комиссий и налогов" />
+    <meta property="og:description" content="Калькулятор для сравнения эффективной доходности ETF, выплачивающих и аккумулирующих дивиденды." />
     <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2020-01-10" />
+        <meta property="og:article:published_time" content="2020-04-18" />
         <meta property="og:article:modified_time" content="2020-04-18" />
-<meta property="og:title" content="Влияние комиссий и налогов на финансовый результат" />
-<meta property="og:url" content="https://onfin.github.io/calculators/fees_taxes_effect" />
+<meta property="og:title" content="Влияние комиссий и налогов на финансовый результат ETF" />
+<meta property="og:url" content="https://onfin.github.io/calculators/etf_taxation" />
 
 
 
@@ -54,16 +54,17 @@
 <div class="page pure-u-1 pure-u-lg-9-12">
     <article>
         <header>
-            <h1>Влияние комиссий и налогов на финансовый результат</h1>
+            <h1>Влияние комиссий и налогов на финансовый результат ETF</h1>
             <div class="meta">
-                    <p class="description">Калькулятор реальной доходности с учётом комиссий и налогов</p>
+                    <p class="description">Калькулятор для сравнения эффективной доходности ETF, выплачивающих и аккумулирующих дивиденды.</p>
                     <p> Обновлено: <time>2020-04-18</time> </p>
 
             </div>
         </header>
 
         <div class="content">
-            <script type="text/javascript" src="/js/preact.umd.js"></script>
+            <p>Все дивиденды реинвестируются, в конце срока удержания фонд продаётся. Если фонд аккумулирует дивиденды, поле «налог на выплаченные дивиденды» установить в 0. Предполагается, что брокерская комиссия уплачивается только при самостоятельном реинвестировании, а для аккумулирующих фондов транзакционные издержки учтены в комиссии за управление.</p>
+<script type="text/javascript" src="/js/preact.umd.js"></script>
 
 <script type="text/javascript" src="/js/hooks.umd.js"></script>
 
@@ -85,14 +86,14 @@
 
 <script type="text/javascript">
   makeForm(netReturn, {
-    infl: {
-      title: "Инфляция, %г",
+    deval: {
+      title: "Средняя скорость обесценения национальной валюты относительно валюты ETF, %г",
       type: "number",
       step: 1,
       default: 5
     },
     appr: {
-      title: "Ценовая доходность сверх инфляции, %г",
+      title: "Ценовая доходность сверх эффекта валютных курсов, %г",
       type: "number",
       step: 0.5,
       default: 1
@@ -109,20 +110,26 @@
       step: 0.01,
       default: 0.05
     },
-    turnover: {
-      title: "Оборачиваемость портфеля, % в год",
-      type: "number",
-      step: 1,
-      default: 5
-    },
     fee: {
-      title: "Комиссия за управление и хранение, %г",
+      title: "Комиссия за управление, %г",
       type: "number",
       step: 0.01,
-      default: 0.01
+      default: 0.05
     },
-    tax: {
-      title: "Налог, %",
+    inner_tax: {
+      title: "Налог на дивиденды внутри ETF, %",
+      type: "number",
+      step: 0.1,
+      default: 15
+    },
+    distr_tax: {
+      title: "Налог на выплаченные дивиденды, %",
+      type: "number",
+      step: 1,
+      default: 13
+    },
+    gain_tax: {
+      title: "Налог с продажи паёв, %",
       type: "number",
       step: 1,
       default: 13
@@ -134,13 +141,13 @@
     }
     },
     function(f) {
-        const inflRate = 1 + f.infl/100;
-        const appr = (1 + f.appr/100)*inflRate;
-        const turnover = f.turnover/100;
+        const devalRate = 1 + f.deval/100;
+        const appr = (1 + f.appr/100);
         const div = 1 + f.div/100;
         const fee = 1 - f.fee/100;
         const trade_fee = f.trade_fee/100;
-        const tax = 1 - f.tax/100;
+        const div_tax = (1 - f.inner_tax/100)*(1 - f.distr_tax/100);
+        const gain_tax = 1 - f.gain_tax/100;
 
         const grossCap = [1];
         const capAfterDivTax = [1];
@@ -153,31 +160,21 @@
         const incomeTaxLoss = [0];
         let turnoverTaxAcc = 0;
 
+        let deval = 1;
         for (let i = 0; i < 40; ++i) {
             labels.push(i+1);
             grossCap.push(grossCap[grossCap.length-1]*appr*div);
-            const turnoverTax = capAfterDivTax[capAfterDivTax.length-1]*(appr-1)*Math.min(turnover,1)*(1-tax);
-            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*tax)
-             - turnoverTax);
-            turnoverTaxAcc += turnoverTax;
+            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*div_tax));
             capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
-                              - capAfterFees[capAfterFees.length-1]*(div-1)*tax*trade_fee
-                              - capAfterFees[capAfterFees.length-1]*2*turnover*trade_fee);
-            const incomeTax = (capAfterFees[capAfterFees.length-1]-1)*(1-tax);
-            capAfterIncomeTax.push(capAfterFees[capAfterFees.length-1] - Math.max(incomeTax-turnoverTaxAcc, 0));
+                              - (f.distr_tax > 0 ? capAfterFees[capAfterFees.length-1]*(div-1)*div_tax*trade_fee : 0));
+            const incomeTax = (capAfterFees[capAfterFees.length-1]*deval-1)*(1-gain_tax);
+            capAfterIncomeTax.push((capAfterFees[capAfterFees.length-1]*deval - incomeTax)/deval);
 
             divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
             feesLoss.push((1-capAfterFees[capAfterFees.length-1]/grossCap[grossCap.length-1])*100 - divTaxLoss[divTaxLoss.length-1]);
             incomeTaxLoss.push((1-capAfterIncomeTax[capAfterIncomeTax.length-1]/grossCap[grossCap.length-1])*100 - feesLoss[feesLoss.length-1] - divTaxLoss[divTaxLoss.length-1]);
-        }
 
-        let infl = 1;
-        for (let i = 0; i < grossCap.length; ++i) {
-            grossCap[i] /= infl;
-            capAfterDivTax[i] /= infl;
-            capAfterFees[i] /= infl;
-            capAfterIncomeTax[i] /= infl;
-            infl *= inflRate;
+            deval *= devalRate;
         }
 
         f.netReturn = ((Math.pow(capAfterIncomeTax[capAfterIncomeTax.length-1], 1/40)-1)*100).toFixed(2);
@@ -193,7 +190,7 @@
                 pointHitRadius: 10,
                 data: grossCap.map(v => v.toFixed(2))
             }, {
-                label: 'После налога на дивиденды и спекулятивную прибыль',
+                label: 'После налога на дивиденды',
                 borderColor: '#ff7f0e',
                 backgroundColor: '#ff7f0e',
                 fill: false,
@@ -329,10 +326,10 @@
         <aside>
             <div style="display: flex; flex-direction: column; text-align: right;">
         <div class="share-buttons">
-            <a href="https://vk.com/share.php?url=https://onfin.github.io/calculators/fees_taxes_effect&title=Влияние комиссий и налогов на финансовый результат&description=Калькулятор реальной доходности с учётом комиссий и налогов" target="_blank"><i class="share">&#xea9d;</i></a>
-            <a href="https://t.me/share/url?url=https://onfin.github.io/calculators/fees_taxes_effect" target="_blank"><i class="share">&#xea9b;</i></a>
-            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/calculators/fees_taxes_effect" target="_blank"><i class="share">&#xea9c;</i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/calculators/fees_taxes_effect" target="_blank"><i class="share">&#xea93;</i></a>
+            <a href="https://vk.com/share.php?url=https://onfin.github.io/calculators/etf_taxation&title=Влияние комиссий и налогов на финансовый результат ETF&description=Калькулятор для сравнения эффективной доходности ETF, выплачивающих и аккумулирующих дивиденды." target="_blank"><i class="share">&#xea9d;</i></a>
+            <a href="https://t.me/share/url?url=https://onfin.github.io/calculators/etf_taxation" target="_blank"><i class="share">&#xea9b;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/calculators/etf_taxation" target="_blank"><i class="share">&#xea9c;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/calculators/etf_taxation" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
         <a class="donate-button" href="/donate">Спасибо</a>
