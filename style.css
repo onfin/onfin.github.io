@@ -527,51 +527,58 @@ body nav ul {
 .calc-form td {
   padding: 0 10px 0 10px;
   width: 50%;
+  border: none;
 }
 
-/* line 254 */
+/* line 253 */
+td {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 0 5px 0 5px;
+}
+
+/* line 260 */
 .payments tr * {
   padding: 0 10px 0 10px;
   font-family: "Courier New", Courier, monospace;
 }
-/* line 259 */
+/* line 265 */
 .payments tr:hover {
   background-color: lightgray;
 }
 
-/* line 264 */
+/* line 270 */
 .collapse-content {
   display: none;
 }
 
-/* line 268 */
+/* line 274 */
 .collapse-content.active {
   display: inherit;
 }
 
-/* line 272 */
+/* line 278 */
 .product-badge {
   max-width: 50%;
   height: auto;
 }
 
-/* line 277 */
+/* line 283 */
 .pure-u-1-2 {
   display: block;
 }
 
-/* line 281 */
+/* line 287 */
 .pure-menu-horizontal {
   white-space: unset;
 }
 
-/* line 285 */
+/* line 291 */
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
   font-weight: normal;
 }
 
-/* line 290 */
+/* line 296 */
 h1 {
   font-size: 32px;
   line-height: 1.2;
@@ -581,27 +588,27 @@ h1 {
   text-align: center;
 }
 
-/* line 299 */
+/* line 305 */
 h2 {
   font-size: 24px;
   padding: 16px 0;
   line-height: 1.2;
 }
 
-/* line 305 */
+/* line 311 */
 h3 {
   font-size: 20px;
   padding: 8px 0;
   line-height: 1.2;
 }
 
-/* line 311 */
+/* line 317 */
 a {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: underline;
 }
 
-/* line 316 */
+/* line 322 */
 hr {
   width: 50%;
   background-color: rgba(0, 0, 0, 0.1);
@@ -609,7 +616,7 @@ hr {
   border: 0;
 }
 
-/* line 324 */
+/* line 330 */
 header, main, footer {
   padding: 5px;
   font-weight: 300;
@@ -617,19 +624,19 @@ header, main, footer {
   margin: 0 auto;
 }
 
-/* line 333 */
+/* line 339 */
 nav {
   text-align: left;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* line 339 */
+/* line 345 */
 .page, .posts, .pagination, .disclaimer {
   max-width: 700px;
 }
 
-/* line 343 */
+/* line 349 */
 .disclaimer {
   width: 100%;
   text-align: left;
@@ -644,7 +651,7 @@ nav {
   padding: 16px 16px 0 16px;
 }
 
-/* line 359 */
+/* line 365 */
 article {
   width: 100%;
   text-align: left;
@@ -657,23 +664,23 @@ article {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 372 */
+/* line 378 */
 article header {
   padding: unset;
 }
-/* line 376 */
+/* line 382 */
 article .meta {
   letter-spacing: -0.02em;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.44);
   font-style: italic;
 }
-/* line 390 */
+/* line 396 */
 article .content {
   margin: 0 auto;
 }
 
-/* line 396 */
+/* line 402 */
 .posts article {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 4px 0px;
   border-radius: 3px;
@@ -681,7 +688,7 @@ article .content {
   box-sizing: border-box;
   padding: 20px;
 }
-/* line 403 */
+/* line 409 */
 .posts article h1 {
   font-size: 32px;
   line-height: 1.2;
@@ -690,31 +697,31 @@ article .content {
   margin: 0 auto;
   text-align: left;
 }
-/* line 411 */
+/* line 417 */
 .posts article h1 a {
   text-decoration: none;
 }
 
-/* line 423 */
+/* line 429 */
 .wide-content > table {
   width: 100%;
   float: right;
   table-layout: fixed;
 }
 
-/* line 430 */
+/* line 436 */
 .pagination {
   margin-bottom: 30px;
 }
-/* line 433 */
+/* line 439 */
 .pagination .left {
   text-align: left;
 }
-/* line 436 */
+/* line 442 */
 .pagination .right {
   text-align: right;
 }
-/* line 439 */
+/* line 445 */
 .pagination a {
   display: inline-block;
   padding: 5px 5px;
@@ -724,21 +731,21 @@ article .content {
   color: rgba(0, 0, 0, 0.44);
   text-decoration: none;
 }
-/* line 449 */
+/* line 455 */
 .pagination a:hover {
   color: rgba(0, 0, 0, 0.8);
   border-color: rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
-/* line 457 */
+/* line 463 */
 .output::-webkit-inner-spin-button,
 .output::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 463 */
+/* line 469 */
 .output {
   -moz-appearance: textfield;
   background-color: white;
@@ -746,7 +753,7 @@ article .content {
   font-weight: bold;
 }
 
-/* line 470 */
+/* line 476 */
 i.share {
   font-family: 'ShareIcons' !important;
   speak: none;
@@ -759,29 +766,29 @@ i.share {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 483 */
+/* line 489 */
 .share-buttons {
   text-align: right;
 }
-/* line 485 */
+/* line 491 */
 .share-buttons a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.44);
 }
-/* line 489 */
+/* line 495 */
 .share-buttons a:hover {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 495 */
+/* line 501 */
 .donate-button {
   text-decoration: none;
 }
-/* line 498 */
+/* line 504 */
 .donate-button:link {
   color: rgba(0, 0, 0, 0.44);
 }
-/* line 502 */
+/* line 508 */
 .donate-button:hover {
   color: rgba(0, 0, 0, 0.8);
 }
