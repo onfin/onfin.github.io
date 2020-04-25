@@ -235,6 +235,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/piketti2</loc>
+            <lastmod>2020-04-25</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/bonds_in_portfolio</loc>
             <lastmod>2020-02-14</lastmod>
             <changefreq>monthly</changefreq>
