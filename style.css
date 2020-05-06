@@ -524,14 +524,14 @@ body nav ul {
   width: 100%;
 }
 /* line 246 */
-.calc-form td {
+.calc-form td, .calc-form th {
   padding: 0 10px 0 10px;
   width: 50%;
   border: none;
 }
 
 /* line 253 */
-td {
+td, th {
   border: 1px solid rgba(128, 128, 128, 0.5);
   padding: 0 5px 0 5px;
 }
