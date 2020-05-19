@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
             <loc>https://onfin.github.io/literacy</loc>
-            <lastmod>2020-05-06</lastmod>
+            <lastmod>2020-05-19</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -151,8 +151,14 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/literacy/instruments/crypto</loc>
+            <lastmod>2020-05-19</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/inflation</loc>
-            <lastmod>2020-02-04</lastmod>
+            <lastmod>2020-05-16</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
