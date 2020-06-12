@@ -25,23 +25,23 @@
 </head>
 <body>
     <header>
-        <nav class="pure-menu pure-menu-horizontal">
+        <nav class="menu">
             <label class="menu-container">
                 <div class="menu-head">
-                    <a href="/" class="pure-menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
+                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
                     <div class="social">
-                        <a href="https://t.me/on_fin" class="pure-menu-link"><i class="share">&#xea9b;</i></a>
-                        <a href="/feed.atom.xml" class="pure-menu-link"><i class="share">&#xea9f;</i></a>
+                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
+                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
                     </div>
                 </div>
                 <input type="checkbox" />
-                <span class="checkmark"><i>&equiv;</i></span>
+                <div class="checkmark">&equiv;</div>
                 <ul class="menu">
-                        <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
-                        <li class="pure-menu-item"><a href="/literacy" class="pure-menu-link">Грамотность</a></li>
-                        <li class="pure-menu-item"><a href="/notes" class="pure-menu-link">Заметки</a></li>
-                        <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
-                        <li class="pure-menu-item"><a href="/calculators" class="pure-menu-link">Калькуляторы</a></li>
+                        <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
+                        <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
+                        <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
+                        <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
+                        <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
                 </ul>
             </label>
         </nav>
@@ -50,20 +50,18 @@
     <main>
 
 
-<div class="pure-g">
-<div class="page pure-u-1 pure-u-lg-9-12">
-    <article>
-        <header>
-            <h1>Математика диверсификации: портфельный эффект и ребалансировка между акциями</h1>
-            <div class="meta">
-                    <p class="description">Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки</p>
-                    <p> Обновлено: <time>2019-12-29</time> </p>
+<article>
+    <header>
+        <h1>Математика диверсификации: портфельный эффект и ребалансировка между акциями</h1>
+        <div class="meta">
+                <p class="description">Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки</p>
+                <p> Обновлено: <time>2019-12-29</time> </p>
 
-            </div>
-        </header>
+        </div>
+    </header>
 
-        <div class="content">
-            <p>Рассмотрим сферический фондовый рынок в вакууме, на котором обращается 10000 акций. Т.к. рынок сферический и в вакууме, компании никак не взаимодействуют ни друг с другом, ни со внешней средой, дивидендов поэтому тоже не платят. Вся доходность акции заключается в изменении её цены. Цены изменяются независимо друг от друга на случайный процент вверх или вниз каждый шаг моделирования. Начальной ценой всех акций возьмём 1.</p>
+    <div class="content">
+        <p>Рассмотрим сферический фондовый рынок в вакууме, на котором обращается 10000 акций. Т.к. рынок сферический и в вакууме, компании никак не взаимодействуют ни друг с другом, ни со внешней средой, дивидендов поэтому тоже не платят. Вся доходность акции заключается в изменении её цены. Цены изменяются независимо друг от друга на случайный процент вверх или вниз каждый шаг моделирования. Начальной ценой всех акций возьмём 1.</p>
 <p>Вот так будет выглядеть распределение цен акций через условные 10 лет моделирования.</p>
 <p><img src=/notes/diversification_math/price_dist_10y.svg style="width: 100%; height: 50wv" /></p>
 <p>График этот читается так: у (Bx-Ax) процентов акций цена лежит между Ay и By. Чтобы показать относительное изменение цены по оси y взята логарифмическая шкала. Тонкими линиями показаны половина акций и начальная цена.</p>
@@ -86,9 +84,9 @@
 <p>Получилось забавное противоречие с господствующими школами мысли. Ведь сторонники гипотезы эффективного рынка выступают за взвешенные по капитализации портфели, а сторонники поиска неэффективностей — как минимум — за равновзвешенные. Поддержание равной балансовой стоимости акций выглядит неплохим нейтральным вариантом.</p>
 <p>Какой из этих вариантов лучше соответствует реальному рынку — я не знаю. На данный момент я руководствуюсь промежуточной моделью: считаю колебания капитализаций отраслей случайными и ребалансируюсь между отраслями, но внутри отраслей ребалансировку не произвожу. Однако сложность этой модели меня утомляет и я хочу её упростить.</p>
 <p>Исходники моделей: <a href="/notes/diversification_math/vol.py">рынок</a>, <a href="/notes/diversification_math/vol2.py">довложения и ребалансировка</a>.</p>
-        </div>
-        <aside>
-            <div style="display: flex; flex-direction: column; text-align: right;">
+    </div>
+    <aside>
+        <div style="display: flex; flex-direction: column; text-align: right;">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/diversification_math&title=Математика диверсификации: портфельный эффект и ребалансировка между акциями&description=Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/notes/diversification_math" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -96,25 +94,15 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/diversification_math" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
-        <a class="donate-button" href="/donate">Спасибо</a>
+        <a class="donate-button" href="/donate">Отблагодарить</a>
     </div>
-        </aside>
-    </article>
-</div>
-</div>
+    </aside>
+</article>
 
     </main>
 
     <footer>
-<div class="pure-g">
-<div class="pagination pure-u-1 pure-u-lg-9-12">
-    <div class="pure-g">
-    <div class="pure-u-1-3 left"><a href="/notes/marketprice"> &lt;&lt; Откуда берётся рыночная цена и доходность акций </a></div>
-    <div class="pure-u-1-3 center"><a href="/notes"> &uarr; Заметки о финансах &uarr; </a></div>
-    <div class="pure-u-1-3 right"><a href="/notes/diversification_math2"> Математика диверсификации-2: доходность и риск &gt;&gt; </a></div>
-    </div>
-</div>
-</div>
+<div class="prevupnext"><a class="prev" href="/notes/marketprice"> &lt;&lt; Откуда берётся рыночная цена и доходность акций </a><a class="up" href="/notes"> &uarr; Заметки о финансах &uarr; </a><a class="next" href="/notes/diversification_math2"> Математика диверсификации-2: доходность и риск &gt;&gt; </a></div>
 
         <div class="disclaimer">
             <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>

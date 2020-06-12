@@ -39,23 +39,23 @@
 </head>
 <body>
     <header>
-        <nav class="pure-menu pure-menu-horizontal">
+        <nav class="menu">
             <label class="menu-container">
                 <div class="menu-head">
-                    <a href="/" class="pure-menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
+                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
                     <div class="social">
-                        <a href="https://t.me/on_fin" class="pure-menu-link"><i class="share">&#xea9b;</i></a>
-                        <a href="/feed.atom.xml" class="pure-menu-link"><i class="share">&#xea9f;</i></a>
+                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
+                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
                     </div>
                 </div>
                 <input type="checkbox" />
-                <span class="checkmark"><i>&equiv;</i></span>
+                <div class="checkmark">&equiv;</div>
                 <ul class="menu">
-                        <li class="pure-menu-item"><a href="/blog" class="pure-menu-link">Сиюминутное</a></li>
-                        <li class="pure-menu-item"><a href="/literacy" class="pure-menu-link">Грамотность</a></li>
-                        <li class="pure-menu-item"><a href="/notes" class="pure-menu-link">Заметки</a></li>
-                        <li class="pure-menu-item"><a href="/pages/sources" class="pure-menu-link">Источники</a></li>
-                        <li class="pure-menu-item"><a href="/calculators" class="pure-menu-link">Калькуляторы</a></li>
+                        <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
+                        <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
+                        <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
+                        <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
+                        <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
                 </ul>
             </label>
         </nav>
@@ -64,20 +64,18 @@
     <main>
 
 
-<div class="pure-g">
-<div class="page pure-u-1 pure-u-lg-9-12">
-    <article>
-        <header>
-            <h1>Полезно решать дифференциальные уравнения: Тома Пикетти</h1>
-            <div class="meta">
-                    <p class="description">Очень простое математическое опровержение основной идеи «Капитала в XXI веке», что превышение доходности капитала над скоростью роста экономики является причиной роста социального неравенства.</p>
-                    <p> Обновлено: <time>2020-04-11</time> </p>
+<article>
+    <header>
+        <h1>Полезно решать дифференциальные уравнения: Тома Пикетти</h1>
+        <div class="meta">
+                <p class="description">Очень простое математическое опровержение основной идеи «Капитала в XXI веке», что превышение доходности капитала над скоростью роста экономики является причиной роста социального неравенства.</p>
+                <p> Обновлено: <time>2020-04-11</time> </p>
 
-            </div>
-        </header>
+        </div>
+    </header>
 
-        <div class="content">
-            <p>Тома Пикетти в своей книге <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BB_%D0%B2_XXI_%D0%B2%D0%B5%D0%BA%D0%B5">«Капитал в XXI веке»</a> утверждает, что основной причиной роста социального неравенства является превышение отдачи на капитал ($r$) над скоростью роста экономики ($g$). Скажу сразу, что книгу я не читал и, возможно, в ней содержится много полезного и интересного, однако исходное её положение категорически неверно. Посчитаем.</p>
+    <div class="content">
+        <p>Тома Пикетти в своей книге <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BB_%D0%B2_XXI_%D0%B2%D0%B5%D0%BA%D0%B5">«Капитал в XXI веке»</a> утверждает, что основной причиной роста социального неравенства является превышение отдачи на капитал ($r$) над скоростью роста экономики ($g$). Скажу сразу, что книгу я не читал и, возможно, в ней содержится много полезного и интересного, однако исходное её положение категорически неверно. Посчитаем.</p>
 <p>Для простоты будем считать что экономический рост остановился, выпуск экономических благ ($Y$) постоянен, и $g = 0$.</p>
 <p>Разделим нашу популяцию на «капиталистов» (индекс $c$) и «пролетариев» ($p$). Как выглядит динамика капитала тех и других?</p>
 <p>$$ \frac{d C_c}{d t} = s_c \alpha Y - \delta C_c $$
@@ -99,9 +97,9 @@ $$ C_p(t) = \frac{s_p (1-\alpha) Y}{\delta} + C_p^{(0)} \mathrm{e}^{-\delta t}. 
 <p>Интересно, что модель позволяет записать выражение для предельной отдачи на капитал (которая падает с ростом доли сбережений):
 $$ r_{\infty} = \delta \frac{1-s_c}{s_c}, $$
 но <strong>не</strong> позволяет найти предельную долю присваиваемых благ $\alpha_{\infty}$, это свободный параметр системы, для которого нужна другая модель.</p>
-        </div>
-        <aside>
-            <div style="display: flex; flex-direction: column; text-align: right;">
+    </div>
+    <aside>
+        <div style="display: flex; flex-direction: column; text-align: right;">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/piketti&title=Полезно решать дифференциальные уравнения: Тома Пикетти&description=Очень простое математическое опровержение основной идеи «Капитала в XXI веке», что превышение доходности капитала над скоростью роста экономики является причиной роста социального неравенства." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/notes/piketti" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -109,25 +107,15 @@ $$ r_{\infty} = \delta \frac{1-s_c}{s_c}, $$
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/piketti" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
-        <a class="donate-button" href="/donate">Спасибо</a>
+        <a class="donate-button" href="/donate">Отблагодарить</a>
     </div>
-        </aside>
-    </article>
-</div>
-</div>
+    </aside>
+</article>
 
     </main>
 
     <footer>
-<div class="pure-g">
-<div class="pagination pure-u-1 pure-u-lg-9-12">
-    <div class="pure-g">
-    <div class="pure-u-1-3 left"><a href="/notes/workersfactories"> &lt;&lt; Фабрики — рабочим </a></div>
-    <div class="pure-u-1-3 center"><a href="/notes"> &uarr; Заметки о финансах &uarr; </a></div>
-    <div class="pure-u-1-3 right"><a href="/notes/piketti2"> Социальное неравенство и налоги &gt;&gt; </a></div>
-    </div>
-</div>
-</div>
+<div class="prevupnext"><a class="prev" href="/notes/workersfactories"> &lt;&lt; Фабрики — рабочим </a><a class="up" href="/notes"> &uarr; Заметки о финансах &uarr; </a><a class="next" href="/notes/piketti2"> Социальное неравенство и налоги &gt;&gt; </a></div>
 
         <div class="disclaimer">
             <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
