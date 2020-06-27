@@ -8,7 +8,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes</loc>
-            <lastmod>2020-06-21</lastmod>
+            <lastmod>2020-06-27</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -206,7 +206,13 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/recklessness</loc>
-            <lastmod>2019-12-29</lastmod>
+            <lastmod>2020-06-27</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/fallacies</loc>
+            <lastmod>2020-06-27</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -302,7 +308,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/credits</loc>
-            <lastmod>2020-02-18</lastmod>
+            <lastmod>2020-06-25</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -356,7 +362,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog/2019-05-20</loc>
-            <lastmod>2019-09-26</lastmod>
+            <lastmod>2020-06-25</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -428,7 +434,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/blog/2018-12-08</loc>
-            <lastmod>2019-09-26</lastmod>
+            <lastmod>2020-06-25</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

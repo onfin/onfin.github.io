@@ -21,7 +21,7 @@
 <body>
     <header>
         <nav class="menu">
-            <label class="menu-container">
+            <label class="menu-container" for="toggle-menu">
                 <div class="menu-head">
                     <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
                     <div class="social">
@@ -29,16 +29,16 @@
                         <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
                     </div>
                 </div>
-                <input type="checkbox" />
                 <div class="checkmark">&equiv;</div>
-                <ul class="menu">
-                        <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
-                        <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
-                        <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                        <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
-                        <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
-                </ul>
             </label>
+            <input type="checkbox" id="toggle-menu" />
+            <ul class="menu">
+                    <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
+                    <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
+                    <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
+                    <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -53,7 +53,7 @@
     </header>
 
     <div class="content">
-        <p><a href="/pages/literacy">Грамотность</a> пополнилась заметкой о <a href="/literacy/basebank">выборе базового банка</a>.</p>
+        <p><a href="/literacy">Грамотность</a> пополнилась заметкой о <a href="/literacy/basebank">выборе базового банка</a>.</p>
     </div>
     <aside>
         <div style="display: flex; flex-direction: column; text-align: right;">
