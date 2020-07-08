@@ -749,3 +749,8 @@ i.share {
   text-align: right;
   grid-column: 3;
 }
+
+/* line 464 */
+details summary {
+  text-decoration: underline dashed;
+}

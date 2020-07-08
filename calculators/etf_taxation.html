@@ -16,7 +16,7 @@
     <meta property="og:description" content="Калькулятор для сравнения эффективной доходности ETF, выплачивающих и аккумулирующих дивиденды." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-04-18" />
-        <meta property="og:article:modified_time" content="2020-04-18" />
+        <meta property="og:article:modified_time" content="2020-07-08" />
 <meta property="og:title" content="Влияние комиссий и налогов на финансовый результат ETF" />
 <meta property="og:url" content="https://onfin.github.io/calculators/etf_taxation" />
 
@@ -55,13 +55,13 @@
         <h1>Влияние комиссий и налогов на финансовый результат ETF</h1>
         <div class="meta">
                 <p class="description">Калькулятор для сравнения эффективной доходности ETF, выплачивающих и аккумулирующих дивиденды.</p>
-                <p> Обновлено: <time>2020-04-18</time> </p>
+                <p> Обновлено: <time>2020-07-08</time> </p>
 
         </div>
     </header>
 
     <div class="content">
-        <p>Все дивиденды реинвестируются, в конце срока удержания фонд продаётся. Если фонд аккумулирует дивиденды, поле «налог на выплаченные дивиденды» установить в 0. Предполагается, что брокерская комиссия уплачивается только при самостоятельном реинвестировании, а для аккумулирующих фондов транзакционные издержки учтены в комиссии за управление.</p>
+        <p>Все дивиденды реинвестируются, в конце срока удержания фонд продаётся. Предполагается, что брокерская комиссия уплачивается только при самостоятельном реинвестировании, а для аккумулирующих фондов транзакционные издержки учтены в комиссии за управление.</p>
 <script type="text/javascript" src="/js/preact.umd.js"></script>
 
 <script type="text/javascript" src="/js/hooks.umd.js"></script>
@@ -85,22 +85,26 @@
 <script type="text/javascript">
   makeForm(netReturn, {
     deval: {
-      title: "Средняя скорость обесценения национальной валюты относительно валюты ETF, %г",
+      title: "Инфляция, %г",
       type: "number",
-      step: 1,
+      step: 0.1,
       default: 5
     },
     appr: {
-      title: "Ценовая доходность сверх эффекта валютных курсов, %г",
+      title: "Реальная ценовая доходность, %г",
       type: "number",
-      step: 0.5,
+      step: 0.1,
       default: 1
     },
     div: {
       title: "Дивидендная доходность, %г",
       type: "number",
-      step: 0.5,
+      step: 0.1,
       default: 5
+    },
+    distr: {
+      title: "ETF выплачивает дивиденды",
+      type: "checkbox"
     },
     trade_fee: {
       title: "Брокерская комиссия с оборота и спред, %",
@@ -144,7 +148,7 @@
         const div = 1 + f.div/100;
         const fee = 1 - f.fee/100;
         const trade_fee = f.trade_fee/100;
-        const div_tax = (1 - f.inner_tax/100)*(1 - f.distr_tax/100);
+        const div_tax = (1 - f.inner_tax/100)*(f.distr ? (1 - f.distr_tax/100) : 1);
         const gain_tax = 1 - f.gain_tax/100;
 
         const grossCap = [1];
@@ -164,7 +168,7 @@
             grossCap.push(grossCap[grossCap.length-1]*appr*div);
             capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*div_tax));
             capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
-                              - (f.distr_tax > 0 ? capAfterFees[capAfterFees.length-1]*(div-1)*div_tax*trade_fee : 0));
+                              - (f.distr ? capAfterFees[capAfterFees.length-1]*(div-1)*div_tax*trade_fee : 0));
             const incomeTax = (capAfterFees[capAfterFees.length-1]*deval-1)*(1-gain_tax);
             capAfterIncomeTax.push((capAfterFees[capAfterFees.length-1]*deval - incomeTax)/deval);
 

@@ -3,12 +3,246 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2020-06-30T19:25:44.502276</updated>
+<updated>2020-07-08T21:05:01.700848</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+
+    <entry>
+        <title>Расчёт эффективности инвестиций через американские, европейские и российские ETF</title>
+        <link href="https://onfin.github.io/calculators/etf_us_eu_ru" rel="alternate"/>
+        <id>https://onfin.github.io/calculators/etf_us_eu_ru</id>
+        <updated>2020-07-08T21:05:01.700848</updated>
+        <published>2020-07-08</published>
+        <summary type="html">&lt;p&gt;По мотивам обсуждений в &lt;a href=&#34;https://t.me/RationalAnswer_Chat&#34;&gt;чате Павла Комаровского&lt;/a&gt;, &lt;a href=&#34;https://stockuper.ru/manual/voo-vs-fxus/&#34;&gt;калькулятора на Stockuper&lt;/a&gt;, и &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1GxvnqeEyW4UfphrhJzeUvmYNGxbXNUFvO_patoujPz4/edit#gid=20811719&#34;&gt;гугл-таблички&lt;/a&gt;. Несколько видоизменённый аналог &lt;a href=&#34;/calculators/etf_taxation&#34;&gt;этого калькулятора&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Для начала перечислим основные факты:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Российские ETF/БПИФ — дорогие (комиссия порядка 1%г против 0,05%г у иностранных).&lt;/li&gt;
+&lt;li&gt;Российские брокеры — дешёвые (практически у всех крупных брокеров единственная комиссия — &lt;a href=&#34;/literacy/brokers&#34;&gt;0,05% от объёма сделок, иногда 0,01%г за хранение ценных бумаг&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;С дивидендов, выплаченных фондом, всегда удерживается 13% налога.&lt;/li&gt;
+&lt;li&gt;Если фонд получает купоны/дивиденды из другой страны, он тоже платит налог в соответствии с законодательством страны-отправителя (найти среднюю ставку налога можно, как правило, только в отчётности фонда: разделив сумму полученных дивидендов на сумму удержанных в иностранных государствах налогов).&lt;/li&gt;
+&lt;li&gt;На фонды, торгующиеся на российских биржах, действует &lt;a href=&#34;/literacy/iis&#34;&gt;трёхлетняя льгота, ЛДВ&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Теперь сведём их все в калькулятор. Рассмотрим «американский» фонд — выплачивающий дивиденды, «европейский» — аккумулирующий дивиденды внутри себя, и «российский» — аккумулирующий и освобождённый от налогообложения при продаже (по ЛДВ или ИИС-Б).&lt;/p&gt;
+&lt;p&gt;Будем считать по схеме с постепенным накоплением и расходованием капитала.&lt;/p&gt;
+&lt;p&gt;Т.к. у нас тут европейсике и американские фонды, размер активов будем считать в долларах. Все расчёты — с поправкой на инфляцию страны проживания.&lt;/p&gt;
+&lt;p&gt;Налоги рассчитываются, разумеется, с номинального результата инвестиций по принципу FIFO: раньше купленные паи раньше и продаются. Это важно, потому что при продаже аккумулирующих фондов налоговая база оказывается гораздо выше, чем при получении аналогичной суммы дивидендами.&lt;/p&gt;
+&lt;p&gt;«Валютная переоценка» учитывается величиной инфляции: на долгосроке расхождение валютных курсов будет приблизительно равно разнице в накопленных инфляциях. Поэтому два актива в разных валютах, но с одинаковой ожидаемой реальной доходностью, дадут в среднем одинаковые финансовые (и налоговые) результаты после пересчёта в валюту страны проживания.&lt;/p&gt;
+&lt;div&gt;
+    &lt;strong&gt;Общие параметры&lt;/strong&gt;
+    &lt;div&gt;
+        &lt;label&gt;&lt;span&gt;Начальная стоимость активов, $:&lt;/span&gt;&lt;input id=&#34;Sum&#34; type=&#34;number&#34; step=10 value=10000 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Реальная ценовая доходность, %г: &lt;input id=&#34;PriceY&#34; type=&#34;number&#34; step=0.1 value=3 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Дивидендная доходность, %г: &lt;input id=&#34;DivY&#34; type=&#34;number&#34; step=0.1 value=2 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Налог на дивиденды, %: &lt;input id=&#34;DivTax&#34; type=&#34;number&#34; step=1 value=13 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Налог на прирост капитала, %г: &lt;input id=&#34;GainTax&#34; type=&#34;number&#34; step=1 value=13 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Инфляция страны проживания, %г: &lt;input id=&#34;Infl&#34; type=&#34;number&#34; step=0.1 value=5 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Ежемесячное пополнение на стадии накопления, $: &lt;input id=&#34;ContribSum&#34; type=&#34;number&#34; step=100 value=1000 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Продолжительность пополнений, лет: &lt;input id=&#34;ContribLen&#34; type=&#34;number&#34; step=1 value=15 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Ежемесячное изъятие на стадии расходования, $: &lt;input id=&#34;WithdrawSum&#34; type=&#34;number&#34; step=100 value=1000 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+        &lt;label&gt;Продолжительность изъятий, лет: &lt;input id=&#34;WithdrawLen&#34; type=&#34;number&#34; step=1 value=25 onChange=&#34;onChange()&#34; /&gt;&lt;/label&gt;
+    &lt;/div&gt;
+    Подставить значения для типичного фонда &lt;span class=&#34;button&#34; onClick=&#34;setUS()&#34;&gt;американских акций&lt;/span&gt;,
+    &lt;span class=&#34;button&#34; onClick=&#34;setEU()&#34;&gt;европейских акций&lt;/span&gt;,
+    &lt;span class=&#34;button&#34; onClick=&#34;setRU()&#34;&gt;российских акций&lt;/span&gt;.
+    &lt;div&gt;
+        &lt;div&gt;
+            &lt;strong&gt;Американский фонд&lt;/strong&gt; (с выплатой дивидендов)
+            &lt;label&gt;Комиссия фонда, %г: &lt;input id=&#34;UsFee&#34; type=&#34;number&#34; step=0.01 value=0.01 onChange=&#34;onChange(&#39;us&#39;)&#34;/&gt;&lt;/label&gt;
+            &lt;label&gt;Внутренний налог на дивиденды, %: &lt;input id=&#34;UsDivTax&#34; type=&#34;number&#34; step=0.1 value=7 onChange=&#34;onChange(&#39;us&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Брокерская комиссия с оборота и спред, %: &lt;input id=&#34;UsBrkFee&#34; type=&#34;number&#34; step=0.01 value=0.1 onChange=&#34;onChange(&#39;us&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Фикс. комиссия брокера, $: &lt;input id=&#34;UsFix&#34; type=&#34;number&#34; step=1 value=10 onChange=&#34;onChange(&#39;us&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Остаток, $: &lt;span id=&#34;UsBalance&#34; class=&#34;result&#34;&gt;&lt;/span&gt;&lt;/label&gt;
+            &lt;details&gt;&lt;summary&gt;Подробнее&lt;/summary&gt;
+                &lt;div class=&#34;schedule&#34;&gt;
+                    &lt;span&gt;Год&lt;/span&gt;
+                    &lt;span&gt;Стоимость пая&lt;/span&gt;
+                    &lt;span&gt;Стоимость активов&lt;/span&gt;
+                    &lt;span&gt;Заплаченные комиссии и налоги&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id=&#34;UsSchedule&#34; class=&#34;schedule&#34;&gt;&lt;/div&gt;
+            &lt;/details&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;strong&gt;Европейский фонд&lt;/strong&gt; (с аккумулированием дивидендов)
+            &lt;label&gt;Комиссия фонда, %г: &lt;input id=&#34;EuFee&#34; type=&#34;number&#34; step=0.01 value=0.2 onChange=&#34;onChange(&#39;eu&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Внутренний налог на дивиденды, %: &lt;input id=&#34;EuDivTax&#34; type=&#34;number&#34; step=0.1 value=7 onChange=&#34;onChange(&#39;eu&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Брокерская комиссия с оборота и спред, %: &lt;input id=&#34;EuBrkFee&#34; type=&#34;number&#34; step=0.01 value=0.1 onChange=&#34;onChange(&#39;us&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Фикс. комиссия брокера, $: &lt;input id=&#34;EuFix&#34; type=&#34;number&#34; step=1 value=10 onChange=&#34;onChange(&#39;eu&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Остаток, $: &lt;span id=&#34;EuBalance&#34; class=&#34;result&#34;&gt;&lt;/span&gt;&lt;/label&gt;
+            &lt;details&gt;&lt;summary&gt;Подробнее&lt;/summary&gt;
+                &lt;div class=&#34;schedule&#34;&gt;
+                    &lt;span&gt;Год&lt;/span&gt;
+                    &lt;span&gt;Стоимость пая&lt;/span&gt;
+                    &lt;span&gt;Стоимость активов&lt;/span&gt;
+                    &lt;span&gt;Заплаченные комиссии и налоги&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id=&#34;EuSchedule&#34; class=&#34;schedule&#34;&gt;&lt;/div&gt;
+            &lt;/details&gt;
+        &lt;/div&gt;
+            &lt;strong&gt;Российский фонд&lt;/strong&gt; (с аккумулированием дивидендов и ЛДВ)
+            &lt;label&gt;Комиссия фонда, %г: &lt;input id=&#34;RuFee&#34; type=&#34;number&#34; step=0.01 value=0.7 onChange=&#34;onChange(&#39;ru&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Внутренний налог на дивиденды, %: &lt;input id=&#34;RuDivTax&#34; type=&#34;number&#34; step=0.1 value=7 onChange=&#34;onChange(&#39;ru&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Брокерская комиссия с оборота и спред, %: &lt;input id=&#34;RuBrkFee&#34; type=&#34;number&#34; step=0.01 value=0.1 onChange=&#34;onChange(&#39;us&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Фикс. комиссия брокера, $: &lt;input id=&#34;RuFix&#34; type=&#34;number&#34; step=1 value=0 onChange=&#34;onChange(&#39;eu&#39;)&#34; /&gt;&lt;/label&gt;
+            &lt;label&gt;Остаток, $: &lt;span id=&#34;RuBalance&#34; class=&#34;result&#34;&gt;&lt;/span&gt;&lt;/label&gt;
+            &lt;details&gt;&lt;summary&gt;Подробнее&lt;/summary&gt;
+                &lt;div class=&#34;schedule&#34;&gt;
+                    &lt;span&gt;Год&lt;/span&gt;
+                    &lt;span&gt;Стоимость пая&lt;/span&gt;
+                    &lt;span&gt;Стоимость активов&lt;/span&gt;
+                    &lt;span&gt;Заплаченные комиссии и налоги&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id=&#34;RuSchedule&#34; class=&#34;schedule&#34;&gt;&lt;/div&gt;
+            &lt;/details&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+    function calcBalance(fundFee, divTax, gainTax, brkFee, brkFix, distr) {
+        console.log(divTax);
+        let sum = Number(Sum.value);
+        let divY = Number(DivY.value)/100/12;
+        let infl = Number(Infl.value)/100/12 + 1;
+        let priceY = (Number(PriceY.value)/100/12 + 1)*infl;
+        let contribSum = Number(ContribSum.value);
+        let contribLen = Number(ContribLen.value)*12;
+        let withdrawSum = Number(WithdrawSum.value);
+        let withdrawLen = Number(WithdrawLen.value)*12;
+
+        let curPrice = 1;
+        let priceHist = [];
+        let inflIndex = 1;
+        let n = sum/curPrice;
+        schedule = []
+        year_fee = 0;
+        for (let m = 1; m &lt; contribLen+1; ++m) {
+            inflIndex *= infl;
+            curPrice *= priceY;
+            const div = curPrice * divY * (1-divTax);
+            const paidDiv = (distr ? div : 0);
+            curPrice += (distr ? 0 : div);
+            const f = curPrice*fundFee;
+            curPrice -= curPrice*fundFee;
+
+            const exp = brkFix + (contribSum*inflIndex + n*paidDiv)*brkFee;
+            const dn = (contribSum*inflIndex + n*paidDiv - exp)/curPrice;
+            n += dn;
+
+            priceHist.push([curPrice, dn]);
+
+            year_fee += (f + exp + (n*curPrice*divY) - (n*curPrice*divY)*(1-divTax))/inflIndex
+            if (m % 12 == 0) {
+                schedule.push([curPrice/inflIndex, curPrice*n/inflIndex, year_fee]);
+                year_fee = 0;
+            }
+        }
+
+        const doSell = (price, amount) =&gt; {
+            let rem = amount/price;
+            let base = 0;
+            for (let i = 0; i &lt; priceHist.length; ++i) {
+                let [p, n] = priceHist[i];
+                if (n &lt; rem) {
+                    rem -= n;
+                    base += p*n;
+                    priceHist[i] = [p, 0];
+                }
+                else {
+                    base += p*rem;
+                    priceHist[i] = [p, n-rem];
+                    break;
+                }
+            }
+            return amount-base;
+        }
+
+        for (let m = 1; m &lt; withdrawLen+1; ++m) {
+            inflIndex *= infl;
+            curPrice *= priceY;
+            const div = curPrice * divY * (1-divTax);
+            const paidDiv = (distr ? div : 0);
+            curPrice += (distr ? 0 : div);
+            const f = curPrice*fundFee;
+            curPrice -= curPrice*fundFee;
+
+            const sellAmount = withdrawSum*inflIndex - n*paidDiv;
+            const gain = sellAmount &gt; 0 ? doSell(curPrice, sellAmount) : 0;
+            const exp = brkFix + (Math.abs(sellAmount) + n*paidDiv)*brkFee + gain * gainTax;
+            dn = (sellAmount + exp)/curPrice
+            n -= dn;
+            if (dn &lt; 0)
+                priceHist.push([curPrice, dn]);
+
+            year_fee += (f + exp + (n*curPrice*divY) - (n*curPrice*divY)*(1-divTax))/inflIndex;
+            if (m % 12 == 0) {
+                schedule.push([curPrice/inflIndex, curPrice*n/inflIndex, year_fee]);
+                year_fee = 0;
+            }
+        }
+
+        return [n*curPrice/inflIndex, schedule];
+    }
+
+    function setUS() {
+        UsFee.value = 0.01;
+        UsDivTax.value = 0;
+        EuFee.value = 0.1;
+        EuDivTax.value = 15;
+        RuFee.value = 0.9
+        RuDivTax.value = 15;
+        onChange();
+    }
+
+    function setEU() {
+        UsFee.value = 0.09;
+        UsDivTax.value = 10;
+        EuFee.value = 0.1;
+        EuDivTax.value = 6;
+        RuFee.value = 0.9
+        RuDivTax.value = 6;
+        onChange();
+    }
+
+    function setRU() {
+        UsFee.value = 0.5;
+        UsDivTax.value = 15;
+        EuFee.value = 0.7;
+        EuDivTax.value = 15;
+        RuFee.value = 1;
+        RuDivTax.value = 0;
+        onChange();
+    }
+
+    function onChange() {
+        let [bal, sch] = calcBalance(
+            Number(UsFee.value)/100/12,
+            (1+Number(UsDivTax.value)/100)*(1+Number(DivTax.value)/100)-1,
+            Number(GainTax.value)/100,
+            Number(UsBrkFee.value)/100, Number(UsFix.value), true);
+        UsBalance.innerHTML = bal.toFixed(0);
+        UsSchedule.innerHTML = sch.map((v, i) =&gt; `&lt;span&gt;${i+1}&lt;/span&gt;&lt;span&gt;${v[0].toFixed(2)}&lt;/span&gt;&lt;span&gt;${v[1].toFixed(2)}&lt;/span&gt;&lt;span&gt;${v[2].toFixed(2)}&lt;/span&gt;`).join(&#34;\n&#34;);
+
+        [bal, sch] = calcBalance(
+            Number(EuFee.value)/100/12, Number(EuDivTax.value)/100, Number(GainTax.value)/100,
+            Number(EuBrkFee.value)/100, Number(EuFix.value), false);
+        EuBalance.innerHTML = bal.toFixed(0);
+        EuSchedule.innerHTML = sch.map((v, i) =&gt; `&lt;span&gt;${i+1}&lt;/span&gt;&lt;span&gt;${v[0].toFixed(2)}&lt;/span&gt;&lt;span&gt;${v[1].toFixed(2)}&lt;/span&gt;&lt;span&gt;${v[2].toFixed(2)}&lt;/span&gt;`).join(&#34;\n&#34;);
+
+        [bal, sch] = calcBalance(
+            Number(RuFee.value)/100/12, Number(RuDivTax.value)/100, 0,
+            Number(RuBrkFee.value)/100, Number(RuFix.value), false);
+        RuBalance.innerHTML = bal.toFixed(0);
+        RuSchedule.innerHTML = sch.map((v, i) =&gt; `&lt;span&gt;${i+1}&lt;/span&gt;&lt;span&gt;${v[0].toFixed(2)}&lt;/span&gt;&lt;span&gt;${v[1].toFixed(2)}&lt;/span&gt;&lt;span&gt;${v[2].toFixed(2)}&lt;/span&gt;`).join(&#34;\n&#34;);
+    }
+
+    onChange();
+&lt;/script&gt;</summary>
+    </entry>
 
     <entry>
         <title>Волатильность как мера риска</title>
@@ -723,273 +957,6 @@ $$\sigma^2_p = \sum_i w_i^2 \sigma_i^2 + \sum_{i}\sum_{j \neq i} w_i \, w_j \, \
 &lt;p&gt;Риск портфеля, понимаемый как отставание от целевой доходности, зависит от &lt;em&gt;доходности&lt;/em&gt; его составляющих, а не исторической корреляции между ними. Добавление в портфель «защитных» низкодоходных инструментов &lt;em&gt;всегда&lt;/em&gt; будет снижать его ожидаемую доходность.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</summary>
-    </entry>
-
-    <entry>
-        <title>Влияние комиссий и налогов на финансовый результат ETF</title>
-        <link href="https://onfin.github.io/calculators/etf_taxation" rel="alternate"/>
-        <id>https://onfin.github.io/calculators/etf_taxation</id>
-        <updated>2020-04-18T15:02:24.356319</updated>
-        <published>2020-04-18</published>
-        <summary type="html">&lt;p&gt;Все дивиденды реинвестируются, в конце срока удержания фонд продаётся. Если фонд аккумулирует дивиденды, поле «налог на выплаченные дивиденды» установить в 0. Предполагается, что брокерская комиссия уплачивается только при самостоятельном реинвестировании, а для аккумулирующих фондов транзакционные издержки учтены в комиссии за управление.&lt;/p&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/preact.umd.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/hooks.umd.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/forms.js&#34;&gt;&lt;/script&gt;
-
-&lt;script type=&#34;text/javascript&#34; src=&#34;/js/Chart.min.js&#34;&gt;&lt;/script&gt;
-
-&lt;div id=&#34;netReturn&#34; class=&#34;calc-form&#34;&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;_1&#34;&gt;Прирост капитала&lt;/h2&gt;
-&lt;div style=&#34;min-height: 256px&#34;&gt;
-    &lt;canvas id=&#34;capChart&#34;&gt;&lt;/canvas&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&#34;_2&#34;&gt;Потери капитала на налогах и комиссиях&lt;/h3&gt;
-&lt;div style=&#34;min-height: 256px&#34;&gt;
-    &lt;canvas id=&#34;lossChart&#34;&gt;&lt;/canvas&gt;
-&lt;/div&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-  makeForm(netReturn, {
-    deval: {
-      title: &#34;Средняя скорость обесценения национальной валюты относительно валюты ETF, %г&#34;,
-      type: &#34;number&#34;,
-      step: 1,
-      default: 5
-    },
-    appr: {
-      title: &#34;Ценовая доходность сверх эффекта валютных курсов, %г&#34;,
-      type: &#34;number&#34;,
-      step: 0.5,
-      default: 1
-    },
-    div: {
-      title: &#34;Дивидендная доходность, %г&#34;,
-      type: &#34;number&#34;,
-      step: 0.5,
-      default: 5
-    },
-    trade_fee: {
-      title: &#34;Брокерская комиссия с оборота и спред, %&#34;,
-      type: &#34;number&#34;,
-      step: 0.01,
-      default: 0.05
-    },
-    fee: {
-      title: &#34;Комиссия за управление, %г&#34;,
-      type: &#34;number&#34;,
-      step: 0.01,
-      default: 0.05
-    },
-    inner_tax: {
-      title: &#34;Налог на дивиденды внутри ETF, %&#34;,
-      type: &#34;number&#34;,
-      step: 0.1,
-      default: 15
-    },
-    distr_tax: {
-      title: &#34;Налог на выплаченные дивиденды, %&#34;,
-      type: &#34;number&#34;,
-      step: 1,
-      default: 13
-    },
-    gain_tax: {
-      title: &#34;Налог с продажи паёв, %&#34;,
-      type: &#34;number&#34;,
-      step: 1,
-      default: 13
-    },
-    netReturn: {
-        title: &#34;Эффективная доходность для инвестора, %г&#34;,
-        type: &#34;number&#34;,
-        output: true
-    }
-    },
-    function(f) {
-        const devalRate = 1 + f.deval/100;
-        const appr = (1 + f.appr/100);
-        const div = 1 + f.div/100;
-        const fee = 1 - f.fee/100;
-        const trade_fee = f.trade_fee/100;
-        const div_tax = (1 - f.inner_tax/100)*(1 - f.distr_tax/100);
-        const gain_tax = 1 - f.gain_tax/100;
-
-        const grossCap = [1];
-        const capAfterDivTax = [1];
-        const capAfterFees = [1*(1-trade_fee)];
-        const capAfterIncomeTax = [1*(1-trade_fee)];
-        let labels = [0];
-
-        const divTaxLoss = [0];
-        const feesLoss = [0];
-        const incomeTaxLoss = [0];
-        let turnoverTaxAcc = 0;
-
-        let deval = 1;
-        for (let i = 0; i &lt; 40; ++i) {
-            labels.push(i+1);
-            grossCap.push(grossCap[grossCap.length-1]*appr*div);
-            capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*div_tax));
-            capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
-                              - (f.distr_tax &gt; 0 ? capAfterFees[capAfterFees.length-1]*(div-1)*div_tax*trade_fee : 0));
-            const incomeTax = (capAfterFees[capAfterFees.length-1]*deval-1)*(1-gain_tax);
-            capAfterIncomeTax.push((capAfterFees[capAfterFees.length-1]*deval - incomeTax)/deval);
-
-            divTaxLoss.push((1-capAfterDivTax[capAfterDivTax.length-1]/grossCap[grossCap.length-1])*100);
-            feesLoss.push((1-capAfterFees[capAfterFees.length-1]/grossCap[grossCap.length-1])*100 - divTaxLoss[divTaxLoss.length-1]);
-            incomeTaxLoss.push((1-capAfterIncomeTax[capAfterIncomeTax.length-1]/grossCap[grossCap.length-1])*100 - feesLoss[feesLoss.length-1] - divTaxLoss[divTaxLoss.length-1]);
-
-            deval *= devalRate;
-        }
-
-        f.netReturn = ((Math.pow(capAfterIncomeTax[capAfterIncomeTax.length-1], 1/40)-1)*100).toFixed(2);
-
-        const capChartData = {
-            labels: labels,
-            datasets: [{
-                label: &#39;Без комиссий и налогов&#39;,
-                borderColor: &#39;#1f77b4&#39;,
-                backgroundColor: &#39;#1f77b4&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: grossCap.map(v =&gt; v.toFixed(2))
-            }, {
-                label: &#39;После налога на дивиденды&#39;,
-                borderColor: &#39;#ff7f0e&#39;,
-                backgroundColor: &#39;#ff7f0e&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: capAfterDivTax.map(v =&gt; v.toFixed(2))
-            }, {
-                label: &#39;После комиссий и потерь на спредах&#39;,
-                borderColor: &#39;#2ca02c&#39;,
-                backgroundColor: &#39;#2ca02c&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: capAfterFees.map(v =&gt; v.toFixed(2))
-            }, {
-                label: &#39;После налога на доход от продажи&#39;,
-                borderColor: &#39;#d62728&#39;,
-                backgroundColor: &#39;#d62728&#39;,
-                fill: false,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                data: capAfterIncomeTax.map(v =&gt; v.toFixed(2))
-            }]
-        };
-
-        var ctx = document.getElementById(&#39;capChart&#39;).getContext(&#39;2d&#39;);
-        if (window.capChartLines)
-            window.capChartLines.destroy();
-        window.capChartLines = Chart.Line(ctx, {
-            data: capChartData,
-            options: {
-                responsive: true,
-                hoverMode: &#39;index&#39;,
-                maintainAspectRatio: false,
-                onResize: function(chart, size) {
-                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
-                },
-                stacked: false,
-                tooltips: {
-                    mode: &#34;index&#34;
-                },
-                scales: {
-                    yAxes: [{
-                        type: &#39;linear&#39;,
-                        display: true,
-                        position: &#39;left&#39;,
-                        id: &#39;spent&#39;,
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Прирост капитала, раз&#34;
-                        }
-                    }],
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Годы&#34;
-                        }
-                    }]
-                }
-            }
-        });
-
-        const lossChartData = {
-            labels: labels,
-            datasets: [{
-                label: &#39;Налог на дивиденды и спекулятивную прибыль&#39;,
-                borderColor: &#39;#ff7f0e&#39;,
-                backgroundColor: &#39;#ff7f0e55&#39;,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                fill: true,
-                data: divTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
-            }, {
-                label: &#39;Комиссии и потери на спредах&#39;,
-                borderColor: &#39;#2ca02c&#39;,
-                backgroundColor: &#39;#2ca02c55&#39;,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                fill: true,
-                data: feesLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
-            }, {
-                label: &#39;Налог на доход от продажи&#39;,
-                borderColor: &#39;#d62728&#39;,
-                backgroundColor: &#39;#d6272855&#39;,
-                pointRadius: 0,
-                pointHitRadius: 10,
-                fill: true,
-                data: incomeTaxLoss.map(v =&gt; v &amp;&amp; v.toFixed(2))
-            }]
-        };
-
-        var ctx = document.getElementById(&#39;lossChart&#39;).getContext(&#39;2d&#39;);
-        if (window.lossChartLines)
-            window.lossChartLines.destroy();
-        window.lossChartLines = Chart.Line(ctx, {
-            data: lossChartData,
-            options: {
-                responsive: true,
-                hoverMode: &#39;index&#39;,
-                maintainAspectRatio: false,
-                onResize: function(chart, size) {
-                    chart.canvas.parentNode.style.height = Math.max(size.height, 256) + &#39;px&#39;;
-                },
-                stacked: false,
-                tooltips: {
-                    mode: &#34;index&#34;
-                },
-                scales: {
-                    yAxes: [{
-                        type: &#39;linear&#39;,
-                        display: true,
-                        position: &#39;left&#39;,
-                        id: &#39;spent&#39;,
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Потери, % от капитала&#34;
-                        },
-                        stacked: true
-                    }],
-                    xAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: &#34;Годы&#34;
-                        }
-                    }]
-                }
-            }
-        });
-    }
-  )
-&lt;/script&gt;</summary>
     </entry>
 
 </feed>

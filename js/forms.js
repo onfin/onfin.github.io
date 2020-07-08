@@ -23,7 +23,7 @@ function makeForm(div, fields, calc) {
             if (!fields[k].output)
                 res.push(h('tr', null,
                     h('td', null, fields[k].title),
-                    h('td', null, h('input', {...fields[k], [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k], onChange: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'], e)}))));
+                    h('td', null, h('input', {...fields[k], id: k, [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k], onChange: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'], e)}))));
             else
                 res.push(h('tr', null,
                     h('td', null, fields[k].title),
