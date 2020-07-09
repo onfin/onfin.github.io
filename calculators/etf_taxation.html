@@ -167,7 +167,7 @@
             labels.push(i+1);
             grossCap.push(grossCap[grossCap.length-1]*appr*div);
             capAfterDivTax.push(capAfterDivTax[capAfterDivTax.length-1]*appr*(1 + (div-1)*div_tax));
-            capAfterFees.push(capAfterDivTax[capAfterDivTax.length-1]*fee
+            capAfterFees.push(capAfterFees[capAfterFees.length-1]*appr*(1 + (div-1)*div_tax)*fee
                               - (f.distr ? capAfterFees[capAfterFees.length-1]*(div-1)*div_tax*trade_fee : 0));
             const incomeTax = (capAfterFees[capAfterFees.length-1]*deval-1)*(1-gain_tax);
             capAfterIncomeTax.push((capAfterFees[capAfterFees.length-1]*deval - incomeTax)/deval);
