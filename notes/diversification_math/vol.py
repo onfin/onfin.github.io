@@ -118,12 +118,12 @@ plt.clf()
 
 caps = np.exp(logp)
 y = np.sort(caps)**(1/30)-1
-plt.plot(np.arange(0,N)/N*100, y, label=f"отдельные акции")
+plt.plot(np.arange(0,N)/N*100, y*100, label=f"отдельные акции")
 s = np.std(y)
 for n in (10, 50, 500):
     p = (np.convolve(caps, np.ones(n), 'valid')/n)**(1/30)-1
     y = np.sort(p)
-    plt.plot(np.arange(0,len(y))/len(y)*100, y, label=f"{n} акций")
+    plt.plot(np.arange(0,len(y))/len(y)*100, y*100, label=f"{n} акций")
 
 ax = plt.gca()
 ax.set_ylabel('доходность, %г')

@@ -16,23 +16,9 @@
     <meta property="og:description" content="Как правильно выбрать банковский вклад, какие бывают схемы начисления и выплаты процентов, расчёт эффективной процентной ставки (для сравнения схем), подводные камни вкладов." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2018-12-19" />
-        <meta property="og:article:modified_time" content="2020-07-08" />
+        <meta property="og:article:modified_time" content="2020-07-15" />
 <meta property="og:title" content="Размещение средств в банках" />
 <meta property="og:url" content="https://onfin.github.io/literacy/deposits" />
-        <script>
-            MathJax = {
-                tex: {
-                    inlineMath: [['$', '$'], ['\\(', '\\)']],
-                    displayMath: [['$$', '$$'], ['\\[', '\\]']]
-                },
-                chtml: {
-                    scale: 1,
-                    matchFontHeight: true
-                }
-            };
-        </script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
 
 
 
@@ -69,7 +55,7 @@
         <h1>Размещение средств в банках</h1>
         <div class="meta">
                 <p class="description">Как правильно выбрать банковский вклад, какие бывают схемы начисления и выплаты процентов, расчёт эффективной процентной ставки (для сравнения схем), подводные камни вкладов.</p>
-                <p> Обновлено: <time>2020-07-08</time> </p>
+                <p> Обновлено: <time>2020-07-15</time> </p>
 
         </div>
     </header>
@@ -118,7 +104,7 @@
 
 <p>При выборе способа выплаты нужно руководствоваться следующими соображениями:</p>
 <ul>
-<li>Получение процентов в конце срока обычно выгоднее их капитализации (процентная ставка начисляется выше, чем в случае даже эффективной ставки с капитализацией). Как правило для вкладов с каптализацией банк приводит <em>эффективную процентную ставку</em> (т.е. приведённую к концу срока вклада). Если её нет, то рассчитывается она просто: $(1+r/N)^{N}-1$, где r — годовая процентная ставка (в единицах, т.е. ставка в процентах делённая на 100), а N — сколько раз за год начисляются проценты (например, если при номинальной годовой ставке
+<li>Получение процентов в конце срока обычно выгоднее их капитализации (процентная ставка начисляется выше, чем в случае даже эффективной ставки с капитализацией). Как правило для вкладов с каптализацией банк приводит <em>эффективную процентную ставку</em> (т.е. приведённую к концу срока вклада). Если её нет, то рассчитывается она просто: <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span>, где r — годовая процентная ставка (в единицах, т.е. ставка в процентах делённая на 100), а N — сколько раз за год начисляются проценты (например, если при номинальной годовой ставке
 <input id="rate" type="number" value=6 step=0.5 style="width: 2em;" onChange="calcEffectiveRate()" />%г
 проценты начисляются
 <input id="periods" type="number" value=12 step=1 style="width: 2.5em;" onChange="calcEffectiveRate()" />раз,
