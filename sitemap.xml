@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
+            <loc>https://onfin.github.io/notes/fairprice</loc>
+            <lastmod>2019-12-29</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2019-02-24</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/moneytransfer</loc>
+            <lastmod>2020-01-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io</loc>
             <lastmod>2019-10-14</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/donate</loc>
-            <lastmod>2020-04-03</lastmod>
+            <loc>https://onfin.github.io/notes/capital</loc>
+            <lastmod>2019-12-29</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2020-04-02</loc>
+            <lastmod>2020-04-10</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/reserves</loc>
+            <lastmod>2019-11-19</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/returns</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/deposits</loc>
+            <lastmod>2020-07-25</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/brokers</loc>
+            <lastmod>2020-02-10</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/gold</loc>
+            <lastmod>2020-01-05</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-15</loc>
+            <lastmod>2019-09-26</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/recklessness</loc>
+            <lastmod>2020-06-27</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/notaboutmoney</loc>
+            <lastmod>2019-11-09</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2020-01-01</loc>
+            <lastmod>2020-04-10</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -25,158 +109,50 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/calculators/credits</loc>
+            <lastmod>2020-06-25</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators/etf_taxation</loc>
+            <lastmod>2020-07-09</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/mpt</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators/cards</loc>
+            <lastmod>2019-10-17</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/literacy/iis</loc>
             <lastmod>2020-07-15</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/literacy/credits</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/howto</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/reserves</loc>
-            <lastmod>2019-11-19</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/moneytransfer</loc>
-            <lastmod>2020-01-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy</loc>
-            <lastmod>2020-07-24</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/basebank</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/taxes</loc>
+            <loc>https://onfin.github.io/notes/piketti</loc>
             <lastmod>2020-07-15</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/literacy/instruments</loc>
-            <lastmod>2019-11-17</lastmod>
+            <loc>https://onfin.github.io/calculators/compounding</loc>
+            <lastmod>2020-02-18</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/literacy/deposits</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/cards</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/brokers</loc>
-            <lastmod>2020-02-10</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/notaboutmoney</loc>
-            <lastmod>2019-11-09</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/returns</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/deposits2</loc>
-            <lastmod>2020-01-04</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/realty</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/cash</loc>
-            <lastmod>2020-01-04</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/stocks</loc>
-            <lastmod>2020-05-07</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/gold</loc>
-            <lastmod>2020-01-05</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/bonds</loc>
-            <lastmod>2020-07-22</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/literacy/instruments/crypto</loc>
-            <lastmod>2020-05-19</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/inflation</loc>
-            <lastmod>2020-05-16</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/workersfactories</loc>
-            <lastmod>2019-12-29</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/capital</loc>
-            <lastmod>2019-12-29</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/aboutme</loc>
-            <lastmod>2019-12-29</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/system</loc>
-            <lastmod>2020-07-15</lastmod>
+            <loc>https://onfin.github.io/notes/marketprice</loc>
+            <lastmod>2020-04-16</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -187,26 +163,74 @@
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/fairprice</loc>
+            <loc>https://onfin.github.io/notes/aboutme</loc>
             <lastmod>2019-12-29</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes</loc>
-            <lastmod>2020-07-24</lastmod>
+            <loc>https://onfin.github.io/literacy/cards</loc>
+            <lastmod>2020-07-08</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/finplan</loc>
+            <loc>https://onfin.github.io/literacy/instruments/bonds</loc>
+            <lastmod>2020-07-22</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/basebank</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/pages/sources</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators/fees_taxes_effect</loc>
+            <lastmod>2020-04-18</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2020-03-22</loc>
+            <lastmod>2020-03-22</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/referrals</loc>
             <lastmod>2019-12-29</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/recklessness</loc>
-            <lastmod>2020-06-27</lastmod>
+            <loc>https://onfin.github.io/literacy/taxes</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/inflation</loc>
+            <lastmod>2020-05-16</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2019-01-12</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/accounting</loc>
+            <lastmod>2019-12-29</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -223,37 +247,79 @@
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/marketprice</loc>
-            <lastmod>2020-04-16</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/referrals</loc>
-            <lastmod>2019-12-29</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/piketti</loc>
+            <loc>https://onfin.github.io/notes/diversification_math2</loc>
             <lastmod>2020-07-15</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/accounting</loc>
-            <lastmod>2019-12-29</lastmod>
+            <loc>https://onfin.github.io/notes</loc>
+            <lastmod>2020-07-24</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/market_to_gdp</loc>
+            <loc>https://onfin.github.io/blog/2018-12-05</loc>
+            <lastmod>2019-09-26</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/volatility</loc>
             <lastmod>2020-07-15</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/piketti2</loc>
+            <loc>https://onfin.github.io/blog/2018-12-31</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/finplan</loc>
+            <lastmod>2019-12-29</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/system</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/zero_sum</loc>
+            <lastmod>2020-07-31</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/cash</loc>
+            <lastmod>2020-01-04</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/deposits2</loc>
+            <lastmod>2020-01-04</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/stocks</loc>
+            <lastmod>2020-05-07</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-19</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/bonds_in_portfolio</loc>
             <lastmod>2020-07-15</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
@@ -265,188 +331,14 @@
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.io/notes/volatility</loc>
+            <loc>https://onfin.github.io/literacy/instruments/crypto</loc>
+            <lastmod>2020-07-27</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/market_to_gdp</loc>
             <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/bonds_in_portfolio</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/markettiming</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/diversification_math</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/diversification_math2</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/notes/mpt</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/pages/sources</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/compounding</loc>
-            <lastmod>2020-02-18</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/etf_us_eu_ru</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/credits</loc>
-            <lastmod>2020-06-25</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators</loc>
-            <lastmod>2020-07-15</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/fees_taxes_effect</loc>
-            <lastmod>2020-04-18</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/bond_price</loc>
-            <lastmod>2020-02-12</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/etf_taxation</loc>
-            <lastmod>2020-07-09</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/calculators/cards</loc>
-            <lastmod>2019-10-17</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2019-01-02</loc>
-            <lastmod>2019-09-26</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2019-02-24</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2020-01-01</loc>
-            <lastmod>2020-04-10</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2019-05-20</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-14</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2020-04-02</loc>
-            <lastmod>2020-04-10</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2020-03-22</loc>
-            <lastmod>2020-03-22</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-05</loc>
-            <lastmod>2019-09-26</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-16</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-19</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2019-01-12</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-07</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-31</loc>
-            <lastmod>2020-07-08</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-01</loc>
-            <lastmod>2019-09-26</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-15</loc>
-            <lastmod>2019-09-26</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-        <url>
-            <loc>https://onfin.github.io/blog/2018-12-08</loc>
-            <lastmod>2020-06-25</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -457,14 +349,128 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/literacy/howto</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/blog/2018-12-02</loc>
             <lastmod>2019-09-26</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://onfin.github.iooutput/blog/index</loc>
-            <lastmod>2020-04-10</lastmod>
+            <loc>https://onfin.github.io/calculators/etf_us_eu_ru</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/exchange</loc>
+            <lastmod>2020-07-30</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2019-01-02</loc>
+            <lastmod>2019-09-26</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/credits</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments/realty</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-16</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/donate</loc>
+            <lastmod>2020-04-03</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/markettiming</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/piketti2</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-01</loc>
+            <lastmod>2019-09-26</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/diversification_math</loc>
+            <lastmod>2020-07-15</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/calculators/bond_price</loc>
+            <lastmod>2020-02-12</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-14</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2019-05-20</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/instruments</loc>
+            <lastmod>2019-11-17</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy</loc>
+            <lastmod>2020-07-30</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-07</loc>
+            <lastmod>2020-07-08</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/workersfactories</loc>
+            <lastmod>2019-12-29</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/blog/2018-12-08</loc>
+            <lastmod>2020-06-25</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
