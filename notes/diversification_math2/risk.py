@@ -91,6 +91,7 @@ def portfolio(f, ds1, ds2):
 
 
 
+
 # def plot_instr_price(ds, interval, label):
 #     rt = ds.rolling(interval).apply(lambda d: d[-1]/d[0], raw=True)
 #     rt = (rt[~ pd.isnull(rt)]-1)*100
