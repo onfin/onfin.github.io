@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Ипотека / аренда + инвестирование</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="/calculators/mortgage" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+        <meta name="description" content="Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" />
+        <meta name="keywords" content="калькулятор, кредит, аннуитет, ипотека, аренда, инвестирование, что выгоднее" />
+
+<meta property="og:locale" content="ru" />
+    <meta property="og:description" content="Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" />
+    <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2020-02-07" />
+        <meta property="og:article:modified_time" content="2021-02-07" />
+<meta property="og:title" content="Ипотека / аренда + инвестирование" />
+<meta property="og:url" content="https://onfin.github.io/calculators/mortgage" />
+
+
+
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <label class="menu-container" for="toggle-menu">
+                <div class="menu-head">
+                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
+                    <div class="social">
+                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
+                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
+                    </div>
+                </div>
+                <div class="checkmark">&equiv;</div>
+            </label>
+            <input type="checkbox" id="toggle-menu" />
+            <ul class="menu">
+                    <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
+                    <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
+                    <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
+                    <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+<article>
+    <header>
+        <h1>Ипотека / аренда + инвестирование</h1>
+        <div class="meta">
+                <p class="description">Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?</p>
+                <p> Обновлено: <time>2021-02-07</time> </p>
+
+        </div>
+    </header>
+    <div class="content">
+        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
+        <form id="creditForm" class="calc-form">
+<label>Начальный капитал: <input id=initialCapital type="number" step=1000 value=3000000 /></label>
+<div class='comment'>Остаток этой суммы (после уплаты первоначального взноса и расходов на оформление кредита) пойдёт на инвестирование.</div>
+
+<label>Свободный доход: <input id="income" type="number" step=1000 value=60000 /></label>
+<div class='comment'>Сколько у вас в среднем остаётся свободных денег в месяц, до платежей и прочих расходов по этому кредиту. Считается, что эта сумма растёт со скоростью инфляции. Инвестируется её остаток после ежемесячного платежа, уплаты ежегодных расходов и частичного досрочного погашения.</div>
+
+<label>Ожидаемая инфляция, %г: <input id="inflationRate" type="number" step=0.1 value=5 /></label>
+<div class='comment'>Ожидаемая средняя инфляция за весь срок кредита. В качестве ориентира можно взять значения с <a href="https://cbr.ru/hd_base/zcyc_params/zcyc/">кривой бескупонной доходности</a>.</div>
+
+<label>Доходность вложений (сверх инфляции), %г: <input id="investmentYield" type="number" step=0.1 value=5 /></label>
+<div class='comment'>Ожидаемая реальная доходность вашего инвестиционного портфеля.</div>
+
+<p></p>
+
+<label>Стоимость жилья: <input id="housePrice" type="number" step=1000 value=3000000 onchange='setRentEst()' /></label>
+<label>Первоначальный взнос: <input id="downpayment" type="number" step=1000 value=600000 onchange='setPayment()' /></label>
+<label>Расходы на оформление: <input id="initialFee" type="number" step=1000 value=15000 /></label>
+<div class='comment'>Оценка недвижимости, комиссии за регистрацию и пр.</div>
+<label>Срок кредита, мес: <input id="months" type="number" step=1 value=360 onchange='setPayment()' /></label>
+<label>Процентная ставка по кредиту, %г: <input id="interestRate" type="number" step=0.1 value=6.5 onchange='setPayment()' /></label>
+<div class='comment'>Ежемесячный платёж будет: <strong><span id='monthlyPayment'></span></strong></div>
+<label>Ежегодные расходы, % от остатка кредита: <input id="recurringFee" type="number" step=0.1 value=0.5 /></label>
+<div class='comment'>На страхование недвижимости, жизни и здоровья.</div>
+<label>На досрочное погашение, %: <input id="earlyRepay" type="number" step=1 value=0 /></label>
+<div class='comment'>Какой процент свободного ежемесячного дохода, после всех расходов по кредиту и жилью, направить на досрочное погашение. Оставшиеся деньги будут инвестированы.</div>
+
+<p></p>
+
+<label>Эксплуатационные расходы в год: <input id="runningCosts" type="number" step=1000 value=20000 /></label>
+<div class='comment'>Среднегодовые расходы на текущий и косметический ремонт, которые вы несёте как собственник жилья, а также налоги. Без коммунальных платежей. Предполагается, что эта сумма растёт со скоростью инфляции. </div>
+<label>Обветшание / восстановительный ремонт и страхование, %г от стоимости жилья: <input id="depreciation" type="number" step=0.1 value=1.5 /></label>
+<div class='comment'>Согласно <a href="https://www.nber.org/papers/w24112">исследованиям</a>, это 1,5-2%г. Если вы почему-то считаете, что дорожать (после поправки на инфляцию) ваше жильё будет быстрее, чем морально и физически устаревать, то сделайте значение в этом поле отрицательным. Но про эту корректировку всё равно не забудьте.</div>
+
+<p></p>
+
+<label>Стоимость аренды аналогичного жилья в мес: <input id="rentPrice" type="number" step=1000 value=20000 /></label>
+<div class='comment'>Обычно это примерно 1/150 от его стоимости (т.е. <span id='rentEst'></span> для указанного значения). Предполагается, что она растёт со скоростью инфляции от начального значения (расходы на поддержание начальной стоимости жилья ложатся на арендодателя). Свободные деньги, оставшиеся после арендного платежа, инвестируются.</div>
+</form>
+
+<p><button onclick="calc()">Рассчитать</button></p>
+<div id="results">
+</div>
+
+<script type="text/javascript">
+    function readForm() {
+        const data = {};
+        for (let i = 0; i < creditForm.elements.length; ++i) {
+            const item = creditForm.elements[i];
+            data[item.id] = Number(item.value);
+        }
+        return data;
+    }
+
+    function annuityPayment(sum, monthRate, months) {
+        return sum*monthRate*Math.pow(1+monthRate, months)/(Math.pow(1+monthRate, months)-1);
+    }
+
+    function calc() {
+        const data = readForm();
+        const res = calcCreditSchedule(data);
+        const res2 = calcRentSchedule(data);
+
+        const sch = [];
+        sch.push(`<tr>
+            <th>Месяц</th>
+            <th>Остаток кредита</th>
+            <th>Сумма инвестиций</th>
+            <th>Стоимость жилья</th>
+            <th>Платёж по кредиту</th>
+            <th>Досрочное погашение</th>
+            <th>Прочие расходы</th>
+        </tr>`);
+        for (const s of res.schedule)
+            sch.push(`
+                <tr>
+                    <td>${s.month}</td>
+                    <td>${prettyNumber(Math.round(s.sum))}</td>
+                    <td>${prettyNumber(Math.round(s.investment))}</td>
+                    <td>${prettyNumber(Math.round(s.housePrice))}</td>
+                    <td>${prettyNumber(Math.round(s.payment))}</td>
+                    <td>${prettyNumber(Math.round(s.earlyRepay))}</td>
+                    <td>${prettyNumber(Math.round(s.costs))}</td>
+                </tr>
+            `);
+
+        results.innerHTML = `
+            <p>
+            Все цифры после поправки на инфляцию. Рассчитывается внутренняя норма доходности вложения начального капитала и свободных денег.
+            <table>
+                <tr><td colspan=2><strong>Покупка</strong></td></tr>
+                <tr><td>Итоговый капитал</td><td>${prettyNumber(Math.round(res.investment+res.housePrice))}</td></tr>
+                <tr><td>Итоговая доходность</td><td>${Math.round(res.yield*10000)/100}%г</td></tr>
+                <tr><td>Лет до погашения</td><td>${Math.round(res.lastYear*10)/10}</td></tr>
+                <tr><td colspan=2><strong>Аренда</strong></td></tr>
+                <tr><td>Итоговый капитал</td><td>${prettyNumber(Math.round(res2.investment))}</td></tr>
+                <tr><td>Итоговая доходность</td><td>${Math.round(res2.yield*10000)/100}%г</td></tr>
+            </table>
+            </p>
+
+            <p>
+            Погашение кредита.
+            <table>
+                ${sch.join('')}
+            </table>
+            </p>
+        `;
+    }
+
+
+    function setPayment() {
+        const data = readForm();
+        let sum = data.housePrice-data.downpayment;
+        const monthRate = data.interestRate/100/12;
+        let pay = annuityPayment(sum, monthRate, data.months);
+        monthlyPayment.innerHTML = Math.round(pay);
+    }
+
+    function setRentEst() {
+        rentEst.innerHTML = Math.round(Number(housePrice.value)/150);
+        setPayment();
+    }
+    setRentEst();
+
+    function calcRentSchedule(data) {
+        let investment = data.initialCapital;
+        const monthYield = 1+data.investmentYield/100/12;
+
+        const flows = [];
+        let year = 0;
+        flows.push([year, data.initialCapital]);
+        for (let m = 1; m <= data.months; ++m) {
+            year += 1/12;
+            investment *= monthYield;
+            investment += data.income - data.rentPrice;
+            flows.push([year, data.income]);
+        }
+        year += 1/12;
+        flows.push([year, -investment]);
+        return {investment, yield: xirr(flows)};
+    }
+
+    function calcCreditSchedule(data) {
+        let housePrice = data.housePrice;
+        let sum = housePrice-data.downpayment;
+        const monthInfl = data.inflationRate/100/12;
+        const monthRate = data.interestRate/100/12;
+        const monthYield = 1+(data.investmentYield + data.inflationRate)/100/12;
+        const monthDepr = 1+data.depreciation/100/12;
+        let pay = annuityPayment(sum, monthRate, data.months);
+
+        let investment = data.initialCapital - data.downpayment - data.initialFee - sum * data.recurringFee/100;
+
+        let year = 0;
+        let inflCoeff = 1;
+        const flows = [];
+        const schedule = [];
+        let lastYear = 0;
+        flows.push([year, data.initialCapital]);
+        schedule.push({month: 0, sum, investment, housePrice, payment: 0, earlyRepay: 0, costs: data.initialFee+sum * data.recurringFee/100});
+
+        for (let m = 1; m <= data.months; ++m) {
+            year += 1/12;
+            investment *= monthYield;
+            housePrice *= 1+monthInfl;
+            housePrice /= monthDepr;
+            sum -= pay - monthRate*sum;
+            if (sum < 1 && lastYear == 0) {
+                sum = 0;
+                lastYear = year;
+            }
+
+            let income = data.income*inflCoeff - pay - data.runningCosts*inflCoeff/12;
+            flows.push([year, data.income]);
+            if (m % 12 == 0)
+                income -= sum * data.recurringFee/100;
+            const earlyRepay = Math.min(sum, income * data.earlyRepay/100);
+            income -= earlyRepay;
+            sum -= earlyRepay;
+            investment += income;
+            inflCoeff *= 1+monthInfl;
+            schedule.push({month: m, sum: sum/inflCoeff, investment: investment/inflCoeff, housePrice: housePrice/inflCoeff, payment: pay/inflCoeff, earlyRepay: earlyRepay/inflCoeff, costs: (data.income*inflCoeff-income-pay-earlyRepay)/inflCoeff});
+            pay = annuityPayment(sum, monthRate, data.months-m);
+        };
+        year += 1/12;
+        flows.push([year, (-investment-housePrice)/inflCoeff]);
+        if (lastYear == 0)
+            lastYear = year;
+
+        return {
+            investment: investment/inflCoeff,
+            housePrice: housePrice/inflCoeff,
+            yield: xirr(flows),
+            lastYear,
+            schedule
+        };
+    }
+
+
+    function findRoot(f, guess) {
+        const precision = 1e-5;
+        const maxIter = 200;
+        const dx = precision;
+
+        let it = 0;
+        let prev = guess;
+        do {
+            prev = guess;
+            const d = (f(guess + dx) - f(guess - dx)) / (2 * dx);
+            if (Math.abs(d) < 1e-9)
+                return undefined;
+            guess -= f(guess)/d;
+        }
+        while (++it < maxIter && Math.abs(prev - guess) > precision)
+
+        if (it < maxIter)
+            return guess;
+        return undefined;
+    }
+
+
+    function xirr(flows) {
+        const lastYear = flows[flows.length-1][0];
+        const npv = (r) => {
+            let res = 0;
+            for (let [y, f] of flows) {
+                res += f * Math.pow(1+r, lastYear-y);
+            }
+            return res;
+        }
+        return findRoot(npv, Math.pow(-flows[flows.length-1][1]/flows[0][1], 1/lastYear)-1);
+    }
+
+    function prettyNumber(x) {
+        return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+    }
+</script>
+        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
+    </div>
+    <aside>
+        <div style="display: flex; flex-direction: column; text-align: right;">
+        <div class="share-buttons">
+            <a href="https://vk.com/share.php?url=https://onfin.github.io/calculators/mortgage&title=Ипотека / аренда + инвестирование&description=Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" target="_blank"><i class="share">&#xea9d;</i></a>
+            <a href="https://t.me/share/url?url=https://onfin.github.io/calculators/mortgage" target="_blank"><i class="share">&#xea9b;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/calculators/mortgage" target="_blank"><i class="share">&#xea9c;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/calculators/mortgage" target="_blank"><i class="share">&#xea93;</i></a>
+
+        </div>
+        <a class="donate-button" href="/donate">Отблагодарить</a>
+    </div>
+    </aside>
+</article>
+
+    </main>
+
+    <footer>
+<div class="prevupnext"><a class="up" href="/calculators"> &uarr; Калькуляторы &uarr; </a></div>
+
+        <div class="disclaimer">
+            <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+
+            <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
+
+            <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
