@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Что такое акции, зачем предприятия их выпускают, как ведёт себя цена акций, почему и как их следует покупать." />
         <meta name="keywords" content="финансовая грамотность, фондовый рынок, акции, IPO, SPO" />
 
@@ -43,14 +44,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Акции и их смысл</h1>
@@ -61,12 +69,10 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Статья перенесена <a href="/literacy/instruments/stocks">сюда</a>.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/stocks&title=Акции и их смысл&description=Что такое акции, зачем предприятия их выпускают, как ведёт себя цена акций, почему и как их следует покупать." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/stocks" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -74,7 +80,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/stocks" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -90,7 +98,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

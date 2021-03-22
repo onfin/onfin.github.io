@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Зачем нужны и какие риски несут наличные деньги." />
         <meta name="keywords" content="финансовая грамотность, инструменты сбережений, наличные деньги, валюта, доллары, риски, доходность" />
 
@@ -16,7 +17,7 @@
     <meta property="og:description" content="Зачем нужны и какие риски несут наличные деньги." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-01-01" />
-        <meta property="og:article:modified_time" content="2020-01-04" />
+        <meta property="og:article:modified_time" content="2021-02-20" />
 <meta property="og:title" content="Наличные деньги" />
 <meta property="og:url" content="https://onfin.github.io/literacy/instruments/cash" />
 
@@ -41,25 +42,31 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Наличные деньги</h1>
         <div class="meta">
                 <p class="description">Зачем нужны и какие риски несут наличные деньги.</p>
-                <p> Обновлено: <time>2020-01-04</time> </p>
+                <p> Обновлено: <time>2021-02-20</time> </p>
 
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Сразу начну с того, что если вы где-то в финансовой литературе встречаете слово «кэш» (cash), то это ни разу не про бумажки и монетки. Это про остатки на банковских счетах, облигации с погашением в ближайший год и прочее подобное. Потому что идиотов хранить деньги в физической форме настолько мало, что о ней даже упоминать негде, и удобное слово изменило своё значение. У нас таких ещё хватает, поэтому вот список, почему так делать не надо.</p>
 <ul>
 <li>Легко уничтожить. Пожар, потоп, грибок. Да даже банальные крысы или домашние животные с удовольствием оставят от вашей заначки только мелкие клочки.</li>
@@ -77,10 +84,9 @@
 <img src=/literacy/instruments/cash_usdrur.svg style="width: 100%; height: 50wv" /></p>
 <p>Т.е. от 1 рубля к 2020г осталось 13 копеек, а от 1 доллара — 29 центов.</p>
 <p>Исходные данные: <a href="https://www.cbr.ru/currency_base/dynamics/">курсы валют</a>, <a href="https://www.cbr.ru/hd_base/mkr/mkr_base/">ставки межбанковского рынка</a> и <a href="https://www.cbr.ru/hd_base/ruonia/">RUONIA</a> (фактическая стоимость денег), <a href="https://www.gks.ru/storage/mediabank/tab-potr.html">индекс потребительских цен</a> (динамика расходов среднестатистического потребителя). При расчёте обесценения в каждом месяце брался максимум из монетарного и потребительского обесценения.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/instruments/cash&title=Наличные деньги&description=Зачем нужны и какие риски несут наличные деньги." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/instruments/cash" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -88,7 +94,11 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/instruments/cash" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
+          <a class="donate-button" href='https://t.me/on_fin/39' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
+
     </div>
     </aside>
 </article>
@@ -104,7 +114,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

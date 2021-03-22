@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
 
 <meta property="og:locale" content="ru" />
     <meta property="og:type" content="website" />
@@ -36,14 +37,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>2019-05-20</h1>
@@ -51,7 +59,6 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Целых три месяца прошло от последней записи, навёрстываем упущенное.</p>
 <p>Во-первых, я актуализировал раздел со своими <a href="/notes/referrals">сервисами</a>). Вылетели закрытые банками (вместе с самими банками) карточки Росгосстрах- и Бин- банков, вылетел брокер Открытие, внезапно установивший депозитарную комиссию в 175р за месяц, в котором были движения ценных бумаг. Добавил описание ИИС от ВТБ, открытого ещё в позапрошлом году из-за его уникальных свойств.</p>
 <p>Новости (и старости) из открытой печати:</p>
@@ -70,10 +77,9 @@
 <li><a href="https://docs.google.com/spreadsheets/d/11ElKz7sJ6JH9Ex6yQcU0hC1TFEMmLVt-hFFQEzY-Fyc/edit#gid=1404557592">Сводная таблица по тарифам брокеров</a></li>
 <li>Ещё один <a href="https://tradingeconomics.com/">огромный массив макроэкономических данных</a>, очень удобно представленных.</li>
 </ul>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/blog/2019-05-20&title=2019-05-20&description=" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/blog/2019-05-20" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -81,7 +87,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/blog/2019-05-20" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -97,7 +105,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

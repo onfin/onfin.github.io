@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
 
 <meta property="og:locale" content="ru" />
     <meta property="og:type" content="website" />
@@ -36,14 +37,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Интересное за неделю</h1>
@@ -51,17 +59,15 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p><a href="http://activeinvestor.pro/uorren-baffet-o-rynke-aktsij/">Алексей Мартынов</a> опубликовал свой перевод рассуждения Уоррена Баффета о рынке акций перед крахом пузыря доткомов. Особенно поучительными для сегодняшнего дня моментами мне кажутся следующие:</p>
 <ul>
 <li>Прямое влияние величины процентных ставок на стоимость активов. Вслед за снижением ставок точно так же снижается и требуемая инвесторами доходность, т.е. стоимость активов, при неизменной прибыли, растёт (за ту же прибыль люди готовы отдать больше денег). Сейчас, по мнению многих экономистов, начинается новый цикл роста ставок.</li>
 <li>Вечная тема о спекулятивной и инвестиционной доходности: <strong>«инвесторы в совокупности не могут получить от своего бизнеса сверх того, что бизнес зарабатывает»</strong>, можно сколь угодно долго обмениваться долями в бизнесе по произвольным ценам, но суммарную прибыль создаёт бизнес, а не процесс обмена (а процесс обмена создаёт только убытки: из-за потерь на комиссиях). Об этом же на неделе ещё раз высказался <a href="https://fintraining.livejournal.com/1047127.html">Сергей Спирин</a>.</li>
 <li>О вложениях в передовые отрасли. Баффет рассматривает передовые отрасли прошлого: автомобиле- и самолётостроение, отмечая следующее: «В автомобильной индустрии [Америки] было по крайней мере 2000 марок автомобилей &lt;...&gt; к 1990-и годам &lt;...&gt; мы пришли к трем американским автомобильным компаниям — и те не сахар для инвесторов. Вот отрасль, которая оказала огромное влияние на Америку, и такое же огромное, но не такое ожидаемое, на инвесторов.» С самолётостроением история аналогичная — несколько сотен во время бума, и сколько вы назовёте сейчас? То же и про авиакомпании: «По состоянию на 1992 год, несмотря на то, что с тех пор ситуация улучшилась, деньги, которые были заработаны всеми авиакомпаниями этой страны с момента зарождения авиации, равны нулю. Абсолютному нулю.». И так далее по всем отраслям. Вывод следующий: <strong>«ключ к инвестированию — это не оценка того, как отрасль будет влиять на общество или как она будет расти, а скорее определение конкурентного преимущества любой компании и, прежде всего, долговечность этого преимущества»</strong>.</li>
 </ul>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/blog/2018-12-02&title=Интересное за неделю&description=" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/blog/2018-12-02" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -69,7 +75,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/blog/2018-12-02" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -85,7 +93,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Теория и расчёт различных схем погашения кредитов. Какова реальная переплата по кредиту по той или иной схеме? Сколько стоит хранить в банке резерв на будущие платежи по кредиту? Сколько можно заработать, если вложить кредитные деньги?" />
         <meta name="keywords" content="финансовая грамотность, банки, кредиты, аннуитетная схема, дифференцированная схема, сравнение схем погашения, кредит и инфляция" />
 
@@ -41,14 +42,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Математика кредитов</h1>
@@ -59,7 +67,6 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Если вам не интересна теория — переходите сразу к <a href="/calculators/credits">калькулятору</a>.</p>
 <p>Кредит — это способ воспользоваться деньгами банка за некоторую плату. Очевидно, пользоваться кредитами имеет смысл только тогда, когда это принесёт больший доход, чем будет выплачено процентов. Однако рассчитывать кредиты довольно сложно и по интернетам разгуливает изрядное количество дури по этому поводу (у одного — <a href="http://capitalgains.ru/obrazovanie/lichnye-finansy/annuitetnaya-shema-pogasheniya-kredita.html">аннуитеты впаривают</a>, другой — <a href="https://daskonto.ru/banki/na-puti-k-zrelosti">взял кредит под 11%г, чтобы положить под 7</a> и считает, что это выгодно).</p>
 <p>Разберёмся сперва с формами погашения. При аннуитетных платежах вы всегда отдаёте банку одну и ту же сумму, часть суммы идёт в погашение процентов, а часть — кредита. Дифференцированный платёж состоит из двух частей: фиксированной суммы в погашение кредита, и платёж по процентам на остаток задолженности. В схематичном виде выглядит это так (здесь на вертикальной оси выплаты по долгу и процентам представлены в процентах от аннуитетного платежа, а остаток по кредиту — от его начальной суммы, по горизонтальной оси — годы):</p>
@@ -93,10 +100,9 @@
 
 <p>Сравниваем сценарии, где мы поддерживаем резерв по выплатам на полгода вперёд (направляя начисленные проценты на погашение кредита, а когда он уменьшится до размера резерва — погашая его полность.) и где сразу погашаем часть кредита на размер резерва (но не уменьшая при этом ежемесячный платёж: всё-таки, выгоднее гасить кредит раньше). Как видно, реальный размер выплат с учётом инфляции различается незначительно.</p>
 <p>Статья будет пополняться новыми разборами.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/credits&title=Математика кредитов&description=Теория и расчёт различных схем погашения кредитов. Какова реальная переплата по кредиту по той или иной схеме? Сколько стоит хранить в банке резерв на будущие платежи по кредиту? Сколько можно заработать, если вложить кредитные деньги?" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/credits" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -104,7 +110,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/credits" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -120,7 +128,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

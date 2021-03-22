@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" />
         <meta name="keywords" content="калькулятор, кредит, аннуитет, ипотека, аренда, инвестирование, что выгоднее" />
 
@@ -16,7 +17,7 @@
     <meta property="og:description" content="Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-02-07" />
-        <meta property="og:article:modified_time" content="2021-02-07" />
+        <meta property="og:article:modified_time" content="2021-03-18" />
 <meta property="og:title" content="Ипотека / аренда + инвестирование" />
 <meta property="og:url" content="https://onfin.github.io/calculators/mortgage" />
 
@@ -41,44 +42,50 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Ипотека / аренда + инвестирование</h1>
         <div class="meta">
                 <p class="description">Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?</p>
-                <p> Обновлено: <time>2021-02-07</time> </p>
+                <p> Обновлено: <time>2021-03-18</time> </p>
 
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <form id="creditForm" class="calc-form">
-<label>Начальный капитал: <input id=initialCapital type="number" step=1000 value=3000000 /></label>
-<div class='comment'>Остаток этой суммы (после уплаты первоначального взноса и расходов на оформление кредита) пойдёт на инвестирование.</div>
+ <label>Начальный капитал: <input id=initialCapital type="number" step=1000 value=3000000 /></label>
+ <div class='comment'>Остаток этой суммы (после уплаты первоначального взноса и расходов на оформление кредита) пойдёт на инвестирование.</div>
 
-<label>Свободный доход: <input id="income" type="number" step=1000 value=60000 /></label>
-<div class='comment'>Сколько у вас в среднем остаётся свободных денег в месяц, до платежей и прочих расходов по этому кредиту. Считается, что эта сумма растёт со скоростью инфляции. Инвестируется её остаток после ежемесячного платежа, уплаты ежегодных расходов и частичного досрочного погашения.</div>
+ <label>Свободный доход: <input id="income" type="number" step=1000 value=60000 /></label>
+ <div class='comment'>Сколько у вас в среднем остаётся свободных денег в месяц, до платежей и прочих расходов по этому кредиту. Считается, что эта сумма растёт со скоростью инфляции. Инвестируется её остаток после ежемесячного платежа, уплаты ежегодных расходов и частичного досрочного погашения.</div>
 
-<label>Ожидаемая инфляция, %г: <input id="inflationRate" type="number" step=0.1 value=5 /></label>
-<div class='comment'>Ожидаемая средняя инфляция за весь срок кредита. В качестве ориентира можно взять значения с <a href="https://cbr.ru/hd_base/zcyc_params/zcyc/">кривой бескупонной доходности</a>.</div>
+ <label>Ожидаемая инфляция, %г: <input id="inflationRate" type="number" step=0.1 value=5 /></label>
+ <div class='comment'>Ожидаемая средняя инфляция за весь срок кредита. В качестве ориентира можно взять значения с <a href="https://cbr.ru/hd_base/zcyc_params/zcyc/">кривой бескупонной доходности</a>.</div>
 
-<label>Доходность вложений (сверх инфляции), %г: <input id="investmentYield" type="number" step=0.1 value=5 /></label>
-<div class='comment'>Ожидаемая реальная доходность вашего инвестиционного портфеля.</div>
+ <label>Доходность вложений (сверх инфляции), %г: <input id="investmentYield" type="number" step=0.1 value=5 /></label>
+ <div class='comment'>Ожидаемая реальная доходность вашего инвестиционного портфеля.</div>
 
 <p></p>
 
 <label>Стоимость жилья: <input id="housePrice" type="number" step=1000 value=3000000 onchange='setRentEst()' /></label>
 <label>Первоначальный взнос: <input id="downpayment" type="number" step=1000 value=600000 onchange='setPayment()' /></label>
-<label>Расходы на оформление: <input id="initialFee" type="number" step=1000 value=15000 /></label>
-<div class='comment'>Оценка недвижимости, комиссии за регистрацию и пр.</div>
+<label>Первоначальные расходы <input id="initialFee" type="number" step=1000 value=15000 /></label>
+<div class='comment'>Оценка недвижимости, комиссии за регистрацию и пр. При покупке новостройки — арендная плата за время строительства и расходы на ремонт.</div>
 <label>Срок кредита, мес: <input id="months" type="number" step=1 value=360 onchange='setPayment()' /></label>
 <label>Процентная ставка по кредиту, %г: <input id="interestRate" type="number" step=0.1 value=6.5 onchange='setPayment()' /></label>
 <div class='comment'>Ежемесячный платёж будет: <strong><span id='monthlyPayment'></span></strong></div>
@@ -100,7 +107,7 @@
 <div class='comment'>Обычно это примерно 1/150 от его стоимости (т.е. <span id='rentEst'></span> для указанного значения). Предполагается, что она растёт со скоростью инфляции от начального значения (расходы на поддержание начальной стоимости жилья ложатся на арендодателя). Свободные деньги, оставшиеся после арендного платежа, инвестируются.</div>
 </form>
 
-<p><button onclick="calc()">Рассчитать</button></p>
+<p><button onclick="calc(event)" ontouchstart="calc(event)">Рассчитать</button></p>
 <div id="results">
 </div>
 
@@ -118,7 +125,8 @@
         return sum*monthRate*Math.pow(1+monthRate, months)/(Math.pow(1+monthRate, months)-1);
     }
 
-    function calc() {
+    function calc(e) {
+        e && e.preventDefault();
         const data = readForm();
         const res = calcCreditSchedule(data);
         const res2 = calcRentSchedule(data);
@@ -294,13 +302,14 @@
     }
 
     function prettyNumber(x) {
-        return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+        // const repl = new RegExp('\\B(?<!\\.\\d*)(?=(\\d{3})+(?!\\d))', 'g');
+        // return String(x).replace(repl, ".");
+        return x.toLocaleString();
     }
-</script>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
+  </script>
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/calculators/mortgage&title=Ипотека / аренда + инвестирование&description=Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/calculators/mortgage" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -308,7 +317,11 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/calculators/mortgage" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
+          <a class="donate-button" href='https://t.me/on_fin/109' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
+
     </div>
     </aside>
 </article>
@@ -324,7 +337,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

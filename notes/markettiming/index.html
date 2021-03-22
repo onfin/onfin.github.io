@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Не обнаружена стратегия, которая позволила бы выбрать точку входа так, чтобы снизить риск инвестиций. Даже всеведущий ГосподьБог может снизить ожидаемую просадку всего на 15%, но наихудшей в 70% всё равно не избежит." />
         <meta name="keywords" content="финансовая грамотность, ценные бумаги, фондовый рынок, цена акции, маркет-тайминг, усреднение, CAPE" />
 
@@ -16,7 +17,7 @@
     <meta property="og:description" content="Не обнаружена стратегия, которая позволила бы выбрать точку входа так, чтобы снизить риск инвестиций. Даже всеведущий ГосподьБог может снизить ожидаемую просадку всего на 15%, но наихудшей в 70% всё равно не избежит." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-05-04" />
-        <meta property="og:article:modified_time" content="2020-07-15" />
+        <meta property="og:article:modified_time" content="2021-02-20" />
 <meta property="og:title" content="Выбор времени для покупки акций" />
 <meta property="og:url" content="https://onfin.github.io/notes/markettiming" />
 
@@ -41,25 +42,31 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Выбор времени для покупки акций</h1>
         <div class="meta">
                 <p class="description">Не обнаружена стратегия, которая позволила бы выбрать точку входа так, чтобы снизить риск инвестиций. Даже всеведущий ГосподьБог может снизить ожидаемую просадку всего на 15%, но наихудшей в 70% всё равно не избежит.</p>
-                <p> Обновлено: <time>2020-07-15</time> </p>
+                <p> Обновлено: <time>2021-02-20</time> </p>
 
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>По мотивам статьи <a href="https://ofdollarsanddata.com/why-market-timing-can-be-so-appealing/">Ника Маггиулли</a> (<a href="https://assetallocation.ru/why-market-timing-can-be-so-appealing/">перевод Сергея Спирина</a>).</p>
 <p>Волатильность фондового рынка такова, что примерно 75% времени ваш портфель акций находится в состоянии затяжного падения с предыдущего абсолютного максимума до следующего абсолютного минимума (под ними я здесь подразумеваю максимум, которого никогда не было ранее и минимум, который никогда более не повторится; high water mark (HWM) и low water mark (LWM) в англоязычной литературе).</p>
 <p><img src=/notes/markettiming/stocks_min_max.svg style="width: 100%; height: 50wv" /></p>
@@ -75,10 +82,9 @@
 <p><img src=/notes/markettiming/stocks_abs_outperf.svg style="width: 100%; height: 50wv" /></p>
 <p>В 20% случаев она отстаёт, и очень сильно отстаёт. Очень многие, попав в такой неудачный момент, могут не выдержать, сравнивая свои результаты с базовым сценарием, и просто зафиксировать убыток.</p>
 <p>В общем, не выбирайте время для покупки акций. Если есть деньги, которые вы можете скормить рынку, — скармливайте сразу. Даже ГосподьБог не может получить результат сильно лучше.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/markettiming&title=Выбор времени для покупки акций&description=Не обнаружена стратегия, которая позволила бы выбрать точку входа так, чтобы снизить риск инвестиций. Даже всеведущий ГосподьБог может снизить ожидаемую просадку всего на 15%, но наихудшей в 70% всё равно не избежит." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/notes/markettiming" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -86,7 +92,11 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/markettiming" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
+          <a class="donate-button" href='https://t.me/on_fin/63' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
+
     </div>
     </aside>
 </article>
@@ -102,7 +112,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

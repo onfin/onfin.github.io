@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Нет доходности без риска. Особенности, риски и историческая доходность наличных денег, вкладов в рублях и долларах, облигаций (ОФЗ), золота, недвижимости, российских и американских акций. Что такое паевые и биржевые (ETF) фонды. Проблемы российских фондов. Неэффективность активно управляемых фондов." />
         <meta name="keywords" content="финансовая грамотность, риск и доходность, пассивный доход, паритет рисков, виды рисков, профиль рисков, особенности и риски финансовых активов, инфляция и девальвация, наличные, валюта, вклады, облигации, золото, недвижимость, акции, паевые и биржевые фонды" />
 
@@ -41,14 +42,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Краткий обзор инструментов сбережения. Сколько и во что вкладывать</h1>
@@ -59,7 +67,6 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Строго говоря, <em>доход</em> можно получить единственным способом — создать и продать ценность. Всё остальное — либо подарки, либо компенсации, либо воровство.</p>
 <p>Создание и купля-продажа ценностей — это про работу и бизнес, тут каждый во что горазд; охота за подарками и воровство — занятия ненадёжные; а вот за что платят компенсации? Платят их за <em>риск</em>. Все операции с финансовыми инструментами — это обмен одних рисков на другие.</p>
 <div class="toc">
@@ -211,10 +218,9 @@
 (Привет тем, у кого «Америка только растёт».)</p>
 <p>Видно, что до 2008г доходность по американским акциям не могла обогнать российскую инфляцию вкупе с обесценением доллара относительно рубля. Российский же рынок уверенно рос, пока не <em>перерос себя</em> к тому же 2008г и совершенно перестал приносить прибыль после восстановления (восстановился он на возврате стоимости нефти к докризисным значениям в 2011г, но с тех пор она падает, доходность индекса около нуля держат другие отрасли), тогда как американский показал четырёхкратную доходность. Также глазу заметна куда бо́льшая стабильность американского индекса — это результат сбалансированности экономических факторов.</p>
 <p>Важное свойство общерыночного риска — обоюдоострость, причём опаснее та сторона, что завышает стоимость активов выше справедливой. Потому что мы можем не продавать доходные активы себе в убыток, но вот вероятность купить их по ценам, которые приведут к отрицательной доходности на ближайшие пару десятилетий (как американские акции в 2000 или российские в 2008) — есть всегда, и её реализации надо старательно избегать.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/instruments&title=Краткий обзор инструментов сбережения. Сколько и во что вкладывать&description=Нет доходности без риска. Особенности, риски и историческая доходность наличных денег, вкладов в рублях и долларах, облигаций (ОФЗ), золота, недвижимости, российских и американских акций. Что такое паевые и биржевые (ETF) фонды. Проблемы российских фондов. Неэффективность активно управляемых фондов." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/instruments" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -222,7 +228,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/instruments" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -238,7 +246,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

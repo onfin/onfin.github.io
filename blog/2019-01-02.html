@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
 
 <meta property="og:locale" content="ru" />
     <meta property="og:type" content="website" />
@@ -36,14 +37,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>2019-01-02</h1>
@@ -51,16 +59,14 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Я уже выкинул из своего биржевого отчёта колонки с доходностями отдельных акций (и перестал расписывать по ним дивиденды), но график динамики портфеля в сравнении с основными индексами сделал — это может быть вам поучительно. На графике — рублёвая стоимость моего российского портфеля (после дивидендов, комиссий и налогов), разделённая на сумму вложений/изъятий, и портфелей из акций индекса Мосбиржи и SnP500 (ETF ERUS и SPY), если покупать/продавать так же.</p>
 <p>Видно, что доходности портфелей приблизительно равны, так что доллар — не наше всё, хотя многие считают иначе. Так же, широкая диверсификация в акциях (мой портфель с 15% на каждую достаточно представленную на рынке отрасль против индекса Мосбиржи с 50% на нефтянку, а дальше что подобралось) значительно снижает волатильность портфеля, но не даёт выигрыша в доходности.</p>
 <div style="width: 100%">
   <img src="/images/perf2018.svg" style="width: 100%" />
 </div>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/blog/2019-01-02&title=2019-01-02&description=" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/blog/2019-01-02" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -68,7 +74,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/blog/2019-01-02" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -84,7 +92,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

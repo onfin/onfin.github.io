@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
 
 <meta property="og:locale" content="ru" />
     <meta property="og:type" content="website" />
@@ -36,14 +37,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Итоги 2020-го</h1>
@@ -51,10 +59,9 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <h2 id="_1">Динамика и доходность портфеля</h2>
 <p>Год выдался интересным, поэтому вернёмся к анализу доходности портфеля.</p>
-<p>На графике показана динамика TWR (доходности без учёта времени пополнений и изъятий) моего портфеля в сравнении с индексом Мосбиржи, индексом мировых акций (MSCI ACWI), в рублях в логарифмическом масштабе.</p>
+<p>На графике показана динамика TWR (доходности без учёта времени пополнений и изъятий) <a href="/notes/myportfolio">моего портфеля</a> в сравнении с индексом Мосбиржи, индексом мировых акций (MSCI ACWI), в рублях в логарифмическом масштабе.</p>
 <p><img src=/blog/2021-01-01/twr.svg style="width: 100%; height: 50wv" /></p>
 <p>TWR за всё время — примерно 20%г, за 2020-й год — 22%г. MWR (доходность с учётом времени пополнений и изъятий) за всё время — 16%г, за 2020-й год — 18%г.</p>
 <p>Закупиться на провале не получилось: нужны были деньги на первый взнос по ипотеке родителям. Получил их обратно только в сентябре, когда было уже поздно. Ипотеку взял на себя, чтобы получить небольшое плечо для портфеля.</p>
@@ -73,10 +80,9 @@
 <p><tbody><tr ><td > Проценты по кредитам </td><td  style='text-align: right' > 158Кр </td></tr><tr ><td > Еда (в т.ч. в кафе)  </td><td  style='text-align: right' > 97Кр  </td></tr><tr ><td > Подарки              </td><td  style='text-align: right' > 48Кр  </td></tr><tr ><td > Коммуналка, связь, hetzner </td><td  style='text-align: right' > 45Кр </td></tr><tr ><td > Путешествия </td><td  style='text-align: right' > 34Кр </td></tr><tr ><td > Налоги ИП   </td><td  style='text-align: right' > 28Кр </td></tr><tr ><td > Ремонт квартиры </td><td  style='text-align: right' > 22Кр </td></tr><tr ><td > Комиссии </td><td  style='text-align: right' > 13Кр </td></tr><tr ><td > Домашнее хозяйство  </td><td  style='text-align: right' > 10Кр </td></tr><tr ><td > Одежда и обувь      </td><td  style='text-align: right' > 7Кр  </td></tr><tr ><td > Транспорт           </td><td  style='text-align: right' > 7Кр  </td></tr><tr ><td > Культурные мероприятия </td><td  style='text-align: right' > 6Кр </td></tr><tr ><td > Прочее </td><td  style='text-align: right' > 12Кр </td></tr><tr ><td > <strong>Всего:</strong> </td><td  style='text-align: right' > <strong>487Кр</strong> </td></tr></tbody></p>
 </table>
 <p>Расходы на путешествия включают только билеты и жильё, всё остальное в других статьях. Из комиссий — примерно половина за Interactive Brokers, почти всё остальное — расходы по оформлению ипотеки. Если исключить её и экстраординарные расходы, то всё остальное оказывается примерно на уровне прошлого года (+7% примерно).</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/blog/2021-01-01&title=Итоги 2020-го&description=" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/blog/2021-01-01" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -84,7 +90,11 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/blog/2021-01-01" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
+          <a class="donate-button" href='https://t.me/on_fin/98' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
+
     </div>
     </aside>
 </article>
@@ -100,7 +110,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

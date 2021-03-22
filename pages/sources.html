@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Источники экономической и финансовой информации, которыми я пользуюсь и всем рекомендую. Обзоры банковских карт, надёжность банков, отчётность компаний, дивиденды, макроэкономическая статистика, и просто очень дельные фундаментальные тексты." />
         <meta name="keywords" content="банки, карты, вклады, кэшбэк, надёжность, отчётность компаний, дивиденды, макроэкономика, статистика, личные финансы, инвестиции" />
 
@@ -16,7 +17,7 @@
     <meta property="og:description" content="Источники экономической и финансовой информации, которыми я пользуюсь и всем рекомендую. Обзоры банковских карт, надёжность банков, отчётность компаний, дивиденды, макроэкономическая статистика, и просто очень дельные фундаментальные тексты." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2018-11-28" />
-        <meta property="og:article:modified_time" content="2020-07-15" />
+        <meta property="og:article:modified_time" content="2021-03-22" />
 <meta property="og:title" content="Источники" />
 <meta property="og:url" content="https://onfin.github.io/pages/sources" />
 
@@ -41,115 +42,164 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Источники</h1>
         <div class="meta">
                 <p class="description">Источники экономической и финансовой информации, которыми я пользуюсь и всем рекомендую. Обзоры банковских карт, надёжность банков, отчётность компаний, дивиденды, макроэкономическая статистика, и просто очень дельные фундаментальные тексты.</p>
-                <p> Обновлено: <time>2020-07-15</time> </p>
+                <p> Обновлено: <time>2021-03-22</time> </p>
 
         </div>
     </header>
-
     <div class="content">
-        <p>Финансы как хобби требуют работы с достаточно большим количеством источников информации, разной степени важности и оперативности. Здесь укажу наиболее полезные.</p>
-<div class="toc">
+        <div class="toc">
 <ul>
-<li><a href="#_1">Практическая информация</a><ul>
-<li><a href="#_2">Банковские карты, вклады, спецпредложения</a></li>
-<li><a href="#_3">Надёжность банков</a></li>
-<li><a href="#_4">Отчётность и анализ компаний</a></li>
+<li><a href="#_1">С чего начать</a></li>
+<li><a href="#_2">Источники информации</a><ul>
+<li><a href="#_3">Банки, карты, вклады</a></li>
+<li><a href="#_4">Биржевые фонды</a></li>
+<li><a href="#_5">Отдельные компании</a></li>
+<li><a href="#_6">Макроэкономика и рынки</a></li>
 </ul>
 </li>
-<li><a href="#_5">Макроэкономика, статистика и моделирование</a><ul>
-<li><a href="#_6">Макроэкономические данные и фондовые рынки</a></li>
-<li><a href="#_7">Сервисы для моделирования</a></li>
+<li><a href="#_7">Полезные блоги об инвестировании</a><ul>
+<li><a href="#_8">Источники вдохновения</a></li>
+<li><a href="#_9">Ранняя пенсия</a></li>
+<li><a href="#_10">Разное</a></li>
 </ul>
 </li>
-<li><a href="#_8">Занимательная теория</a><ul>
-<li><a href="#_9">О бережливости</a></li>
-<li><a href="#_10">Об экономике в целом и инвестировании в частности</a></li>
-<li><a href="#_11">Об инвестировании</a></li>
-</ul>
-</li>
+<li><a href="#_11">Важные статьи</a></li>
 </ul>
 </div>
-<h2 id="_1">Практическая информация</h2>
-<div id="cards"></div>
-
-<h3 id="_2">Банковские карты, вклады, спецпредложения</h3>
+<h2 id="_1">С чего начать</h2>
 <ul>
-<li><a href="http://hranidengi.ru/">Храни деньги</a> — блог с регулярными подробными обзорами банковских карт, сервисов и всего что около.</li>
-<li><a href="https://blogbankir.ru/">Блог банкира</a> — аналогично, но с упором в кэшбэк.</li>
-<li><a href="http://www.banki.ru/">Склянки</a> и их <a href="http://www.banki.ru/forum/">форум</a> — отзывы о банках и обсуждение всего и вся.</li>
+<li><a href="https://capital-gain.ru/course/">Курс от Дмитрия Никитенко</a>. Пока неоконченный, но уже внушающий огромное уважение очень детальной проработкой статей. Обещает стать лучшим источником по данной теме на русском языке.</li>
+<li><a href="https://fintraining.livejournal.com/">Сергей Спирин</a>. Столп народного просвещения, цикл «Введение в инвестиции» (список в левой колонке сайта) к прочтению обязателен.</li>
+<li><a href="https://assetallocation.ru/quick-start/">Статьи и брошюры</a> об основах портфельного инвестирования, собранные им же.</li>
+<li><a href="https://journal.tinkoff.ru/shepelev/">Статьи Евгения Шепелева в Тинькоф-Журнале</a>. Преимущественно подробные ответы на распространённые вопросы новичков.</li>
+<li><a href="http://arsagera.ru/kuda_i_kak_investirovat/">«Заметки в инвестировании» Арсагеры</a> и их <a href="https://arsagera.ru/course/">Курс лекций</a>. Арсагера — компания, занимающаяся <em>активным</em> инвестированием, поэтому несколько искажает сложившийся научный консенсус в свою сторону. Однако, её материалы остаются одним из лучших русскоязычных источников для тех, кто склонен строить свою картину мира «снизу вверх» — от механики работы отдельных компаний и взаимодействия участников рынка к общим закономерностям его функционирования.</li>
+<li><a href="https://artem-bakulin.github.io/latex/papers/index-investing/">Брошюра по портфельному инвестированию от Артёма Бакулина</a> добротно излагает математический фундамент портфельного инвестирования.</li>
 </ul>
-<p>У двух первых источников есть телеграм-каналы (<a href="https://t.me/hranidengi">храни деньги</a>, <a href="https://t.me/blogbankir">блог банкира</a>), на которые рекомендую подписаться, чтобы оперативно отслеживать изменения условий по вашим картам; есть ещё аналогичный канал <a href="https://t.me/cash_back">Cashback и банковские карты</a>.</p>
-<p>Каналы коммерческие, постоянно рекламируют всякие сторонние источники сомнительного содержания.</p>
-<h3 id="_3">Надёжность банков</h3>
+<h2 id="_2">Источники информации</h2>
+<h3 id="_3">Банки, карты, вклады</h3>
+<p>Блоги с регулярными подробными обзорами банковских карт, сервисов, кэшбэка и всего что около (постоянно рекламируют всякие сторонние источники сомнительного содержания, не отвлекайтесь, читайте только про банки):</p>
 <ul>
-<li><a href="http://kuap.ru/">Куап</a> — подробная финансовая отчётность и здоровье банков.</li>
-<li><a href="http://www.analizbankov.ru/">Анализ банков</a> — то же, но есть аналитические отчёты по банкам на понятном простом обывателю языке <a href="http://www.analizbankov.ru/bank.php?BankId=tin-koff-bank-2673&amp;BankMenu=nadezhnost">например, Тиньков</a>.</li>
+<li><a href="http://hranidengi.ru/">Храни деньги</a> (<a href="https://t.me/hranidengi">тлгм</a>).</li>
+<li><a href="https://blogbankir.ru/">Блог банкира</a> (<a href="https://t.me/blogbankir">тлгм</a>).</li>
+<li><a href="https://t.me/cash_back">Cashback и банковские карты</a> (<a href="https://t.me/cash_back">тлгм</a>).</li>
 </ul>
-<h3 id="_4">Отчётность и анализ компаний</h3>
+<p>Главное место для обсуждения банков:</p>
 <ul>
-<li><a href="http://e-disclosure.ru/">Центр раскрытия корпоративной информации</a> Интерфакса — первоисточник по отчётности эмитентов.</li>
+<li><a href="http://www.banki.ru/">Банки.ру</a>, их <a href="http://www.banki.ru/forum/">форум</a>, и <a href="https://www.banki.ru/services/responses/">народный рейтинг</a>.</li>
+</ul>
+<p>Финансовая отчётность и здоровье банков:</p>
+<ul>
+<li><a href="http://www.analizbankov.ru/">Анализ банков</a> — здесь есть аналитические отчёты по банкам на понятном простом обывателю языке <a href="http://www.analizbankov.ru/bank.php?BankId=tin-koff-bank-2673&amp;BankMenu=nadezhnost">например, Тиньков</a>.</li>
+<li><a href="http://kuap.ru/">Куап</a> — то же, но более подробно и серьёзно.</li>
+</ul>
+<h3 id="_4">Биржевые фонды</h3>
+<ul>
+<li><a href="https://www.etf.com/">etf.com</a> и <a href="https://etfdb.com/">etfdb.com</a> — американские ETF.</li>
+<li><a href="https://www.justetf.com">justetf</a> — европейские ETF.</li>
+<li><a href="https://rusetfs.com/">rusetfs</a> — российские ETF и БПИФы.</li>
+</ul>
+<h3 id="_5">Отдельные компании</h3>
+<ul>
+<li><a href="http://e-disclosure.ru/">Центр раскрытия корпоративной информации</a> Интерфакса — первоисточник по отчётности российских эмитентов.</li>
 <li><a href="https://www.conomy.ru/">Conomy</a> — здесь удобно смотреть данные из финансовой отчётности за несколько лет.</li>
 <li>Аналитика Арсагеры: <a href="http://arsagera.ru/analitika/issledovanie_korporativnogo_upravleniya_v_rossii/analiz_sostoyaniya_korporativnogo_upravleniya/">рейтинг корпоративного управления</a> (насколько качественно и прозрачно управляется компания, т.е. нет ли у менеджмента тенденции умыкнуть или разбазарить ваши деньги) и <a href="https://bf.arsagera.ru/">блогофорум акций</a> — оперативная информация о динамике показателей.</li>
 <li><a href="https://smart-lab.ru/dividends/">Дивидендный раздел</a> Смарт-Лаба — удобно представлены ближайшие дивидендные отсечки и доходность к текущим котировкам. За его пределы лучше не выходить — начинается трэш, угар и содомия.</li>
 <li><a href="https://dohod.ru/ik/analytics/dividend/">Дивидендный раздел</a> сайта УК «Доход» — можно посмотреть дивидендную историю и особенности дивидендной политики компании, а также прогноз по дивидендам исходя из неё. Не все эмитенты присутствуют.</li>
-<li><a href="https://dohod.ru/ik/analytics/share">Раздел анализа акций</a> там же — есть мультипликаторы и краткое «экспертное» резюме, можно использовать для первичного отбора акций в портфель.</li>
+<li><a href="https://dohod.ru/ik/analytics/share">Раздел анализа акций</a> там же — есть мультипликаторы и краткое «экспертное» резюме.</li>
 <li><a href="https://www.finviz.com/screener.ashx">Finviz</a> — отбор иностранных акций по формальным показателям.</li>
 <li><a href="https://stockrow.com/">Stockrow</a> — наглядный анализ динамики показателей иностранных акций.</li>
-<li><a href="https://www.etf.com/">etf.com</a> и <a href="https://etfdb.com/">etfdb.com</a> — базы данных по американским ETF.</li>
 </ul>
-<h2 id="_5">Макроэкономика, статистика и моделирование</h2>
-<h3 id="_6">Макроэкономические данные и фондовые рынки</h3>
+<h3 id="_6">Макроэкономика и рынки</h3>
 <ul>
-<li><a href="http://rffx.ru/">rffx</a> — блог с индикаторами российской экономики.</li>
-<li><a href="http://www.cbr.ru/">Центральный банк РФ</a> — огромный массив данных по финансовому сектору.</li>
-<li><a href="http://www.gks.ru/">Федеральная служба государственной статистики</a> — тоже огромный массив данных, но уже более ориентированных на человека.</li>
+<li><a href="http://www.cbr.ru/">Центральный банк РФ</a> — огромный массив данных по российскому финансовому сектору.</li>
+<li><a href="https://rosstat.gov.ru/folder/10705">Федеральная служба государственной статистики</a> — собрание основных показателей официальной статистики.</li>
+<li><a href="https://www.fedstat.ru">Росстат</a> — огромная база данных официальной статистики.</li>
+<li><a href="https://fred.stlouisfed.org/">База данных Федерального резервного банка Сент-Луиса</a> — макроэкономическая статистика со всего мира + рынки США, один из самых удобных источников.</li>
 <li><a href="https://www.quandl.com/">Quandl</a> — собрание всевозможных данных по мировой экономике.</li>
+<li><a href="https://datahub.io/">DataHub</a> — просто собрание всевозможных данных, в том числе по макроэкономике и финансовым рынкам (месячные цены на золото с 1950г только тут нашёл в свободном доступе).</li>
 <li><a href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">Kenneth French</a> — статистические таблицы по доходности различным образом сконструированных портфелей на различных фондовых рынках.</li>
 <li><a href="http://www.econ.yale.edu/~shiller/data.htm">Robert Shiller</a> — история рынка США с конца XIX в.: индекс фондового рынка, дивиденды, инфляция, стоимость недвижимости, процентные ставки и проч.</li>
 <li><a href="https://tradingeconomics.com/">Trading econimics</a> — огромный массив макроэкономических данных, очень удобно представленных.</li>
 <li><a href="https://data.worldbank.org/">World Bank Open Data</a> — экономическая статисика от Всемирного Банка</li>
-</ul>
-<h3 id="_7">Сервисы для моделирования</h3>
-<ul>
-<li><a href="https://www.portfoliovisualizer.com/">PortfolioVisualizer</a> — сервис для визуализации истории портфелей из выбранных классов активов или реальных акций.</li>
 <li><a href="https://www.moex.com/ru/indices">Индексы Московской биржи</a>.</li>
 <li><a href="https://iss.moex.com/iss/reference/">API Московской биржи</a> — для автоматической загрузки котировок и прочих данных.</li>
-<li><a href="https://www.alphavantage.co/">AlphaVantage</a> — api для загрузки котировок, дивидендов и сплитов по американским акциям.</li>
+<li><a href="https://www.alphavantage.co/">AlphaVantage</a> — бесплатное api для загрузки котировок, дивидендов и сплитов по американским акциям.</li>
+<li><a href="http://mrmarket.eu/">MrMarket.EU</a></li>
+<li><a href="https://www.hussmanfunds.com/html/datapage.htm">Historical Data Series and Interesting Links</a></li>
+<li><a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datacurrent.html">Damodaran data sets</a> — сырые данные для фундаментальной оценки рынков от Асвата Дамодарана.</li>
+<li><a href="http://rffx.ru/">rffx</a> — блог с индикаторами российской экономики.</li>
+<li><a href="https://www.portfoliovisualizer.com/">PortfolioVisualizer</a> — сервис для визуализации истории портфелей из выбранных классов активов или реальных акций.</li>
+<li><a href="https://www.msci.com/end-of-day-data-search">Индексы MSCI</a></li>
+<li><a href="https://stooq.com/">stooq</a> — беспрецедентно длинные ценовые ряды по основным активам и индексам.</li>
 </ul>
-<h2 id="_8">Занимательная теория</h2>
-<h3 id="_9">О бережливости</h3>
+<h2 id="_7">Полезные блоги об инвестировании</h2>
+<p>Помимо упомянутых ранее <a href="https://capital-gain.ru">Дмитрия Никитенко</a> и <a href="https://fintraining.livejournal.com/">Сергея Спирина</a>, которых не грех и ещё раз упомянуть и рекомендовать, имеется ещё весьма и весьма обширный список:</p>
+<h3 id="_8">Источники вдохновения</h3>
 <ul>
-<li><a href="http://earlyretirementextreme.com/">ERE</a> — с этого блога всё это и началось, идея выйти на пенсию как можно раньше.</li>
-<li><a href="https://www.mrmoneymustache.com/">Mr. Money Mustache</a> — ещё один тридцатилетний пенсионер рассказывает о способах экономии.</li>
-<li><a href="https://www.getrichslowly.org/">Get Rich Slowly</a> — да, это популярная тема.</li>
+<li><a href="https://nakhusha.livejournal.com">nakhusha</a></li>
+<li><a href="https://at6.livejournal.com/">at6</a></li>
+<li><a href="https://nefedor.livejournal.com/">nefedor</a></li>
+<li><a href="https://ofdollarsanddata.com">Of Dollars and Data</a></li>
+<li><a href="https://blog.thinknewfound.com/">Flirting with Models</a></li>
+<li><a href="https://systematicinvestor.wordpress.com/">systematicinvestor</a></li>
+<li><a href="http://www.calculatinginvestor.com/">calculatinginvestor</a></li>
+<li><a href="https://alphaarchitect.com/blog/">Alpha Architect Blog</a> и <a href="https://alphaarchitect.com/alpha-architect-white-papers/">White Papers</a></li>
+<li><a href="https://earlyretirementnow.com/">Early Retirement Now</a></li>
 </ul>
-<h3 id="_10">Об экономике в целом и инвестировании в частности</h3>
+<h3 id="_9">Ранняя пенсия</h3>
+<p>Пропаганда бережливого образа жизни (без значимого снижения её качества), советы и секреты, философия:</p>
 <ul>
-<li><a href="https://sensibleinvesting.tv/acuity">Acuity</a> — короткие, занимательные, хорошо изготовленные, аргументированные и иллюстрированные статьи на финансовые темы.</li>
-<li><a href="https://www.pragcap.com/">Pragmatic Capitalism</a> — блог о функционировании финансовой системы и фондовых рынков.</li>
+<li><a href="http://earlyretirementextreme.com/">ERE</a>.</li>
+<li><a href="https://www.mrmoneymustache.com/">Mr. Money Mustache</a>.</li>
+<li><a href="https://www.getrichslowly.org/">Get Rich Slowly</a>.</li>
+<li><a href="https://buynothingproject.org/">Buy Nothing</a>.</li>
 </ul>
-<h3 id="_11">Об инвестировании</h3>
+<h3 id="_10">Разное</h3>
+<p>Прочие блоги, которые я читаю:</p>
 <ul>
-<li><strong><a href="https://fintraining.livejournal.com/">Сергей Спирин</a></strong> — столп народного просвещения в деле <em>пассивных</em> инвестиций; временами несколько фанатичен, но все статьи в правой колонке сайта — <strong>читать обязательно</strong>.</li>
-<li><strong><a href="http://arsagera.ru/kuda_i_kak_investirovat/">Арсагера</a></strong> — а это столп просвещения в деле <em>активных</em> инвестиций.</li>
-<li><a href="http://activeinvestor.pro/">Активный инвестор</a>, <a href="https://nakhusha.livejournal.com">nakhusha</a>, <a href="https://gregbar.livejournal.com">gregbar</a>, <a href="https://zhu-s.livejournal.com">zhu-s</a>, <a href="https://borodainvestora.ru/">Борода инвестора</a>, <a href="https://at6.livejournal.com">at6</a>, <a href="https://roundabout.ru/">Вокруг да около</a>, <a href="https://rostsber.ru">Рост сбережений</a> — ещё финансовые блоги, которые я читаю.</li>
+<li>Несравненный <a href="http://aswathdamodaran.blogspot.com">Асват Дамодаран</a> о фундаментальном анализе.</li>
+<li><a href="https://behaviouralinvestment.com">Behavioural Investment</a> — блог о поведенческих аспектах инвестирования.</li>
+<li><a href="https://www.pragcap.com/">Pragmatic Capitalism</a> — блог о функционировании финансовой системы и фондовых рынков. <a href="https://orcamgroup.com/understanding-money/">Цикл наиболее важных статей оттуда</a>.</li>
+<li><a href="https://sensibleinvesting.tv/acuity">Acuity</a> — короткие, занимательные, хорошо изготовленные, иллюстрированные и аргументированные статьи на финансовые темы.</li>
+<li><a href="http://www.rationalanswer.ru/">RationalAnswer</a> — Павел Комаровский ищет рациональные ответы на вопросы более-менее обо всём, но в основном о личных финансах. Подписывайтесь сразу и на телеграм, и на твиттер и на рассылку — их содержание довольно слабо пересекается.</li>
+<li><a href="https://theirrelevantinvestor.com">The Irrelevant Investor</a> — Майкл Батник, особенно ценный тем, что каждую неделю публикует дайджест наиболее интересных статей из огромного списка блогов.</li>
+<li><a href="https://gregbar.livejournal.com">gregbar</a> — Григорий Барщевский о своём пути стоимостного инвестора.</li>
+<li><a href="https://t.me/olegshibanov">FRAT <span><img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></span></a> — Олег Шибанов, макроэкономист, директор Центра исследования финансовых технологий и цифровой экономики СКОЛКОВО-РЭШ.</li>
+<li><a href="https://t.me/finsay">Финсей <span><img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></span></a> — Ликбез и актуальные комментарии от профессионального управляющего активами.</li>
+<li><a href="https://www.youtube.com/channel/UCDXTQ8nWmx_EhZ2v-kp7QxA">Бен Феликс <span><img src='/images/yt.png' style='height: 0.6em; margin-left: -0.5ex; vertical-align: text-top'></span></a> — Очень насыщенные, и одновременно очень понятные, разъяснения самых разных вопросов, связанных с инвестированием. В каждом выпуске — с десяток ссылок на подтверждающие исследования.</li>
+<li><a href="https://t.me/RationalAnswer_Chat">Чат Павла Комаровского <span><img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></span></a> — место, уникальное весьма высоким уровнем дискуссии, где часто попадаются очень интересные материалы (как рассуждения участников, так и ссылки на подтверждающие исследования).</li>
+</ul>
+<h2 id="_11">Важные статьи</h2>
+<ul>
+<li><a href="https://www.nber.org/papers/w24112">The Rate of Return on Everything, 1870-2015</a> — исследование о реальных и номинальных доходностях основных классов доходных активов: акций, облигаций и недвижимости практически по всем странам мира.</li>
+<li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=906686">Diversification in Portfolios of Individual Stocks: 100 Stocks are Not Enough</a> — исследование о зависимости риска и доходности портфеля из случайно выбранных акций от его размера.</li>
+<li><a href="https://web.stanford.edu/~wfsharpe/art/active/active.htm">The Arithmetic of Active Management</a> — Уильям Шарп о том, что активные участники рынка не могут получить доходность за счёт пассивных. <a href="https://assetallocation.ru/arithmetic-of-active-management">Перевод на русский</a> от Сергея Спирина, <a href="/literacy/zero_sum">мой математический пересказ</a> с комментариями.</li>
+<li><a href="https://thebamalliance.com/blog/the-perils-of-owning-individual-stocks/">The Perils of Owning Individual Stocks</a> — сборник из выводов нескольких статей о характерной динамке отдельных акций и о том, что большинство из них имеет отрицательную реальную доходность. Аналогичный <a href="https://smart-lab.ru/company/tinkoff_invest/blog/630878.php">разбор на русском</a> от Евгения Шепелева.</li>
+<li><a href="http://aswathdamodaran.blogspot.com/2016/12/active-investing-rest-in-peace-or.html">Active Investing: Rest in Peace or Resurgent Force?</a> — Асват Дамодаран пересказывает исследования о (плачевных) результатах активных управляющих. <a href="https://assetallocation.ru/active-investing-rest-in-peace/">Русский перевод</a> от Сергея Спирина.</li>
 </ul>
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/pages/sources&title=Источники&description=Источники экономической и финансовой информации, которыми я пользуюсь и всем рекомендую. Обзоры банковских карт, надёжность банков, отчётность компаний, дивиденды, макроэкономическая статистика, и просто очень дельные фундаментальные тексты." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/pages/sources" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -157,7 +207,11 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/pages/sources" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
+          <a class="donate-button" href='https://t.me/on_fin/113' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
+
     </div>
     </aside>
 </article>
@@ -173,7 +227,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

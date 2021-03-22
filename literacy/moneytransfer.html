@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Как правильно переводить деньги. Какие здесь есть возможности, риски и подводные камни. Как избежать обвинений в обналичке, транзите и отмывании." />
         <meta name="keywords" content="финансовая грамотность, денежные переводы, межбанковские переводы, переводы по номеру карты, стягивание и выталкивание, снятие и зачисление наличных, транзитные операции" />
 
@@ -41,14 +42,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Денежные переводы</h1>
@@ -59,7 +67,6 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Когда человек начинает активно пользоваться банковской системой, у него неизбежно возникает потребность перемещать деньги между разными банками. Об этом и поговорим.</p>
 <div class="toc">
 <ul>
@@ -166,10 +173,9 @@
 <li>по возможности рассчитываться внутри банка.</li>
 </ul>
 <p>Если вы в самом деле не занимаетесь никакой противозаконной деятельностью, соблюдать эти правила нетрудно.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/moneytransfer&title=Денежные переводы&description=Как правильно переводить деньги. Какие здесь есть возможности, риски и подводные камни. Как избежать обвинений в обналичке, транзите и отмывании." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/moneytransfer" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -177,7 +183,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/moneytransfer" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -193,7 +201,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Калькуляторы для расчёта, сравнения и выбра различных схем выплаты кредитов. Насколько выгоднее или невыгоднее взять кредит и вложить по сравнению с постепенным накоплением." />
         <meta name="keywords" content="калькулятор, кредит, аннуитетная схема, дифференцированная схема, сравнение схем погашения, кредит и инфляция" />
 
@@ -16,7 +17,7 @@
     <meta property="og:description" content="Калькуляторы для расчёта, сравнения и выбра различных схем выплаты кредитов. Насколько выгоднее или невыгоднее взять кредит и вложить по сравнению с постепенным накоплением." />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2019-10-13" />
-        <meta property="og:article:modified_time" content="2020-06-25" />
+        <meta property="og:article:modified_time" content="2021-03-19" />
 <meta property="og:title" content="Калькуляторы кредитов" />
 <meta property="og:url" content="https://onfin.github.io/calculators/credits" />
 
@@ -41,28 +42,32 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Калькуляторы кредитов</h1>
         <div class="meta">
                 <p class="description">Калькуляторы для расчёта, сравнения и выбра различных схем выплаты кредитов. Насколько выгоднее или невыгоднее взять кредит и вложить по сравнению с постепенным накоплением.</p>
-                <p> Обновлено: <time>2020-06-25</time> </p>
+                <p> Обновлено: <time>2021-03-19</time> </p>
 
         </div>
     </header>
-
     <div class="content">
-        <script type="text/javascript" src="/js/forms.js"></script>
-
-<script type="text/javascript" src="/js/nunjucks.min.js"></script>
+        <script type="text/javascript" src="/js/nunjucks.min.js"></script>
 
 <script defer src="/js/lodash.min.js"></script>
 
@@ -110,11 +115,15 @@
 <h2 id="_4">Занять и вложить</h2>
 <div id="borrowAndInvestSchedule"></div>
 
-<script type="text/javascript">
-    function toggleCollapsible(elem) {
+<script type='text/javascript'>
+function toggleCollapsible(elem) {
         elem.classList.toggle("active");
         elem.nextElementSibling.classList.toggle("active");
     }
+</script>
+
+<script type="module">
+    import {Form} from '/js/forms.js';
 
     const scheduleTemplate = nunjucks.compile(`
             <p>Полная сумма платежей: {{total | round(0)}}<br>
@@ -147,8 +156,8 @@
 
     const borrowAndInvestTemplate = nunjucks.compile(`
             <p>
-                Конечный капитал с инвестированием займа: {{capitalWithCredit | round(0)}}<br>
-                Конечный капитал с инвестированием накоплений: {{capitalWithSavings | round(0)}}<br>
+                Конечный капитал с инвестированием займа: {{capitalWithCredit | round(0)}}, после инфляции {{capitalWithCreditReal | round(0)}}<br>
+                Конечный капитал с инвестированием накоплений: {{capitalWithSavings | round(0)}}, после инфляции {{capitalWithSavingsReal | round(0)}}<br>
                 Дополнительная доходность схемы: {{extra | round(2)}}%г
             </p>
 
@@ -213,6 +222,7 @@
             // });
         }
     );
+    window.creditForm = creditForm;
 
     function annuityCoeff(data) {
         const monthRate = data.interestRate/100/12;
@@ -305,30 +315,40 @@
     function calcBorrowAndInvest(data) {
         let capitalWithCredit = data.sum;
         let capitalWithSavings = 0;
+        let capitalWithCreditReal = 0;
+        let capitalWithSavingsReal = 0;
+
         const pay = annuityPayment(data);
         const monthInfl = data.inflation/100/12;
         const monthInterest = data.interestRate/100/12;
         const monthRent = data.investRate/100/12;
+        let inflCoeff = 1;
 
         const schedule = [];
         for (let m = 0; m < data.months; ++m) {
-            capitalWithCredit = capitalWithCredit*(1+monthRent);
+            inflCoeff *= (monthInfl+1);
+            capitalWithCredit = capitalWithCredit*(1+monthRent) - pay;
             capitalWithSavings = capitalWithSavings*(1+monthRent) + pay;
+            capitalWithCreditReal = capitalWithCredit/inflCoeff;
+            capitalWithSavingsReal = capitalWithSavings/inflCoeff;
 
             schedule.push({
                 month: m+1,
                 capitalWithCredit,
-                capitalWithSavings
+                capitalWithCreditReal,
+                capitalWithSavings,
+                capitalWithSavingsReal
             });
         };
 
         return {capitalWithCredit, capitalWithSavings, schedule,
-            extra: (Math.pow(capitalWithCredit/capitalWithSavings, 12.0/data.months)-1)*100};
+            capitalWithCreditReal, capitalWithSavingsReal,
+            extra: (Math.pow(1+capitalWithCredit/data.sum, 12.0/data.months)-1)*100};
     }
 </script>
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/calculators/credits&title=Калькуляторы кредитов&description=Калькуляторы для расчёта, сравнения и выбра различных схем выплаты кредитов. Насколько выгоднее или невыгоднее взять кредит и вложить по сравнению с постепенным накоплением." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/calculators/credits" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -336,7 +356,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/calculators/credits" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -352,7 +374,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

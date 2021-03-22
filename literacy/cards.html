@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Как устроена банковская карта. Как банки зарабатывают на картах. Опасности при использовании карт. Виды дебетовых карт. Откуда берётся кэшбэк. Как правильно и выгодно пользоваться кредитными картами." />
         <meta name="keywords" content="финансовая грамотность, банковские карты, дебетовые карты, кредитные карты, кэшбэк" />
 
@@ -41,14 +42,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Банковские карты</h1>
@@ -59,7 +67,6 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>В неустанной заботе об удобстве клиентов и своей выгоде, банки изобретают всё более совершенные способы оплаты покупок. Банковский пластик, на данный момент, — уже пройденная вершина, в связи с развитием технологий бесконтактной оплаты, однако организационно это всё ещё старые добрые карты. О них и поговорим.</p>
 <div class="toc">
 <ul>
@@ -119,10 +126,9 @@
 <p>Даже неиспользуемая кредитка болтается в вашей кредитной истории и смущает банки, от которых вам могут впоследствии понадобиться какие-то плюшки, бесплатные или хотя бы дешёвые деньги.</p>
 <p>Набирающие популярность карты рассрочки — те же длинногрейсовые кредитки, только с увеличенными ежемесячными платежами (вместо 5% — треть-четверть суммы покупки).</p>
 <p>Банки неохотно делятся информацией сколько клиентов использует кредитку правильно — не платя банку комиссий (кроме годового обслуживания, если есть) и процентов, — но проскакивает информация что не более 30%. Выгода банков, при таких процентах, колоссальная и на привлечение новых пользователей кредиток денег не жалеют. А свою выгоду посчитаем на <a href="/literacy/cardscalc">практике</a>.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/cards&title=Банковские карты&description=Как устроена банковская карта. Как банки зарабатывают на картах. Опасности при использовании карт. Виды дебетовых карт. Откуда берётся кэшбэк. Как правильно и выгодно пользоваться кредитными картами." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/cards" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -130,7 +136,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/cards" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -146,7 +154,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

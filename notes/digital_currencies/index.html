@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Центробанки практически всех экономически развитых стран занялись исследованиями в области «цифровых валют». Какие задачи они хотят решить с их помощью, и чем нам всем это грозит?" />
         <meta name="keywords" content="цифровая валюта, криптовалюта, биткойн, центральный банк, денежное обращение" />
 
@@ -16,7 +17,7 @@
     <meta property="og:description" content="Центробанки практически всех экономически развитых стран занялись исследованиями в области «цифровых валют». Какие задачи они хотят решить с их помощью, и чем нам всем это грозит?" />
     <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="2020-01-28" />
-        <meta property="og:article:modified_time" content="2021-01-28" />
+        <meta property="og:article:modified_time" content="2021-02-20" />
 <meta property="og:title" content="Цифровые валюты центральных банков" />
 <meta property="og:url" content="https://onfin.github.io/notes/digital_currencies" />
 
@@ -41,25 +42,31 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Цифровые валюты центральных банков</h1>
         <div class="meta">
                 <p class="description">Центробанки практически всех экономически развитых стран занялись исследованиями в области «цифровых валют». Какие задачи они хотят решить с их помощью, и чем нам всем это грозит?</p>
-                <p> Обновлено: <time>2021-01-28</time> </p>
+                <p> Обновлено: <time>2021-02-20</time> </p>
 
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p><em>Статья написана для Международной научно-практической конференции <a href="https://conf.udsu.ru/conference/bt2021">«Блокчейн технологии – 2021»</a>, г. Ижевск, УдГУ, 5-6 февраля 2021г.</em></p>
 <div class="toc">
 <ul>
@@ -164,10 +171,9 @@
 <p>Сложившаяся финансовая система обладает огромной инерцией. В США, например, до сих пор широко распространены расчёты с помощью чеков. Развёртывание новой системы расчётов параллельно со старой потребует значительных расходов, в т.ч. и на их интеграцию. Также возможно и противодействие со стороны банков, у которых отбирают не только часть их функций (а, следовательно, и комиссий), но и часть их финансовых резервов в виде остатков по текущим счетам, которые теперь будут учитываться только на балансе Центрального Банка.</p>
 <h2 id="_16">Заключение</h2>
 <p>Как в развитых странах практически исчезло наличное денежное обращение в пользу более технологичного и более контролируемого безналичного, так и безналичное, скорее всего, в обозримой перспективе исчезнет в пользу «цифрового». К сожалению, оно значительно усиливает роль государства в экономике и, фактически, снижает толерантность финансовой системы к техническим и управленческим ошибкам. Поэтому проектирование цифровых валют — это не только техническая и финансовая, а и важная политическая задача. И недостаточное общественное внимание к этому вопросу — удручает.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/digital_currencies&title=Цифровые валюты центральных банков&description=Центробанки практически всех экономически развитых стран занялись исследованиями в области «цифровых валют». Какие задачи они хотят решить с их помощью, и чем нам всем это грозит?" target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/notes/digital_currencies" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -175,7 +181,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/digital_currencies" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -191,7 +199,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

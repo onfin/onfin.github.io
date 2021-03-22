@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
     <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
         <meta name="description" content="Как правильно выбрать банковский вклад, какие бывают схемы начисления и выплаты процентов, расчёт эффективной процентной ставки (для сравнения схем), подводные камни вкладов." />
         <meta name="keywords" content="финансовая грамотность, банки, текущие счета, накопительные счета, вклады, депозиты, эффективная ставка, страховка АСВ" />
 
@@ -41,14 +42,21 @@
                     <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
                     <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
                     <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
                     <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
 <article>
     <header>
         <h1>Размещение средств в банках</h1>
@@ -59,7 +67,6 @@
         </div>
     </header>
     <div class="content">
-        <img src='https://onfin.blksv.dev/begin.png' loading="lazy" style='position:absolute; width: 0; height: 0' />
         <p>Прежде чем рассказывать о банковских сервисах по размещению денег, хочу ещё раз произнести фундаментальную истину по их поводу. Деньги, которые вы отнесли в банк, — <strong>больше не ваши деньги</strong>, это деньги банка. В обмен на них вы получили обязательство банка по возврату вам долга и оплаты его использования (в форме процентов или услуг). Точно так же, как деньги полученные вами в кредит от банка — больше не деньги банка, в обмен на них банк получил ваше обязательство по возврату долга и оплаты его использования. Кредит и депозит — это полностью симметричные операции. К сожалению, маркетологи банков часто сами этого не осознают, придумывая очень странные схемы начисления, например, процентов на остатки по картам и счетам, а юридически они потом оформляются ещё страннее (потому что это явная нелепица: определять стоимость заимствования в зависимости от совершения заимодавцем (не должником!) не связанных с займом действий).</p>
 <div class="toc">
 <ul>
@@ -120,10 +127,9 @@
 <p>Некоторые банки на остаток по своим дебетовкам начисляют весьма высокие проценты (иногда даже не выдвигая дополнительных требований, или делая их несущественными). Такие карты называют <em>доходными</em>, ими вполне можно пользоваться как обычным накопительным счётом, но для этого нужно снизить доступные лимиты на операции по карте до уровня текущих расходов (если они будут совершаться с этой карты).</p>
 <h2 id="_5">Проверка надёжности банка</h2>
 <p>Я смотрю аналитические отчёты по банкам на этих сервисах: <a href="http://kuap.ru/">Куап</a> — подробная финансовая отчётность и здоровье банков, <a href="http://www.analizbankov.ru/">Анализ банков</a> — то же, но есть аналитические отчёты по банкам на понятном простом обывателю языке <a href="http://www.analizbankov.ru/bank.php?BankId=tin-koff-bank-2673&amp;BankMenu=nadezhnost">например, Тиньков</a>.</p>
-        <img src='https://onfin.blksv.dev/end.png' loading="lazy" style='width: 0; height: 0' />
     </div>
-    <aside>
-        <div style="display: flex; flex-direction: column; text-align: right;">
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
             <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/deposits&title=Размещение средств в банках&description=Как правильно выбрать банковский вклад, какие бывают схемы начисления и выплаты процентов, расчёт эффективной процентной ставки (для сравнения схем), подводные камни вкладов." target="_blank"><i class="share">&#xea9d;</i></a>
             <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/deposits" target="_blank"><i class="share">&#xea9b;</i></a>
@@ -131,7 +137,9 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/deposits" target="_blank"><i class="share">&#xea93;</i></a>
 
         </div>
+        
         <a class="donate-button" href="/donate">Отблагодарить</a>
+
     </div>
     </aside>
 </article>
@@ -147,7 +155,7 @@
             <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
             <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2020.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
             </p>
         </div>
     </footer>

@@ -1,6 +1,6 @@
-const {h, render, Fragment} = preact;
-const {useState} = preactHooks;
+import {h, render, useState} from '/js/preact.js';
 
+export
 function makeForm(div, fields, calc) {
     const defaultValues = {};
     for (let k in fields) {
@@ -14,7 +14,7 @@ function makeForm(div, fields, calc) {
         const onChange = (name, value, e) => {
             if (fields[name].type == "number" && value == String(Number(value)))
               value = Number(value);
-            const newValues = {...values, [name]: value};
+            const newValues = Object.assign({}, values, {[name]: value});
             calc(newValues);
             setValues(newValues);
         }
@@ -23,11 +23,18 @@ function makeForm(div, fields, calc) {
             if (!fields[k].output)
                 res.push(h('tr', null,
                     h('td', null, fields[k].title),
-                    h('td', null, h('input', {...fields[k], id: k, [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k], onChange: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'], e)}))));
+                    h('td', null, h('input',
+                        Object.assign({}, fields[k],
+                            {
+                                id: k,
+                                [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k],
+                                onChange: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'], e)
+                            }
+                    )))));
             else
                 res.push(h('tr', null,
                     h('td', null, fields[k].title),
-                    h('td', null, h('input', {...fields[k], value: values[k], readonly: true, class: "output"}))));
+                    h('td', null, h('input', Object.assign({}, fields[k], {value: values[k], readonly: true, class: "output"})))));
         }
         return h('table', {}, res);
     }
@@ -35,6 +42,7 @@ function makeForm(div, fields, calc) {
     render(h(PForm), div);
 }
 
+export
 function Form(name, fields, calc) {
     this.form = document.getElementById(name);
     this.fields = fields;
@@ -54,4 +62,4 @@ function Form(name, fields, calc) {
     };
 
     this.calc();
-  }
+}
