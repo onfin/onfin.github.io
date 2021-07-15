@@ -3,12 +3,31 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2021-03-22T12:40:17.515768</updated>
+<updated>2021-07-15T16:11:13.636701</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+
+    <entry>
+        <title>Легион хаотичных трейдеров</title>
+        <link href="https://onfin.github.io/notes/trading" rel="alternate"/>
+        <id>https://onfin.github.io/notes/trading</id>
+        <updated>2021-07-15T16:11:13.636701</updated>
+        <published>2021-07-15</published>
+        <summary type="html">&lt;p&gt;Существует ли навык трейдинга, т.е. понимание, как выбирать время покупки и продажи предварительно выбранного актива так, чтобы иметь от этого устойчивую прибыль? &lt;a href=&#34;https://rationalanswer.club/user/AlSilaev/&#34;&gt;Александр Силаев&lt;/a&gt; убедительно отвечает, что да, и он сам с этого живёт. Но сможем ли отличить действительно успешного спекулянта от простого везунчика просто исходя из его результатов за некоторый период времени? Для этого предлагаю посмотреть на очень простую модель.&lt;/p&gt;
+&lt;p&gt;Пусть у нас есть &lt;em&gt;легион хаотичных трейдеров&lt;/em&gt;, которые начинают в один и тот же момент времени с одной и той же суммы, и каждый день абсолютно случайно с некоторой вероятностью &lt;em&gt;p&lt;/em&gt; могут или купить SnP500 на всю имеющуюся у них сумму, или всё продать. Транзакционные издержки — 0,1% от суммы сделки. На денежную позицию начисляется доход по безрисковой ставке. Посмотрим на распределение полученных ими доходностей через 1 год, 5 и 10 лет такой хаотичной торговли, полученное с 500 случайных начальных моментов времени и случайных &lt;em&gt;p&lt;/em&gt; (для сходимости результатов).&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;Технические подробности&lt;/summary&gt;&lt;p&gt;Прямое моделирование траекторий капитала отдельных трейдеров требует неподъёмных для меня вычислительных ресурсов, даже 500.000 траекторий от одной начальной точки не дают сходимости результатов. Поэтому распределение строится альтернативным способом. Состояние трейдера определяется тройкой &amp;lt;вероятность состояния, количество, деньги/актив&amp;gt;. Каждый день трейдер принимает решение или переключить позицию (деньги ↔ актив), или оставить как есть. Позиция расщепляется на две: (1) &amp;lt;вероятность предыдущей позиции&amp;gt;×(1 – &lt;em&gt;p&lt;/em&gt;) с прежним состоянием (т.е. деньги или актив), (2) &amp;lt;вероятность предыдущей позиции&amp;gt;×&lt;em&gt;p&lt;/em&gt; — с новым состоянием. Таким образом, начиная с одной позиции (100%, 1000$, деньги) каждый день количество возможных позиций удваивается. Поэтому более сложные стратегии поведения трейдеров реализовать довольно проблематично: получается слишком большой коэффициент размножения позиций. Позиции, отличающиеся меньше чем на 0,1% объединяются (количество денег/актива усредняется, вероятности складываются).&lt;/p&gt;&lt;/details&gt;
+
+&lt;p&gt;&lt;img src=/notes/trading/a_distr.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;У нас получился довольно ожидаемый (я бы даже сказал — тривиальный) результат, что итоговая доходность хаотичного трейдера с течением времени стремится к рыночной минус транзакционные издержки (примерно 4,1%г получилось в этой модели), причём надо обладать изрядным невезением, чтобы показать результат сильно хуже этого. С другой стороны, даже спустя 10 лет вы видим 10% трейдеров, обгоняющих рынок, из которых половина — существенно (более чем на 5%г). На срочном рынке, где транзакционные издержки в ликвидных инструментах в десятки раз меньше, таких супер-успешных трейдеров будет уже порядка 15% от общего числа, а просто опережающих рынок — 35%.&lt;/p&gt;
+&lt;p&gt;А что там с риском? Т.к. в модели отсутствуют плечи и шорты, получить риск заметно выше рыночного хаотичным трейдерам крайне затруднительно. У 95% СКО месячных доходностей оказывается меньше, чем у рынка в тот же период; ниже показан график соотношения СКО.&lt;/p&gt;
+&lt;p&gt;&lt;img src=/notes/trading/v_distr.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Сопоставление коэффициентов Шарпа также показывает, что бо́льшая доходность соответствует большему его значению. Т.е. получение сверхрыночной доходности не сопряжено с избыточным риском.&lt;/p&gt;
+&lt;p&gt;&lt;img src=/notes/trading/s_distr.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Таким образом, даже из этой очень грубой модели, мы можем сделать один очень важный вывод: в популяции всегда существует весьма высокий процент &lt;em&gt;долгоживущих&lt;/em&gt; трейдеров, которые получили сверхрыночную доходность при меньшем риске &lt;strong&gt;абсолютно случайно&lt;/strong&gt;. Даже если вам предъявляют 10-летнюю историю опережения рынка (с меньшим риском) с помощью маркет-тайминга — априорная вероятность случайности полученного результата получается порядка 15%. Это много. Требуйте дополнительных доказательств.&lt;/p&gt;</summary>
+    </entry>
 
     <entry>
         <title>Запланированные статьи</title>
@@ -1040,158 +1059,6 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
     </entry>
 
     <entry>
-        <title>Межотраслевая диверсификация</title>
-        <link href="https://onfin.github.io/notes/industries" rel="alternate"/>
-        <id>https://onfin.github.io/notes/industries</id>
-        <updated>2020-09-17T23:13:12.595607</updated>
-        <published>2020-09-17</published>
-        <summary type="html">&lt;p&gt;С &lt;a href=&#34;/notes/factors&#34;&gt;факторами&lt;/a&gt; разобрались, посмотрим, можно ли построить портфель лучше рыночного более старомодным способом, отойдя от взвешивания отраслей пропорционально их рыночной капитализации. Для этого воспользуемся уже знакомыми &lt;a href=&#34;https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html&#34;&gt;таблицами Френча&lt;/a&gt;, в которых даны исторические доходности в том числе по отраслям. Френч приводит разбивку рынка вплоть до 49 отраслей, я выберу из них только самые базовые. Анализ будем также вести с 1985г. Для недвижимости данные у Френча странные, поэтому взял &lt;a href=&#34;https://www.reit.com/data-research/reit-indexes/monthly-index-values-returns&#34;&gt;индекс Equity REITs от FTSE&lt;/a&gt;.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Код&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Медианная доходность, %г&lt;/th&gt;
-&lt;th&gt;СКО квартальной доходности, %г&lt;/th&gt;
-&lt;th&gt;доходность&lt;br&gt;/&lt;br&gt;СКО&lt;/th&gt;
-&lt;th&gt;средняя просадка, %&lt;/th&gt;
-&lt;th&gt;макс. просадка, %&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;MARKET&lt;/td&gt;
-&lt;td&gt;Рынок&lt;/td&gt;
-&lt;td&gt;6,54&lt;/td&gt;
-&lt;td&gt;7,06&lt;/td&gt;
-&lt;td&gt;0,93&lt;/td&gt;
-&lt;td&gt;-16&lt;/td&gt;
-&lt;td&gt;-52&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ConsNC&lt;/td&gt;
-&lt;td&gt;Потреб. товары повседневного спроса&lt;/td&gt;
-&lt;td&gt;7,78&lt;/td&gt;
-&lt;td&gt;7,41&lt;/td&gt;
-&lt;td&gt;1,05&lt;/td&gt;
-&lt;td&gt;-8&lt;/td&gt;
-&lt;td&gt;-30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ConsC&lt;/td&gt;
-&lt;td&gt;Потреб. товары циклического спроса&lt;/td&gt;
-&lt;td&gt;2,96&lt;/td&gt;
-&lt;td&gt;12,30&lt;/td&gt;
-&lt;td&gt;0,24&lt;/td&gt;
-&lt;td&gt;-44&lt;/td&gt;
-&lt;td&gt;-76&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Energy&lt;/td&gt;
-&lt;td&gt;Топливно-энергетический комплекс&lt;/td&gt;
-&lt;td&gt;8,63&lt;/td&gt;
-&lt;td&gt;9,72&lt;/td&gt;
-&lt;td&gt;0,89&lt;/td&gt;
-&lt;td&gt;-8&lt;/td&gt;
-&lt;td&gt;-37&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;HiTech&lt;/td&gt;
-&lt;td&gt;Технологический сектор&lt;/td&gt;
-&lt;td&gt;7,46&lt;/td&gt;
-&lt;td&gt;11,90&lt;/td&gt;
-&lt;td&gt;0,63&lt;/td&gt;
-&lt;td&gt;-27&lt;/td&gt;
-&lt;td&gt;-81&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Telcom&lt;/td&gt;
-&lt;td&gt;Телекоммуникации&lt;/td&gt;
-&lt;td&gt;3,82&lt;/td&gt;
-&lt;td&gt;8,90&lt;/td&gt;
-&lt;td&gt;0,43&lt;/td&gt;
-&lt;td&gt;-27&lt;/td&gt;
-&lt;td&gt;-77&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Health&lt;/td&gt;
-&lt;td&gt;Здравоохранение&lt;/td&gt;
-&lt;td&gt;7,64&lt;/td&gt;
-&lt;td&gt;8,10&lt;/td&gt;
-&lt;td&gt;0,94&lt;/td&gt;
-&lt;td&gt;-13&lt;/td&gt;
-&lt;td&gt;-42&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Util&lt;/td&gt;
-&lt;td&gt;Коммунальное хозяйство&lt;/td&gt;
-&lt;td&gt;6,68&lt;/td&gt;
-&lt;td&gt;6,83&lt;/td&gt;
-&lt;td&gt;0,98&lt;/td&gt;
-&lt;td&gt;-9&lt;/td&gt;
-&lt;td&gt;-38&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Fin&lt;/td&gt;
-&lt;td&gt;Финансы&lt;/td&gt;
-&lt;td&gt;4,63&lt;/td&gt;
-&lt;td&gt;10,08&lt;/td&gt;
-&lt;td&gt;0,46&lt;/td&gt;
-&lt;td&gt;-32&lt;/td&gt;
-&lt;td&gt;-67&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Agro&lt;/td&gt;
-&lt;td&gt;Сельское хозяйство&lt;/td&gt;
-&lt;td&gt;7,54&lt;/td&gt;
-&lt;td&gt;10,66&lt;/td&gt;
-&lt;td&gt;0,71&lt;/td&gt;
-&lt;td&gt;-13&lt;/td&gt;
-&lt;td&gt;-44&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Realty&lt;/td&gt;
-&lt;td&gt;Недвижимость&lt;/td&gt;
-&lt;td&gt;7,85&lt;/td&gt;
-&lt;td&gt;8,73&lt;/td&gt;
-&lt;td&gt;0,90&lt;/td&gt;
-&lt;td&gt;-15&lt;/td&gt;
-&lt;td&gt;-55&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Ind&lt;/td&gt;
-&lt;td&gt;Промышленное производство&lt;/td&gt;
-&lt;td&gt;7,98&lt;/td&gt;
-&lt;td&gt;7,44&lt;/td&gt;
-&lt;td&gt;1,07&lt;/td&gt;
-&lt;td&gt;-7&lt;/td&gt;
-&lt;td&gt;-27&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;MetMine&lt;/td&gt;
-&lt;td&gt;Металлы и добыча&lt;/td&gt;
-&lt;td&gt;7,52&lt;/td&gt;
-&lt;td&gt;9,68&lt;/td&gt;
-&lt;td&gt;0,78&lt;/td&gt;
-&lt;td&gt;-9&lt;/td&gt;
-&lt;td&gt;-36&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Разброс куда сильнее, чем для факторов. И какой же ландшафт портфелей мы из этого получаем? (Красный пунктир — рыночный портфель с плечом под ключевую ставку + 1,5%г.)&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/industries/eff.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Рыночный портфель вновь оказался достаточно глубоко под эффективной границей. И, в отличие от факторов, здесь это уже нельзя списать на неопределённость стратегии или трудности с ведением портфеля: классификация компаний по отраслям достаточно однозначна и проблем вести взвешенный по капитализации портфель акций одной отрасли, вроде бы, нет.&lt;/p&gt;
-&lt;p&gt;Посмотрим, как и в разборе факторов, на распределения доходностей, просадок и отставаний от рынка.&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/industries/returns_leaders.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/industries/drawdowns_leaders.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/industries/market_lag_leaders.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Что-ж, защитные отрасли действительно показали себя защитными отраслями. Ценой риска отстать от рынка более чем в два раза. Но, вообще говоря, к этой группе отраслей вопросов нет: они замечательно выстраиваются на линейной зависимости доходности от риска. В чём привлекательность отраслей, которые лежат глубоко под ней? Почему они систематически оказываются переоценены?&lt;/p&gt;
-&lt;p&gt;&lt;img src=/notes/industries/returns_losers.svg style=&#34;width: 100%; height: 50wv&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;HiTech — понятно, это модно и иногда (&lt;em&gt;очень редко&lt;/em&gt;) даёт феноменальные доходности. Финансовый сектор, как правило, платит высокие дивиденды и за счёт их реинвестирования даёт ещё более феноменальные доходности вполне регулярно. Сельское хозяйство вообще претендует на роль долгосрочного защитного сектора. Привлекательность всего остального, видимо, более преходяща.&lt;/p&gt;
-&lt;p&gt;OK, вроде бы, мы можем «победить рынок», отклоняясь от рыночного распределения отраслей в портфеле. Какими тогда будут самые эффективные/доходные портфели? Все они оказываются ставками на две, в лучшем случае три, отрасли. Такой уровень риска нас, конечно же, не устраивает. Посмотрим на равновзвешенные портфели из всех отраслей, только из «лучших» (над красным пунктиром) и «лучших» + HiTech (поиск самых доходных портфелей, но не сильно отстающих от рынка, стабильно выдаёт 40% на HiTech).&lt;/p&gt;</summary>
-    </entry>
-
-    <entry>
         <title>Как считать доходность</title>
         <link href="https://onfin.github.io/literacy/yield" rel="alternate"/>
         <id>https://onfin.github.io/literacy/yield</id>
@@ -1438,7 +1305,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
         <title>Расчёт эффективности инвестиций через американские, европейские и российские ETF</title>
         <link href="https://onfin.github.io/calculators/etf_us_eu_ru" rel="alternate"/>
         <id>https://onfin.github.io/calculators/etf_us_eu_ru</id>
-        <updated>2021-03-18T10:39:40.567329</updated>
+        <updated>2021-06-23T13:19:20.381985</updated>
         <published>2020-07-08</published>
         <summary type="html">&lt;p&gt;По мотивам обсуждений в &lt;a href=&#34;https://t.me/RationalAnswer_Chat&#34;&gt;чате Павла Комаровского&lt;/a&gt;, &lt;a href=&#34;https://stockuper.ru/manual/voo-vs-fxus/&#34;&gt;калькулятора на Stockuper&lt;/a&gt;, и &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1GxvnqeEyW4UfphrhJzeUvmYNGxbXNUFvO_patoujPz4/edit#gid=20811719&#34;&gt;гугл-таблички&lt;/a&gt;. Несколько видоизменённый аналог &lt;a href=&#34;/calculators/etf_taxation&#34;&gt;этого калькулятора&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Для начала перечислим основные факты:&lt;/p&gt;
@@ -1528,7 +1395,6 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 
 &lt;script type=&#34;text/javascript&#34;&gt;
     function calcBalance(fundFee, divTax, gainTax, brkFee, brkFix, distr) {
-        console.log(divTax);
         let sum = Number(Sum.value);
         let divY = Number(DivY.value)/100/12;
         let infl = Number(Infl.value)/100/12 + 1;
