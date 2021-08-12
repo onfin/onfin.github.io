@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Экспозиция и риск/доходность</title>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="/notes/expo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
+        <meta name="description" content="Небольшая зарисовка о неочевидных особенностях масштабирования портфелей" />
+        <meta name="keywords" content="Экспозиция, риск, доходность, портфельная теория, волатильность, risk parity" />
+
+<meta property="og:locale" content="ru" />
+    <meta property="og:description" content="Небольшая зарисовка о неочевидных особенностях масштабирования портфелей" />
+    <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2021-08-12" />
+        <meta property="og:article:modified_time" content="2021-08-12" />
+<meta property="og:title" content="Экспозиция и риск/доходность" />
+<meta property="og:url" content="https://onfin.github.io/notes/expo" />
+
+
+
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <label class="menu-container" for="toggle-menu">
+                <div class="menu-head">
+                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
+                    <div class="social">
+                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
+                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
+                    </div>
+                </div>
+                <div class="checkmark">&equiv;</div>
+            </label>
+            <input type="checkbox" id="toggle-menu" />
+            <ul class="menu">
+                    <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
+                    <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
+                    <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
+                    <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
+                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+<script async>
+    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
+        headers: {
+            'X-Referer': document.referrer
+        }
+    });
+</script>
+<article>
+    <header>
+        <h1>Экспозиция и риск/доходность</h1>
+        <div class="meta">
+                <p class="description">Небольшая зарисовка о неочевидных особенностях масштабирования портфелей</p>
+                <p> Обновлено: <time>2021-08-12</time> </p>
+
+        </div>
+    </header>
+    <div class="content">
+        <p>Пусть у нас есть некоторый портфель/актив/фактор А и безрисковый актив — кэш. Долю А в суммарном портфеле инвестора будем называть <em>экспозицией</em>.</p>
+<p>Вопрос — как изменяется риск/доходность суммарного портфеля (кэш + А), при изменении экспозиции на А? Предполагаем, что и доходность кэша, и стоимость заимствования равны безрисковой ставке, которая нулевая.</p>
+<p>В координатах «ср.-арифм. доходность — её СКО», используемых в классической портфельной теории, ответ довольно очевиден — изменяется линейно.</p>
+<p><img src=/notes/expo/expo_classic.svg style="width: 100%; height: 50wv" /></p>
+<p>Однако, как мы знаем из <a href="/notes/volatility2">статьи про риск</a>, СКО доходностей — не самая адекватная мера риска. Также и ср.-арифм. доходность инвестор не сможет положить себе в карман при наличии хоть какой-либо волатильности. Нужно смотреть на ср.-геом. или характерную.</p>
+<p>Посмотрим, как на самом деле ведут себя доходность и риск при масштабировании различных активов. (Опять же, предупреждаю, что все графики построены на исторических данных одной-единственной страны и даже там такое поведение активов в будущем не повторится, да и на другом промежутке времени будет совсем другим. Нам здесь важен сам факт отклонения от классической теории.)</p>
+<p><img src=/notes/expo/expo_s.svg style="width: 100%; height: 50wv" />
+<img src=/notes/expo/expo_b.svg style="width: 100%; height: 50wv" />
+<img src=/notes/expo/expo_g.svg style="width: 100%; height: 50wv" />
+<img src=/notes/expo/expo_p.svg style="width: 100%; height: 50wv" /></p>
+<p>Как видно, с ростом экспозиции выше 100% доходность растёт заметно медленнее, чем предполагает классическая теория, а волатильность — заметно быстрее. И падает тоже медленнее, при снижении экспозиции ниже 100%. Соотношение доходность/риск не остаётся постоянным, а практически равномерно падает с ростом экспозиции. Также надо заметить, что масштабируемость актива мало зависит от его волатильности: что СКО доходностей, что волатильность капитала у акций и золота практически одинаковы, однако экспозиция на золото масштабировалась гораздо лучше.</p>
+<p>Отчёго так получается? Всё тот же портфельный эффект, в своём химически-чистом, «одностороннем», виде. При экспозиции на актив меньше 100% вы имеете запас кэша, который пополняете на разгонах, и из которого закупаетесь на просадках. Это создаёт дополнительную доходность (не компенсируя падения доходности от недоэкспозиции, но тем не менее). При экспозиции выше 100% вы вынуждены разворачивать стратегию: продавать актив на просадках, чтобы снизить плечо, и покупать на разгонах. Покупаете дорого, продаёте дёшево ⇒ теряете доходность, а трендовость дополнительно увеличивает риск. Именно так большое плечо убивает портфель, даже если оно само по себе бесплатное.</p>
+<p>Какие ещё интересные выводы из этого следуют?</p>
+<ol>
+<li>Существует оптимальная экспозиция на рисковые активы / портфель, но её нельзя найти по соотношению риск/доходность т.к. оно сведёт экспозицию в ноль.</li>
+<li>Когда встречаетесь с утверждением «доходность портфеля объясняется экспозицией на такие-то факторы» — перепроверьте на более адекватных мерах доходности и риска. Это же касается и популярных risk parity портфелей, для которых линейная масштабируемость является основополагающим требованием к жизнеспособности. И которое, скорее всего, в реальности не выполняется...</li>
+</ol>
+    </div>
+    <aside style='display: flex'>
+        <div style="display: flex; flex-direction: column; margin-left: auto">
+        <div class="share-buttons">
+            <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/expo&title=Экспозиция и риск/доходность&description=Небольшая зарисовка о неочевидных особенностях масштабирования портфелей" target="_blank"><i class="share">&#xea9d;</i></a>
+            <a href="https://t.me/share/url?url=https://onfin.github.io/notes/expo" target="_blank"><i class="share">&#xea9b;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/notes/expo" target="_blank"><i class="share">&#xea9c;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/expo" target="_blank"><i class="share">&#xea93;</i></a>
+
+        </div>
+        
+        <a class="donate-button" href="/donate">Отблагодарить</a>
+
+    </div>
+    </aside>
+</article>
+
+    </main>
+
+    <footer>
+<div class="prevupnext"><a class="prev" href="/notes/volatility2"> &lt;&lt; Измеряя рыночный риск </a><a class="up" href="/notes"> &uarr; Заметки о финансах &uarr; </a><a class="next" href="/notes/diversification_math"> Математика диверсификации: портфельный эффект и ребалансировка между акциями &gt;&gt; </a></div>
+
+        <div class="disclaimer">
+            <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+
+            <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
+
+            <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
+            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
