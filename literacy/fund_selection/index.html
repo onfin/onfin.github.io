@@ -1,101 +1,92 @@
 
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
     <title>Выбор индексных фондов</title>
-    <meta charset="utf-8" />
-    <link rel="canonical" href="/literacy/fund_selection" />
+    <meta charset="utf-8" />    <link rel="canonical" href="/literacy/fund_selection" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
-    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
-    <link rel="icon" type="image/png" href="/images/favicon.png"/>
-        <meta name="description" content="Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов." />
-        <meta name="keywords" content="финансовая грамотность, инвестиционные фонды, индексные фонды, ETF, БПИФ, комиссии, TER, ошибка отслеживания, tracking error, скорость отставания, tracking difference" />
-
-<meta property="og:locale" content="ru" />
-    <meta property="og:description" content="Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов." />
-    <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2020-11-30" />
-        <meta property="og:article:modified_time" content="2021-02-20" />
-<meta property="og:title" content="Выбор индексных фондов" />
-<meta property="og:url" content="https://onfin.github.io/literacy/fund_selection" />
-
-
-
-</head>
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов." />        <meta name="keywords" content="финансовая грамотность, инвестиционные фонды, индексные фонды, ETF, БПИФ, комиссии, TER, ошибка отслеживания, tracking error, скорость отставания, tracking difference" />
+<meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
+<meta property="og:url" content="https://onfin.github.io/literacy/fund_selection" /></head>
 <body>
     <header>
-        <nav class="menu">
-            <label class="menu-container" for="toggle-menu">
-                <div class="menu-head">
-                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
-                    <div class="social">
-                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
-                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
-                    </div>
-                </div>
-                <div class="checkmark">&equiv;</div>
-            </label>
-            <input type="checkbox" id="toggle-menu" />
-            <ul class="menu">
-                    <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
-                    <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
-                    <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-
-<script async>
-    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
-        headers: {
-            'X-Referer': document.referrer
-        }
-    });
-</script>
-<article>
-    <header>
-        <h1>Выбор индексных фондов</h1>
-        <div class="meta">
-                <p class="description">Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов.</p>
-                <p> Обновлено: <time>2021-02-20</time> </p>
-
+<nav class="menu">
+    <label class="menu-container" for="toggle-menu">
+        <div class="menu-head">
+            <a href='/' class="menu-home">Житейские воззрения пана Семушельского</a>
+            <div class="social">
+                <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea95;</i></a>
+                <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9b;</i></a>
+            </div>
         </div>
-    </header>
-    <div class="content">
-        <p><em>Статья написана для проекта <a href="https://indexera.io/">Indexera</a>, которому я разрабатываю алгоритмы планирования и анализа пассивных портфелей, а также прочей инвестиционной математики, в том числе и представленные далее методики. Ими уже можно там воспользоваться (правда пока только преимущественно для российских фондов).</em></p>
-<div class="toc">
-<ul>
-<li><a href="#_1">Базовый индекс, бенчмарк и активные фонды</a></li>
-<li><a href="#_2">Комиссии</a></li>
-<li><a href="#tracking-difference">Скорость отставания от индекса (tracking difference)</a></li>
-<li><a href="#tracking-error">Ошибка отслеживания (tracking error)</a></li>
-<li><a href="#_3">Средняя накопленная ошибка отслеживания</a></li>
-<li><a href="#_4">Нюансы сравнения фондов</a></li>
-<li><a href="#_5">Организационная форма</a></li>
-<li><a href="#_6">Тип репликации</a></li>
-<li><a href="#_7">Размер и время жизни фонда</a></li>
-<li><a href="#_8">Страна регистрации, налогообложение дивидендов</a></li>
-<li><a href="#_9">Выплата дивидендов</a></li>
-<li><a href="#_10">Как же выбрать?</a></li>
-</ul>
+        <span class="checkmark">&equiv;</span>
+    </label>
+    <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+    <ul class="menu">            <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>            <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>            <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>            <li class="menu-item"><a href="/sources" class="menu-link">Источники</a></li>    </ul>
+</nav>    </header>
+    <main>
+        <article>
+            <header>
+                <h1> Выбор индексных фондов </h1>
+                <div class="meta"><p class=summary>Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов.</p>
+                    <p> Опубликовано: <time>2020-11-30</time> </p>
+<p>Находится в:</p>
+                    <p>
+                    <ul>
+    <a href='/literacy#passive'>Грамотность/Пассивное инвестирование</a>
+
+    </ul>
+
+                    </p>
+                </div>
+            </header>
+            <div class="content">                <section id="">
+<div class="meta">
 </div>
-<h2 id="_1">Базовый индекс, бенчмарк и активные фонды</h2>
+<p><em>Статья написана для проекта <a href="https://indexera.io/">Indexera</a>, которому я разрабатываю алгоритмы планирования и анализа пассивных портфелей, а также прочей инвестиционной математики, в том числе и представленные далее методики. Ими уже можно там воспользоваться (правда пока только преимущественно для российских фондов).</em></p>
+<div><ul>
+<li><a href="/literacy/fund_selection#_2">Базовый индекс, бенчмарк и активные фонды</a></li>
+<li><a href="/literacy/fund_selection#_3">Комиссии</a></li>
+<li><a href="/literacy/fund_selection#_4">Скорость отставания от индекса (_tracking difference_)</a></li>
+<li><a href="/literacy/fund_selection#_5">Ошибка отслеживания (_tracking error_)</a></li>
+<li><a href="/literacy/fund_selection#_6">Средняя накопленная ошибка отслеживания</a></li>
+<li><a href="/literacy/fund_selection#_7">Нюансы сравнения фондов</a></li>
+<li><a href="/literacy/fund_selection#_8">Организационная форма</a></li>
+<li><a href="/literacy/fund_selection#_9">Тип репликации</a></li>
+<li><a href="/literacy/fund_selection#_10">Размер и время жизни фонда</a></li>
+<li><a href="/literacy/fund_selection#_11">Страна регистрации, налогообложение дивидендов</a></li>
+<li><a href="/literacy/fund_selection#_12">Выплата дивидендов</a></li>
+<li><a href="/literacy/fund_selection#_13">Как же выбрать?</a></li>
+</ul></div>
+<section id="_2">
+<h2><a href="/literacy/fund_selection#_2">Базовый индекс, бенчмарк и активные фонды</a></h2>
+<div class="meta">
+</div>
 <p>Наука о распределении активов учит нас составлять портфели из классов и подклассов активов. Для них составляются <em>индексы</em> — списки конкретных активов со своими весами. Задача индексных фондов — точное повторение доходности своих базовых (<em>reference</em>) индексов. Их также называют бенчмарками (<em>benchmark</em>), т.к. с динамикой именно этого индекса сравнивают результаты фонда.</p>
 <p>В этой статье я исхожу из того, что вы уже определили состав индексов, которые хотите видеть в своём портфеле (<em>целевых</em>), и теперь выбираете из списка доступных фондов, их отслеживающих. Я расскажу об основных количественных и качественных характеристиках фондов, которые определяют вашу ожидаемую доходность (точнее, потери относительно ожидаемой доходности индекса: ориентир по доходности и рискам задаёт именно индекс) и дополнительные риски.</p>
-<p>Сразу оговорюсь, что практически весь материал, как следует из названия, относится к пассивным индексным фондам, которые ставят своей задачей в точности повторять индекс. Хотя активно-управляемые фонды также указывают свой бенчмарк, они нацелены не повторить его, а превзойти. Что (а) получается <a href="https://us.spindices.com/spiva/#/reports">плохо</a>, (б) создаёт непрогнозируемые риски, от расхождения запланированной и фактической динамики фонда до потери капитала, (в) имеет <a href="/literacy/zero_sum">отрицательную ожидаемую премию</a> относительно индекса. Поэтому использование активных фондов в портфелях не рекомендуется, даже если они заявляют нужный вам целевой индекс в качестве бенчмарка.</p>
-<h2 id="_2">Комиссии</h2>
+<p>Сразу оговорюсь, что практически весь материал, как следует из названия, относится к пассивным индексным фондам, которые ставят своей задачей в точности повторять индекс. Хотя активно-управляемые фонды также указывают свой бенчмарк, они нацелены не повторить его, а превзойти. Что (а) получается <a href="https://us.spindices.com/spiva/#/reports">плохо</a>, (б) создаёт непрогнозируемые риски, от расхождения запланированной и фактической динамики фонда до потери капитала, (в) имеет <a href="/literacy/zero_sum">отрицательную ожидаемую премию</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>Рынок как игра с нулевой суммой</span>
+            <span class='description'>Почему активные инвесторы и спекулянты отбирают деньги друг у друга, а пассивных невозможно победить</span>
+        </span> относительно индекса. Поэтому использование активных фондов в портфелях не рекомендуется, даже если они заявляют нужный вам целевой индекс в качестве бенчмарка.</p>
+</section>
+<section id="_3">
+<h2><a href="/literacy/fund_selection#_3">Комиссии</a></h2>
+<div class="meta">
+</div>
 <p>Самая важная характеристика инвестиционного фонда — максимальный размер удерживаемых комиссий, он же TER (<em>total expense ratio</em>). Комиссии удерживаются из активов фонда, а не с вашего брокерского счёта: каждый день рыночная стоимость ваших паёв уменьшается на размер комиссии.</p>
 <p>Почему самая важная? Максимальную ожидаемую доходность имеют акции, у которых она составляет 5%г сверх инфляции. Вот сколько процентов от своего дохода вы отдадите фонду акций при разном уровне комиссий и сроке инвестирования (разумеется, если акции дадут меньше ожидаемой доходности, или фонд от них отстанет, вы отдадите ещё больше: комиссия взимается безотносительно результатов).</p>
 <table>
 <p><thead><tr ><th  rowspan=2 >Комиссия, %г</th><th  colspan=4 >Недополученный доход, %</th></tr><tr ><th > 5 лет </th><th > 10 лет </th><th > 20 лет </th><th > 30 лет</th></tr></thead><tbody><tr ><td > 0,05 </td><td > 1,1   </td><td > 1,2    </td><td > 1,5    </td><td > 1,8 </td></tr><tr ><td > 0,5 </td><td > 10,9   </td><td > 12,1    </td><td > 14,6    </td><td > 17,3 </td></tr><tr ><td > 1   </td><td > 21,6    </td><td > 23,6    </td><td > 27,9   </td><td > 32,5 </td></tr><tr ><td > 2   </td><td > 42,4    </td><td > 45,3   </td><td > 51,2   </td><td > 57,0 </td></tr></tbody></p>
 </table>
 <p>У активов с меньшей доходностью величина недополученного дохода (в реальном выражении) будет ещё выше, а то и превосходить 100% (для фондов государственных облигаций с комиссией выше 1%г, например).</p>
-<h2 id="tracking-difference">Скорость отставания от индекса (<em>tracking difference</em>)</h2>
+</section>
+<section id="_4">
+<h2><a href="/literacy/fund_selection#_4">Скорость отставания от индекса (_tracking difference_)</a></h2>
+<div class="meta">
+</div>
 <p>Но комиссии — не единственный источник потерь для инвестора. Они отражают лишь предельный размер <em>прямых</em> расходов фонда за счёт средств пайщиков. Непрямые потери включают в себя, например:</p>
 <ul>
 <li>Налоги с дивидендов, удерживаемые при их выплате <em>фонду</em>.</li>
@@ -111,12 +102,16 @@
 </table>
 <p>Видим, что фактическая скорость отставания может быть как больше, так и меньше заявленной максимальной комиссии. А иногда фонд может даже опережать свой бенчмарк. Как правило, это получается из-за того, что фонды часть средств (до 20%) вынуждены держать в деньгах, чтобы удовлетворять заявки на погашение паёв. И на падающем рынке это приводит к тому, что паи фонда обесцениваются медленнее бенчмарка, следовательно, обгоняют его. При росте же рынка это приведёт к отставанию. Поэтому большой разрыв между скоростью отставания и комиссией — это всегда плохой знак, в какую сторону он бы ни был, и лучше считать, что фонд всегда отстаёт от бенчмарка не меньше, чем на свою комиссию.</p>
 <p>Скорость отставания — не такой простой параметр, как кажется. Соблазнительно посчитать его просто как
-<span><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.67793em;vertical-align:-0.95003em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cyrillic_fallback">д</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">х</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">д</span><span class="mord cyrillic_fallback">н</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">с</span><span class="mord cyrillic_fallback">т</span><span class="mord cyrillic_fallback">ь</span><span class="mspace"> </span><span class="mord cyrillic_fallback">б</span><span class="mord cyrillic_fallback">е</span><span class="mord cyrillic_fallback">н</span><span class="mord cyrillic_fallback">ч</span><span class="mord cyrillic_fallback">м</span><span class="mord cyrillic_fallback">а</span><span class="mord cyrillic_fallback">р</span><span class="mord cyrillic_fallback">к</span><span class="mord cyrillic_fallback">а</span><span class="mspace"> </span><span class="mord cyrillic_fallback">з</span><span class="mord cyrillic_fallback">а</span><span class="mspace"> </span><span class="mord cyrillic_fallback">п</span><span class="mord cyrillic_fallback">е</span><span class="mord cyrillic_fallback">р</span><span class="mord cyrillic_fallback">и</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">д</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cyrillic_fallback">д</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">х</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">д</span><span class="mord cyrillic_fallback">н</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">с</span><span class="mord cyrillic_fallback">т</span><span class="mord cyrillic_fallback">ь</span><span class="mspace"> </span><span class="mord cyrillic_fallback">ф</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">н</span><span class="mord cyrillic_fallback">д</span><span class="mord cyrillic_fallback">а</span><span class="mspace"> </span><span class="mord cyrillic_fallback">з</span><span class="mord cyrillic_fallback">а</span><span class="mspace"> </span><span class="mord cyrillic_fallback">п</span><span class="mord cyrillic_fallback">е</span><span class="mord cyrillic_fallback">р</span><span class="mord cyrillic_fallback">и</span><span class="mord cyrillic_fallback">о</span><span class="mord cyrillic_fallback">д</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.7279em;"><span style="top:-3.9029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">/</span><span class="mord mtight"><span class="mord cyrillic_fallback mtight">п</span><span class="mord cyrillic_fallback mtight">р</span><span class="mord cyrillic_fallback mtight">о</span><span class="mord cyrillic_fallback mtight">д</span><span class="mord cyrillic_fallback mtight">о</span><span class="mord cyrillic_fallback mtight">л</span><span class="mord cyrillic_fallback mtight">ж</span><span class="mord cyrillic_fallback mtight">и</span><span class="mord cyrillic_fallback mtight">т</span><span class="mord cyrillic_fallback mtight">е</span><span class="mord cyrillic_fallback mtight">л</span><span class="mord cyrillic_fallback mtight">ь</span><span class="mord cyrillic_fallback mtight">н</span><span class="mord cyrillic_fallback mtight">о</span><span class="mord cyrillic_fallback mtight">с</span><span class="mord cyrillic_fallback mtight">т</span><span class="mord cyrillic_fallback mtight">ь</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord cyrillic_fallback mtight">п</span><span class="mord cyrillic_fallback mtight">е</span><span class="mord cyrillic_fallback mtight">р</span><span class="mord cyrillic_fallback mtight">и</span><span class="mord cyrillic_fallback mtight">о</span><span class="mord cyrillic_fallback mtight">д</span><span class="mord cyrillic_fallback mtight">а</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord cyrillic_fallback mtight">в</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord cyrillic_fallback mtight">г</span><span class="mord cyrillic_fallback mtight">о</span><span class="mord cyrillic_fallback mtight">д</span><span class="mord cyrillic_fallback mtight">а</span><span class="mord cyrillic_fallback mtight">х</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.67793em;vertical-align:-0.95003em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord cyrillic_fallback">доходность</span><span class="mord"> </span><span class="mord cyrillic_fallback">бенчмарка</span><span class="mord"> </span><span class="mord cyrillic_fallback">за</span><span class="mord"> </span><span class="mord cyrillic_fallback">период</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord cyrillic_fallback">доходность</span><span class="mord"> </span><span class="mord cyrillic_fallback">фонда</span><span class="mord"> </span><span class="mord cyrillic_fallback">за</span><span class="mord"> </span><span class="mord cyrillic_fallback">период</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.7279em;"><span style="top:-3.9029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">/</span><span class="mord mtight"><span class="mord text mtight"><span class="mord cyrillic_fallback mtight">продолжительность</span><span class="mord mtight"> </span><span class="mord cyrillic_fallback mtight">периода</span><span class="mord mtight"> </span><span class="mord cyrillic_fallback mtight">в</span><span class="mord mtight"> </span><span class="mord cyrillic_fallback mtight">годах</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
 Однако такой, «наивный», подход крайне чувствителен к ошибкам отслеживания фонда (т.е. эпизодическим отклонениям доходности фонда от своего бенчмарка): смещение интервала, на котором оценивается скорость отслеживания, всего лишь на 1 день приводит к абсолютно другим значениям скорости отставания. Поэтому вместо полных доходностей фонда и бенчмарка надо использовать их <em>характерные</em> доходности на рассматриваемом интервале времени (т.е. рассчитанные так, что средние отклонения от них реальных цен минимальны, см. далее в подразделе «технические подробности»).</p>
 <p>На графике показано сравнение этих двух способов расчёта скорости отставания на скользящем годовом интервале для фонда FXRL.</p>
-<p><img src=/literacy/fund_selection/td.svg style="width: 100%" /></p>
+<p><img src="/literacy/fund_selection/td.svg"></img></p>
 <p>(Модификации «наивного» подхода с использованием средних цен в некоторой окрестности краёв интервала для расчёта доходности, или усреднения доходностей на нескольких смещённых интервалах, или усреднения на них уже скорости отслеживания практически не приводят к снижению чувствительности расчёта к выбору начальной и конечной точки расчёта доходности. Только использование характерных доходностей позволяет получить устойчивые результаты.)</p>
-<h2 id="tracking-error">Ошибка отслеживания (<em>tracking error</em>)</h2>
+</section>
+<section id="_5">
+<h2><a href="/literacy/fund_selection#_5">Ошибка отслеживания (_tracking error_)</a></h2>
+<div class="meta">
+</div>
 <p>Ошибка отслеживания показывает, насколько ежедневная (еженедельная/ежемесячная/ежеквартальная...) доходность фонда отклоняется от его бенчмарка. Ведь может так случиться, что за некоторый продолжительный период времени фонд покажет приблизительно ту же доходность, но придёт к ней совсем другим путём (обычное дело для разных сегментов мирового рынка акций, например). Это будет значить, что фактические риски фонда совершенно не те, что закладывал инвестор при планировании портфеля. Поэтому чем меньше ошибка отслеживания — тем лучше.</p>
 <p>Существуют два основных способа расчёта ошибки отслеживания.</p>
 <p><strong>Первый способ</strong> — как среднее квадратическое разности доходностей фонда и бенчмарка. Обычно, в этом случае изменение доходности берётся <em>до вычета налогов, комиссий и издержек фонда</em> (т.к. ошибка отслеживания должна измерять только качество управления, но не его стоимость; а предельный размер издержек инвестору известен).</p>
@@ -201,15 +196,21 @@ h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span
 <p>Во-первых, размер СЧА фонд (особенно (Б)ПИФ) может считать с достаточно большим количеством степеней свободы, особенно если его активы торгуются в разное время, и/или активы и паи торгуются в разное время, или имеют низкую ликвидность. У крупных фондов на низколиквидные активы или активы с других рынков рыночная цена пая может лучше отражать справедливую стоимость активов, нежели рассчитанная фондом (поэтому такая характеристика как премия/дисконт рыночной цены к чистым активам может терять смысл).</p>
 <p>Во-вторых, частный инвестор, в отличие от профучастников, не может покупать/продавать паи по расчётной цене. Если в периоды рыночной волатильности фонд/профучастники не успевают создавать/погашать паи с необходимой скоростью, то рыночная цена значительно отклоняется от расчётной. При этом фонд может честно рапортовать о замечательном отслеживании индекса, тогда как частный инвестор лучше бы приобрёл паи конкурента, у которого выше ошибка отслеживания относительно расчётной цены, зато рыночная гораздо лучше следует за расчётной.</p>
 <p>Поэтому ошибки отслеживания и скорости отставания фондов надо пересчитывать самостоятельно по биржевым ценам по второй методике (через СКО).</p>
-<h2 id="_3">Средняя накопленная ошибка отслеживания</h2>
+</section>
+<section id="_6">
+<h2><a href="/literacy/fund_selection#_6">Средняя накопленная ошибка отслеживания</a></h2>
+<div class="meta">
+</div>
 <p>К сожалению, у «официально признанной» ошибки отслеживания есть один фундаментальный изъян: игнорирование риска последовательности исходов (<em>sequence risk</em>). Предположим, у двух фондов получаются следующие разницы в доходностях с индексом.</p>
 <table>
 <p><thead><tr ><th > День </th><th > Фонд А, % </th><th > Фонд Б, % </th></tr></thead><tbody><tr ><td > 1 </td><td > -0,5    </td><td > -0,6   </td></tr><tr ><td > 2 </td><td > -0,6    </td><td > 0,5    </td></tr><tr ><td > 3 </td><td > -0,3    </td><td > -0,42   </td></tr><tr ><td > 4 </td><td > 0,5    </td><td > 0,52 </td></tr><tr ><td > 5 </td><td > 0,5   </td><td >-0,45 </td></tr><tr ><td > 6 </td><td >0,5   </td><td > 0,45 </td></tr></tbody></p>
 </table>
 <p>Отставание от индекса в обоих случаях одинаковое (нулевое), ошибка отслеживания по дневным доходностям — тоже (4,2%г в годовом выражении), но максимальное отставание от индекса на этом промежутке времени у фонда А будет 1,4%, а у фонда Б — всего лишь 0,6%. Причина видна из таблицы: фонд А долго отстаёт и долго нагоняет, а фонд Б свои отставания компенсирует быстро.</p>
 <p>Как мы видели на графике в разделе о скорости отставания, для фондов действительно характерны очень длительные периоды непрерывного отставания или опережения бенчмарка, поэтому имеет смысл рассчитывать ошибку отслеживания по <em>накопленным</em> отклонениям доходности, а не сбрасывать их каждый день/неделю/... (правда, для этого нужно динамику фонда скорректировать на харктерную скорость его отставания, иначе мы получим не ошибку отслеживания, а накопленное отставание). Полученное число будет отражать на сколько процентов в среднем стоимость пая фонда расходится со стоимостью индекса. Его можно считать оценкой дополнительной «комиссии», которую в среднем заплатит инвестор при покупке и продаже пая.</p>
-<p><img src=/literacy/fund_selection/sbmx.svg style="width: 100%" /></p>
-<details><summary>Технические подробности</summary><p>Пусть <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> и <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> — ряды значений индексов полной доходности фонда и его бенчмарка за рассматриваемый период времени, оба индекса начинаются с 1 (если это не так, достаточно оба ряда разделить на их начальное значение).</p>
+<p><img src="/literacy/fund_selection/sbmx.svg"></img></p>
+<details>
+<p><summary>Технические подробности</summary>
+Пусть <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> и <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> — ряды значений индексов полной доходности фонда и его бенчмарка за рассматриваемый период времени, оба индекса начинаются с 1 (если это не так, достаточно оба ряда разделить на их начальное значение).</p>
 <p>Найдём (методом наименьших квадратов) характерную доходность (<span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span></span>) и отклонения относительно неё (<span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span>):</p>
 <p><span><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.59445em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69841em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.59445em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69841em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span></span></p>
 <p>Логарифмы нужны, чтобы экспоненциальный рост превратить в линейный, а абсолютные разности с трендом — в относительные. Разность <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> даст уже известную нам характерную скорость отставания фонда от бенчмарка, а разность <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span> — ряд накопленных ошибок отслеживания (в логарифмах). <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord cyrillic_fallback">и</span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> задают начальные стоимости паёв фонда и индекса и тоже определяются в методе наименьших квадратов (без этого будет получаться, что мы гарантируем алгоритму расчёта отсутствие ошибки отслеживания в начальной точке, что неверно).</p>
@@ -219,9 +220,13 @@ H742v3239l-4 4-4 4c-.667.7 -2 1.5-4 2.5s-4.167 1.833-6.5 2.5-5.5 1-9.5 1
 h-12l-28-84c-16.667-52-96.667 -294.333-240-727l-212 -643 -85 170
 c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 219 661 l218 661zM702 80H400000v40H742z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎠</span></span></span><span style="top:-3.2550000000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="overlay" style="height:0.3em;width:0.875em;"><svg width='0.875em' height='0.3em' style='width:0.875em' viewBox='0 0 875 300' preserveAspectRatio='xMinYMin'><path d='M457 0 H583 V300 H457 z'/></svg></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></span></p>
-<p>Экспонента нужна для обратного перехода от логарифмов к относительному отставанию.</p></details>
-
-<h2 id="_4">Нюансы сравнения фондов</h2>
+<p>Экспонента нужна для обратного перехода от логарифмов к относительному отставанию.</p>
+</details>
+</section>
+<section id="_7">
+<h2><a href="/literacy/fund_selection#_7">Нюансы сравнения фондов</a></h2>
+<div class="meta">
+</div>
 <p>Фонды могут менять отслеживаемый индекс, способ репликации, управляющую компанию, депозитарий, правила управления и т.д. Если такое изменение произошло, все предыдущие результаты фонда оказываются не актуальны и их необходимо отбросить. Но даже для стабильных фондов едва ли разумно использовать для расчёта данные старше 3–5 лет: они, скорее всего, уже не соответствуют текущим условиям работы фонда (как минимум, фонд значительно вырос и у него возросли потери на торговых операциях). Слишком короткая же история, с одной стороны, содержит мало «рыночных событий», чтобы адекватно оценить способность фонда отслеживать свой индекс в широком диапазоне условий, а с другой — придаёт слишком большой вес незначительным отклонениям (если история меньше года).</p>
 <p>Также все фонды необходимо сравнивать на одном и том же промежутке времени. Потому что наибольшее отставание и наибольшая ошибка отслеживания, как правило, приходится на периоды высокой волатильности на рынках. Скорость отставания и ошибка отслеживания усредняются по всему интервалу расчёта. Поэтому если сравнивать фонды, основываясь на всей доступной для каждого истории, без приведения к общему интервалу, вес «спокойных» и «бурных» периодов у каждого фонда окажется разный, и сравнивать рассчитанные показатели будет нельзя. Потому что нельзя будет сказать, обсуловлены ли лучшие характеристики действительно качеством работы фонда, или тем, что продолжительность спокойных периодов в его истории оказалась больше.</p>
 <p>Ещё один нюанс связан с правильным выбором индексов. Даже если фонды отслеживают один и тот же набор активов, некоторые из них в качестве бенчмарка могут указать индекс, учитывающий налогообложение дивидендов, а фидерные фонды (см. далее) — вообще стоимость пая своих мастер-фондов. Сравнение качества отслеживания таких разных бенчмарков не имеет смысла. Ведь в этом случае ни скорость отставания, ни ошибка отслеживания не скажут инвестору ни сколько он недополучит по сравнению со своим целевым индексом, ни насколько он рискует получить иную динамику. Поэтому результаты фонда нужно соотносить не с заявленным бенчмарком этого фонда, а с целевым индексом инвестора (который должен быть индексом полной доходности брутто, и состоять из тех же активов, в которые инвестирует фонд).</p>
@@ -229,7 +234,11 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 <p>Сравниваемые фонды могут находиться в разных юрисдикциях и как выплачивать, так и реинвестировать дивиденды. Чтобы корректно их сравнить, нужно динамику выплачивающего фонда считать с учётом налогообложения дивидендов по вашей ставке НДФЛ и расходов на реинвестирование. Тогда расходы на реинвестирование дивидендов будут учтены в скорости отставания всех фондов.</p>
 <p>На некоторые подклассы активов существует множество индексов. Например, для US Small Caps это S&amp;P Small Cap 600, Russell 2000, CRSP US Small Cap, и др. Сравнивать по качеству отслеживания фонды на разные индексы одного подкласса активов — можно. Из эффективности рынков следует, что ожидаемые долгосрочные доходности и реакция на макроэкономические события и тенденции у этих индексов будут примерно одинаковы, но одни индексы могут быть удобнее и дешевле для отслеживания, чем другие (например, из-за меньшей оборачиваемости). Потери на отставании от «правильного» индекса в одном подклассе активов будут, скорее всего, выше, чем от выбора «неправильного» с меньшими потерями.</p>
 <p>Здесь же хотел бы предостеречь от выбора целевого индекса в подклассе активов по его прошлой доходности (или даже коэффициенту Шарпа). Отклонения доходностей разных индексов в одном подклассе друг от друга (если речь не идёт об активных индексах: факторных, дивидендных, активно-управляемых и пр.), как правило, более-менее случайны, и выбор более доходного в прошлом, но хуже отслеживаемого индекса, скорее всего, будет ошибкой.</p>
-<h2 id="_5">Организационная форма</h2>
+</section>
+<section id="_8">
+<h2><a href="/literacy/fund_selection#_8">Организационная форма</a></h2>
+<div class="meta">
+</div>
 <p>Теперь посмотрим, какие характеристики фондов влияют на скорость отставания и ошибку отслеживания. Начнём с организационно-правовой формы фонда.</p>
 <p><strong>ETF</strong> (<em>exchange-traded fund</em>, не путать с БПИФ). Имеет жёсткую инвестиционную декларацию, соблюдение которой контролируется независимой организацией (кастодианом, он же хранит имущество фонда). Распоряжения управляющей компании, которые не соответствуют целям и ограничениям фонда, не будут им исполнены. Справедливая рыночная цена пая обеспечивается независимыми профучастниками (маркетмейкерами) за счёт арбитражного механизма. Если рыночная цена пая становится выше справедливой (т.е. стоимости активов фонда, приходящихся на пай), маркетмейкер формирует корзину активов, соответствующих структуре фонда, обменивает их на паи в управляющей компании, и продаёт на рынке, получая арбитражную прибыль. Аналогично если стоимость паёв ниже справедливой, маркетмейкер их выкупает, обменивает на корзину активов и распродаёт активы в рынок. Так до тех пор, пока цены на паи и содержащиеся в них активы не сравняются (с точностью до транзакционных издержек). Фонд не несёт транзакционных издержек (в т.ч. косвенных) на торговые операции, а пайщики не несут рисков некорректных действий фонда при их исполнении. Конкуренция независимых маркетмейкеров (ETF должен иметь несколько на каждом рынке где торгуется) обеспечивает наилучшие возможные цены приобретения паёв и дополнительную защиту от злоупотреблений.</p>
 <p><strong>БПИФ</strong>. Или «ETF по российскому праву», гораздо менее зарегулированная структура. Соблюдение инвестиционной декларации не контролируется при совершении операций на бирже. Спецдепозитарий (аналог кастодиана ETF) и маркетмейкер обычно входят в одну группу компаний с управляющей компанией фонда. Арбитражный механизм отслеживания справедливой цены, как правило, не действует: маркетмейкер обменивает паи не на корзину активов, соответствующую структуре фонда, а на деньги. Поэтому издержки и риски торговых операций ложатся на пайщиков фонда. Также существует возможность злоупотребления своим положением у единственного маркетмейкера, который при повышенном спросе на паи может задавать цену существенно выше справедливой, а при распродаже — существенно ниже, даже если спред между его ценами покупки и продажи остаётся небольшим.</p>
@@ -238,7 +247,11 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 <p><strong>ETN</strong> (<em>exchange-traded note</em>). Фактически, род долговой расписки — обязательство эмитента обеспечивать соответствие её доходности какому-то индексу, может быть осуществлять какие-то выплаты, и выкупить по расчётной цене. В России такие тоже появляются под названием биржевых структурных облигаций (БСО). Хотя они могут отслеживать какие-то индексы, но фондами не являются и несут дополнительный риск несостоятельности эмитента.</p>
 <p><strong>ETC</strong> (<em>exchange-traded commodity</em>). Тоже долговая расписка, но на какую-то корзину биржевых товаров/металлов. В отличие от ETN, обеспечивается залогом. Хотя в случае несостоятельности эмитента вы всё равно рискуете потерять часть вложенных средств (смотря по качеству залога) и получить не ту динамику цены, на которую рассчитывали.</p>
 <p><strong>Сommodity pool</strong>. Вы можете найти фонды этого типа в поисках экспозиции на товарные активы, и подумать, что это именно то, что нужно. Но нет. Они инвестируют в корзины фьючерсных контрактов. А динамика фьючерсов может очень сильно отличаться от динамики соответствующих активов (товарных в особенности) в силу того, что в цену фьючерса закладываются ожидания рынка по будущим ценам актива, <em>расходы на его хранение и поставку</em>, процентные ставки и прочие факторы.</p>
-<h2 id="_6">Тип репликации</h2>
+</section>
+<section id="_9">
+<h2><a href="/literacy/fund_selection#_9">Тип репликации</a></h2>
+<div class="meta">
+</div>
 <p>Репликация — это то, каким образом фонд отслеживает динамику своего индекса. Она бывает следующих типов.</p>
 <p><strong>Физическая</strong> (<em>physical</em>).</p>
 <p>Самый простой и понятный тип репликации, когда фонд просто держит активы, перечисленные в индексе, в тех же пропорциях.</p>
@@ -276,12 +289,20 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 <p><strong>Фидерная</strong> (<em>feeder</em>).</p>
 <p>В этом случае фонд просто держит паи какого-то другого фонда (вышестоящего фонда, мастер-фонда, <em>master fund</em>), который уже и отслеживает базовый индекс. Таким образом, инвестор получает риски как фидерного, так и мастер-фонда.</p>
 <p>Важный нюанс с комиссиями и ошибкой отслеживания фидерных фондов. В документах фонда в качестве бенчмарка может быть указан или бенчмарк мастер-фонда, или стоимость его пая. В первом случае комиссии мастер-фонда уже учтены в TER фидерного, а ошибка отслеживания сообщается относительно целевого индекса. Во втором, комиссию мастер-фонда надо прибавлять к комиссии фидерного, а ошибку отслеживания пересчитывать самостоятельно т.к. она будет сообщаться относительно стоимости приобретаемых паёв, что вообще никак не согласуется с целями инвестора.</p>
-<h2 id="_7">Размер и время жизни фонда</h2>
+</section>
+<section id="_10">
+<h2><a href="/literacy/fund_selection#_10">Размер и время жизни фонда</a></h2>
+<div class="meta">
+</div>
 <p>Размер оценивается по размеру совокупных чистых активов. У маленьких фондов высок риск закрытия и, часто, выше комиссии (хотя в США это не так: старые крупные фонды дороже молодых и мелких). Маленькие БПИФы, в силу несовершенного механизма выпуска/погашения паёв, в общем случае, также страдают от высокой ошибки отслеживания и скорости отставания: потери на торговых операциях отнимают бо́льшую долю от СЧА. В ETF эти потери несёт сторонняя организация и пайщиков фонда они практически не затрагивают.</p>
 <p>С другой стороны, у крупных фондов гораздо выше косвенные потери на спредах и отсутствия необходимой ликвидности при ребалансировках. Для примера можно посмотреть на <a href="https://indexera.io/funds/9294807">VIOO и IJR</a>: комиссия первого почти в два раза выше (0,10%г против 0,06%г у IJR), но и доходность выше на 0,05%, если смотреть на последние 3 года.</p>
 <p>Многие фонды на самом деле больше, чем кажутся. Когда вы смотрите информацию по какому-то ETF, вы видите СЧА, которые относятся только к паям этого ETF. Однако общие активы фонда могут быть распределены между несколькими ETF (например, выпущенных для обращения на разных рынках, выплачивающих и реинвестирующих дивиденды), и даже несколькими формами вложений (например, ETF и mutual fund).</p>
 <p>Чем дольше фонд существует, тем меньше риски его закрытия (если это индексный фонд, а если активный — скорее выше т.к. даже работавшие в прошлом стратегии имеют тенденцию со временем ломаться и разочаровывать инвесторов).</p>
-<h2 id="_8">Страна регистрации, налогообложение дивидендов</h2>
+</section>
+<section id="_11">
+<h2><a href="/literacy/fund_selection#_11">Страна регистрации, налогообложение дивидендов</a></h2>
+<div class="meta">
+</div>
 <p>Страна регистрации влияет на некоторые особенности регулирования деятельности фонда (отличие БПИФ от ETF мы уже рассмотрели, могут быть и другие нюансы), геополитические риски для граждан РФ по владению паями этого фонда, но самое важное — это налогообложение дивидендов, купонов и прочих выплат. Основные идеи следующие:</p>
 <ul>
 <li>В общем случае налоги удерживаются, и с выплат эмитентов в пользу фонда, и с выплат фонда в пользу его пайщиков.</li>
@@ -295,7 +316,11 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 <li>Для налоговых резидентов других стран могут быть свои нюансы. Например, резиденты Великобритании должны платить НДФЛ не только с полученных на руки выплат, но и с капитализированных внутри фонда. Гражданам США вообще, можно сказать, запрещено вкладываться в зарубежные фонды (ставки и объём отчётности делают это занятие очень сложным и крайне невыгодным).</li>
 </ul>
 <p>Также надо иметь в виду, что при наследовании ценных бумаг, выпущенных в США (при этом неважно, где они куплены и учитываются), а также американских банковских счетов, суммарной стоимостью свыше 60K$, необходимо подавать налоговую декларацию в IRS и платить <a href="https://www.law.cornell.edu/uscode/text/26/subtitle-B/chapter-11/subchapter-B">налог</a> вплоть <a href="https://www.law.cornell.edu/uscode/text/26/2001#c">до 40%</a>.</p>
-<h2 id="_9">Выплата дивидендов</h2>
+</section>
+<section id="_12">
+<h2><a href="/literacy/fund_selection#_12">Выплата дивидендов</a></h2>
+<div class="meta">
+</div>
 <p>Практически все российские БПИФы дивиденды реинвестирую внутри себя. Американские фонды обязаны выплачивать. Европейские же фонды, как правило, доступны как с реинвестированием дивидендов, так и с выплатой.</p>
 <p>Реинвестирование или выплата дивидендов сама по себе никак не влияет на эффективность фонда. Вся разница в том, в какой именно момент и в каком размере вы будете платить налоги на эти дивиденды:</p>
 <ul>
@@ -304,7 +329,11 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 </ul>
 <p>При прочих равных <em>всегда</em> выгоднее покупать паи реинвестирующих фондов (если вы можете терпеть психологический дискомфорт от продажи паёв на просадках). При получении дивидендов ваша налоговая база всегда будет равна полной сумме дивидендов. При продаже паёв на сумму, равную причисленным дивидендам, налоговая база будет <em>уменьшена</em> на стоимость покупки этих паёв. Т.к. сделки учитываются начиная с самых ранних, эта налоговая база будет <em>стремиться</em> к сумме сделки (= размеру дивидендов), но всегда будет меньше.</p>
 <p>Определить свой дивидендный доход в реинвестирующем фонде довольно просто: стоимость фонда в конце года – (стоимость фонда в начале года × доходность его <em>ценового</em> бенчмарка за год). Если вы какие-то паи покупали/продавали в течение года, то для них (и только для них) вместо стоимости в начале и конце года будет стоимость в день покупки/продажи.</p>
-<h2 id="_10">Как же выбрать?</h2>
+</section>
+<section id="_13">
+<h2><a href="/literacy/fund_selection#_13">Как же выбрать?</a></h2>
+<div class="meta">
+</div>
 <p>К этому моменту у многих, наверное, уже голова пошла кругом от множества характеристик и нюансов. Поэтому прилагаю примерный алгоритм.</p>
 <ol>
 <li>Определитесь с классом/подклассом активов.</li>
@@ -314,39 +343,41 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
 <li>Оставьте только те фонды, которые вошли в обе группы лидеров. Если выбирать особо не из чего, последовательно вычёркивайте худшие фонды из каждой группы (один из первой, один из второй), пока не останется только один фонд, присутствующий в обоих.</li>
 <li>Выберите тот, скорость отставания которого минимальна (предполагается, что отставание выплачивающих фондов посчитано с учётом уплаты налога и расходов на реинвестирование), или единственный оставшийся. Но если скорость отставания (уже на всей доступной истории, а не на окне сравнения) такова, что ожидаемая доходность вложений в фонд (= ожидаемая доходность класса активов – скорость отставания) перестаёт оправдывать рисков инструмента, или средняя накопленная ошибка отслеживания превышает 5%, то от такой инвестиции лучше отказаться.</li>
 </ol>
-    </div>
-    <aside style='display: flex'>
-        <div style="display: flex; flex-direction: column; margin-left: auto">
+</section>
+</section>
+            </div>
+            <hr/>
+            <div class="meta"><div class=categories>
+                    Категории:<a href="/categories/instruments">Инструменты сбережений</a>
+<a href="/categories/passive">Пассивное инвестирование</a>
+                    </div>
+                    <div class="up">
+                        <span> &uarr; <a href='/literacy#passive'> Грамотность/Пассивное инвестирование</a> &uarr; </span>
+                    </div>
+            </div>
+            <aside style='display: flex'>
+                <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
-            <a href="https://vk.com/share.php?url=https://onfin.github.io/literacy/fund_selection&title=Выбор индексных фондов&description=Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов." target="_blank"><i class="share">&#xea9d;</i></a>
-            <a href="https://t.me/share/url?url=https://onfin.github.io/literacy/fund_selection" target="_blank"><i class="share">&#xea9b;</i></a>
-            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/literacy/fund_selection" target="_blank"><i class="share">&#xea9c;</i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/literacy/fund_selection" target="_blank"><i class="share">&#xea93;</i></a>
-
-        </div>
-        
-        <a class="donate-button" href="/donate">Отблагодарить</a>
-
+            <a href="https://vk.com/share.php?url=/literacy/fund_selection&title=Выбор индексных фондов&description=Как правильно рассчитать и сравнить основные характеристики индексных фондов. Почему нельзя опираться на цифры из отчётности фондов. Какие бывают типы фондов, чем различаются между собой различные способы репликации и каковы их риски. Прочие факторы, влияющие на выбор фондов." target="_blank"><i class="share">&#xea98;</i></a>
+            <a href="https://t.me/share/url?url=/literacy/fund_selection" target="_blank"><i class="share">&#xea95;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=/literacy/fund_selection" target="_blank"><i class="share">&#xea96;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/literacy/fund_selection" target="_blank"><i class="share">&#xea91;</i></a>
+        </div>        
+            <a class="donate-button" href="/donate">Отблагодарить</a>
           <a class="donate-button" href='https://t.me/on_fin/96' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
-
     </div>
-    </aside>
-</article>
-
+            </aside>
+        </article>
     </main>
 
     <footer>
-<div class="prevupnext"><a class="prev" href="/literacy/zero_sum"> &lt;&lt; Рынок как игра с нулевой суммой </a><a class="up" href="/literacy"> &uarr; Грамотность &uarr; </a></div>
+<div class="disclaimer">
+    <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
 
-        <div class="disclaimer">
-            <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+    <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
-            <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
-
-            <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
-            </p>
-        </div>
-    </footer>
-</body>
+    <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
+    <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
+    </p>
+</div>    </footer></body>
 </html>

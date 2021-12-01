@@ -1,128 +1,122 @@
 
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
     <title>Математика диверсификации: портфельный эффект и ребалансировка между акциями</title>
-    <meta charset="utf-8" />
-    <link rel="canonical" href="/notes/diversification_math" />
+    <meta charset="utf-8" />    <link rel="canonical" href="/notes/diversification_math" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
-    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
-    <link rel="icon" type="image/png" href="/images/favicon.png"/>
-        <meta name="description" content="Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки" />
-        <meta name="keywords" content="финансовая грамотность, фондовый рынок, акции, диверсификация, ребалансировка, портфель" />
-
-<meta property="og:locale" content="ru" />
-    <meta property="og:description" content="Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки" />
-    <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2019-12-07" />
-        <meta property="og:article:modified_time" content="2021-08-24" />
-<meta property="og:title" content="Математика диверсификации: портфельный эффект и ребалансировка между акциями" />
-<meta property="og:url" content="https://onfin.github.io/notes/diversification_math" />
-
-
-
-</head>
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки" />        <meta name="keywords" content="финансовая грамотность, фондовый рынок, акции, диверсификация, ребалансировка, портфель" />
+<meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
+<meta property="og:url" content="https://onfin.github.io/notes/diversification_math" /></head>
 <body>
     <header>
-        <nav class="menu">
-            <label class="menu-container" for="toggle-menu">
-                <div class="menu-head">
-                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
-                    <div class="social">
-                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
-                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
-                    </div>
-                </div>
-                <div class="checkmark">&equiv;</div>
-            </label>
-            <input type="checkbox" id="toggle-menu" />
-            <ul class="menu">
-                    <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
-                    <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
-                    <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-
-<script async>
-    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
-        headers: {
-            'X-Referer': document.referrer
-        }
-    });
-</script>
-<article>
-    <header>
-        <h1>Математика диверсификации: портфельный эффект и ребалансировка между акциями</h1>
-        <div class="meta">
-                <p class="description">Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки</p>
-                <p> Обновлено: <time>2021-08-24</time> </p>
-
+<nav class="menu">
+    <label class="menu-container" for="toggle-menu">
+        <div class="menu-head">
+            <a href='/' class="menu-home">Житейские воззрения пана Семушельского</a>
+            <div class="social">
+                <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea95;</i></a>
+                <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9b;</i></a>
+            </div>
         </div>
-    </header>
-    <div class="content">
-        <p>Рассмотрим сферический фондовый рынок в вакууме, на котором обращается 10000 акций. Т.к. рынок сферический и в вакууме, компании никак не взаимодействуют ни друг с другом, ни со внешней средой, дивидендов поэтому тоже не платят. Вся доходность акции заключается в изменении её цены. Цены изменяются независимо друг от друга на случайный процент вверх или вниз каждый шаг моделирования. Начальной ценой всех акций возьмём 1.</p>
+        <span class="checkmark">&equiv;</span>
+    </label>
+    <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+    <ul class="menu">            <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>            <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>            <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>            <li class="menu-item"><a href="/sources" class="menu-link">Источники</a></li>    </ul>
+</nav>    </header>
+    <main>
+        <article>
+            <header>
+                <h1> Математика диверсификации: портфельный эффект и ребалансировка между акциями </h1>
+                <div class="meta"><p class=summary>Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки</p>
+                    <p> Опубликовано: <time>2019-12-07</time> </p>
+<p>Находится в:</p>
+                    <p>
+                    <ul>
+    <a href='/notes#portfolio'>Заметки о финансах/Инвестиционный портфель</a>
+
+    </ul>
+
+                    </p>
+                </div>
+            </header>
+            <div class="content">                <section id="">
+<div class="meta">
+<details>
+            <summary>Используется в:</summary>
+            <ul>
+                        <li><a href='/notes/diversification_math2'>Математика диверсификации-2: доходность и риск</a></li>
+            </ul>
+        </details>
+</div>
+<p>Рассмотрим сферический фондовый рынок в вакууме, на котором обращается 10000 акций. Т.к. рынок сферический и в вакууме, компании никак не взаимодействуют ни друг с другом, ни со внешней средой, дивидендов поэтому тоже не платят. Вся доходность акции заключается в изменении её цены. Цены изменяются независимо друг от друга на случайный процент вверх или вниз каждый шаг моделирования. Начальной ценой всех акций возьмём 1.</p>
 <p>Вот так будет выглядеть распределение цен акций через условные 10 лет моделирования.</p>
-<p><img src=/notes/diversification_math/price_dist_10y.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/diversification_math/price_dist_10y.svg"></img></p>
 <p>График этот читается так: у (Bx-Ax) процентов акций цена лежит между Ay и By. Чтобы показать относительное изменение цены по оси y взята логарифмическая шкала. Тонкими линиями показаны половина акций и начальная цена.</p>
 <p>Как ожидалось, вероятности получения прибыли и убытка по каждой акции совершенно одинаковы. С одинаковой вероятностью можно получить как увеличение своего капитала в 10 раз, так и его уменьшение в те же 10 раз. Так выглядит этот график, если по оси y взять доходность отдельных акций в процентах годовых (на всех графиках цены и доходности условны и используются только для сравнения сценариев, хотя я откалибровал параметры модели так, чтобы среднерыночная доходность соответствала ≈5%г).</p>
-<p><img src=/notes/diversification_math/yield_dist_10y.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/diversification_math/yield_dist_10y.svg"></img></p>
 <p>С течением времени среднегодовая доходность возвращается к средней.</p>
-<p><img src=/notes/diversification_math/yield_dist_30y.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/diversification_math/yield_dist_30y.svg"></img></p>
 <p>Но абсолютные результаты лучших и худших акций продолжают разбегаться всё сильнее, хотя большинство акций так и болтаются около своей начальной цены (<a href="https://thebamalliance.com/blog/the-perils-of-owning-individual-stocks/">как это и происходит на настоящем рынке</a>).</p>
-<p><img src=/notes/diversification_math/price_dist_30y.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/diversification_math/price_dist_30y.svg"></img></p>
 <p>Теперь посмотрим, что получается если мы начнём собирать из этих акций портфели (случайные, разумеется).</p>
-<p><img src=/notes/diversification_math/portfolio_yield_dist_30y.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/diversification_math/portfolio_yield_dist_30y.svg"></img></p>
 <p>С увеличением количества акций в портфеле, его ожидаемая доходность всё время растёт и снижается неопределённость в её размере. Мы не делали никаких ребалансировок и довложений, мы просто включили в портфель N независимо ведущих себя акций. Почему так получается? Ответ очевиден: убытки ограничены (стоимость акции не может стать отрицательной), а прибыль — нет.</p>
 <p>Теперь посмотрим на эффект довложений и ребалансировок (портфель из 50 акций, довложение/ребалансировка ежегодно в размере начальной суммы, расчёт на 30 лет).</p>
-<p><img src=/notes/diversification_math/portfolio_yields.svg style="width: 100%; height: 50wv" /></p>
-<p>Как видно, регулярные довложения (временна́я диверсификация) увеличивают и доходность, и стабильность портфеля (но только в теоретической модели, где все движения цен независимые, а на реальном рынке <a href="/notes/contributions">доходность будет та же, а риск выше</a> ). При этом докупка пропорционально капитализации имеет несколько неоднозначный эффект: она хороша, только если в портфеле оказалось достаточно «акций-счастливчиков». А ребалансировка (т.е. выравнивание долей акций в портфеле) показывает совершенно выдающиеся результаты по повышению доходности и снижению риска портфеля, только в 30% исходов проигрывая портфелям, взвешенным по капитализации.</p>
+<p><img src="/notes/diversification_math/portfolio_yields.svg"></img></p>
+<p>Как видно, регулярные довложения (временна́я диверсификация) увеличивают и доходность, и стабильность портфеля (но только в теоретической модели, где все движения цен независимые, а на реальном рынке <a href="/notes/contributions">доходность будет та же, а риск выше</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>Проблема довложений</span>
+            <span class='description'>Вопреки распространённому мнению, довложения в портфель увеличивают его риск в смысле неопределённости ожидаемой доходности (ну и, конечно же, никак не влияют на сам размер ожидаемой доходности)</span>
+        </span> ). При этом докупка пропорционально капитализации имеет несколько неоднозначный эффект: она хороша, только если в портфеле оказалось достаточно «акций-счастливчиков». А ребалансировка (т.е. выравнивание долей акций в портфеле) показывает совершенно выдающиеся результаты по повышению доходности и снижению риска портфеля, только в 30% исходов проигрывая портфелям, взвешенным по капитализации.</p>
 <p>Однако, эти результаты справедливы только в случае, если успех или неуспех компаний определяется случайными факторами. Если мы будем считать, что некоторые компании лучше других способны зарабатывать прибыль, а некоторые, наоборот, только уничтожают акционерный капитал, то получим следующие результаты.</p>
-<p><img src=/notes/diversification_math/portfolio_yields_fate.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/diversification_math/portfolio_yields_fate.svg"></img></p>
 <p>Оптимальным вариантом становится портфель, взвешенный и пополняемый пропорционально рыночной капитализации, а ребалансировка приводит только к снижению доходности.</p>
 <p>Однако доходность акции на рынке определяется не только деятельностью компании, но и рыночной оценкой её будущего. Т.е. даже совсем убыточная компания может быть оценена так низко, что при своём банкротстве даст инвестору среднерыночную прибыль — от распродажи имущества. Учитывая это, полученный результат можно переформулировать так: на абсолютно эффективном рынке, где вся информация о деятельности компании и возможных рисках включена в цену, поэтому ожидаемые доходности всех акций одинаковы и вся разница в фактической доходности определяется случайными факторами (чей эффект вновь тут же включается в цену) — наилучшим будет равновзвешенный портфель акций; на неэффективном рынке, где присутствует систематическая пере- или недооценка отдельных компаний — наилучшим будет портфель, взвешенный по капитализации.</p>
 <p>Получилось забавное противоречие с господствующими школами мысли. Ведь сторонники гипотезы эффективного рынка выступают за взвешенные по капитализации портфели, а сторонники поиска неэффективностей — как минимум — за равновзвешенные. Поддержание равной балансовой стоимости акций выглядит неплохим нейтральным вариантом.</p>
 <p>Какой из этих вариантов лучше соответствует реальному рынку — я не знаю. На данный момент я руководствуюсь промежуточной моделью: считаю колебания капитализаций отраслей случайными и ребалансируюсь между отраслями, но внутри отраслей ребалансировку не произвожу. Однако сложность этой модели меня утомляет и я хочу её упростить.</p>
-<p>Исходники моделей: <a href="/notes/diversification_math/vol.py">рынок</a>, <a href="/notes/diversification_math/vol2.py">довложения и ребалансировка</a>.</p>
-    </div>
-    <aside style='display: flex'>
-        <div style="display: flex; flex-direction: column; margin-left: auto">
+</section>
+            </div>
+            <hr/>
+            <div class="meta"><div class=categories>
+                    Категории:<a href="/categories/portfolio">Портфель</a>
+<a href="/categories/stocks">Акции</a>
+                    </div>
+                    <div>
+                        <p>Читайте далее</p>
+                        <ul>
+                                <li><a href='/notes/diversification_math2'>Математика диверсификации-2: доходность и риск</a></li>
+                        </ul>
+                    </div>
+                    <div class="up">
+                        <span> &uarr; <a href='/notes#portfolio'> Заметки о финансах/Инвестиционный портфель</a> &uarr; </span>
+                    </div>
+            </div>
+            <aside style='display: flex'>
+                <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
-            <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/diversification_math&title=Математика диверсификации: портфельный эффект и ребалансировка между акциями&description=Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки" target="_blank"><i class="share">&#xea9d;</i></a>
-            <a href="https://t.me/share/url?url=https://onfin.github.io/notes/diversification_math" target="_blank"><i class="share">&#xea9b;</i></a>
-            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/notes/diversification_math" target="_blank"><i class="share">&#xea9c;</i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/diversification_math" target="_blank"><i class="share">&#xea93;</i></a>
-
-        </div>
-        
-        <a class="donate-button" href="/donate">Отблагодарить</a>
-
+            <a href="https://vk.com/share.php?url=/notes/diversification_math&title=Математика диверсификации: портфельный эффект и ребалансировка между акциями&description=Рассмотрим на простой модели как из набора акций с нулевой ожидаемой доходностью получается портфель с положительной и как на его доходность влияют довложения и ребалансировки" target="_blank"><i class="share">&#xea98;</i></a>
+            <a href="https://t.me/share/url?url=/notes/diversification_math" target="_blank"><i class="share">&#xea95;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=/notes/diversification_math" target="_blank"><i class="share">&#xea96;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/notes/diversification_math" target="_blank"><i class="share">&#xea91;</i></a>
+        </div>        
+            <a class="donate-button" href="/donate">Отблагодарить</a>
           <a class="donate-button" href='https://t.me/on_fin/30' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
-
     </div>
-    </aside>
-</article>
-
+            </aside>
+        </article>
     </main>
 
     <footer>
-<div class="prevupnext"><a class="prev" href="/notes/rebalance_bonus"> &lt;&lt; Бонус за ребалансировку и потери на волатильности (физмат-этюд) </a><a class="up" href="/notes"> &uarr; Заметки о финансах &uarr; </a><a class="next" href="/notes/diversification_math2"> Математика диверсификации-2: доходность и риск &gt;&gt; </a></div>
+<div class="disclaimer">
+    <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
 
-        <div class="disclaimer">
-            <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+    <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
-            <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
-
-            <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
-            </p>
-        </div>
-    </footer>
-</body>
+    <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
+    <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
+    </p>
+</div>    </footer></body>
 </html>

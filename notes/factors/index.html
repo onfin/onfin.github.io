@@ -1,101 +1,88 @@
 
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
     <title>Инвестиционные факторы</title>
-    <meta charset="utf-8" />
-    <link rel="canonical" href="/notes/factors" />
+    <meta charset="utf-8" />    <link rel="canonical" href="/notes/factors" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
-    <link href="/feed.atom.xml" type="application/atom+xml" rel="alternate" title="Житейские воззрения пана Семушельского Atom Feed" />
-    <link rel="icon" type="image/png" href="/images/favicon.png"/>
-        <meta name="description" content="Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало." />
-        <meta name="keywords" content="финансовая грамотность, фондовый рынок, акции, диверсификация, ребалансировка, портфель, риск, доходность, инвестиционные факторы, Фама, Френч, CAPM" />
-
-<meta property="og:locale" content="ru" />
-    <meta property="og:description" content="Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало." />
-    <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2020-09-17" />
-        <meta property="og:article:modified_time" content="2021-02-20" />
-<meta property="og:title" content="Инвестиционные факторы" />
-<meta property="og:url" content="https://onfin.github.io/notes/factors" />
-
-
-
-</head>
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало." />        <meta name="keywords" content="финансовая грамотность, фондовый рынок, акции, диверсификация, ребалансировка, портфель, риск, доходность, инвестиционные факторы, Фама, Френч, CAPM" />
+<meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
+<meta property="og:url" content="https://onfin.github.io/notes/factors" /></head>
 <body>
     <header>
-        <nav class="menu">
-            <label class="menu-container" for="toggle-menu">
-                <div class="menu-head">
-                    <a href="/" class="menu-link menu-link-home">Житейские воззрения пана Семушельского</a>
-                    <div class="social">
-                        <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea9b;</i></a>
-                        <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9f;</i></a>
-                    </div>
-                </div>
-                <div class="checkmark">&equiv;</div>
-            </label>
-            <input type="checkbox" id="toggle-menu" />
-            <ul class="menu">
-                    <li class="menu-item"><a href="/blog" class="menu-link">Сиюминутное</a></li>
-                    <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>
-                    <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>
-                    <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>
-                    <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-
-<script async>
-    fetch(`https://onfin.blksv.dev/visit${location.pathname}`, {
-        headers: {
-            'X-Referer': document.referrer
-        }
-    });
-</script>
-<article>
-    <header>
-        <h1>Инвестиционные факторы</h1>
-        <div class="meta">
-                <p class="description">Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало.</p>
-                <p> Обновлено: <time>2021-02-20</time> </p>
-
+<nav class="menu">
+    <label class="menu-container" for="toggle-menu">
+        <div class="menu-head">
+            <a href='/' class="menu-home">Житейские воззрения пана Семушельского</a>
+            <div class="social">
+                <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea95;</i></a>
+                <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9b;</i></a>
+            </div>
         </div>
-    </header>
-    <div class="content">
-        <div class="toc">
-<ul>
-<li><a href="#capm">Историческая справка: CAPM, альфа, бета, и факторы</a></li>
-<li><a href="#_1">Исходные данные и сводная таблица факторов</a></li>
-<li><a href="#_2">Аномальные доходности</a></li>
-<li><a href="#_3">А если волатильность — не риск?</a></li>
-<li><a href="#_4">А что там с дивидендами?</a></li>
-<li><a href="#_5">Диверсификация между факторами</a></li>
-<li><a href="#_6">Реализация</a><ul>
-<li><a href="#momentum">MOMENTUM</a></li>
-<li><a href="#value">VALUE</a></li>
-<li><a href="#quality">QUALITY</a></li>
-</ul>
-</li>
-<li><a href="#_7">Второй тур</a></li>
-<li><a href="#_8">Выводы</a></li>
-</ul>
+        <span class="checkmark">&equiv;</span>
+    </label>
+    <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+    <ul class="menu">            <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>            <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>            <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>            <li class="menu-item"><a href="/sources" class="menu-link">Источники</a></li>    </ul>
+</nav>    </header>
+    <main>
+        <article>
+            <header>
+                <h1> Инвестиционные факторы </h1>
+                <div class="meta"><p class=summary>Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало.</p>
+                    <p> Опубликовано: <time>2020-09-17</time> </p>
+<p>Находится в:</p>
+                    <p>
+                    <ul>
+    <a href='/notes#portfolio'>Заметки о финансах/Инвестиционный портфель</a>
+
+    </ul>
+
+                    </p>
+                </div>
+            </header>
+            <div class="content">                <section id="">
+<div class="meta">
 </div>
-<h2 id="capm">Историческая справка: CAPM, альфа, бета, и факторы</h2>
+<div><ul>
+<li><a href="/notes/factors#_2">Историческая справка: CAPM, альфа, бета, и факторы</a></li>
+<li><a href="/notes/factors#_3">Исходные данные и сводная таблица факторов</a></li>
+<li><a href="/notes/factors#_4">Аномальные доходности</a></li>
+<li><a href="/notes/factors#_5">А если волатильность — не риск?</a></li>
+<li><a href="/notes/factors#_6">А что там с дивидендами?</a></li>
+<li><a href="/notes/factors#_7">Диверсификация между факторами</a></li>
+<li><a href="/notes/factors#_8">Реализация</a></li>
+<ul>
+<li><a href="/notes/factors#_9">MOMENTUM</a></li>
+<li><a href="/notes/factors#_10">VALUE</a></li>
+<li><a href="/notes/factors#_11">QUALITY</a></li>
+</ul>
+<li><a href="/notes/factors#_12">Второй тур</a></li>
+<li><a href="/notes/factors#_13">Выводы</a></li>
+</ul></div>
+<section id="_2">
+<h2><a href="/notes/factors#_2">Историческая справка: CAPM, альфа, бета, и факторы</a></h2>
+<div class="meta">
+</div>
 <p>Пусть все инвесторы на рынке максимизируют свою доходность, при заданном уровне индивидуального риска, имеют одинаковые ожидания от активов, одинаковое понимание риска (как волатильности доходностей) и одинаковый горизонт инвестирования, а также имеют неограниченный доступ к кредиту под безрисковую ставку. Комиссии и ограничения на торговые операции отсутствуют. В этом случае соотношение доходность/риск всех инструментов будет одинаковым. А так как рыночный портфель — тоже инструмент, то мы можем выразить ожидаемые (требуемые инвесторами) доходности через рыночную доходность:
 <span><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span></span></span></span></span></span>
 где <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span></span> — ожидаемая доходность инструмента, <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span> — безрисковая ставка, <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> — ожидаемая рыночная доходность, а <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span></span> — коэффициент, показывающий чувствительность доходности актива к изменению доходности рынка.</p>
-<p>Это базовое соотношение <a href="https://en.wikipedia.org/wiki/Capital_asset_pricing_model">Capital Asset Pricing Model</a> (модели оценки финансовых активов), предложенной в середине 60-х как следствие <a href="/notes/mpt">портфельной теории Марковица</a>.</p>
+<p>Это базовое соотношение <a href="https://en.wikipedia.org/wiki/Capital_asset_pricing_model">Capital Asset Pricing Model</a> (модели оценки финансовых активов), предложенной в середине 60-х как следствие <a href="/notes/mpt">портфельной теории Марковица</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>(Не)Математика диверсификации-3: современная теория портфеля</span>
+            <span class='description'>Теория портфеля Гарри Марковица, и почему это лишь математическая иллюстрация. Принципы построения портфеля гораздо проще.</span>
+        </span>.</p>
 <p>В эту модель мы углубляться не будем, а пойдём немного в другую сторону. Коэффициент <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span></span> определяется умножением коэффициента корреляции на отношение стандартных отклонений доходностей актива и рыночного портфеля (его также можно определить из регрессионной модели: как коэффициент прямой, наилучшим образом описывающей зависимость доходности актива от доходности рынка). Очевидно, что если актив с рынком некоррелирован, то модель предскажет для него безрисковую доходность, несмотря на возможную высокую волатильность этого актива. Так мы приходим к концепции <em>инвестиционных факторов</em>: владение финансовым активом подставляет инвестора под некоторую совокупность независимых друг от друга рисков, к каждому из которых актив имеет разную чувствительность, и каждый из которых имеет собственную изменяющуюся во времени доходность. То есть (все доходности сверх безрисковых):
 <span><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.31444em;vertical-align:-0.19444em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span></span></span></span></span></span>
 где <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> и <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> — доходности факторов и чувствительность актива к ним, а <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></span> — доходность актива, не объяснимая факторами. Это и есть та самая альфа, за которую бьются активные управляющие. (Впрочем, некоторые исследователи, Роберт Шиллер например, утверждают, что никакие это не независимые риски, а систематическая неэффективность. Дискуссия в научной среде продолжается, а разного рода факторов насчитали уже <a href="https://docs.google.com/spreadsheets/d/1mws1bU56ZAc8aK7Dvz696LknM0Vp4Rojc3n61q2-keY/edit#gid=895744753">порядка трёхсот</a>, хотя не все они взаимно-независимые.)</p>
 <p>Эта модель, изначально из трёх факторов: рынок, капитализация (SML, Small Minus Large, доходность мелких минус доходность крупных фирм), оценка (HML, High B/P Minus Low B/P, доходность дешёвых минус доходность дорогих по P/B фирм), была предложена в 1992 г. Анализ доходностей активно-управляемых фондов, <a href="http://mba.tuck.dartmouth.edu/bespeneckbo/default/AFA611-Eckbo%20web%20site/AFA611-S8C-FamaFrench-LuckvSkill-JF10.pdf">сделанный ими в 2010г</a> с добавлением фактора инерции (momentum) показал, что такая модель на 99% объясняет доходности фондов (при этом альфа — доходность от собственно управления активами — отрицательна и примерно равна комиссиям за управление).</p>
 <p>Инвестировать напрямую в факторы (кроме общерыночного) — невозможно т.к. нельзя, например, бесплатно зашортить акции крупных компаний и на полученные деньги купить акции мелких, что должно дать чистую доходность фактора SML, остальные конструируются аналогично. Но можно инвестировать в такие категории акций, которые дают экспозицию на нужные факторы: акции малой капитализации, недооценённые акции, акции, которые в недавнем прошлом росли быстрее всего. Посмотрим, как ведут себя портфели, собранные из акций разных категорий.</p>
-<h2 id="_1">Исходные данные и сводная таблица факторов</h2>
+</section>
+<section id="_3">
+<h2><a href="/notes/factors#_3">Исходные данные и сводная таблица факторов</a></h2>
+<div class="meta">
+</div>
 <p>Изучать «факторные портфели» будем по <a href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">таблицам Френча</a> — огромному массиву месячных доходностей портфелей акций, отобранных по различным критериям. Я выбрал ряд наиболее понятных и популярных критериев. Для каждого из них взял доходности взвешенных по капитализации портфелей из 30% первых и 30% последних акций по данному критерию. Если у нас комбинированный фактор, то портфели будут из акций, которые в числе первых/последних одновременно и по первому критерию, и по второму.</p>
 <p>Хотя основная масса рядов у Френча доступна с 1927г, я буду анализировать отрезок только c 1985. Т.к. примерно с этого времени получили широкое распространение компьютеры и базы данных, и по крайней мере профессиональным участникам стал доступен сплошной анализ компаний, что значительно повысило эффективность рынка.</p>
 <table>
@@ -293,36 +280,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_2">Аномальные доходности</h2>
+</section>
+<section id="_4">
+<h2><a href="/notes/factors#_4">Аномальные доходности</a></h2>
+<div class="meta">
+</div>
 <p>Из таблицы выше видно, что большинство «факторных» портфелей заметно отстают от рыночного по такому «классическому» параметру эффективности размещения средств как отношение доходности на единицу волатильности этой доходности. Но есть и «аномалии»: Hop, Lpe, Lcap Lpe, Lpb Hop. Особенно последний — «священный грааль» активных инвесторов: эффективные компании, которые при этом дёшево оценены рынком — с фантастической медианной доходностью аж втрое выше рыночной. Но вдруг эти аномалии вовсе не аномалии? Посмотрим на распределения доходностей и просадок (начального капитала в реальном выражении) на 15-летних скользящих окнах.</p>
-<p><img src=/notes/factors/returns_anomaly.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/returns_anomaly.svg"></img></p>
 <p>Доходности всех «аномальных» факторов систематически опережают рыночную. Кроме «священного грааля», который в примерно 25% случаев начинает катастрофически терять доходность, и в 5% худших случаев оказывается ниже рынка. А если мы пересчитаем на полном наборе данных, то ниже рынка он окажется уже в 20% случаев, причём с отрицательной доходностью вплоть до -10%г:</p>
-<p><img src=/notes/factors/returns_anomaly_full.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/returns_anomaly_full.svg"></img></p>
 <p>По-видимому, здесь играет роль недостаточная диверсификация таких портфелей. То, что апологетами активного инвестирования преподносится как несомненное преимущество портфеля — небольшое количество тщательно проанализированных, эффективных и, главное, дёшево купленных, компаний — этот портфель и губит, когда реализуются недиверсифицируемые риски этих компаний. Но до тех пор, конечно, они — короли положения и <em>очень</em> убедительны.</p>
 <p>На полных данных ещё и фактор высокой прибыльности мало отличим от рынка.</p>
 <p>А что с просадками?</p>
-<p><img src=/notes/factors/drawdowns_anomaly.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/drawdowns_anomaly.svg"></img></p>
 <p>Иногда чуть хуже рынка, но в основном сильно лучше. Неужели и правда неэффективность?</p>
-<p><img src=/notes/factors/market_lag_anomaly.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/market_lag_anomaly.svg"></img></p>
 <p>Ну как сказать... Практически на любом 15-летнем периоде любой из этих факторов от рынка какое-то время катастрофически отставал (кроме, разве что, Hop). Для профессионального управляющего — неприемлемая ситуация. Но если вам норм, можете эту доходность забрать. Но не переоценивайте свою психологическую устойчивость.</p>
 <p>При этом, распределения доходностей и просадок Lcap Hop сливаются с таковыми для Lcap Lpe, а Hcap Hop — для Hop, поэтому не будем их в дальнейшем рассматривать.</p>
-<h2 id="_3">А если волатильность — не риск?</h2>
+</section>
+<section id="_5">
+<h2><a href="/notes/factors#_5">А если волатильность — не риск?</a></h2>
+<div class="meta">
+</div>
 <p>Теперь выберем те факторы, которые дают доходность выше рыночной и при этом меньшие, или сопоставимые, средние и максимальные просадки. Пусть и со значительно более высокой волатильностью.</p>
-<p><img src=/notes/factors/returns_vol.svg style="width: 100%; height: 50wv" />
-<img src=/notes/factors/drawdowns_vol.svg style="width: 100%; height: 50wv" />
-<img src=/notes/factors/market_lag_vol.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/returns_vol.svg"></img>
+<img src="/notes/factors/drawdowns_vol.svg"></img>
+<img src="/notes/factors/market_lag_vol.svg"></img></p>
 <p>Что мы видим? Более высокая волатильность привела к более проблемным портфелям и с точки зрения других видов риска.</p>
 <p>Владеть акциями малой капитализации (Lcap) — <em>очень</em> больно, недооценёнными по P/B — тоже. Неожиданно ведёт себя momentum: в 40% случаев показывая фантастическую доходность, но и отставая иногда от рынка совершенно чудовищно. И совсем нежиданно хорошо показывают себя <em>медленно</em> растущие компании (Lgro): максимальное отставание от рынка в пределах разумного (для меня), систематически более высокая доходность, и значительно меньше просадки. Это уже тянет на неэффективность, имеющую психологическое объяснение: скучные, медленно растущие компании инвесторам не интересны и их стоимость оказывается систематически заниженной. Компании роста, наоборот, порождают завышенные ожидания, которые оказываются в цене, и в конченом итоге разочаровывают инвесторов (см. таблицу).</p>
-<h2 id="_4">А что там с дивидендами?</h2>
+</section>
+<section id="_6">
+<h2><a href="/notes/factors#_6">А что там с дивидендами?</a></h2>
+<div class="meta">
+</div>
 <p>Мы уже выделили «защитные» классы акций: Hop и Lgro. Добавим к ним ещё традиционно считающиеся таковыми «дивидендные» акции — Hdiv.</p>
-<p><img src=/notes/factors/returns_defence.svg style="width: 100%; height: 50wv" />
-<img src=/notes/factors/market_lag_defence.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/returns_defence.svg"></img>
+<img src="/notes/factors/market_lag_defence.svg"></img></p>
 <p>Красноречиво. Hdiv систематически хуже Lgro по доходности, и это можно понять: высокие дивиденды платят компании, которым уже некуда развиваться (т.е. Hdiv — это подкласс Lgro), но вот чтобы дивидендная доходность была высока — у компании должны быть проблемы, да ещё она может оказываться переоценённой относительно своих долгосрочных фундаментальных показателей из-за привлекательности текущих высоких дивидендов. Ну и максимальное отставание от рынка тут на уровне других «проблемных» факторов. График максимальной просадки я убрал, там Hdiv идёт между рынком и Lgro, приближаясь к рынку в худших сценариях.</p>
-<h2 id="_5">Диверсификация между факторами</h2>
+</section>
+<section id="_7">
+<h2><a href="/notes/factors#_7">Диверсификация между факторами</a></h2>
+<div class="meta">
+</div>
 <p>Итак, такого фактора, который обеспечивал бы нам доходность выше рыночной и, одновременно, душевный покой — не существует. Разве что Hop, который не очень сильно отстаёт от рынка. Потому что Lgro в виде фонда вы никогда не купите (представьте себе маркетинг такого чуда, как фонд на неразвивающиеся бесперспективные компании), только руками собирать, но тогда транзакционные издержки съедят изрядную часть премии «за бесперспективность» (всего лишь 2,5%г в среднем, кстати), и уж точно весь душевный покой.</p>
 <p>Но у нас ведь куча факторов с довольно различной динамикой, между которыми так и хочется ребалансировать портфель. Чтобы упростить работу, для начала очистим наш список категорий акций от повторений, недоступных категорий и очевидно бессмысленных для ребалансировки: с медианной доходностью значительно ниже среднерыночной при большем или сопоставимом риске. После этого у нас останется список всего из десяти категорий: Lcap, Hcap, Lpb, Hdiv, Hop, Lpe, Lcap Hop, Lpb Hop, mom.</p>
 <p>Теперь найдём эффективную границу портфелей, составленных из этих категорий. Сгенерируем 50.000 случайных портфелей и разместим их на традиционном графике риск-доходность. Верхняя граница полученной фигуры из точек и будет исторической эффективной границей. Выглядит это так (каждая мелкая точка — портфель, цветом я обозначил максимальное отставание этого портфеля от рынка: чем зеленее — тем меньше).</p>
-<p><img src=/notes/factors/eff.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/eff.svg"></img></p>
 <p>Большинство выбранных категорий (кроме Lpb, Lcap, mom) лежат практически на одной линии в координатах риск-доходность, а то, что значительная часть портфелей находится выше этой линии по уровню доходности, говорит о возможности получить значительный бонус от ребалансировки. Посмотрим на 10 лучших портфелей по соотношению риск/доходность. Конечно, это не самые оптимальные портфели (я выбирал из тех 50.000 случайных), но нам они нужны не для того, чтобы воплощать (прошлое не повторится), а чтобы оценить использование каких факторов позволяет улучшить портфель.</p>
 <table>
 <thead>
@@ -691,31 +694,55 @@
 </tbody>
 </table>
 <p>Та же самая структура, только «защитная» часть стала ещё защитнее, а размер рискованной чуть уменьшился.</p>
-<h2 id="_6">Реализация</h2>
+</section>
+<section id="_8">
+<h2><a href="/notes/factors#_8">Реализация</a></h2>
+<div class="meta">
+</div>
 <p>Формулируя выводы предыдущего раздела на более традиционном языке, можно сказать, что оптимальные портфели — портфели, дающие постоянную экспозицию на QUALITY (Hop), VALUE (Lpb Hop/Lpe/Lpb/Hdiv) и MOMENTUM (mom) факторы. Посмотрим теперь, какие фонды мы можем выбрать, чтобы получить нужную нам экспозицию.</p>
 <p>Проблема заключается в том, что издержки на самостоятельное управление диверсифицированным портфелем из отдельных акций, отобранных по этим факторам, будут чудовищными. А фонды могут иметь собственное представление о том, каким образом собирать факторные портфели. Так же и операционные издержки фондов могут быть таковы, что смысл их использования теряется.</p>
 <p>Я выбрал по нескольку наиболее крупных, дешёвых и давно существующих фонда на каждый фактор, и оценил, насколько хорошо они отслеживают динамику этого фактора (чтобы устранить общерыночный риск, я смотрел на динамику категорий акций и фондов за вычетом динамики рынка в целом).</p>
-<h3 id="momentum">MOMENTUM</h3>
-<p><img src=/notes/factors/mom_funds.svg style="width: 100%; height: 50wv" /></p>
+<section id="_9">
+<h3><a href="/notes/factors#_9">MOMENTUM</a></h3>
+<div class="meta">
+</div>
+<p><img src="/notes/factors/mom_funds.svg"></img></p>
 <p>Всё очень плохо. Корреляция momentum-фондов с momentum-портфелем из таблиц Френча отчётливо <em>отрицательная</em>. Т.е. все наши выводы из предыдущего раздела уже пошли насмарку: momentum Френча появляется в портфелях из-за его отрицательной корреляции с другими категориями, но реальный momentum ведёт себя прямо противоположным образом.</p>
 <p>Добавлять momentum-фонды в портфель ОПАСНО. Это не momentum-фактор, как он нам известен из академических исследований. Это совершенно неисследованное нечто, которое, к тому же, у каждого фонда — своё.</p>
-<h3 id="value">VALUE</h3>
+</section>
+<section id="_10">
+<h3><a href="/notes/factors#_10">VALUE</a></h3>
+<div class="meta">
+</div>
 <p>У нас довольно много вариантов по каким параметрам добавлять «недооценённые» акции в портфель. К счастью, кроме очень проблемного Lpb Hop, они все ведут себя примерно одинаково.</p>
-<p><img src=/notes/factors/value_proxy.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/value_proxy.svg"></img></p>
 <p>Выберем для сравнения Lpe.</p>
-<p><img src=/notes/factors/value_funds.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/value_funds.svg"></img></p>
 <p>Здесь отслеживание уже гораздо лучше, но волатильность оказывается ниже «теоретического» value-портфеля, так что и бонус от ребалансировки будет меньше.</p>
-<h3 id="quality">QUALITY</h3>
-<p><img src=/notes/factors/quality_funds.svg style="width: 100%; height: 50wv" /></p>
+</section>
+<section id="_11">
+<h3><a href="/notes/factors#_11">QUALITY</a></h3>
+<div class="meta">
+</div>
+<p><img src="/notes/factors/quality_funds.svg"></img></p>
 <p>Quality, пожалуй, — самый проблемный фактор, который можно трактовать практически как угодно. Поэтому удивительно, что нашёлся фонд, который достаточно хорошо отслеживает теоретический портфель (FTCS). К сожалению, издержки стратегии оказываются велики, и реализованная доходность опускается на общую линию риск-доходность, лишь чуть-чуть превосходя среднерыночную, что соответствует большей волатильности такого портфеля.</p>
-<h2 id="_7">Второй тур</h2>
+</section>
+</section>
+<section id="_12">
+<h2><a href="/notes/factors#_12">Второй тур</a></h2>
+<div class="meta">
+</div>
 <p>Итак, у нас остались Hcap, Lcap, Hop и Lpe, причём доходности двух последних надо скорректировать вниз к линейной зависимости доходности от СКО (для этого возьмём логарифм от их индекса полной доходности, разложим его на линейный тренд и волатильность, изменим коэффициент линейного тренда и прибавим волатильность обратно). Вновь посмотрим на эффективную границу и эффективные портфели.</p>
-<p><img src=/notes/factors/eff2.svg style="width: 100%; height: 50wv" /></p>
+<p><img src="/notes/factors/eff2.svg"></img></p>
 <p>Красным пунктиром я отметил портфель с плечом стоимостью 1,5%г сверх безрисковой ставки, как в IB.</p>
 <p>Самые эффективные по риск/доходность портфели получались из примерно 70% Hop + 30% MARKET с доходностью 7,3%г, СКО 7,2%г, отставанием от рынка 15% и просадкой 42%.</p>
 <p>Самые доходные — 55% Lcap + 45% Lpe, 8,4%г, СКО 9,5%г, отставание 50%, просадка 47%.</p>
 <p>Самые доходные с отставанием от рынка не более 20% — больше 60% Hop, остальное Lpe, 7,5%г, СКО 7,5%, просадка 37%.</p>
-<h2 id="_8">Выводы</h2>
+</section>
+<section id="_13">
+<h2><a href="/notes/factors#_13">Выводы</a></h2>
+<div class="meta">
+</div>
 <p>Что из всего этого следует?</p>
 <ol>
 <li>Фундаментальный анализ всё ещё работает, но на премию к рынку выше 2% для диверсифицированного портфеля рассчитывать сложно, и готовьтесь к периодам сильного и продолжительного отставания от рынка (причём сыграть на них ребалансировкой, похоже, нельзя: эффективных/доходных портфелей 30% MARKET + 30% Lpe + 30% Hop при моделировании не получилось).</li>
@@ -724,39 +751,41 @@
 <li>Собирать руками портфель из фондов на отдельные факторы — аналогичная история.</li>
 <li>Дешёвое плечо <em>значительно</em> лучше значимого перевеса в SmallCaps.</li>
 </ol>
-    </div>
-    <aside style='display: flex'>
-        <div style="display: flex; flex-direction: column; margin-left: auto">
+</section>
+</section>
+            </div>
+            <hr/>
+            <div class="meta"><div class=categories>
+                    Категории:<a href="/categories/market">Финансовый рынок</a>
+<a href="/categories/portfolio">Портфель</a>
+                    </div>
+                    <div class="up">
+                        <span> &uarr; <a href='/notes#portfolio'> Заметки о финансах/Инвестиционный портфель</a> &uarr; </span>
+                    </div>
+            </div>
+            <aside style='display: flex'>
+                <div style="display: flex; flex-direction: column; margin-left: auto">
         <div class="share-buttons">
-            <a href="https://vk.com/share.php?url=https://onfin.github.io/notes/factors&title=Инвестиционные факторы&description=Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало." target="_blank"><i class="share">&#xea9d;</i></a>
-            <a href="https://t.me/share/url?url=https://onfin.github.io/notes/factors" target="_blank"><i class="share">&#xea9b;</i></a>
-            <a href="https://twitter.com/intent/tweet?text=https://onfin.github.io/notes/factors" target="_blank"><i class="share">&#xea9c;</i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://onfin.github.io/notes/factors" target="_blank"><i class="share">&#xea93;</i></a>
-
-        </div>
-        
-        <a class="donate-button" href="/donate">Отблагодарить</a>
-
+            <a href="https://vk.com/share.php?url=/notes/factors&title=Инвестиционные факторы&description=Разбираемся с последней модой в области пассивных инвестиций: инвестиционными факторами и smart-beta фондами. Как выясняется, смысла в этом довольно мало." target="_blank"><i class="share">&#xea98;</i></a>
+            <a href="https://t.me/share/url?url=/notes/factors" target="_blank"><i class="share">&#xea95;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=/notes/factors" target="_blank"><i class="share">&#xea96;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/notes/factors" target="_blank"><i class="share">&#xea91;</i></a>
+        </div>        
+            <a class="donate-button" href="/donate">Отблагодарить</a>
           <a class="donate-button" href='https://t.me/on_fin/88' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
-
     </div>
-    </aside>
-</article>
-
+            </aside>
+        </article>
     </main>
 
     <footer>
-<div class="prevupnext"><a class="prev" href="/notes/mpt"> &lt;&lt; (Не)Математика диверсификации-3: современная теория портфеля </a><a class="up" href="/notes"> &uarr; Заметки о финансах &uarr; </a><a class="next" href="/notes/bonds_in_portfolio"> Облигации в инвестиционном портфеле &gt;&gt; </a></div>
+<div class="disclaimer">
+    <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
 
-        <div class="disclaimer">
-            <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+    <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
 
-            <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
-
-            <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
-            <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
-            </p>
-        </div>
-    </footer>
-</body>
+    <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
+    <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
+    </p>
+</div>    </footer></body>
 </html>
