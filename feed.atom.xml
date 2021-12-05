@@ -3,18 +3,27 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2021-12-01</updated>
+<updated>2021-12-05</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
     <entry>
+        <title>Обновлено: Контринтуитивная доходность/Неэргодичность</title>
+        <link href="https://onfin.github.io/literacy/erratic_returns#non-ergo" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/erratic_returns#non-ergo</id>
+        <content src="https://onfin.github.io/literacy/erratic_returns#non-ergo"></content>
+        <updated>2021-12-05</updated>
+        <published>2021-12-05</published>
+        <summary type="html">Врезка с объяснением математики этого эффекта<br/><a href="https://onfin.github.io/literacy/erratic_returns#non-ergo">Перейти</a></summary>
+    </entry>
+    <entry>
         <title>Контринтуитивная доходность</title>
         <link href="https://onfin.github.io/literacy/erratic_returns" rel="alternate"/>
         <id>https://onfin.github.io/literacy/erratic_returns</id>
         <content src="https://onfin.github.io/literacy/erratic_returns"></content>
-        <updated>2021-12-01</updated>
+        <updated>2021-12-05</updated>
         <published>2021-12-01</published>
         <summary type="html">Для доходностей финансовых инструментов характерны толстые хвосты и асимметрия, а сам процесс инвестирования — неэргодичен. Наша интуиция в таких условиях работает плохо, и мы можем существенно недооценивать риски выбранных активов и стратегий.<br/><a href="https://onfin.github.io/literacy/erratic_returns">Перейти</a></summary>
     </entry>
@@ -224,14 +233,5 @@
         <updated>2020-07-08</updated>
         <published>2020-07-08</published>
         <summary type="html">Расчёт итоговой суммы капитала при инвестициях через американские, европейские и российские биржевые фонды<br/><a href="https://onfin.github.io/calculators/etf_us_eu_ru">Перейти</a></summary>
-    </entry>
-    <entry>
-        <title>Волатильность как мера риска</title>
-        <link href="https://onfin.github.io/notes/volatility" rel="alternate"/>
-        <id>https://onfin.github.io/notes/volatility</id>
-        <content src="https://onfin.github.io/notes/volatility"></content>
-        <updated>2020-06-30</updated>
-        <published>2020-06-30</published>
-        <summary type="html">Заблуждения про волатильность и нюансы её расчёта<br/><a href="https://onfin.github.io/notes/volatility">Перейти</a></summary>
     </entry>
 </feed>
