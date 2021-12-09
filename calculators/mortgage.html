@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?" />        <meta name="keywords" content="калькулятор, кредит, аннуитет, ипотека, аренда, инвестирование, что выгоднее" />
 <meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
 <meta property="og:url" content="https://onfin.github.io/calculators/mortgage" /></head>
+
 <body>
     <header>
 <nav class="menu">
@@ -32,13 +33,11 @@
                 <div class="meta"><p class=summary>Что выгоднее: купить квартиру сразу, в ипотеку, продолжать снимать? Погашать ли ипотеку досрочно?</p>
                     <p> Опубликовано: <time>2020-02-07</time> </p>
 <p>Находится в:</p>
-                    <p>
                     <ul>
     <a href='/calculators'>Калькуляторы</a>
 
     </ul>
 
-                    </p>
                 </div>
             </header>
             <div class="content">                <section id="">
@@ -59,20 +58,30 @@
 <p></p>
 
 <label>Стоимость жилья: <input id="housePrice" type="number" step=1000 value=3000000 onchange='setRentEst()' /></label>
+<div></div>
+
 <label>Первоначальный взнос: <input id="downpayment" type="number" step=1000 value=600000 onchange='setPayment()' /></label>
+<div></div>
+
 <label>Первоначальные расходы <input id="initialFee" type="number" step=1000 value=15000 /></label>
 <div class="comment">Оценка недвижимости, комиссии за регистрацию и пр. При покупке новостройки — арендная плата за время строительства и расходы на ремонт.</div>
+
 <label>Срок кредита, мес: <input id="months" type="number" step=1 value=360 onchange='setPayment()' /></label>
+<div></div>
+
 <label>Процентная ставка по кредиту, %г: <input id="interestRate" type="number" step=0.1 value=6.5 onchange='setPayment()' /></label>
 <div class="comment">Ежемесячный платёж будет: <strong><span id='monthlyPayment'></span></strong></div>
+
 <label>Ежегодные расходы, % от остатка кредита: <input id="recurringFee" type="number" step=0.1 value=0.5 /></label>
 <div class="comment">На страхование недвижимости, жизни и здоровья.</div>
+
 <label>На досрочное погашение, %: <input id="earlyRepay" type="number" step=1 value=0 /></label>
 <div class="comment">Какой процент свободного ежемесячного дохода, после всех расходов по кредиту и жилью, направить на досрочное погашение. Оставшиеся деньги будут инвестированы.</div>
 <p></p>
 
 <label>Эксплуатационные расходы в год: <input id="runningCosts" type="number" step=1000 value=20000 /></label>
 <div class="comment">Среднегодовые расходы на текущий и косметический ремонт, которые вы несёте как собственник жилья, а также налоги. Без коммунальных платежей. Предполагается, что эта сумма растёт со скоростью инфляции. </div>
+
 <label>Обветшание / восстановительный ремонт и страхование, %г от стоимости жилья: <input id="depreciation" type="number" step=0.1 value=1.5 /></label>
 <div class="comment">Согласно <a href="https://www.nber.org/papers/w24112">исследованиям</a>, это 1,5-2%г. Если вы почему-то считаете, что дорожать (после поправки на инфляцию) ваше жильё будет быстрее, чем морально и физически устаревать, то сделайте значение в этом поле отрицательным. Но про эту корректировку всё равно не забудьте.</div>
 <p></p>
