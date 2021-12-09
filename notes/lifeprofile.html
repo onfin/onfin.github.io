@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Как будут изменяться в течение жизни доходы, расходы и капитал если делать сбережения и если их не делать." />        <meta name="keywords" content="финансовая грамотность, доходы, расходы, сбережения, капитал, пенсия, обеспеченная старость" />
 <meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
 <meta property="og:url" content="https://onfin.github.io/notes/lifeprofile" /></head>
+
 <body>
     <header>
 <nav class="menu">
@@ -32,13 +33,11 @@
                 <div class="meta"><p class=summary>Как будут изменяться в течение жизни доходы, расходы и капитал если делать сбережения и если их не делать.</p>
                     <p> Опубликовано: <time>2019-11-21</time> </p>
 <p>Находится в:</p>
-                    <p>
                     <ul>
     <a href='/literacy#persfin'>Грамотность/Личные финансы</a>
 
     </ul>
 
-                    </p>
                 </div>
             </header>
             <div class="content">                <section id="">
@@ -172,8 +171,8 @@
             invested.push((invested.length === 0 ? 0 : invested[invested.length-1]) + inc_i-sp_i);
         }
 
-        f.spent_o = (spent_o.reduce((a,b) => a+b, 0)/1e3).toFixed(3);
-        f.spent_i = (spent_i.reduce((a,b) => a+b, 0)/1e3).toFixed(3);
+        f.spent_o = (spent_o.reduce((a,b) => a+b, 0.0)/1e3).toFixed(3);
+        f.spent_i = (spent_i.reduce((a,b) => a+b, invested[invested.length-1])/1e3).toFixed(3);
 
         var lineChartData = {
             labels: labels,
@@ -255,6 +254,15 @@
     }
   )
 </script>
+<div class="warn" id="pMHgYmEykJM">
+<p><i class='share'><a href='/notes/lifeprofile#pMHgYmEykJM'>&#xe902;</a></i>
+Есть несколько аспектов, которые не учтены в этой модели:</p>
+<ul>
+<li>неравномерность восприятия: деньги сейчас кажутся ценнее, чем потом, даже после поправки на инфляцию; хотя как раз этот эффект и не нужно учитывать, просто полезно иметь в виду;</li>
+<li>полезность: и на капитал, и на доходы распространяется закон убывающей отдачи, и, скажем, норма сбережений в 30% от з/п в 20 и 30 лет — даёт совершенно разный эффект на качество жизни;</li>
+<li>риск: у меня нарисован совершенно идеальный гладкий сценарий, а на самом деле — капитал и доступный денежный поток будут очень волатильны, что также снижает их полезность.</li>
+</ul>
+</div>
 </section>
             </div>
             <hr/>
