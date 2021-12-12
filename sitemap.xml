@@ -31,7 +31,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/credits</loc>
-            <lastmod>2019-01-12</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -50,6 +50,12 @@
         <url>
             <loc>https://onfin.github.io/literacy/moneytransfer</loc>
             <lastmod>2018-12-09</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/literacy/psych</loc>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -79,7 +85,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/deposits</loc>
-            <lastmod>2018-12-19</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -121,7 +127,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/instruments/realty</loc>
-            <lastmod>2020-01-07</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -133,7 +139,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/instruments/stocks</loc>
-            <lastmod>2020-05-06</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -169,7 +175,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/inflation</loc>
-            <lastmod>2021-01-26</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -212,6 +218,12 @@
         <url>
             <loc>https://onfin.github.io/notes/holywars</loc>
             <lastmod>2020-10-24</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/active_investing</loc>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -259,7 +271,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/pe</loc>
-            <lastmod>2021-07-26</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -319,7 +331,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/trading</loc>
-            <lastmod>2021-07-15</lastmod>
+            <lastmod>2021-12-11</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="С помощью очень простой модели оценим, какой процент трейдеров может добиться выдающихся результатов абсолютно случайно. Большой." />        <meta name="keywords" content="трейдинг, спекуляции, доходность, априорная вероятность, процент успешных трейдеров" />
 <meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
 <meta property="og:url" content="https://onfin.github.io/notes/trading" /></head>
+
 <body>
     <header>
 <nav class="menu">
@@ -23,7 +24,7 @@
         <span class="checkmark">&equiv;</span>
     </label>
     <input type="checkbox" id="toggle-menu" class="toggle-menu" />
-    <ul class="menu">            <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>            <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>            <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>            <li class="menu-item"><a href="/sources" class="menu-link">Источники</a></li>    </ul>
+    <ul class="menu">            <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>            <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>            <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>            <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>    </ul>
 </nav>    </header>
     <main>
         <article>
@@ -31,14 +32,13 @@
                 <h1> Легион хаотичных трейдеров </h1>
                 <div class="meta"><p class=summary>С помощью очень простой модели оценим, какой процент трейдеров может добиться выдающихся результатов абсолютно случайно. Большой.</p>
                     <p> Опубликовано: <time>2021-07-15</time> </p>
+                    <p>  Обновлено: <time>2021-12-11</time> </p>
 <p>Находится в:</p>
-                    <p>
                     <ul>
     <a href='/notes#portfolio'>Заметки о финансах/Инвестиционный портфель</a>
 
     </ul>
 
-                    </p>
                 </div>
             </header>
             <div class="content">                <section id="">
@@ -58,6 +58,32 @@
 <p><img src="/notes/trading/s_distr.svg"></img></p>
 <p>Таким образом, даже из этой очень грубой модели, мы можем сделать один очень важный вывод: в популяции всегда существует весьма высокий процент <em>долгоживущих</em> трейдеров, которые получили сверхрыночную доходность при меньшем риске <strong>абсолютно случайно</strong>. Даже если вам предъявляют 10-летнюю историю опережения рынка (с меньшим риском) с помощью маркет-тайминга — априорная вероятность случайности полученного результата получается порядка 15%. Это много. Требуйте дополнительных доказательств.</p>
 <p>В этой модели я рассматривал «медленный» трейдинг, одна сделка в несколько дней, без шортов и плеч. Насколько её результаты применимы к случаю внутридневной торговли с плечами? У меня нет доступа ко внутридневным данным за сколь-нибудь значительный период, но, как можно заключить из <a href="https://www.nytimes.com/2018/02/02/your-money/stock-market-after-hours-trading.html">этой статьи</a>, внутридневная волатильность намного меньше «междневной». Таким образом, «наблюдаемая волатильность» при маржинальной торговле внутри дня, при разумном использовании плеча, будет в какой-то степени соответствовать используемой в модели «междневной» волатильности. Повышенная частота сделок компенсируется управлением размером задействованного капитала (моя модель исходит из того, что трейдер делает ставку в размере всего своего капитала). Таким образом, можно предполагать, что полученная в этой очень грубой модели скорость сходимости априорного распределения вероятностей результатов к «рыночная доходность минус транзакционные издержки» будет работать и для случая внутридневного трейдинга (опять же, при условии некоторого «разумного» использования плеча / управления размером задействованного капитала, которое не приводит к случаям обнуления капитала трейдера). Также нужно отметить, что увеличение наблюдаемой волатильности приводит к расширению распределения результатов и <em>снижению</em> скорости сходимости. То есть, использование плеча может приводить к тому, что случайное опережение рынка будет сильнее, и сохраняться дольше, чем предсказывается моделью.</p>
+<section id="_2">
+<h2><a href="/notes/trading#_2">Ссылки по теме</a></h2>
+<div class="meta">
+<div>
+        Обновления:
+        <ul>
+                <li>2021-12-11: Добавлены ссылки на дополнительные материалы</li>
+        </ul>
+        </div>
+</div>
+<section id="_3">
+<h3><a href="/notes/trading#_3">Виктор Аргонов. Трейдеры и пьяницы</a></h3>
+<div class="meta">
+<a href="https://ru.ihodl.com/advertising/2016-01-20/treidery-i-pianitsy/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+</section>
+<section id="_4">
+<h3><a href="/notes/trading#_4">Виктор Аргонов. Задача о котировке, которая никогда не вернётся</a></h3>
+<div class="meta">
+<a href="https://ru.ihodl.com/advertising/2016-01-26/zadacha-o-kotirovke-kotoraia-nikogda-ne-verniotsia/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+</section>
+<section id="_5">
+<h3><a href="/notes/trading#_5">Виктор Аргонов. Задача об игроке, которого нельзя выгнать из казино</a></h3>
+<div class="meta">
+<a href="https://ru.ihodl.com/advertising/2016-02-02/zadacha-ob-igroke-kotorogo-nelzia-vygnat-iz-kazino/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+</section>
+</section>
 </section>
             </div>
             <hr/>
