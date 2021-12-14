@@ -3,12 +3,21 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2021-12-11</updated>
+<updated>2021-12-14</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Болезненность и полезность</title>
+        <link href="https://onfin.github.io/notes/paingain" rel="alternate"/>
+        <id>https://onfin.github.io/notes/paingain</id>
+        <content src="https://onfin.github.io/notes/paingain"></content>
+        <updated>2021-12-14</updated>
+        <published>2021-12-14</published>
+        <summary type="html">Определяем оптимальную экспозицию на актив/портфель с помощью функции полезности (и «функции болезненности»). Это нам впоследствии поможет и при составлении оптимальных портфелей.<br/><a href="https://onfin.github.io/notes/paingain">Перейти</a></summary>
+    </entry>
     <entry>
         <title>Психология долгосрочных инвестиций</title>
         <link href="https://onfin.github.io/literacy/psych" rel="alternate"/>
@@ -224,14 +233,5 @@
         <updated>2021-01-08</updated>
         <published>2021-01-08</published>
         <summary type="html">Вступившие в силу изменения в НК, уточнения по работе с ИИС.<br/><a href="https://onfin.github.io/literacy/iis">Перейти</a></summary>
-    </entry>
-    <entry>
-        <title>Обновлено: Брокерский счёт: как рассчитываются и уплачиваются налоги</title>
-        <link href="https://onfin.github.io/literacy/taxes" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/taxes</id>
-        <content src="https://onfin.github.io/literacy/taxes"></content>
-        <updated>2021-01-08</updated>
-        <published>2021-01-08</published>
-        <summary type="html">Вступившие в силу изменения в НК.<br/><a href="https://onfin.github.io/literacy/taxes">Перейти</a></summary>
     </entry>
 </feed>

@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Болезненность и полезность</title>
+    <meta charset="utf-8" />    <link rel="canonical" href="/notes/paingain" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Определяем оптимальную экспозицию на актив/портфель с помощью функции полезности (и «функции болезненности»). Это нам впоследствии поможет и при составлении оптимальных портфелей." />        <meta name="keywords" content="экспозиция, риск, доходность, портфельная теория, волатильность, полезность" />
+<meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
+<meta property="og:url" content="https://onfin.github.io/notes/paingain" /></head>
+
+<body>
+    <header>
+<nav class="menu">
+    <label class="menu-container" for="toggle-menu">
+        <div class="menu-head">
+            <a href='/' class="menu-home">Житейские воззрения пана Семушельского</a>
+            <div class="social">
+                <a href="https://t.me/on_fin" class="menu-link"><i class="share">&#xea95;</i></a>
+                <a href="/feed.atom.xml" class="menu-link"><i class="share">&#xea9b;</i></a>
+            </div>
+        </div>
+        <span class="checkmark">&equiv;</span>
+    </label>
+    <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+    <ul class="menu">            <li class="menu-item"><a href="/literacy" class="menu-link">Грамотность</a></li>            <li class="menu-item"><a href="/notes" class="menu-link">Заметки</a></li>            <li class="menu-item"><a href="/calculators" class="menu-link">Калькуляторы</a></li>            <li class="menu-item"><a href="/pages/sources" class="menu-link">Источники</a></li>    </ul>
+</nav>    </header>
+    <main>
+        <article>
+            <header>
+                <h1> Болезненность и полезность </h1>
+                <div class="meta"><p class=summary>Определяем оптимальную экспозицию на актив/портфель с помощью функции полезности (и «функции болезненности»). Это нам впоследствии поможет и при составлении оптимальных портфелей.</p>
+                    <p> Опубликовано: <time>2021-12-14</time> </p>
+<p>Находится в:</p>
+                    <ul>
+    <a href='/notes#portfolio'>Заметки о финансах/Инвестиционный портфель</a>
+
+    </ul>
+
+                </div>
+            </header>
+            <div class="content">                <section id="">
+<div class="meta">
+</div>
+<section id="_2">
+<h2><a href="/notes/paingain#_2">Полезность</a></h2>
+<div class="meta">
+</div>
+<div class="warn" id="pBH9LYQjBM8">
+<p><i class='share'><a href='/notes/paingain#pBH9LYQjBM8'>&#xe902;</a></i>Это может быть не очень удобный заход к концепции полезности, но он предыдущие рассуждения вывели меня именно на него.</p>
+</div>
+<p><a href="/notes/expo">Прошлая статья</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>Экспозиция и риск/доходность</span>
+            <span class='description'>Небольшая зарисовка о неочевидных особенностях масштабирования портфелей</span>
+        </span> оставила нас с вопросом об оптимальной экспозиции на рисковый актив. Оптимизировать по соотношению риск/доходность мы не можем: оптимальной оказывается нулевая экспозиция. Оптимизировать по доходности — очевидно — тоже: нельзя игнорировать риск, растущий быстрее ожидаемой доходности.</p>
+<p>Поэтому обратимся к концепции <em>полезности</em>. В экономической теории функция полезности (<em>utility</em>) <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></span> отображает некоторый объективный параметр <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span></span> в субъективную полезность <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">u</span></span></span></span></span>. Самой старой и наиболее интуитивной является логарифмическая функция полезности <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></span>. Её использование (в контексте личных финансов) предполагает, что полезность каждого последующего рубля падает пропорционально размеру накопленного капитала.</p>
+<p><img src="/notes/paingain/log_utility.svg"></img></p>
+<p>Соответственно, когда наш капитал уменьшается, мы теряем больше полезности, чем когда он растёт на ту же сумму, а полная потеря капитала будет для нас означать бесконечную боль: <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">∞</span></span></span></span></span>.</p>
+<p>Логарифмическая полезность удобна и логична тем, что полезность относительного прироста капитала равна разности полезностей  конечного и начального: <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span></span>. Используя такую форму полезности, мы также неявно учитываем и <a href="/literacy/erratic_returns#neg-asy">асимметрию</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>Контринтуитивная доходность/Отрицательная асимметрия</span>
+            <span class='description'>Отрицательная асимметрия — это когда вы в большинстве случаев получаете высокую доходность, но иногда случаются события/периоды, которые разрушают ваш капитал. Положительная асимметрия — в большинстве случаев вы получаете доходность ниже среднего (или вообще теряете деньги), но иногда — резко наращиваете капитал.</span>
+        </span> в распределении результатов инвестирования. В этом преимущество абстрактной, на первый взгляд, полезности перед средней и медианной/характерной доходностями: т.к. распределение исходов инвестирования асимметрично и имеет толстые хвосты, средняя доходность искажается редкими мощными выбросами, а медианная/характерная — просто их отбрасывает. Использование <em>средней</em> исторической полезности позволяет, на мой взгляд, более корректно отразить влияние толстых асимметричных хвостов на инвестора («редкие сверхдоходности — не очень-то и хотелось, а вот даже небольшой вероятности почти полной потери капитала — лучше бы избежать»).</p>
+<div class="todo" id="uNsBFPi8TI8">
+<p><i class='share'><a href='/notes/paingain#uNsBFPi8TI8'>&#xe902;</a></i>Есть и множество других функций полезности, <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span></span>, <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></span>, <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6817em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1617em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">/</span><span class="mord mathnormal mtight">a</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">x</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">b</span><span class="mord mtight">/</span><span class="mord mathnormal mtight">a</span><span class="mclose mtight"><span class="mclose mtight">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9667142857142857em;"><span style="top:-2.966714285714285em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5357142857142856em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">/</span><span class="mord mathnormal mtight">a</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>, ... со своими свойствами, и которые тоже, возможно, нам где-нибудь пригодятся, но в текущем контексте мне самым подходящим представляется логарифм.</p>
+</div>
+<p>Посмотрим, какую итоговую полезность создают различные активы на горизонте 15 лет (показано среднее по скользящим интервалам с 1950г).</p>
+<p><img src="/notes/paingain/expo_util.svg"></img></p>
+<p>Интересно, что зависимость полезности облигаций и портфеля от экспозиции примерно следует характерной доходности из <a href="/notes/expo">предыдущей статьи</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>Экспозиция и риск/доходность</span>
+            <span class='description'>Небольшая зарисовка о неочевидных особенностях масштабирования портфелей</span>
+        </span> (напоминаю, что плечо пока — бесплатное), а вот полезность золота начала загибаться вслед за акциями.</p>
+</section>
+<section id="_3">
+<h2><a href="/notes/paingain#_3">Болезненность</a></h2>
+<div class="meta">
+</div>
+<p>Но неопределённость результата — это ещё не всё. Добавим в модель <em>болезненность</em> от владения портфелем. Для этого мы <a href="/notes/volatility2">вводили</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>Измеряя рыночный риск</span>
+            <span class='description'>Проанализировал целых 10 возможных мер рыночного риска, и собрал их в 3 основных его аспекта, которые должны учитываться при определении терпимости к риску и построении оптимального портфеля.</span>
+        </span> такие метрики как волатильность капитала, максимальная и среднеквадратичная просадки. Они измеряются в процентах от капитала и их нужно как-то перевести в единицы полезности. Самым очевидным решением будет применить тот же логарифм. Если просадка или волатильность капитала равны 100%, то это эквивалентно полной потере капитала = бесконечная боль = <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mclose">)</span></span></span></span></span>, где <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span> — величина риска в процентах от капитала. Т.к. потери не окончательные (кроме полной), прибавим к итоговой полезности <em>половину</em> этого логарифма (бесконечная боль при этом останется бесконечной). Можно прибавлять меньше половины, если терпимость к риску повышенная, или больше — если пониженная (прибавлять — потому что значение этого логарифма отрицательно). Но половина выглядит хорошим начальным приближением. Для более точного моделирования чувствительности к разным аспектам риска можно использовать и более изощрённые «функции болезненности», но мы пока остановимся на максимально простой.</p>
+<p><img src="/notes/paingain/expo_util_risk.svg"></img></p>
+<p>Так мы учли в своей модели волатильность активов и увидели, что экспозиция на волатильные активы выше (и ниже) 100% потеряла смысл. Хотя низковолатильные продолжают хорошо масштабироваться. Добавим, наконец, стоимость плеча. В Interactive Brokers можно кредитоваться под ставку ФРС + 1,5%г. Будем считать, что, долгосрочно, реальная ставка ФРС примерно равна нулю, как и реальная доходность безрисковых инструментов.</p>
+<p><img src="/notes/paingain/expo_util_risk_paid.svg"></img></p>
+<p>Получаем следующую замечательную (и довольно интуитивную, по-моему) картину, что
+<span class='hl' id='45n4wOadUls' markdown=1><i class='share'><a href='/notes/paingain#45n4wOadUls'>&#xe902;</a></i>оптимальная экспозиция на «чистые» активы = 1, а <a href="/notes/mpt">портфельный эффект</a>
+        <button class='link-meta-anchor'><strong>i</strong></button>
+        <span class='link-meta'>
+            <span class='header'>(Не)Математика диверсификации-3: современная теория портфеля</span>
+            <span class='description'>Теория портфеля Гарри Марковица, и почему это лишь математическая иллюстрация. Принципы построения портфеля гораздо проще.</span>
+        </span> между активами может сделать небольшое плечо полезным.
+</span></p>
+<div class="todo" id="2uj-wJbar9U">
+<p><i class='share'><a href='/notes/paingain#2uj-wJbar9U'>&#xe902;</a></i>Надо посмотреть, не меняется ли эта замечательная картина с изменением исторического периода.</p>
+</div>
+<p>Ещё раз повторюсь, что исторически-оптимальные портфели и экспозиции не являются оптимальными в будущем, и вообще зависят от ваших личных обстоятельств.</p>
+</section>
+<section id="_4">
+<h2><a href="/notes/paingain#_4">Ссылки по теме</a></h2>
+<div class="meta">
+</div>
+<section id="_5">
+<h3><a href="/notes/paingain#_5">Виктор Аргонов. Парадокс Санкт-Петербургской лотереи</a></h3>
+<div class="meta">
+<a href="https://ru.ihodl.com/investment/2016-02-09/paradoks-sankt-peterburgskoi-loterei/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+</section>
+<section id="_6">
+<h3><a href="/notes/paingain#_6">Виктор Аргонов. Можно ли купить счастье</a></h3>
+<div class="meta">
+<a href="https://ru.ihodl.com/advertising/2016-02-18/mozhno-li-kupit-schaste/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+</section>
+<section id="_7">
+<h3><a href="/notes/paingain#_7">Julia Galef. Income &amp; Happiness</a></h3>
+<div class="meta">
+<a href="http://danluu.com/dunning-kruger/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+<p>via <a href="https://twitter.com/Rational_Answer/status/1460493987186417668">Rational_Answer</a></p>
+</section>
+</section>
+</section>
+            </div>
+            <hr/>
+            <div class="meta"><div class=categories>
+                    Категории:<a href="/categories/market">Финансовый рынок</a>
+<a href="/categories/portfolio">Портфель</a>
+<a href="/categories/risk">Риск</a>
+<a href="/categories/yield">Доходность</a>
+                    </div>
+                    <div class="up">
+                        <span> &uarr; <a href='/notes#portfolio'> Заметки о финансах/Инвестиционный портфель</a> &uarr; </span>
+                    </div>
+            </div>
+            <aside style='display: flex'>
+                <div style="display: flex; flex-direction: column; margin-left: auto">
+        <div class="share-buttons">
+            <a href="https://vk.com/share.php?url=/notes/paingain&title=Болезненность и полезность&description=Определяем оптимальную экспозицию на актив/портфель с помощью функции полезности (и «функции болезненности»). Это нам впоследствии поможет и при составлении оптимальных портфелей." target="_blank"><i class="share">&#xea98;</i></a>
+            <a href="https://t.me/share/url?url=/notes/paingain" target="_blank"><i class="share">&#xea95;</i></a>
+            <a href="https://twitter.com/intent/tweet?text=/notes/paingain" target="_blank"><i class="share">&#xea96;</i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/notes/paingain" target="_blank"><i class="share">&#xea91;</i></a>
+        </div>        
+            <a class="donate-button" href="/donate">Отблагодарить</a>
+          <a class="donate-button" href='https://t.me/on_fin/124' target="_blank">Комментарии <img src='/images/tg.svg' style='height: 0.7em; margin-left: -0.5ex; vertical-align: text-top'></a>
+    </div>
+            </aside>
+        </article>
+    </main>
+
+    <footer>
+<div class="disclaimer">
+    <p>Здесь я выкладываю лишь собственные размышления/исследования/расчёты, иногда собственное же изложение чужих мнений или результатов исследований. Размещённая информация может содержать ошибки, быть неактуальной на момент прочтения, допускать множество интерпретаций и проч. Я не занимаюсь образовательной деятельностью и не даю инвестиционных рекомендаций ни на этом сайте, ни в частном порядке.</p>
+
+    <p>Может быть, вам показалось, но способов получить гарантированную доходность за счёт каких бы то ни было финансовых инструментов, портфелей или торговых стратегий НЕ СУЩЕСТВУЕТ. Хуже того, способов гарантированно сохранить свой капитал тоже НЕ СУЩЕСТВУЕТ.</p>
+
+    <p>Материалы сайта могут быть использованы на условиях лицензии <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.
+    <br> &copy; <a href="https://t.me/blksv" rel="author">Андрей Болкисев</a>, 2021.
+    </p>
+</div>    </footer></body>
+</html>
