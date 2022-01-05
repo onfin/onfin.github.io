@@ -3,12 +3,37 @@
 
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
-<updated>2021-12-14</updated>
+<link rel="self" href="/feed.atom.xml" />
+<updated>2022-01-05</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Временна́я стоимость денег. Дисконтирование</title>
+        <link href="https://onfin.github.io/literacy/discounting" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/discounting</id>
+        <content src="https://onfin.github.io/literacy/discounting"></content>
+        <updated>2022-01-05</updated>
+        <published>2022-01-05</published>
+        <summary type="html">Ставка дисконтирования. Её составляющие. Сравнение вариантов вложений через ставку дисконтирования.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
+        <title>Обновлено: Акции/Ссылки по теме</title>
+        <link href="https://onfin.github.io/literacy/instruments/stocks#_9" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/instruments/stocks#_9</id>
+        <content src="https://onfin.github.io/literacy/instruments/stocks#_9"></content>
+        <updated>2021-12-26</updated>
+        <published>2021-12-26</published>
+        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Болезненность и полезность</title>
         <link href="https://onfin.github.io/notes/paingain" rel="alternate"/>
@@ -16,7 +41,10 @@
         <content src="https://onfin.github.io/notes/paingain"></content>
         <updated>2021-12-14</updated>
         <published>2021-12-14</published>
-        <summary type="html">Определяем оптимальную экспозицию на актив/портфель с помощью функции полезности (и «функции болезненности»). Это нам впоследствии поможет и при составлении оптимальных портфелей.<br/><a href="https://onfin.github.io/notes/paingain">Перейти</a></summary>
+        <summary type="html">Определяем оптимальную экспозицию на актив/портфель с помощью функции полезности (и «функции болезненности»). Это нам впоследствии поможет и при составлении оптимальных портфелей.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Психология долгосрочных инвестиций</title>
@@ -25,7 +53,10 @@
         <content src="https://onfin.github.io/literacy/psych"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Что мешает нам инвестировать вдолгую, и вообще формировать подходящие для себя портфели. Как с этим бороться.<br/><a href="https://onfin.github.io/literacy/psych">Перейти</a></summary>
+        <summary type="html">Что мешает нам инвестировать вдолгую, и вообще формировать подходящие для себя портфели. Как с этим бороться.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Активные инвестиции</title>
@@ -34,7 +65,10 @@
         <content src="https://onfin.github.io/notes/active_investing"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Некоторые заметки по проблемам и возможностям активного инвестирования, нигде более не записанные<br/><a href="https://onfin.github.io/notes/active_investing">Перейти</a></summary>
+        <summary type="html">Некоторые заметки по проблемам и возможностям активного инвестирования, нигде более не записанные></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Математика кредитов/Ссылки по теме</title>
@@ -43,7 +77,10 @@
         <content src="https://onfin.github.io/literacy/credits#_2"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы<br/><a href="https://onfin.github.io/literacy/credits#_2">Перейти</a></summary>
+        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Размещение средств в банках/Банковские вклады</title>
@@ -52,7 +89,10 @@
         <content src="https://onfin.github.io/literacy/deposits#deposit"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Пример вклада с плавающей ставкой<br/><a href="https://onfin.github.io/literacy/deposits#deposit">Перейти</a></summary>
+        <summary type="html">Пример вклада с плавающей ставкой></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Недвижимость/Ссылки по теме</title>
@@ -61,16 +101,10 @@
         <content src="https://onfin.github.io/literacy/instruments/realty#_6"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы<br/><a href="https://onfin.github.io/literacy/instruments/realty#_6">Перейти</a></summary>
-    </entry>
-    <entry>
-        <title>Обновлено: Акции/Ссылки по теме</title>
-        <link href="https://onfin.github.io/literacy/instruments/stocks#_9" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/instruments/stocks#_9</id>
-        <content src="https://onfin.github.io/literacy/instruments/stocks#_9"></content>
-        <updated>2021-12-11</updated>
-        <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы<br/><a href="https://onfin.github.io/literacy/instruments/stocks#_9">Перейти</a></summary>
+        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Инфляция/Ссылки по теме</title>
@@ -79,7 +113,10 @@
         <content src="https://onfin.github.io/notes/inflation#_13"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы<br/><a href="https://onfin.github.io/notes/inflation#_13">Перейти</a></summary>
+        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Про P/E и перекупленность Америки/Ссылки по теме</title>
@@ -88,7 +125,10 @@
         <content src="https://onfin.github.io/notes/pe#_2"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы<br/><a href="https://onfin.github.io/notes/pe#_2">Перейти</a></summary>
+        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Легион хаотичных трейдеров/Ссылки по теме</title>
@@ -97,7 +137,10 @@
         <content src="https://onfin.github.io/notes/trading#_2"></content>
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы<br/><a href="https://onfin.github.io/notes/trading#_2">Перейти</a></summary>
+        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Контринтуитивная доходность/Неэргодичность</title>
@@ -106,7 +149,10 @@
         <content src="https://onfin.github.io/literacy/erratic_returns#non-ergo"></content>
         <updated>2021-12-05</updated>
         <published>2021-12-05</published>
-        <summary type="html">Врезка с объяснением математики<br/><a href="https://onfin.github.io/literacy/erratic_returns#non-ergo">Перейти</a></summary>
+        <summary type="html">Врезка с объяснением математики></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Контринтуитивная доходность</title>
@@ -115,7 +161,10 @@
         <content src="https://onfin.github.io/literacy/erratic_returns"></content>
         <updated>2021-12-05</updated>
         <published>2021-12-01</published>
-        <summary type="html">Для доходностей финансовых инструментов характерны толстые хвосты и асимметрия, а сам процесс инвестирования — неэргодичен. Наша интуиция в таких условиях работает плохо, и мы можем существенно недооценивать риски выбранных активов и стратегий.<br/><a href="https://onfin.github.io/literacy/erratic_returns">Перейти</a></summary>
+        <summary type="html">Для доходностей финансовых инструментов характерны толстые хвосты и асимметрия, а сам процесс инвестирования — неэргодичен. Наша интуиция в таких условиях работает плохо, и мы можем существенно недооценивать риски выбранных активов и стратегий.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Результаты активного управления</title>
@@ -124,7 +173,10 @@
         <content src="https://onfin.github.io/notes/active_results"></content>
         <updated>2021-11-29</updated>
         <published>2021-11-29</published>
-        <summary type="html">Список источников по результатам активного управления с краткими выписками и комментариями.<br/><a href="https://onfin.github.io/notes/active_results">Перейти</a></summary>
+        <summary type="html">Список источников по результатам активного управления с краткими выписками и комментариями.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Индивидуальный инвестиционный счёт и другие налоговые льготы и вычеты для инвесторов/Нюансы использования ИИС</title>
@@ -133,7 +185,10 @@
         <content src="https://onfin.github.io/literacy/iis#_4"></content>
         <updated>2021-11-27</updated>
         <published>2021-11-27</published>
-        <summary type="html">ВТБ с лета начал удерживать налог на дивиденды при зачислении на ИИС.<br/><a href="https://onfin.github.io/literacy/iis#_4">Перейти</a></summary>
+        <summary type="html">ВТБ с лета начал удерживать налог на дивиденды при зачислении на ИИС.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Как выбрать брокера</title>
@@ -142,7 +197,10 @@
         <content src="https://onfin.github.io/literacy/brokers"></content>
         <updated>2021-11-27</updated>
         <published>2021-11-27</published>
-        <summary type="html">Убрал раздел с тарифами брокеров, т.к. нет ресурсов поддерживать его актуальность.<br/><a href="https://onfin.github.io/literacy/brokers">Перейти</a></summary>
+        <summary type="html">Убрал раздел с тарифами брокеров, т.к. нет ресурсов поддерживать его актуальность.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Бонус за ребалансировку и потери на волатильности (физмат-этюд)</title>
@@ -151,7 +209,10 @@
         <content src="https://onfin.github.io/notes/rebalance_bonus"></content>
         <updated>2021-08-24</updated>
         <published>2021-08-24</published>
-        <summary type="html">Получаем выражение для величины бонуса за ребалансировку, и заодно понимаем, что бонуса как такового не существует, просто нелинейные зависимости — нелинейны. Аналогичное быстро проделываем с «потерями на волатильности», которые и вовсе порождены использованием неправильного представления доходностей.<br/><a href="https://onfin.github.io/notes/rebalance_bonus">Перейти</a></summary>
+        <summary type="html">Получаем выражение для величины бонуса за ребалансировку, и заодно понимаем, что бонуса как такового не существует, просто нелинейные зависимости — нелинейны. Аналогичное быстро проделываем с «потерями на волатильности», которые и вовсе порождены использованием неправильного представления доходностей.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Портфельный эффект и гримасы корреляции</title>
@@ -160,7 +221,10 @@
         <content src="https://onfin.github.io/notes/grimace"></content>
         <updated>2021-08-22</updated>
         <published>2021-08-22</published>
-        <summary type="html">Почему не стоит полагаться на корреляции при выборе активов в портфель. И на доходности тоже.<br/><a href="https://onfin.github.io/notes/grimace">Перейти</a></summary>
+        <summary type="html">Почему не стоит полагаться на корреляции при выборе активов в портфель. И на доходности тоже.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Экспозиция и риск/доходность</title>
@@ -169,7 +233,10 @@
         <content src="https://onfin.github.io/notes/expo"></content>
         <updated>2021-08-12</updated>
         <published>2021-08-12</published>
-        <summary type="html">Небольшая зарисовка о неочевидных особенностях масштабирования портфелей<br/><a href="https://onfin.github.io/notes/expo">Перейти</a></summary>
+        <summary type="html">Небольшая зарисовка о неочевидных особенностях масштабирования портфелей></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Измеряя рыночный риск</title>
@@ -178,7 +245,10 @@
         <content src="https://onfin.github.io/notes/volatility2"></content>
         <updated>2021-08-10</updated>
         <published>2021-08-10</published>
-        <summary type="html">Проанализировал целых 10 возможных мер рыночного риска, и собрал их в 3 основных его аспекта, которые должны учитываться при определении терпимости к риску и построении оптимального портфеля.<br/><a href="https://onfin.github.io/notes/volatility2">Перейти</a></summary>
+        <summary type="html">Проанализировал целых 10 возможных мер рыночного риска, и собрал их в 3 основных его аспекта, которые должны учитываться при определении терпимости к риску и построении оптимального портфеля.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Про P/E и перекупленность Америки</title>
@@ -187,7 +257,10 @@
         <content src="https://onfin.github.io/notes/pe"></content>
         <updated>2021-12-11</updated>
         <published>2021-07-26</published>
-        <summary type="html">Разбираемся с «физическим смыслом» индикаторов P/E и CAPE, а также одним очевидным способом их улучшения.<br/><a href="https://onfin.github.io/notes/pe">Перейти</a></summary>
+        <summary type="html">Разбираемся с «физическим смыслом» индикаторов P/E и CAPE, а также одним очевидным способом их улучшения.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Золото/Производство, потребление и историческая динамика</title>
@@ -196,7 +269,10 @@
         <content src="https://onfin.github.io/literacy/instruments/gold#_2"></content>
         <updated>2021-07-26</updated>
         <published>2021-07-26</published>
-        <summary type="html">Учёл в потреблении золота спрос со стороны ювелирного дела и сделал оговорку о вторичной переработке.<br/><a href="https://onfin.github.io/literacy/instruments/gold#_2">Перейти</a></summary>
+        <summary type="html">Учёл в потреблении золота спрос со стороны ювелирного дела и сделал оговорку о вторичной переработке.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Легион хаотичных трейдеров</title>
@@ -205,7 +281,10 @@
         <content src="https://onfin.github.io/notes/trading"></content>
         <updated>2021-12-11</updated>
         <published>2021-07-15</published>
-        <summary type="html">С помощью очень простой модели оценим, какой процент трейдеров может добиться выдающихся результатов абсолютно случайно. Большой.<br/><a href="https://onfin.github.io/notes/trading">Перейти</a></summary>
+        <summary type="html">С помощью очень простой модели оценим, какой процент трейдеров может добиться выдающихся результатов абсолютно случайно. Большой.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Запланированные статьи</title>
@@ -214,7 +293,10 @@
         <content src="https://onfin.github.io/pages/plan"></content>
         <updated>2021-03-22</updated>
         <published>2021-03-22</published>
-        <summary type="html"><br/><a href="https://onfin.github.io/pages/plan">Перейти</a></summary>
+        <summary type="html">></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
     <entry>
         <title>Обновлено: Инфляция/Составляющие инфляции</title>
@@ -223,15 +305,9 @@
         <content src="https://onfin.github.io/notes/inflation#components"></content>
         <updated>2021-01-26</updated>
         <published>2021-01-26</published>
-        <summary type="html">Изменение структуры потребления без изменения цен *не* влияет на ИПЦ.<br/><a href="https://onfin.github.io/notes/inflation#components">Перейти</a></summary>
-    </entry>
-    <entry>
-        <title>Обновлено: Индивидуальный инвестиционный счёт и другие налоговые льготы и вычеты для инвесторов</title>
-        <link href="https://onfin.github.io/literacy/iis" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/iis</id>
-        <content src="https://onfin.github.io/literacy/iis"></content>
-        <updated>2021-01-08</updated>
-        <published>2021-01-08</published>
-        <summary type="html">Вступившие в силу изменения в НК, уточнения по работе с ИИС.<br/><a href="https://onfin.github.io/literacy/iis">Перейти</a></summary>
+        <summary type="html">Изменение структуры потребления без изменения цен *не* влияет на ИПЦ.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
     </entry>
 </feed>
