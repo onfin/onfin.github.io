@@ -4,12 +4,48 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-01-05</updated>
+<updated>2022-01-08</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Обновлено: Криптовалюты/Ссылки по теме/My first impressions of web3</title>
+        <link href="https://onfin.github.io/literacy/instruments/crypto#_7" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/instruments/crypto#_7</id>
+        <content src="https://onfin.github.io/literacy/instruments/crypto#_7"></content>
+        <updated>2022-01-08</updated>
+        <published>2022-01-08</published>
+        <summary type="html">Интересный обзор централизованности блокчейн (на примере эфира), а также незащищённости клиент-серверного взаимодействия «децентрализованных» приложений.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
+        <title>Обновлено: Криптовалюты/Ссылки по теме/Money and Cryptocurrencies</title>
+        <link href="https://onfin.github.io/literacy/instruments/crypto#_8" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/instruments/crypto#_8</id>
+        <content src="https://onfin.github.io/literacy/instruments/crypto#_8"></content>
+        <updated>2022-01-08</updated>
+        <published>2022-01-08</published>
+        <summary type="html">Разбор тщеты криптовалют и их непригодности в современном виде к дальнейшему усовершенствованию денежного обращения.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
+        <title>Обновлено: Калькуляторы банковских карт/Доход от кэшбэка и льготного кредита по кредитной карте</title>
+        <link href="https://onfin.github.io/calculators/cards#_4" rel="alternate"/>
+        <id>https://onfin.github.io/calculators/cards#_4</id>
+        <content src="https://onfin.github.io/calculators/cards#_4"></content>
+        <updated>2022-01-08</updated>
+        <published>2022-01-08</published>
+        <summary type="html">Разделил отчётный и платёжный период, чтобы точнее считать длинногрейсовые кредитки.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Временна́я стоимость денег. Дисконтирование</title>
         <link href="https://onfin.github.io/literacy/discounting" rel="alternate"/>
@@ -270,42 +306,6 @@
         <updated>2021-07-26</updated>
         <published>2021-07-26</published>
         <summary type="html">Учёл в потреблении золота спрос со стороны ювелирного дела и сделал оговорку о вторичной переработке.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Легион хаотичных трейдеров</title>
-        <link href="https://onfin.github.io/notes/trading" rel="alternate"/>
-        <id>https://onfin.github.io/notes/trading</id>
-        <content src="https://onfin.github.io/notes/trading"></content>
-        <updated>2021-12-11</updated>
-        <published>2021-07-15</published>
-        <summary type="html">С помощью очень простой модели оценим, какой процент трейдеров может добиться выдающихся результатов абсолютно случайно. Большой.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Запланированные статьи</title>
-        <link href="https://onfin.github.io/pages/plan" rel="alternate"/>
-        <id>https://onfin.github.io/pages/plan</id>
-        <content src="https://onfin.github.io/pages/plan"></content>
-        <updated>2021-03-22</updated>
-        <published>2021-03-22</published>
-        <summary type="html">></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Инфляция/Составляющие инфляции</title>
-        <link href="https://onfin.github.io/notes/inflation#components" rel="alternate"/>
-        <id>https://onfin.github.io/notes/inflation#components</id>
-        <content src="https://onfin.github.io/notes/inflation#components"></content>
-        <updated>2021-01-26</updated>
-        <published>2021-01-26</published>
-        <summary type="html">Изменение структуры потребления без изменения цен *не* влияет на ИПЦ.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>

@@ -32,6 +32,7 @@
                 <h1> Криптовалюты </h1>
                 <div class="meta"><p class=summary>Разбираем экономическую сущность криптовалют и их пригодность в качестве актива в диверсифицированном портфеле. Результаты, как можно догадаться, неутешительные.</p>
                     <p> Опубликовано: <time>2020-05-19</time> </p>
+                    <p>  Обновлено: <time>2022-01-08</time> </p>
 <p>Находится в:</p>
                     <ul>
     <a href='/literacy/instruments'>Краткий обзор инструментов сбережения...</a>
@@ -71,6 +72,11 @@
 <li><a href="/literacy/instruments/crypto#_3">Криптовалюты как валюты</a></li>
 <li><a href="/literacy/instruments/crypto#_4">Криптовалюты как средство платежа</a></li>
 <li><a href="/literacy/instruments/crypto#_5">Криптовалюты как актив</a></li>
+<li><a href="/literacy/instruments/crypto#links">Ссылки по теме</a></li>
+<ul>
+<li><a href="/literacy/instruments/crypto#_7">My first impressions of web3</a></li>
+<li><a href="/literacy/instruments/crypto#_8">Money and Cryptocurrencies</a></li>
+</ul>
 </ul></div>
 <section id="_2">
 <h2><a href="/literacy/instruments/crypto#_2">Общие представления</a></h2>
@@ -136,6 +142,49 @@
 <p>На моё предположение об отрицательной (или хотя бы нулевой) ожидаемой доходности криптовалют часто можно услышать возражение, что, по мере того как криптовалюты будут становиться всё более общепринятым средством расчёта, их стоимость (из-за ограниченности предложения) будет расти. Эта идея представляет собой экономический оксюморон, даже если забыть об <em>огромном</em> и постоянно растущем количестве новых криптовалют (на одном только блокчейне эфира, например, разных криптовалют-токенов запущено уже почти <a href="https://etherscan.io/tokens">триста тысяч</a>). Если стоимость актива растёт, то он в дефиците, но дефицитный актив не может использоваться как средство расчёта, потому что его недостаточно для расчётов (иначе не было бы дефицита), плюс экономические агенты обычно не склонны просто так расставаться с растущими в цене активами. Чтобы какая-то криптовалюта служила средством расчётов и одновременно росла в цене, необходимо <em>законодательно обязать</em> всех экономических агентов осуществлять расчёты исключительно и только в этой криптовалюте, но даже и в этом случае они очень быстро съезжают на векселя-взаимозачёты-бартер, потому что рассчитываться дефицитным активом невозможно (Великая Депрессия и наше начало 2000-х тому примером).</p>
 <p>На аргумент о волатильности как препятствии для влючения в портфель можно было бы возразить, что по мере признания криптовалют она будет снижаться. Однако на данный момент снижения волатильности биткойна со временем замечено не было. Для снижения волатильности всё-таки требуется наличие механизмов внешнего управления курсом/эмиссией, что в корне противоречит идеологии большинства современных криптовалют.</p>
 <p>Таким образом, криптовалюты остаются исключительно спекулятивным активом, не дающем ни хотя бы нулевой реальной доходности, ни диверсификации (понимаемой как снижение риска портфеля, а не простое набивание его активами).</p>
+</section>
+<section id="links">
+<h2><a href="/literacy/instruments/crypto#links">Ссылки по теме<i class=share>&#xe9cb;</i></a></h2>
+<div class="meta">
+</div>
+<section id="_7">
+<h3><a href="/literacy/instruments/crypto#_7">My first impressions of web3</a></h3>
+<div class="meta">
+<div>
+        Обновления:
+        <ul>
+                <li>2022-01-08: Интересный обзор централизованности блокчейн (на примере эфира), а также незащищённости клиент-серверного взаимодействия «децентрализованных» приложений.</li>
+        </ul>
+        </div><a href="https://moxie.org/2022/01/07/web3-first-impressions.html" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+<ul>
+<li>People don’t want to run their own servers, and never will. When people talk about blockchains &lt;...&gt; All the network diagrams are of servers, the trust model is between servers, everything is about servers. Blockchains are designed to be a network of peers, but not designed such that it’s really possible for your mobile device or your browser to be one of those peers.</li>
+<li>In fact, even when you connect a wallet like MetaMask to a dApp, and the dApp interacts with the blockchain via your wallet, MetaMask is just making calls to Infura! These client APIs are not using anything to verify blockchain state or the authenticity of responses. The results aren’t even signed.</li>
+<li>Instead of storing the data on-chain, NFTs instead contain a URL that points to the data. What surprised me about the standards was that there’s no hash commitment for the data located at the URL.</li>
+<li>
+<p>So as an experiment, I made an NFT that changes based on who is looking at it &lt;...&gt; it looked one way on OpenSea, another way on Rarible, but when you buy it and view it from your crypto wallet, it will always display as a large 💩 emoji. What you bid on isn’t what you get. There’s nothing unusual about this NFT, it’s how the NFT specifications are built. Many of the highest priced NFTs could turn into 💩 emoji at any time; I just made it explicit.</p>
+<p>After a few days, without warning or explanation, the NFT I made was removed from OpenSea. What I found most interesting, though, is that after OpenSea removed my NFT, it also no longer appeared in any crypto wallet on my device. This is web3, though, how is that possible?</p>
+</li>
+<li>
+<p>A wallet like MetaMask needs to do basic things like display your balance, your recent transactions, and your NFTs... MetaMask needs to interact with the blockchain, but the blockchain has been built such that clients like MetaMask can’t interact with it. So like my dApp, MetaMask accomplishes this by making API calls to three companies that have consolidated in this space: etherscan, Infura, OpenSea. Again, like with my dApp, these responses are not authenticated in some way. They’re not even signed so that you could later prove they were lying. It reuses the same connections, TLS session tickets, etc for all the accounts in your wallet, so if you’re managing multiple accounts in your wallet to maintain some identity separation, these companies know they’re linked.</p>
+</li>
+<li>All this means that if your NFT is removed from OpenSea, it also disappears from your wallet. It doesn’t functionally matter that my NFT is indelibly on the blockchain somewhere, because the wallet (and increasingly everything else in the ecosystem) is just using the OpenSea API to display NFTs, which began returning 304 No Content for the query of NFTs owned by my address!</li>
+<li>Given the history of why web1 became web2, what seems strange to me about web3 is that technologies like ethereum have been built with many of the same implicit trappings as web1. To make these technologies usable, the space is consolidating around… platforms. Again. People who will run servers for you, and iterate on the new functionality that emerges. Infura, OpenSea, Coinbase, Etherscan.</li>
+<li>When building First Derivative, it would have been great to price minting derivatives as a percentage of the underlying’s value. That data isn’t on chain, but it’s in an API that OpenSea will give you. People are excited about NFT royalties for the way that can benefit creators, but royalties aren’t specified in ERC-721, and it’s too late to change it, so OpenSea has its own way of configuring royalties that exists in web2 space.</li>
+<li>Even if this is just the beginning (and it very well might be!), I’m not sure we should consider that any consolation. It seems like we should take notice that from the very beginning, these technologies immediately tended towards centralization through platforms in order for them to be realized.</li>
+<li>When you think about it, OpenSea would actually be much “better” in the immediate sense if all the web3 parts were gone. It would be faster, cheaper for everyone, and easier to use. For example, to accept a bid on my NFT, I would have had to pay over <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord">−</span></span></span></span></span>150+ just in ethereum transaction fees. That puts an artificial floor on all bids, since otherwise you’d lose money by accepting a bid for less than the gas fees. Payment fees by credit card, which typically feel extortionary, look cheap compared to that. OpenSea could even publish a simple transparency log if people wanted a public record of transactions, offers, bids, etc to verify their accounting.</li>
+</ul>
+</section>
+<section id="_8">
+<h3><a href="/literacy/instruments/crypto#_8">Money and Cryptocurrencies</a></h3>
+<div class="meta">
+<div>
+        Обновления:
+        <ul>
+                <li>2022-01-08: Разбор тщеты криптовалют и их непригодности в современном виде к дальнейшему усовершенствованию денежного обращения.</li>
+        </ul>
+        </div><a href="http://jwmason.org/slackwire/on-cryptocurrencies/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+<p>Для начала, разбор тщеты криптовалют: их капитализация ничтожна, ни финансовые институты, ни реальный сектор на них не полагаются и не используют, транзакции дороги, участники обмена сильно зависят от посредников, инфраструктура de facto принадлежит нескольким крупным игрокам. А далее уже начинается обсуждение двух взглядов на деньги: как на фундаментальную сущность с самостоятельной ценностью (на этой концепции основываются практически все современные криптовалюты), и как на условную единицу, производную от реальных обязательств (что более соответствует современным представлениям и об устройстве экономики, и о происхождении собственно денег).</p>
+</section>
 </section>
 </section>
             </div>

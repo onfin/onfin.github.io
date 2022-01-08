@@ -32,6 +32,7 @@
                 <h1> Калькуляторы банковских карт </h1>
                 <div class="meta"><p class=summary>Калькуляторы для расчёта выгоды, сравнения и выбора банковских карт.</p>
                     <p> Опубликовано: <time>2019-10-13</time> </p>
+                    <p>  Обновлено: <time>2022-01-08</time> </p>
 <p>Находится в:</p>
                     <ul>
     <a href='/calculators'>Калькуляторы</a>
@@ -148,6 +149,12 @@
 <section id="_4">
 <h2><a href="/calculators/cards#_4">Доход от кэшбэка и льготного кредита по кредитной карте</a></h2>
 <div class="meta">
+<div>
+        Обновления:
+        <ul>
+                <li>2022-01-08: Разделил отчётный и платёжный период, чтобы точнее считать длинногрейсовые кредитки.</li>
+        </ul>
+        </div>
 </div>
 <div class="calc-form" id="creditCard"></div>
 <script type="module">
@@ -171,16 +178,17 @@
       step: 0.5,
       default: 1
     },
-    grace: {
-      title: "Продолжительность грейса, дней",
+    graceLen: {
+      title: "Продолжительность отчётного периода, дней",
       type: "number",
       step: 1,
-      default: 55
+      default: 30
     },
-    trueGrace: {
-      title: "Честный грейс",
-      type: "checkbox",
-      default: true
+    paymentLen: {
+      title: "Продолжительность платёжного периода, дней",
+      type: "number",
+      step: 1,
+      default: 25
     },
     mid: {
       title: "Минимальное ежемесячное погашение",
@@ -206,6 +214,11 @@
       step: 1,
       default: 25
     },
+    maxDebt: {
+      title: "Макс. задолженность",
+      type: "number",
+      output: true
+    },
     income: {
       title: "Доход от карты в год",
       type: "number",
@@ -216,7 +229,7 @@
       type: "number",
       output: true
     },
-    debt: {
+    interestPayment: {
       title: "Платёж в случае вылета из грейса",
       type: "number",
       output: true
@@ -228,16 +241,16 @@
     },
   },
     function(f) {
-      var k = f.grace/30 * (1-f.mid/100);
-      if (!f.trueGrace)
-        k /= 2;
+      var k = (f.graceLen * (1-f.mid/100) + f.paymentLen)/30;
       var res = k*f.spending*f.percent/100 + f.spending*12*f.cashback/100 + f.bonus - f.fee;
 
-      f.income = res.toFixed(2);
+      f.income = res.toFixed(0);
       f.incomePercent = (res/12/f.spending*100).toFixed(2);
 
-      f.debt = (f.spending*f.interest/100/360*f.grace).toFixed(2);
-      f.debtDayInc = (f.spending*f.interest/100/360).toFixed(2);
+      f.maxDebt = (k*f.spending).toFixed(0);
+      f.debtDayInc = (f.maxDebt*f.interest/100/360).toFixed(2);
+      f.interestPayment = (f.maxDebt*f.interest/100/360 * (f.graceLen + f.paymentLen)/2).toFixed(0);
+
     }
   )
 </script>
