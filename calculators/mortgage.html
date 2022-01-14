@@ -45,49 +45,49 @@
 <div class="meta">
 </div>
 <form class="calc-form" id="creditForm">
- <label>Начальный капитал: <input id=initialCapital type="number" step=1000 value=3000000 /></label>
+ <label for=initialCapital>Начальный капитал:</label> <input id=initialCapital type="number" step=1000 value=3000000 />
  <div class="comment">Остаток этой суммы (после уплаты первоначального взноса и расходов на оформление кредита) пойдёт на инвестирование.</div>
 
- <label>Свободный доход: <input id="income" type="number" step=1000 value=60000 /></label>
+ <label for=income>Свободный доход:</label> <input id="income" type="number" step=1000 value=60000 />
  <div class="comment">Сколько у вас в среднем остаётся свободных денег в месяц, до платежей и прочих расходов по этому кредиту. Считается, что эта сумма растёт со скоростью инфляции. Инвестируется её остаток после ежемесячного платежа, уплаты ежегодных расходов и частичного досрочного погашения.</div>
 
- <label>Ожидаемая инфляция, %г: <input id="inflationRate" type="number" step=0.1 value=5 /></label>
+ <label for=inflationRate>Ожидаемая инфляция, %г:</label> <input id="inflationRate" type="number" step=0.1 value=5 />
  <div class="comment">Ожидаемая средняя инфляция за весь срок кредита. В качестве ориентира можно взять значения с <a href="https://cbr.ru/hd_base/zcyc_params/zcyc/">кривой бескупонной доходности</a>.</div>
 
- <label>Доходность вложений (сверх инфляции), %г: <input id="investmentYield" type="number" step=0.1 value=5 /></label>
+ <label for=investmentYield>Доходность вложений (сверх инфляции), %г:</label> <input id="investmentYield" type="number" step=0.1 value=5 />
  <div class="comment">Ожидаемая реальная доходность вашего инвестиционного портфеля.</div>
-<p></p>
+<p></p><p></p>
 
-<label>Стоимость жилья: <input id="housePrice" type="number" step=1000 value=3000000 onchange='setRentEst()' /></label>
-<div></div>
+<label for=housePrice>Стоимость жилья:</label> <input id="housePrice" type="number" step=1000 value=3000000 onchange='setRentEst()' />
 
-<label>Первоначальный взнос: <input id="downpayment" type="number" step=1000 value=600000 onchange='setPayment()' /></label>
-<div></div>
 
-<label>Первоначальные расходы <input id="initialFee" type="number" step=1000 value=15000 /></label>
+<label for=downpayment>Первоначальный взнос:</label> <input id="downpayment" type="number" step=1000 value=600000 onchange='setPayment()' />
+
+
+<label for=initialFee>Первоначальные расходы:</label> <input id="initialFee" type="number" step=1000 value=15000 />
 <div class="comment">Оценка недвижимости, комиссии за регистрацию и пр. При покупке новостройки — арендная плата за время строительства и расходы на ремонт.</div>
 
-<label>Срок кредита, мес: <input id="months" type="number" step=1 value=360 onchange='setPayment()' /></label>
-<div></div>
+<label for=months>Срок кредита, мес:</label> <input id="months" type="number" step=1 value=360 onchange='setPayment()' />
 
-<label>Процентная ставка по кредиту, %г: <input id="interestRate" type="number" step=0.1 value=6.5 onchange='setPayment()' /></label>
+
+<label for=interestRate>Процентная ставка по кредиту, %г:</label> <input id="interestRate" type="number" step=0.1 value=6.5 onchange='setPayment()' />
 <div class="comment">Ежемесячный платёж будет: <strong><span id='monthlyPayment'></span></strong></div>
 
-<label>Ежегодные расходы, % от остатка кредита: <input id="recurringFee" type="number" step=0.1 value=0.5 /></label>
+<label for=recurringFee>Ежегодные расходы, % от остатка кредита:</label> <input id="recurringFee" type="number" step=0.1 value=0.5 />
 <div class="comment">На страхование недвижимости, жизни и здоровья.</div>
 
-<label>На досрочное погашение, %: <input id="earlyRepay" type="number" step=1 value=0 /></label>
+<label for=earlyRepay>На досрочное погашение, %:</label> <input id="earlyRepay" type="number" step=1 value=0 />
 <div class="comment">Какой процент свободного ежемесячного дохода, после всех расходов по кредиту и жилью, направить на досрочное погашение. Оставшиеся деньги будут инвестированы.</div>
-<p></p>
+<p></p><p></p>
 
-<label>Эксплуатационные расходы в год: <input id="runningCosts" type="number" step=1000 value=20000 /></label>
+<label for=runningCosts>Эксплуатационные расходы в год:</label> <input id="runningCosts" type="number" step=1000 value=20000 />
 <div class="comment">Среднегодовые расходы на текущий и косметический ремонт, которые вы несёте как собственник жилья, а также налоги. Без коммунальных платежей. Предполагается, что эта сумма растёт со скоростью инфляции. </div>
 
-<label>Обветшание / восстановительный ремонт и страхование, %г от стоимости жилья: <input id="depreciation" type="number" step=0.1 value=1.5 /></label>
+<label for=depreciation>Обветшание / восстановительный ремонт и страхование, %г от стоимости жилья:</label> <input id="depreciation" type="number" step=0.1 value=1.5 />
 <div class="comment">Согласно <a href="https://www.nber.org/papers/w24112">исследованиям</a>, это 1,5-2%г. Если вы почему-то считаете, что дорожать (после поправки на инфляцию) ваше жильё будет быстрее, чем морально и физически устаревать, то сделайте значение в этом поле отрицательным. Но про эту корректировку всё равно не забудьте.</div>
-<p></p>
+<p></p><p></p>
 
-<label>Стоимость аренды аналогичного жилья в мес: <input id="rentPrice" type="number" step=1000 value=20000 /></label>
+<label for=rentPrice>Стоимость аренды аналогичного жилья в мес:</label> <input id="rentPrice" type="number" step=1000 value=20000 />
 <div class="comment">Обычно это примерно 1/150 от его стоимости (т.е. <span id='rentEst'></span> для указанного значения). Предполагается, что она растёт со скоростью инфляции от начального значения (расходы на поддержание начальной стоимости жилья ложатся на арендодателя). Свободные деньги, оставшиеся после арендного платежа, инвестируются.</div>
 </form>
 <p><button onclick="calc(event)" ontouchstart="calc(event)">Рассчитать</button></p>

@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-01-13</updated>
+<updated>2022-01-14</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Обновлено: Криптовалюты/Ссылки по теме/The Web3 Fraud</title>
+        <link href="https://onfin.github.io/literacy/instruments/crypto#_9" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/instruments/crypto#_9</id>
+        <content src="https://onfin.github.io/literacy/instruments/crypto#_9"></content>
+        <updated>2022-01-14</updated>
+        <published>2022-01-14</published>
+        <summary type="html">Скорость и стоимость хранения и вычислений на блокчейне Эфира. 600КГц или 3kB/с за 250$ в секунду.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Аспекты риска</title>
         <link href="https://onfin.github.io/literacy/risk_aspects" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2021-08-22</updated>
         <published>2021-08-22</published>
         <summary type="html">Почему не стоит полагаться на корреляции при выборе активов в портфель. И на доходности тоже.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Экспозиция и риск/доходность</title>
-        <link href="https://onfin.github.io/notes/expo" rel="alternate"/>
-        <id>https://onfin.github.io/notes/expo</id>
-        <content src="https://onfin.github.io/notes/expo"></content>
-        <updated>2021-08-12</updated>
-        <published>2021-08-12</published>
-        <summary type="html">Небольшая зарисовка о неочевидных особенностях масштабирования портфелей></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>

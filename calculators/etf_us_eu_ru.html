@@ -9,13 +9,6 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/>        <meta name="description" content="Расчёт итоговой суммы капитала при инвестициях через американские, европейские и российские биржевые фонды" />        <meta name="keywords" content="финансовая грамотность, брокерский счёт, ETF, биржевые фонды, американские ETF, ирландские ETF, российские ETF, инстранный брокер, налоги, трёхлетняя льгота, ЛДВ, валютная переоценка" />
 <meta property="og:locale" content="ru" />    <meta property="og:type" content="website" /><meta property="og:title" content="" />
 <meta property="og:url" content="https://onfin.github.io/calculators/etf_us_eu_ru" />        <style type="text/css">
-    input {
-        width: 100px
-    }
-    label {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
     .result {
         font-weight: bold;
     }
@@ -100,79 +93,74 @@
 <p>Т.к. у нас тут европейсике и американские фонды, размер активов будем считать в долларах. Все расчёты — с поправкой на инфляцию страны проживания.</p>
 <p>Налоги рассчитываются с номинального результата инвестиций по принципу FIFO: раньше купленные паи раньше и продаются.</p>
 <p>«Валютная переоценка» учитывается величиной инфляции: на долгосроке расхождение валютных курсов будет приблизительно равно разнице в накопленных инфляциях. Поэтому два актива в разных валютах, но с одинаковой ожидаемой реальной доходностью, дадут в среднем одинаковые финансовые (и налоговые) результаты после пересчёта в валюту страны проживания.</p>
-<div>
-    <strong>Общие параметры</strong>
-    <div>
-        <label><span>Начальная стоимость активов, $:</span><input id="Sum" type="number" step=10 value=10000 onChange="onChange()" /></label>
-        <label>Реальная ценовая доходность, %г: <input id="PriceY" type="number" step=0.1 value=3 onChange="onChange()" /></label>
-        <label>Дивидендная доходность, %г: <input id="DivY" type="number" step=0.1 value=2 onChange="onChange()" /></label>
-        <label>Налог на дивиденды, %: <input id="DivTax" type="number" step=1 value=13 onChange="onChange()" /></label>
-        <label>Налог на прирост капитала, %г: <input id="GainTax" type="number" step=1 value=13 onChange="onChange()" /></label>
-        <label>Инфляция страны проживания, %г: <input id="Infl" type="number" step=0.1 value=5 onChange="onChange()" /></label>
-        <label>Ежемесячное пополнение на стадии накопления, $: <input id="ContribSum" type="number" step=100 value=1000 onChange="onChange()" /></label>
-        <label>Продолжительность пополнений, лет: <input id="ContribLen" type="number" step=1 value=15 onChange="onChange()" /></label>
-        <label>Ежемесячное изъятие на стадии расходования, $: <input id="WithdrawSum" type="number" step=100 value=1000 onChange="onChange()" /></label>
-        <label>Продолжительность изъятий, лет: <input id="WithdrawLen" type="number" step=1 value=25 onChange="onChange()" /></label>
+<p><br></p>
+<div></div>    <div class=calc-form>
+        <strong class=full-width-row>Общие параметры</strong>
+        <label for=Sum>Начальная стоимость активов, $:</label><input id="Sum" type="number" step=10 value=10000 onChange="onChange()" />
+        <label for=PriceY>Реальная ценовая доходность, %г:</label> <input id="PriceY" type="number" step=0.1 value=3 onChange="onChange()" />
+        <label for=DivY>Дивидендная доходность, %г:</label> <input id="DivY" type="number" step=0.1 value=2 onChange="onChange()" />
+        <label for=DivTax>Налог на дивиденды, %:</label> <input id="DivTax" type="number" step=1 value=13 onChange="onChange()" />
+        <label for=GainTax>Налог на прирост капитала, %г:</label> <input id="GainTax" type="number" step=1 value=13 onChange="onChange()" />
+        <label for=Infl>Инфляция страны проживания, %г:</label> <input id="Infl" type="number" step=0.1 value=5 onChange="onChange()" />
+        <label for=ContribSum>Ежемесячное пополнение на стадии накопления, $:</label> <input id="ContribSum" type="number" step=100 value=1000 onChange="onChange()" />
+        <label for=ContribLen>Продолжительность пополнений, лет:</label> <input id="ContribLen" type="number" step=1 value=15 onChange="onChange()" />
+        <label for=WithdrawSum>Ежемесячное изъятие на стадии расходования, $:</label> <input id="WithdrawSum" type="number" step=100 value=1000 onChange="onChange()" />
+        <label for=WithdrawLen>Продолжительность изъятий, лет:</label> <input id="WithdrawLen" type="number" step=1 value=25 onChange="onChange()" />
     </div>
-<div class="codehilite"><pre><span></span>Подставить значения для типичного фонда <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">onClick=</span><span class="s">&quot;setUS()&quot;</span><span class="nt">&gt;</span>американских акций<span class="nt">&lt;/span&gt;</span>,
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">onClick=</span><span class="s">&quot;setEU()&quot;</span><span class="nt">&gt;</span>европейских акций<span class="nt">&lt;/span&gt;</span>,
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">onClick=</span><span class="s">&quot;setRU()&quot;</span><span class="nt">&gt;</span>российских акций<span class="nt">&lt;/span&gt;</span>.
-<span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;strong&gt;</span>Американский фонд<span class="nt">&lt;/strong&gt;</span> (с выплатой дивидендов)
-        <span class="nt">&lt;label&gt;</span>Комиссия фонда, %г: <input id="UsFee" type="number" step=0.01 value=0.01 onChange="onChange('us')"/><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Внутренний налог на дивиденды, %: <input id="UsDivTax" type="number" step=0.1 value=7 onChange="onChange('us')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Брокерская комиссия с оборота и спред, %: <input id="UsBrkFee" type="number" step=0.01 value=0.1 onChange="onChange('us')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Фикс. комиссия брокера, $: <input id="UsFix" type="number" step=1 value=10 onChange="onChange('us')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Остаток, $: <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;UsBalance&quot;</span> <span class="na">class=</span><span class="s">&quot;result&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/label&gt;</span>
-        <span class="nt">&lt;details&gt;&lt;summary&gt;</span>Подробнее<span class="nt">&lt;/summary&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;schedule&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Год<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Стоимость пая<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Стоимость активов<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Заплаченные комиссии и налоги<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;UsSchedule&quot;</span> <span class="na">class=</span><span class="s">&quot;schedule&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-        <span class="nt">&lt;/details&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;strong&gt;</span>Европейский фонд<span class="nt">&lt;/strong&gt;</span> (с аккумулированием дивидендов)
-        <span class="nt">&lt;label&gt;</span>Комиссия фонда, %г: <input id="EuFee" type="number" step=0.01 value=0.2 onChange="onChange('eu')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Внутренний налог на дивиденды, %: <input id="EuDivTax" type="number" step=0.1 value=7 onChange="onChange('eu')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Брокерская комиссия с оборота и спред, %: <input id="EuBrkFee" type="number" step=0.01 value=0.1 onChange="onChange('us')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Фикс. комиссия брокера, $: <input id="EuFix" type="number" step=1 value=10 onChange="onChange('eu')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Остаток, $: <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;EuBalance&quot;</span> <span class="na">class=</span><span class="s">&quot;result&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/label&gt;</span>
-        <span class="nt">&lt;details&gt;&lt;summary&gt;</span>Подробнее<span class="nt">&lt;/summary&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;schedule&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Год<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Стоимость пая<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Стоимость активов<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Заплаченные комиссии и налоги<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;EuSchedule&quot;</span> <span class="na">class=</span><span class="s">&quot;schedule&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-        <span class="nt">&lt;/details&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;strong&gt;</span>Российский фонд<span class="nt">&lt;/strong&gt;</span> (с аккумулированием дивидендов и ЛДВ)
-        <span class="nt">&lt;label&gt;</span>Комиссия фонда, %г: <input id="RuFee" type="number" step=0.01 value=0.7 onChange="onChange('ru')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Внутренний налог на дивиденды, %: <input id="RuDivTax" type="number" step=0.1 value=7 onChange="onChange('ru')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Брокерская комиссия с оборота и спред, %: <input id="RuBrkFee" type="number" step=0.01 value=0.1 onChange="onChange('us')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Фикс. комиссия брокера, $: <input id="RuFix" type="number" step=1 value=0 onChange="onChange('eu')" /><span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Остаток, $: <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;RuBalance&quot;</span> <span class="na">class=</span><span class="s">&quot;result&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/label&gt;</span>
-        <span class="nt">&lt;details&gt;&lt;summary&gt;</span>Подробнее<span class="nt">&lt;/summary&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;schedule&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Год<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Стоимость пая<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Стоимость активов<span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;span&gt;</span>Заплаченные комиссии и налоги<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;RuSchedule&quot;</span> <span class="na">class=</span><span class="s">&quot;schedule&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-        <span class="nt">&lt;/details&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div>
-
-</div>
-<script type="text/javascript">
+Подставить значения для типичного фонда <span class="button" onClick="setUS()">американских акций</span>,
+    <span class="button" onClick="setEU()">европейских акций</span>,
+    <span class="button" onClick="setRU()">российских акций</span>.
+    <div class=calc-form>
+        <span class='full-width-row'><strong>Американский фонд</strong> (с выплатой дивидендов)</span>
+        <label for=UsFee>Комиссия фонда, %г:</label> <input id="UsFee" type="number" step=0.01 value=0.01 onChange="onChange('us')"/>
+        <label for=UsDivTax>Внутренний налог на дивиденды, %:</label> <input id="UsDivTax" type="number" step=0.1 value=7 onChange="onChange('us')" />
+        <label for=UsBrkFee>Брокерская комиссия с оборота и спред, %:</label> <input id="UsBrkFee" type="number" step=0.01 value=0.1 onChange="onChange('us')" />
+        <label for=UsFix>Фикс. комиссия брокера, $:</label> <input id="UsFix" type="number" step=1 value=0 onChange="onChange('us')" />
+        <label for=UsBalance>Остаток, $:</label> <span id="UsBalance" class="result"></span>
+    </div>
+    <details><summary>Подробнее</summary>
+        <div class="schedule">
+            <span>Год</span>
+            <span>Стоимость пая</span>
+            <span>Стоимость активов</span>
+            <span>Заплаченные комиссии и налоги</span>
+        </div>
+        <div id="UsSchedule" class="schedule"></div>
+    </details>
+        <div class=calc-form>
+            <span class=full-width-row><strong>Европейский фонд</strong> (с аккумулированием дивидендов)</span>
+            <label for=EuFee>Комиссия фонда, %г:</label> <input id="EuFee" type="number" step=0.01 value=0.2 onChange="onChange('eu')" />
+            <label for=EuDivTax>Внутренний налог на дивиденды, %:</label> <input id="EuDivTax" type="number" step=0.1 value=7 onChange="onChange('eu')" /></label>
+            <label for=EuBrkFee>Брокерская комиссия с оборота и спред, %:</label> <input id="EuBrkFee" type="number" step=0.01 value=0.1 onChange="onChange('us')" /></label>
+            <label for=EuFix>Фикс. комиссия брокера, $:</label> <input id="EuFix" type="number" step=1 value=0 onChange="onChange('eu')" /></label>
+            <label for=EuBalance>Остаток, $:</label> <span id="EuBalance" class="result"></span>
+        </div>
+        <details><summary>Подробнее</summary>
+                <div class="schedule">
+                    <span>Год</span>
+                    <span>Стоимость пая</span>
+                    <span>Стоимость активов</span>
+                    <span>Заплаченные комиссии и налоги</span>
+                </div>
+                <div id="EuSchedule" class="schedule"></div>
+            </details>
+        <div class=calc-form>
+            <span class=full-width-row><strong>Российский фонд</strong> (с аккумулированием дивидендов и ЛДВ)</span>
+            <label for=RuFee>Комиссия фонда, %г:</label> <input id="RuFee" type="number" step=0.01 value=0.7 onChange="onChange('ru')" />
+            <label for=RuDivTax>Внутренний налог на дивиденды, %:</label> <input id="RuDivTax" type="number" step=0.1 value=7 onChange="onChange('ru')" />
+            <label for=RuBrkFee>Брокерская комиссия с оборота и спред, %:</label> <input id="RuBrkFee" type="number" step=0.01 value=0.1 onChange="onChange('us')" />
+            <label for=RuFix>Фикс. комиссия брокера, $:</label> <input id="RuFix" type="number" step=1 value=0 onChange="onChange('eu')" />
+            <label for=RuBalance>Остаток, $:</label> <span id="RuBalance" class="result"></span>
+        </div>
+        <details><summary>Подробнее</summary>
+                <div class="schedule">
+                    <span>Год</span>
+                    <span>Стоимость пая</span>
+                    <span>Стоимость активов</span>
+                    <span>Заплаченные комиссии и налоги</span>
+                </div>
+                <div id="RuSchedule" class="schedule"></div>
+            </details><script type="text/javascript">
     function calcBalance(fundFee, divTax, gainTax, brkFee, brkFix, distr) {
         let sum = Number(Sum.value);
         let divY = Number(DivY.value)/100/12;

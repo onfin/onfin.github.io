@@ -20,23 +20,26 @@ function makeForm(div, fields, calc) {
         }
         const res = [];
         for (let k in fields) {
-            if (!fields[k].output)
-                res.push(h('tr', null,
-                    h('td', null, fields[k].title),
-                    h('td', null, h('input',
+            if (!fields[k].output) {
+                //res.push(h('div', null,
+                   res.push(h('span', null, fields[k].title));
+                   res.push(h('input',
                         Object.assign({}, fields[k],
                             {
                                 id: k,
                                 [fields[k].type == "checkbox" ? 'checked' : 'value']: values[k],
                                 onChange: (e) => onChange(k,e.target[fields[k].type == "checkbox" ? 'checked' : 'value'], e)
-                            }
-                    )))));
-            else
-                res.push(h('tr', null,
-                    h('td', null, fields[k].title),
-                    h('td', null, h('input', Object.assign({}, fields[k], {value: values[k], readonly: true, class: "output"})))));
+                            })));
+                //    )))));
+            }
+            else {
+                //res.push(h('div', null,
+                    res.push(h('span', null, fields[k].title));
+                    res.push(h('input', Object.assign({}, fields[k], {value: values[k], readonly: true, class: "output"})));
+                //));
+            }
         }
-        return h('table', {}, res);
+        return res; //h('div', {}, res);
     }
 
     render(h(PForm), div);

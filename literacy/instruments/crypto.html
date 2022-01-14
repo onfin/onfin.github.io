@@ -33,7 +33,7 @@
                 <h1> Криптовалюты </h1>
                 <div class="meta"><p class=summary>Разбираем экономическую сущность криптовалют и их пригодность в качестве актива в диверсифицированном портфеле. Результаты, как можно догадаться, неутешительные.</p>
                     <p> Опубликовано: <time>2020-05-19</time> </p>
-                    <p>  Обновлено: <time>2022-01-08</time> </p>
+                    <p>  Обновлено: <time>2022-01-14</time> </p>
 <p>Находится в:</p>
                     <ul>
     <a href='/literacy/instruments'>Краткий обзор инструментов сбережения</a>
@@ -77,6 +77,7 @@
 <ul>
 <li><a href="/literacy/instruments/crypto#_7">My first impressions of web3</a></li>
 <li><a href="/literacy/instruments/crypto#_8">Money and Cryptocurrencies</a></li>
+<li><a href="/literacy/instruments/crypto#_9">The Web3 Fraud</a></li>
 </ul>
 </ul></div>
 <section id="_2">
@@ -185,6 +186,22 @@
         </ul>
         </div><a href="http://jwmason.org/slackwire/on-cryptocurrencies/" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
 <p>Для начала, разбор тщеты криптовалют: их капитализация ничтожна, ни финансовые институты, ни реальный сектор на них не полагаются и не используют, транзакции дороги, участники обмена сильно зависят от посредников, инфраструктура de facto принадлежит нескольким крупным игрокам. А далее уже начинается обсуждение двух взглядов на деньги: как на фундаментальную сущность с самостоятельной ценностью (на этой концепции основываются практически все современные криптовалюты), и как на условную единицу, производную от реальных обязательств (что более соответствует современным представлениям и об устройстве экономики, и о происхождении собственно денег).</p>
+</section>
+<section id="_9">
+<h3><a href="/literacy/instruments/crypto#_9">The Web3 Fraud</a></h3>
+<div class="meta">
+<div>
+        Обновления:
+        <ul>
+                <li>2022-01-14: Скорость и стоимость хранения и вычислений на блокчейне Эфира. 600КГц или 3kB/с за 250$ в секунду.</li>
+        </ul>
+        </div><a href="https://www.usenix.org/publications/loginonline/web3-fraud" target="_blank"><i class=share>&#xea7e;</i> Внешний источник</a></div>
+<p>Any given block of the Ethereum blockchain represents a maximum amount of execution, currently 30 million gas.  And the system adds a new block every 15 seconds, which means the total compute of the Ethereum network as 2 million gas/second, since that is the amount of computation that gets recorded into the Ethereum ledger.</p>
+<p>Estimating the cost (measured in ‘gas’) of an arbitrary computation is complex but let’s assume that we are only interested in the most simple operation: 256 bit integer addition. Each addition costs 3 gas each.  So on a worldwide basis this system rates at 600,000 adds per second.</p>
+<p>Compare this amount of compute to a Raspberry Pi 4, a $45 single-board computer which has four processors running at 1.5 GHz.  Each core has 2 ALUs and it will take 4 instructions to perform a 256 bit addition, as the basic unit for the Raspberry Pi (and most other modern computers) is 64 bits.  So each core has a peak performance of 750,000,000 adds per second for a total peak of 3,000,000,000 adds per second.  Put bluntly, the Ethereum “world computer” has roughly 1/5,000 of the compute power of a Raspberry Pi 4!</p>
+<p>This might be acceptable if the compute wasn’t also terrifyingly expensive.  The current transaction fees for 30M in gas consumed is over 1 Ether.  At the current price of roughly <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathnormal">p</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">e</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord">’</span><span class="mord mathnormal">s</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span></span></span></span></span>250.  So a mere second of Ethereum’s virtual machine costs 25 times more than a month of my far more capable EC2 instance.  Or could buy me several Raspberry Pis.</p>
+<p>What about the storage?  The entire Ethereum blockchain is just 1 terabyte of data and adds a total of a few hundred kilobytes a minute.  Storing the Ethereum blockchain using a robust commercial service like Amazon S3 costs just $20 a month.</p>
+<p>Even the most optimal storage strategy in Ethereum requires 600 gas per byte.  Yet the total network compute capacity is only 2M gas/second so storing 1 megabyte will require 300 seconds.   So not only can the Ethereum blockchain only store 3 kB of data a second, storing that 3kB costs $250!  So the cost of writing a single 3kB message to the Ethereum blockchain is the same price as a year of storage on Amazon for the entire 1 TB Ethereum blockchain.  Or the same price as buying a 1 TB M.2 SSD.</p>
 </section>
 </section>
 </section>
