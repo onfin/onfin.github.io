@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-01-14</updated>
+<updated>2022-01-27</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Обновлено: Банковские счета, карты и вклады</title>
+        <link href="https://onfin.github.io/literacy/instruments/deposits2" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/instruments/deposits2</id>
+        <content src="https://onfin.github.io/literacy/instruments/deposits2"></content>
+        <updated>2022-01-27</updated>
+        <published>2022-01-27</published>
+        <summary type="html">Актуализировал данные, добавил динамику доходности по средней максимальной ставке.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Обновлено: Криптовалюты/Ссылки по теме/The Web3 Fraud</title>
         <link href="https://onfin.github.io/literacy/instruments/crypto#_9" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2021-08-24</updated>
         <published>2021-08-24</published>
         <summary type="html">Получаем выражение для величины бонуса за ребалансировку, и заодно понимаем, что бонуса как такового не существует, просто нелинейные зависимости — нелинейны. Аналогичное быстро проделываем с «потерями на волатильности», которые и вовсе порождены использованием неправильного представления доходностей.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Портфельный эффект и гримасы корреляции</title>
-        <link href="https://onfin.github.io/notes/grimace" rel="alternate"/>
-        <id>https://onfin.github.io/notes/grimace</id>
-        <content src="https://onfin.github.io/notes/grimace"></content>
-        <updated>2021-08-22</updated>
-        <published>2021-08-22</published>
-        <summary type="html">Почему не стоит полагаться на корреляции при выборе активов в портфель. И на доходности тоже.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
