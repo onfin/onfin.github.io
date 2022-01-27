@@ -11,6 +11,18 @@
 <id>https://onfin.github.io</id>
 
     <entry>
+        <title>Инвесторов лучше «среднего» — очень мало, а не половина</title>
+        <link href="https://onfin.github.io/notes/better_than_average" rel="alternate"/>
+        <id>https://onfin.github.io/notes/better_than_average</id>
+        <content src="https://onfin.github.io/notes/better_than_average"></content>
+        <updated>2022-01-27</updated>
+        <published>2022-01-27</published>
+        <summary type="html">Распределение доходностей инвесторов — асимметрично. Поэтому «лучше среднего» — это не «средний инвестор» + чуть-чуть, а высшая лига, топ-10%, если не круче.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
         <title>Обновлено: Банковские счета, карты и вклады</title>
         <link href="https://onfin.github.io/literacy/instruments/deposits2" rel="alternate"/>
         <id>https://onfin.github.io/literacy/instruments/deposits2</id>
@@ -18,6 +30,18 @@
         <updated>2022-01-27</updated>
         <published>2022-01-27</published>
         <summary type="html">Актуализировал данные, добавил динамику доходности по средней максимальной ставке.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
+        <title>Обновлено: Артём Крумпан. Что такое Децентрализованные Финансы (DeFi)?</title>
+        <link href="https://onfin.github.io/literacy/instruments/crypto#_10" rel="alternate"/>
+        <id>https://onfin.github.io/literacy/instruments/crypto#_10</id>
+        <content src="https://onfin.github.io/literacy/instruments/crypto#_10"></content>
+        <updated>2022-01-21</updated>
+        <published>2022-01-21</published>
+        <summary type="html">Обзор DeFi сервисов на блокчейне Терра></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
@@ -282,30 +306,6 @@
         <updated>2021-11-27</updated>
         <published>2021-11-27</published>
         <summary type="html">ВТБ с лета начал удерживать налог на дивиденды при зачислении на ИИС.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Как выбрать брокера</title>
-        <link href="https://onfin.github.io/literacy/brokers" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/brokers</id>
-        <content src="https://onfin.github.io/literacy/brokers"></content>
-        <updated>2021-11-27</updated>
-        <published>2021-11-27</published>
-        <summary type="html">Убрал раздел с тарифами брокеров, т.к. нет ресурсов поддерживать его актуальность.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Бонус за ребалансировку и потери на волатильности (физмат-этюд)</title>
-        <link href="https://onfin.github.io/notes/rebalance_bonus" rel="alternate"/>
-        <id>https://onfin.github.io/notes/rebalance_bonus</id>
-        <content src="https://onfin.github.io/notes/rebalance_bonus"></content>
-        <updated>2021-08-24</updated>
-        <published>2021-08-24</published>
-        <summary type="html">Получаем выражение для величины бонуса за ребалансировку, и заодно понимаем, что бонуса как такового не существует, просто нелинейные зависимости — нелинейны. Аналогичное быстро проделываем с «потерями на волатильности», которые и вовсе порождены использованием неправильного представления доходностей.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
