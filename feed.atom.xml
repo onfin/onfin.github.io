@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-01-27</updated>
+<updated>2022-01-28</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>На рынке не бывает справедливых цен</title>
+        <link href="https://onfin.github.io/notes/no_fair_price" rel="alternate"/>
+        <id>https://onfin.github.io/notes/no_fair_price</id>
+        <content src="https://onfin.github.io/notes/no_fair_price"></content>
+        <updated>2022-01-28</updated>
+        <published>2022-01-28</published>
+        <summary type="html">Потому что для каждого инвестора справедливая цена — своя></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Инвесторов лучше «среднего» — очень мало, а не половина</title>
         <link href="https://onfin.github.io/notes/better_than_average" rel="alternate"/>
@@ -35,7 +47,7 @@
         </author>
     </entry>
     <entry>
-        <title>Обновлено: Артём Крумпан. Что такое Децентрализованные Финансы (DeFi)?</title>
+        <title>Обновлено: Криптовалюты/Ссылки по теме/Артём Крумпан. Что такое Децентрализованные Финансы (DeFi)?</title>
         <link href="https://onfin.github.io/literacy/instruments/crypto#_10" rel="alternate"/>
         <id>https://onfin.github.io/literacy/instruments/crypto#_10</id>
         <content src="https://onfin.github.io/literacy/instruments/crypto#_10"></content>
@@ -294,18 +306,6 @@
         <updated>2021-11-29</updated>
         <published>2021-11-29</published>
         <summary type="html">Список источников по результатам активного управления с краткими выписками и комментариями.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Индивидуальный инвестиционный счёт и другие налоговые льготы и вычеты для инвесторов/Нюансы использования ИИС</title>
-        <link href="https://onfin.github.io/literacy/iis#_4" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/iis#_4</id>
-        <content src="https://onfin.github.io/literacy/iis#_4"></content>
-        <updated>2021-11-27</updated>
-        <published>2021-11-27</published>
-        <summary type="html">ВТБ с лета начал удерживать налог на дивиденды при зачислении на ИИС.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
