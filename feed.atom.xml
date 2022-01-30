@@ -4,12 +4,36 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-01-28</updated>
+<updated>2022-01-30</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Ищем «справедливый» курс доллара</title>
+        <link href="https://onfin.github.io/notes/usdrub" rel="alternate"/>
+        <id>https://onfin.github.io/notes/usdrub</id>
+        <content src="https://onfin.github.io/notes/usdrub"></content>
+        <updated>2022-01-30</updated>
+        <published>2022-01-30</published>
+        <summary type="html">Исходя из принципа паритета процентных ставок пробуем рассчитать «справедливый» курс доллара на текущий момент и понять, много ли мы «переплачиваем» за геополитичекую напряжённость, вкладываясь сейчас в зарубежные инструменты.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
+        <title>Обновлено: Калькуляторы банковских карт/Эффективный кэшбэк за повседневные покупки при разных схемах округления</title>
+        <link href="https://onfin.github.io/calculators/cards#_5" rel="alternate"/>
+        <id>https://onfin.github.io/calculators/cards#_5</id>
+        <content src="https://onfin.github.io/calculators/cards#_5"></content>
+        <updated>2022-01-29</updated>
+        <published>2022-01-29</published>
+        <summary type="html">Рассчитал эффективный кэшбеэк за свои повседневные покупки при разных схемах округления и разных ставках></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>На рынке не бывает справедливых цен</title>
         <link href="https://onfin.github.io/notes/no_fair_price" rel="alternate"/>
@@ -282,30 +306,6 @@
         <updated>2021-12-05</updated>
         <published>2021-12-05</published>
         <summary type="html">Врезка с объяснением математики></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Контринтуитивная доходность</title>
-        <link href="https://onfin.github.io/literacy/erratic_returns" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/erratic_returns</id>
-        <content src="https://onfin.github.io/literacy/erratic_returns"></content>
-        <updated>2021-12-05</updated>
-        <published>2021-12-01</published>
-        <summary type="html">Для доходностей финансовых инструментов характерны толстые хвосты и асимметрия, а сам процесс инвестирования — неэргодичен. Наша интуиция в таких условиях работает плохо, и мы можем существенно недооценивать риски выбранных активов и стратегий.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Результаты активного управления</title>
-        <link href="https://onfin.github.io/notes/active_results" rel="alternate"/>
-        <id>https://onfin.github.io/notes/active_results</id>
-        <content src="https://onfin.github.io/notes/active_results"></content>
-        <updated>2021-11-29</updated>
-        <published>2021-11-29</published>
-        <summary type="html">Список источников по результатам активного управления с краткими выписками и комментариями.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>

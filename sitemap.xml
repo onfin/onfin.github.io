@@ -306,6 +306,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/usdrub</loc>
+            <lastmod>2022-01-30</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/volatility</loc>
             <lastmod>2020-06-30</lastmod>
             <changefreq>monthly</changefreq>
@@ -469,7 +475,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/calculators/cards</loc>
-            <lastmod>2022-01-08</lastmod>
+            <lastmod>2022-01-29</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
