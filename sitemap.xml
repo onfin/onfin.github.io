@@ -169,7 +169,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/literacy/instruments/crypto</loc>
-            <lastmod>2022-01-21</lastmod>
+            <lastmod>2022-02-22</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
@@ -218,6 +218,12 @@
         <url>
             <loc>https://onfin.github.io/notes/myportfolio</loc>
             <lastmod>2019-11-11</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://onfin.github.io/notes/cryptoecon</loc>
+            <lastmod>2022-02-22</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>
