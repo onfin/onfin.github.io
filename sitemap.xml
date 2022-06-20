@@ -222,6 +222,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/intl_trade</loc>
+            <lastmod>2022-06-20</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/cryptoecon</loc>
             <lastmod>2022-02-22</lastmod>
             <changefreq>monthly</changefreq>
@@ -253,7 +259,7 @@
         </url>
         <url>
             <loc>https://onfin.github.io/notes/recklessness</loc>
-            <lastmod>2019-10-29</lastmod>
+            <lastmod>2022-06-20</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

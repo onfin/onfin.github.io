@@ -4,12 +4,36 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-02-22</updated>
+<updated>2022-06-20</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>О международной торговле в нацвалютах</title>
+        <link href="https://onfin.github.io/notes/intl_trade" rel="alternate"/>
+        <id>https://onfin.github.io/notes/intl_trade</id>
+        <content src="https://onfin.github.io/notes/intl_trade"></content>
+        <updated>2022-06-20</updated>
+        <published>2022-06-20</published>
+        <summary type="html">Международная торговля в нацвалютах, которая многим видится как более справедливый порядок по сравнению с использованием небольшого числа резервных валют, на самом деле скорее привела бы к повышенным издержкам, постоянным перебоям в поставках из-за курсовых рисков, повышенной узявимости и меньшей управляемости национальных экономик, валютным войнам. Мне кажется более вероятным, что сложившиеся вызовы (в том числе и для эмитентов резервных валют т.к. сопоставимый с национальной экономикой оффшорный рынок нацвалюты — серьёзная угроза для монетарной и бюджетной стабильности) приведут к активизации разработки наднациональной валюты международных расчётов, возможно, с использованием блокчейн-технологий для организации прозрачного управления ею на основе консенсуса центробанков.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
+    <entry>
+        <title>Обновлено: Безответственное отношение к деньгам/Ссылки/Experienced well-being rises with income, even above $75,000 per year</title>
+        <link href="https://onfin.github.io/notes/recklessness#_6" rel="alternate"/>
+        <id>https://onfin.github.io/notes/recklessness#_6</id>
+        <content src="https://onfin.github.io/notes/recklessness#_6"></content>
+        <updated>2022-06-20</updated>
+        <published>2022-06-20</published>
+        <summary type="html">Исследование о логарифмической зависимлсти ощущаемого благополучия от дохода></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Некоторые вопросы к экономике криптовалют и блокчейнов</title>
         <link href="https://onfin.github.io/notes/cryptoecon" rel="alternate"/>
@@ -282,30 +306,6 @@
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
         <summary type="html">Пример вклада с плавающей ставкой></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Недвижимость/Ссылки по теме</title>
-        <link href="https://onfin.github.io/literacy/instruments/realty#_6" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/instruments/realty#_6</id>
-        <content src="https://onfin.github.io/literacy/instruments/realty#_6"></content>
-        <updated>2021-12-11</updated>
-        <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Инфляция/Ссылки по теме</title>
-        <link href="https://onfin.github.io/notes/inflation#_14" rel="alternate"/>
-        <id>https://onfin.github.io/notes/inflation#_14</id>
-        <content src="https://onfin.github.io/notes/inflation#_14"></content>
-        <updated>2021-12-11</updated>
-        <published>2021-12-11</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
