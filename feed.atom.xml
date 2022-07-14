@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-06-20</updated>
+<updated>2022-07-14</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Деньги — это абстракция</title>
+        <link href="https://onfin.github.io/notes/money_is_abstraction" rel="alternate"/>
+        <id>https://onfin.github.io/notes/money_is_abstraction</id>
+        <content src="https://onfin.github.io/notes/money_is_abstraction"></content>
+        <updated>2022-07-14</updated>
+        <published>2022-07-14</published>
+        <summary type="html">Универсальность денег и их эквивалентность экономическим благам — не абсолютны. Если не обращать внимания на ресурсы, перераспределяемые с помощью денег, то очень часто можно сильно ошибиться в рассуждениях.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>О международной торговле в нацвалютах</title>
         <link href="https://onfin.github.io/notes/intl_trade" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2021-12-11</updated>
         <published>2021-12-11</published>
         <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Размещение средств в банках/Банковские вклады</title>
-        <link href="https://onfin.github.io/literacy/deposits#deposit" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/deposits#deposit</id>
-        <content src="https://onfin.github.io/literacy/deposits#deposit"></content>
-        <updated>2021-12-11</updated>
-        <published>2021-12-11</published>
-        <summary type="html">Пример вклада с плавающей ставкой></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
