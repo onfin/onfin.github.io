@@ -246,6 +246,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/lightspeed</loc>
+            <lastmod>2022-08-09</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/holywars</loc>
             <lastmod>2020-10-24</lastmod>
             <changefreq>monthly</changefreq>
