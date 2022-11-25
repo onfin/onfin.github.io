@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2022-11-21</updated>
+<updated>2022-11-22</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>«Частные деньги»</title>
+        <link href="https://onfin.github.io/notes/private_money" rel="alternate"/>
+        <id>https://onfin.github.io/notes/private_money</id>
+        <content src="https://onfin.github.io/notes/private_money"></content>
+        <updated>2022-11-22</updated>
+        <published>2022-11-22</published>
+        <summary type="html">Мультивалютная система, предложенная Фридрихом фон Хайеком в книге «Частные деньги», основывается на множестве условий и предположений, значительная часть которых нереализуема. И даже при их выполнении оказывается неустойчивой и очень дорогой в эксплуатации. Все участники системы вынуждены нести гораздо более высокие транзакционные издержки и часто действовать вопреки своим текущим экономическим интересам. Едва ли такая система окажется выгоднее, чем единая фиатная валюта с умеренной инфляцией. Также мне не кажется оправданным смешивать в одном инструменте средство обращения и средство сбережения (требование долгосрочного сохранения покупательной способности денег): по отдельности эти функции реализуются лучше и дешевле. Тем не менее, разработка механизмов, которые позволяли бы находить оптимальные «ареалы монетарного регулирования» (как территориальные, так и отраслевые) мне кажется необходимой, просто это задача отнюдь не уровня «рыночек порешает».></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Почему и как печатают деньги</title>
         <link href="https://onfin.github.io/notes/money_printer" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-11</updated>
         <published>2022-01-05</published>
         <summary type="html">Ставка дисконтирования. Её составляющие. Сравнение вариантов вложений через ставку дисконтирования.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Акции/Ссылки по теме</title>
-        <link href="https://onfin.github.io/literacy/instruments/stocks#_9" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/instruments/stocks#_9</id>
-        <content src="https://onfin.github.io/literacy/instruments/stocks#_9"></content>
-        <updated>2021-12-26</updated>
-        <published>2021-12-26</published>
-        <summary type="html">Добавлены ссылки на дополнительные материалы></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
