@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2023-03-04</updated>
+<updated>2024-01-13</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Прямые иностранные инвестиции — зачем?</title>
+        <link href="https://onfin.github.io/notes/dfi" rel="alternate"/>
+        <id>https://onfin.github.io/notes/dfi</id>
+        <content src="https://onfin.github.io/notes/dfi"></content>
+        <updated>2024-01-13</updated>
+        <published>2024-01-13</published>
+        <summary type="html">(а) Заимствование передовых производственных и управленческих практик, (б) вовлечение в систему международных торговых связей, (в) стимулирование конкуренции, (г) сигнал отечественным инвесторам, (д) укрепление дипломатических связей, (е) диверсификация экономики и структуры трансграничных платежей.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Обновлено: Как выбрать брокера</title>
         <link href="https://onfin.github.io/literacy/brokers" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-08</updated>
         <published>2022-01-08</published>
         <summary type="html">Интересный обзор централизованности блокчейн (на примере эфира), а также незащищённости клиент-серверного взаимодействия «децентрализованных» приложений.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Некоторые вопросы к экономике криптовалют и блокчейнов/Ссылки по теме/Money and Cryptocurrencies</title>
-        <link href="https://onfin.github.io/notes/cryptoecon#_17" rel="alternate"/>
-        <id>https://onfin.github.io/notes/cryptoecon#_17</id>
-        <content src="https://onfin.github.io/notes/cryptoecon#_17"></content>
-        <updated>2022-01-08</updated>
-        <published>2022-01-08</published>
-        <summary type="html">Разбор тщеты криптовалют и их непригодности в современном виде к дальнейшему усовершенствованию денежного обращения.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
