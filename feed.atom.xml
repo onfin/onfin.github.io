@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2024-01-13</updated>
+<updated>2024-02-05</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Имущественные налоги</title>
+        <link href="https://onfin.github.io/notes/property_taxes" rel="alternate"/>
+        <id>https://onfin.github.io/notes/property_taxes</id>
+        <content src="https://onfin.github.io/notes/property_taxes"></content>
+        <updated>2024-02-05</updated>
+        <published>2024-02-05</published>
+        <summary type="html">Практическая реализация эффективного налогообложения имущества — проблемна, и скорее всего приведёт к бегству капитала, снижению предпринимательской активности, и увеличению социального неравенства, вопреки изначальной идее. Тем не менее, в отдельных узкоспециальных случаях имущественные налоги могут быть полезны. Морально-этические и концептуальные вопросы имущественных налогов (и права собственности вообще) в заметке не рассматриваются и не должны обсуждаться в комментариях к ней: только механика налогообложения и его последствий.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Прямые иностранные инвестиции — зачем?</title>
         <link href="https://onfin.github.io/notes/dfi" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-11</updated>
         <published>2022-01-11</published>
         <summary type="html">Индексирование номинала ОФЗ-ИН может подпадать под ЛДВ. НК неоднозначен, по крайней мере некоторые брокеры считают так.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Некоторые вопросы к экономике криптовалют и блокчейнов/Ссылки по теме/My first impressions of web3</title>
-        <link href="https://onfin.github.io/notes/cryptoecon#_16" rel="alternate"/>
-        <id>https://onfin.github.io/notes/cryptoecon#_16</id>
-        <content src="https://onfin.github.io/notes/cryptoecon#_16"></content>
-        <updated>2022-01-08</updated>
-        <published>2022-01-08</published>
-        <summary type="html">Интересный обзор централизованности блокчейн (на примере эфира), а также незащищённости клиент-серверного взаимодействия «децентрализованных» приложений.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
