@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2024-02-05</updated>
+<updated>2024-10-05</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Бонус за не-ребалансировку (физмат-этюд)</title>
+        <link href="https://onfin.github.io/notes/rebalance_bonus_2" rel="alternate"/>
+        <id>https://onfin.github.io/notes/rebalance_bonus_2</id>
+        <content src="https://onfin.github.io/notes/rebalance_bonus_2"></content>
+        <updated>2024-10-05</updated>
+        <published>2024-10-05</published>
+        <summary type="html">Оцениваем ожидаемую доходность портфеля без ребалансировки и условия, при которых периодическая ребалансировка выгоднее отсутствия оной.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Имущественные налоги</title>
         <link href="https://onfin.github.io/notes/property_taxes" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-11</updated>
         <published>2022-01-11</published>
         <summary type="html">Добавил оговорку про неясность применения ЛДВ к индексации номинала ОФЗ-ИН.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Временна́я стоимость денег. Дисконтирование/Сравнение с потоком реальных платежей</title>
-        <link href="https://onfin.github.io/literacy/discounting#compare-real" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/discounting#compare-real</id>
-        <content src="https://onfin.github.io/literacy/discounting#compare-real"></content>
-        <updated>2022-01-11</updated>
-        <published>2022-01-11</published>
-        <summary type="html">Индексирование номинала ОФЗ-ИН может подпадать под ЛДВ. НК неоднозначен, по крайней мере некоторые брокеры считают так.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>

@@ -240,6 +240,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/rebalance_bonus_2</loc>
+            <lastmod>2024-10-05</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/cryptoecon</loc>
             <lastmod>2022-02-22</lastmod>
             <changefreq>monthly</changefreq>
