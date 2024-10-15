@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2024-10-05</updated>
+<updated>2024-10-15</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Ребалансировка между активами с неопределённой будущей доходностью (физмат-этюд)</title>
+        <link href="https://onfin.github.io/notes/rebalance_bonus_3" rel="alternate"/>
+        <id>https://onfin.github.io/notes/rebalance_bonus_3</id>
+        <content src="https://onfin.github.io/notes/rebalance_bonus_3"></content>
+        <updated>2024-10-15</updated>
+        <published>2024-10-15</published>
+        <summary type="html">Ребалансировка должна восприниматься исключительно как механизм контроля _рисков_ портфеля. И этот механизм — не бесплатный. В реальных сценариях оказывается крайне маловероятным, чтобы портфель с ребалансировкой принес бо́льшую доходность, чем без неё. Бесплатных обедов не существует. Другое дело, что, пожертвовав частью «ненужной» доходности, мы можем приобрести значительное снижение волатильности портфеля, и даже получить бо́льшую доходность на целевой уровень его волатильности / неопределённости итоговых результатов.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Бонус за не-ребалансировку (физмат-этюд)</title>
         <link href="https://onfin.github.io/notes/rebalance_bonus_2" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-13</updated>
         <published>2022-01-13</published>
         <summary type="html">Собираю здесь индекс по аспектам риска, которые необходимо учитывать при планировании портфеля и инвестиционных стратегий.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Индивидуальный инвестиционный счёт и другие налоговые льготы и вычеты для инвесторов/Льгота по долгосрочному владению ценными бумагами (ЛДВ)</title>
-        <link href="https://onfin.github.io/literacy/iis#_5" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/iis#_5</id>
-        <content src="https://onfin.github.io/literacy/iis#_5"></content>
-        <updated>2022-01-11</updated>
-        <published>2022-01-11</published>
-        <summary type="html">Добавил оговорку про неясность применения ЛДВ к индексации номинала ОФЗ-ИН.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
