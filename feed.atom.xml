@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2024-10-15</updated>
+<updated>2024-12-28</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>О доходности взвешенных по капитализации портфелей в условиях зашумлённых рыночных цен (физмат-этюд)</title>
+        <link href="https://onfin.github.io/notes/capweighting_drag" rel="alternate"/>
+        <id>https://onfin.github.io/notes/capweighting_drag</id>
+        <content src="https://onfin.github.io/notes/capweighting_drag"></content>
+        <updated>2024-12-28</updated>
+        <published>2024-12-28</published>
+        <summary type="html">Предложение: в портфеле, взвешивающем компании по капитализации, переоценённые компании автоматически получают больший вес, а недооценённые — меньший ⇒ его доходность будет ниже, чем если бы компании были взвешены «справедливо». Расчёт: ничего подобного.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Ребалансировка между активами с неопределённой будущей доходностью (физмат-этюд)</title>
         <link href="https://onfin.github.io/notes/rebalance_bonus_3" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-14</updated>
         <published>2022-01-14</published>
         <summary type="html">Скорость и стоимость хранения и вычислений на блокчейне Эфира. 600КГц или 3kB/с за 250$ в секунду.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Аспекты риска</title>
-        <link href="https://onfin.github.io/literacy/risk_aspects" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/risk_aspects</id>
-        <content src="https://onfin.github.io/literacy/risk_aspects"></content>
-        <updated>2022-01-13</updated>
-        <published>2022-01-13</published>
-        <summary type="html">Собираю здесь индекс по аспектам риска, которые необходимо учитывать при планировании портфеля и инвестиционных стратегий.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>

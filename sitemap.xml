@@ -276,6 +276,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/capweighting_drag</loc>
+            <lastmod>2024-12-28</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/holywars</loc>
             <lastmod>2020-10-24</lastmod>
             <changefreq>monthly</changefreq>
