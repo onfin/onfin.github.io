@@ -270,6 +270,12 @@
             <priority>0.5</priority>
         </url>
         <url>
+            <loc>https://onfin.github.io/notes/freemarket_proof</loc>
+            <lastmod>2025-01-19</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://onfin.github.io/notes/money_printer</loc>
             <lastmod>2022-11-21</lastmod>
             <changefreq>monthly</changefreq>
