@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2025-01-19</updated>
+<updated>2025-03-15</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Обновлено: Рыночек не порешает</title>
+        <link href="https://onfin.github.io/notes/freemarket" rel="alternate"/>
+        <id>https://onfin.github.io/notes/freemarket</id>
+        <content src="https://onfin.github.io/notes/freemarket"></content>
+        <updated>2025-03-15</updated>
+        <published>2025-03-15</published>
+        <summary type="html">Вывел ограничения из математического доказательства эффективности.></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Эффективность рыночной экономики: упрощённое доказательство</title>
         <link href="https://onfin.github.io/notes/freemarket_proof" rel="alternate"/>
@@ -99,7 +111,7 @@
         <link href="https://onfin.github.io/notes/freemarket" rel="alternate"/>
         <id>https://onfin.github.io/notes/freemarket</id>
         <content src="https://onfin.github.io/notes/freemarket"></content>
-        <updated>2022-12-26</updated>
+        <updated>2025-03-15</updated>
         <published>2022-12-26</published>
         <summary type="html">Помимо отрицателей рыночной экономики, есть ещё и обширная категория последователей культа Свободного Рынка: отмените всё регулирование, рыночек сам всё порешает. Нет, не порешает. Математически доказанная эффективность рыночной экономики — это следствие ряда условий, обеспечить которые, в ряде ситуаций, по меньшей мере нетривиально, если вообще возможно. Также, свободный рынок способен лишь к локальной оптимизации экономики, а найденные им равновесия могут быть «плохими» — приводить к стагнации или хрупкости экономики (пусть и при максимально эффективном использовании имеющихся ресурсов) или просто не соответствовать представлениям о справедливом распределении. Таким образом, регулирование рынка и перераспределение ресурсов внерыночными методами — необходимо — чтобы (а) создавать необходимые условия для функционирования рынка, (б) направлять развитие экономики в нужную сторону, (в) компенсировать ошибки экономических агентов и рыночного механизма в целом. Почему при всём при этом мы не можем отказаться от рыночной экономики? Потому что у нас нет альтернатив, для которых обеспечение максимальной эффективности (субъективной, выраженной индивидуальными функциями полезности) распределения ресурсов, было бы доказанным в условиях, создаваемых с меньшим объёмом внешних вмешательств.></summary>
         <author>
@@ -294,18 +306,6 @@
         <updated>2022-01-27</updated>
         <published>2022-01-27</published>
         <summary type="html">Распределение доходностей инвесторов — асимметрично. Поэтому «лучше среднего» — это не «средний инвестор» + чуть-чуть, а высшая лига, топ-10%, если не круче.></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Обновлено: Банковские счета, карты и вклады</title>
-        <link href="https://onfin.github.io/literacy/instruments/deposits2" rel="alternate"/>
-        <id>https://onfin.github.io/literacy/instruments/deposits2</id>
-        <content src="https://onfin.github.io/literacy/instruments/deposits2"></content>
-        <updated>2022-01-27</updated>
-        <published>2022-01-27</published>
-        <summary type="html">Актуализировал данные, добавил динамику доходности по средней максимальной ставке.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
