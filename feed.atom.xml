@@ -4,12 +4,24 @@
 <title>Житейские воззрения пана Семушельского</title>
 <link href="https://onfin.github.io"/>
 <link rel="self" href="/feed.atom.xml" />
-<updated>2025-03-15</updated>
+<updated>2025-05-14</updated>
 <author>
     <name>Андрей Болкисев</name>
 </author>
 <id>https://onfin.github.io</id>
 
+    <entry>
+        <title>Современное денежное обращение</title>
+        <link href="https://onfin.github.io/notes/money" rel="alternate"/>
+        <id>https://onfin.github.io/notes/money</id>
+        <content src="https://onfin.github.io/notes/money"></content>
+        <updated>2025-05-14</updated>
+        <published>2025-05-14</published>
+        <summary type="html">Большой обзор современного денежного обращения: сущность современных денег, их создание и уничтожение, монетарная динамика и финансовая стабильность, международные финансы, перспективные формы денег></summary>
+        <author>
+            <name>Андрей Болкисев</name>
+        </author>
+    </entry>
     <entry>
         <title>Обновлено: Рыночек не порешает</title>
         <link href="https://onfin.github.io/notes/freemarket" rel="alternate"/>
@@ -294,18 +306,6 @@
         <updated>2022-01-28</updated>
         <published>2022-01-28</published>
         <summary type="html">Потому что для каждого инвестора справедливая цена — своя></summary>
-        <author>
-            <name>Андрей Болкисев</name>
-        </author>
-    </entry>
-    <entry>
-        <title>Инвесторов лучше «среднего» — очень мало, а не половина</title>
-        <link href="https://onfin.github.io/notes/better_than_average" rel="alternate"/>
-        <id>https://onfin.github.io/notes/better_than_average</id>
-        <content src="https://onfin.github.io/notes/better_than_average"></content>
-        <updated>2022-01-27</updated>
-        <published>2022-01-27</published>
-        <summary type="html">Распределение доходностей инвесторов — асимметрично. Поэтому «лучше среднего» — это не «средний инвестор» + чуть-чуть, а высшая лига, топ-10%, если не круче.></summary>
         <author>
             <name>Андрей Болкисев</name>
         </author>
